@@ -1,12 +1,8 @@
-import React from 'react'
-import './Canvas.css'
+import React from "react";
+import classes from "./Canvas.module.css";
 
-function Canvas() {
-    return (
-        <div>
+const Canvas = () => {
+  return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default Canvas
+export default Canvas;
