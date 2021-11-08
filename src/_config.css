@@ -1,0 +1,14 @@
+:root {
+  /* colors */
+  --main-color: rgba(15, 21, 68, 1);
+  --light-color: #f4f4f4;
+  --medium-color: #ccc;
+  --dark-color: #333;
+
+  --sidebar-text-color: rgba(255, 255, 255, 1);
+  
+  /* device width */
+  --website-width: 1280px;
+  
+  /* images */
+}
