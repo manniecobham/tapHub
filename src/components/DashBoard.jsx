@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from './Sidebar'
-import Canvas from './Canvas'
+import Canvas from './Canvas/Canvas'
 import './DashBoard.css'
 
 function DashBoard(){
