@@ -1,7 +1,0 @@
-.sidebar {
-    background-color: var(--main-color);
-    color: var(--sidebar-text-color);
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-}

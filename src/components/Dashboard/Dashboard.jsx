@@ -6,13 +6,13 @@ import classes from "./Dashboard.module.css";
 
 function Dashboard() {
   return (
-    <React.Fragment>
+    <div class={classes.dashboard}>
       <Sidebar></Sidebar>
 
-      <main class={`container`}>
+      <main class={`container ${classes.canvas}`}>
         <Canvas></Canvas>
       </main>
-    </React.Fragment>
+    </div>
   );
 }
 

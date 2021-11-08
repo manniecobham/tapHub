@@ -8,7 +8,14 @@
   --sidebar-text-color: rgba(255, 255, 255, 1);
   
   /* device width */
-  --website-width: 1280px;
+  --website-width: 1440px;
+
+  --canvas-width: 1240px;
   
   /* images */
+  --overview-logo: url('./images/Vector.png');
+  --analytics-logo: url('./images/Vector.png');
+  --reports-logo: url('./images/Vector.png');
+  --sensors-logo: url('./images/Vector.png');
+  --property-logo: url('./images/Vector.png');
 }
