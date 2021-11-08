@@ -2,22 +2,18 @@ import React from "react";
 //import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Canvas from "./Canvas/Canvas";
-import "./DashBoard.module.css";
+import classes from "./Dashboard.module.css";
 
-function DashBoard() {
+function Dashboard() {
   return (
-    <div className="DashBoard">
-      <Container>
-        <Col>
-          <Sidebar></Sidebar>
-        </Col>
+    <React.Fragment>
+      <Sidebar></Sidebar>
 
-        <Col>
-          <Canvas></Canvas>
-        </Col>
-      </Container>
-    </div>
+      <main class={`container`}>
+        <Canvas></Canvas>
+      </main>
+    </React.Fragment>
   );
 }
 
-export default DashBoard;
+export default Dashboard;
