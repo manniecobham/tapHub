@@ -11,6 +11,7 @@ import LineChart from "./components/Graph/LineChart";
 //Amplify.configure(aws_exports);
 
 import { data1, data2, data3 } from '../src/components/Graph/data2'
+import HeatMap from "./components/Graph/Heatmap";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <React.Fragment>
       <LineChart data1={data1} data2={data2} data3={data3} />
+      <HeatMap />
       {/* <Dashboard /> */}
     </React.Fragment>
   );

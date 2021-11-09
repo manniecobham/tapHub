@@ -4,22 +4,6 @@ import ReactApexChart from "react-apexcharts";
 //styles
 // import { Button, ButtonContainer, GraphNav, TimeDisplay, TimeDisplayContainer } from '../../views/Overview/styles'
 
-// function generateData(data) {
-//   // console.log("5", data);
-//   var newArr = [];
-//   newArr = data.map (item => item[2]);
-//   console.log(newArr);
-//   if (data.length !== 0) {
-//     for (let i = 0; i <= 23; i++) {
-//       // console.log(data[i])
-//       // arr.push([i, object[i].object.map(item => item[2]))
-//       arr.push([i,newArr[i]]);
-     
-//       // arr.push([i, dataY]);
-//     }
-//   }
-// }
-
 const LineChart = ({data1, data2, data3}) => {
 
   const initialState = {
@@ -202,8 +186,11 @@ const LineChart = ({data1, data2, data3}) => {
   //     setColorMonth('gray');
   //   }
   // } 
+
   return (
     <>
+
+    
     {/* <GraphNav>
       <TimeDisplayContainer>
         <TimeDisplay>{timeFrame} Trends</TimeDisplay>
