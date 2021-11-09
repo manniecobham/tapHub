@@ -18,4 +18,14 @@
   --reports-logo: url('./images/Vector.png');
   --sensors-logo: url('./images/Vector.png');
   --property-logo: url('./images/Vector.png');
+
+  /* Typography */
+  --font-one: "Helvetica Neue", Helvetica;
+  --front-two: 'Roboto';
+  --main-header-size: 36px;
+  --title-size: 28px;
+  --header-size: 20px;
+  --sub-header-size: 16px;
+  --paragraph-size: 14px;
+  --caption-footer-size: 12px;
 }

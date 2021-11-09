@@ -3,4 +3,11 @@
   padding: 0px 0px 0rem 230px;
   margin: auto; 
   overflow: hidden;
+  background: #E8EBF0;  
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 0 3px;
+  border-radius: 8px;
 }

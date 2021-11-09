@@ -1,0 +1,41 @@
+.overview {
+  max-width: 1122px;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-areas: 
+    'location location rooms      co2'
+    'location location lightwaste hcwaste';
+}
+
+.location {
+  grid-area: location;
+  width: 546px;
+  height: 302px;
+}
+
+.rooms {
+  grid-area: rooms;
+}
+
+.co2 {
+  grid-area: co2;
+}
+
+.lightwaste {
+  grid-area: lightwaste;
+}
+
+.hcwaste {
+  grid-area: hcwaste;
+}
+
+.graph {
+  max-width: 1122px;
+  height: 546px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

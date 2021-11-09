@@ -11,8 +11,22 @@
 
 .sidebar--item {
     margin-bottom: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
 }
 
-.icon {
-    background-image: var(--overview-logo);
+.sidebar--icon {
+    height: 18px;
+    width: 18px;
+}
+
+.main {
+    
+}
+
+.main--icon {
+    height: 23px;
+    width: 26px;
+    margin: auto;
 }
