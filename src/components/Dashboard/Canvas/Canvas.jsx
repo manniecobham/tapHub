@@ -5,10 +5,10 @@ import classes from "./Canvas.module.css";
 
 const Canvas = () => {
   return (
-    <React.Fragment>
+    <div className={`${classes["canvas"]}`}>
       <Header />
       <Overview />
-    </React.Fragment>
+    </div>
   );
 };
 

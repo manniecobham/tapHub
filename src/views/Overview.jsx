@@ -5,31 +5,31 @@ const Overview = () => {
   return (
     <div className={`${classes.overview}`}>
       <div className={`${classes.grid}`}>
-        <div className={`${classes.location} card`}>
+        <div className={`${classes.location} ${classes["grid-item"]} card`}>
           <h2>hi</h2>
           <p>
             einwefinweogweoefh gewegwgewgwe wq dqwdqwdwqfd qw wq qwf w qfwqfw f
             qewewe weewewewew eweweweweww{" "}
           </p>
         </div>
-        <div className={`${classes.rooms} card`}>
+        <div className={`${classes.rooms} ${classes["grid-item"]} card`}>
           <h2>hi</h2>
           <p>einwefinweogweoiewngoih</p>
         </div>
-        <div className={`${classes.co2} card`}>
+        <div className={`${classes.co2} ${classes["grid-item"]} card`}>
           <h2>hi</h2>
           <p>einwefinweogweoiewngoih</p>
         </div>
-        <div className={`${classes.lightwaste} card`}>
+        <div className={`${classes.lightwaste} ${classes["grid-item"]} card`}>
           <h2>hi</h2>
           <p>einwefinweogweoiewngoih</p>
         </div>
-        <div className={`${classes.hcwaste} card`}>
+        <div className={`${classes.hcwaste} ${classes["grid-item"]} card`}>
           <h2>hi</h2>
           <p>einwefinweogweoiewngoih</p>
         </div>
       </div>
-      <div className={`${classes.graph} card`}>
+      <div className={`${classes.graph} ${classes["grid-item"]} card`}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           imperdiet lacinia orci id viverra. Vestibulum molestie mauris at nisi

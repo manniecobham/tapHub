@@ -11,6 +11,10 @@
     'location location lightwaste hcwaste';
 }
 
+.grid-item {
+  padding: 17px;
+}
+
 .location {
   grid-area: location;
   width: 546px;
@@ -18,23 +22,27 @@
 }
 
 .rooms {
+  max-width: 256px;
   grid-area: rooms;
 }
 
 .co2 {
+  max-width: 256px;
   grid-area: co2;
 }
 
 .lightwaste {
+  max-width: 256px;
   grid-area: lightwaste;
 }
 
 .hcwaste {
+  max-width: 256px;
   grid-area: hcwaste;
 }
 
 .graph {
-  max-width: 1122px;
+  width: 1122px;
   height: 546px;
   margin-top: 20px;
   margin-bottom: 20px;

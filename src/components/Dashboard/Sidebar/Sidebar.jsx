@@ -1,7 +1,8 @@
 import React from "react";
 import classes from "./Sidebar.module.css";
-import IH_icon from "../../instahubIcon.png";
-import replace_icon from "../../images/Vector.png";
+import IH_icon from "../../../instahubIcon.png";
+import replace_icon from "../../../images/Vector.png";
+import sep_line from "../../../images/line-separator.png";
 
 function Sidebar() {
   return (
@@ -13,7 +14,14 @@ function Sidebar() {
           className={`${classes["sidebar--icon"]} ${classes["main--icon"]}`}
         />
       </div>
-      <div className={`${classes["sidebar--item"]} overview`}>
+      <div className={`${classes["sidebar--item"]} ${classes["main"]}`}>
+        <img
+          src={sep_line}
+          alt="separator"
+          className={`${classes["sidebar--icon"]}}`}
+        />
+      </div>
+      <div className={`${classes["sidebar--item"]}`}>
         <img
           src={replace_icon}
           alt="overview"
@@ -21,7 +29,7 @@ function Sidebar() {
         />
         <p>Overview</p>
       </div>
-      <div className={`${classes["sidebar--item"]} analytics`}>
+      <div className={`${classes["sidebar--item"]}`}>
         <img
           src={replace_icon}
           alt="analytics"
@@ -29,7 +37,7 @@ function Sidebar() {
         />
         <p>Analytics</p>
       </div>
-      <div className={`${classes["sidebar--item"]} reports`}>
+      <div className={`${classes["sidebar--item"]}`}>
         <img
           src={replace_icon}
           alt="reports"
@@ -37,13 +45,21 @@ function Sidebar() {
         />
         <p>Reports</p>
       </div>
-      <div className={`${classes["sidebar--item"]} sensors`}>
+      <div className={`${classes["sidebar--item"]}`}>
         <img
           src={replace_icon}
           alt="sensors"
           className={`${classes["sidebar--icon"]}`}
         />
         <p>Sensors</p>
+      </div>
+      <div className={`${classes["sidebar--item"]}`}>
+        <img
+          src={replace_icon}
+          alt="property"
+          className={`${classes["sidebar--icon"]}`}
+        />
+        <p>Property</p>
       </div>
     </div>
   );

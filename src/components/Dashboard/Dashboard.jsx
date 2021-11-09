@@ -1,6 +1,6 @@
 import React from "react";
 //import { Container, Row, Col } from 'react-bootstrap'
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar/Sidebar";
 import Canvas from "./Canvas/Canvas";
 import classes from "./Dashboard.module.css";
 
