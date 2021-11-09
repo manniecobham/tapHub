@@ -33,3 +33,23 @@
     width: 26px;
     margin: auto;
 }
+
+.analytics img {
+    width: 17px;
+    height: 10px;
+}
+
+.reports img {
+    width: 14px;
+    height: 17px;
+}
+
+.sensors img {
+    width: 15px;
+    height: 15px;
+}
+
+.property img {
+    width: 20px;
+    height: 20px;
+}

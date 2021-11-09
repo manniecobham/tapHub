@@ -13,11 +13,11 @@
   --canvas-width: 1240px;
   
   /* images */
-  --overview-logo: url('./images/Vector.png');
-  --analytics-logo: url('./images/Vector.png');
-  --reports-logo: url('./images/Vector.png');
-  --sensors-logo: url('./images/Vector.png');
-  --property-logo: url('./images/Vector.png');
+  --overview-logo: url('./images/overview.png');
+  --analytics-logo: url('./images/overview.png');
+  --reports-logo: url('./images/overview.png');
+  --sensors-logo: url('./images/overview.png');
+  --property-logo: url('./images/overview.png');
 
   /* Typography */
   --font-one: "Helvetica Neue", Helvetica;

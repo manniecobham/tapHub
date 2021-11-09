@@ -4,7 +4,7 @@ import notification from "../../../images/notification.png";
 
 const Notification = () => {
   return (
-    <img href={notification} alt="bell" className={`${classes.notification}`} />
+    <img src={notification} alt="bell" className={`${classes.notification}`} />
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Notification from "./Notification";
+import Profile from "./Profile";
 import classes from "./HeaderContent.module.css";
 
 const HeaderContent = () => {
@@ -19,10 +20,10 @@ const HeaderContent = () => {
         ></input>
       </div>
       <div className={`${classes["header--item"]}`}>
-        <img />
+        <Notification />
       </div>
       <div className={`${classes["header--item"]}`}>
-        <Notification />
+        <Profile />
       </div>
     </div>
   );
