@@ -1,21 +1,14 @@
 import React from "react";
 import classes from "./OverviewDashboard.module.css";
-import Sidebar from "../Sidebar/Sidebar";
-import Header from "./Canvas/Header";
-import OverviewContent from "./OverviewContent";
+import Header from "./Header/Header";
+import OverviewContent from "./Content/OverviewContent";
 
 const OverviewDashboard = () => {
   return (
-    <div className={classes.dashboard}>
-      <Sidebar></Sidebar>
-
-      <main className={`container`}>
-        <div className={`${classes.canvas}`}>
-          <Header />
-          <OverviewContent />
-        </div>
-      </main>
-    </div>
+    <main className={`${classes.canvas} container`}>
+      <Header />
+      <OverviewContent />
+    </main>
   );
 };
 

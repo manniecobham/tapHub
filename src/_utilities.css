@@ -1,6 +1,6 @@
 .container {
-  max-width: --var(--canvas-width);
-  padding: 0px 0px 0rem 230px;
+  max-width: 1450px;
+  padding: 30px 30px 0rem 230px;
   overflow: hidden;
   background: #E8EBF0;  
 }
