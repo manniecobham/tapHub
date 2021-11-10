@@ -1,7 +1,7 @@
 import React from "react";
+import classes from "./HeaderContent.module.css";
 import Notification from "./Notification";
 import Profile from "./Profile";
-import classes from "./HeaderContent.module.css";
 
 const HeaderContent = () => {
   return (

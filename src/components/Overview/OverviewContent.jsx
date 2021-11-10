@@ -1,9 +1,9 @@
 import React from "react";
+import classes from "./OverviewContent.module.css";
 import instahubImage from "../../images/dummy_data/instahub-office.png";
 import lightningIcon from "../../images/card_data/lightning.png";
 import dollarIcon from "../../images/card_data/dollar.png";
 import CardData from "./Canvas/CardData";
-import classes from "./OverviewContent.module.css";
 
 const OverviewContent = () => {
   return (

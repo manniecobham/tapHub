@@ -8,7 +8,7 @@ import reports_icon from "../../images/reports.png";
 import sensors_icon from "../../images/sensors.png";
 import property_icon from "../../images/property.png";
 
-function Sidebar() {
+const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
       <div className={`${classes["sidebar--item"]} ${classes["main"]}`}>
@@ -67,6 +67,6 @@ function Sidebar() {
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;
