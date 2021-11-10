@@ -3,7 +3,7 @@ import "./App.css";
 //import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 //import Amplify from 'aws-amplify';
 //import aws_exports from './aws-exports';
-import Dashboard from "./components/Dashboard/Dashboard";
+import Overview from "./views/Overview";
 import "./_config.css";
 import "./_utilities.css";
 
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Dashboard />
+      <Overview />
     </React.Fragment>
   );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./Header";
-import Overview from "../../../views/Overview";
 import classes from "./Canvas.module.css";
+import OverviewContent from "../OverviewContent";
 
 const Canvas = () => {
   return (
     <div className={`${classes["canvas"]}`}>
       <Header />
-      <Overview />
+      <OverviewContent />
     </div>
   );
 };

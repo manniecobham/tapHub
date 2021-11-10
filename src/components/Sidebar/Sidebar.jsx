@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./Sidebar.module.css";
-import IH_icon from "../../../instahubIcon.png";
-import overview_icon from "../../../images/overview.png";
-import sep_line from "../../../images/line-separator.png";
-import analytics_icon from "../../../images/analytics.png";
-import reports_icon from "../../../images/reports.png";
-import sensors_icon from "../../../images/sensors.png";
-import property_icon from "../../../images/property.png";
+import IH_icon from "../../instahubIcon.png";
+import overview_icon from "../../images/overview.png";
+import sep_line from "../../images/line-separator.png";
+import analytics_icon from "../../images/analytics.png";
+import reports_icon from "../../images/reports.png";
+import sensors_icon from "../../images/sensors.png";
+import property_icon from "../../images/property.png";
 
 function Sidebar() {
   return (
