@@ -24,4 +24,6 @@
 .toggle--container {
   padding: 2px;
   margin: auto;
+  cursor: pointer;
+  border: none;
 }

@@ -7,20 +7,20 @@ const CardData = (props) => {
       <div className={`${classes["card--header"]}`}>
         <h2 className={`${classes["card--title"]}`}>{props.title}</h2>
         <div className={`${classes["card--toggle"]}`}>
-          <span className={`${classes["toggle--container"]}`}>
+          <button className={`${classes["toggle--container"]}`}>
             <img
               src={props.imageName1}
               alt={props.imageAlt1}
               className={`${classes["card--img1"]}`}
             />
-          </span>
-          <span className={`${classes["toggle--container"]}`}>
+          </button>
+          <button className={`${classes["toggle--container"]}`}>
             <img
               src={props.imageName2}
               alt={props.imageAlt2}
               className={`${classes["card--img2"]}`}
             />
-          </span>
+          </button>
         </div>
       </div>
       <p>{props.data}</p>
