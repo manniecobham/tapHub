@@ -1,9 +1,8 @@
 import React from "react";
+import classes from "./OverviewDashboard.module.css";
 import Sidebar from "../Sidebar/Sidebar";
-import Canvas from "./Canvas/Canvas";
 import Header from "./Canvas/Header";
 import OverviewContent from "./OverviewContent";
-import classes from "./OverviewDashboard.module.css";
 
 const OverviewDashboard = () => {
   return (
