@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 
 //styles
-// import { Button, ButtonContainer, GraphNav, TimeDisplay, TimeDisplayContainer } from '../../views/Overview/styles'
+// import { Button, ButtonContainer, GraphNav, TimeDisplay, TimeDisplayContainer } from './styles'
 
 const LineChart = ({data1, data2, data3}) => {
 
   const initialState = {
-    series: [
-      {
-        name: "Feature Movement",
-        data: data1
-      }
-    ],
+    series: data1,
     options: {
       chart: {
         type: "area",
@@ -102,11 +97,7 @@ const LineChart = ({data1, data2, data3}) => {
 
   //     setLineChart(prevState => ({
   //       ...prevState,
-  //       series: [
-  //         {
-  //           data: data1
-  //         }
-  //       ]
+  //       series: data1
   //     }))
 
   //     setTimeFrame("Today's")
@@ -133,11 +124,7 @@ const LineChart = ({data1, data2, data3}) => {
 
   //     setLineChart(prevState => ({
   //       ...prevState,
-  //       series: [
-  //         {
-  //           data: data2
-  //         }
-  //       ]
+  //       series: data2
   //     }))
       
   //     setTimeFrame("Weekly")
@@ -164,11 +151,7 @@ const LineChart = ({data1, data2, data3}) => {
 
   //     setLineChart(prevState => ({
   //       ...prevState,
-  //       series: [
-  //         {
-  //           data: data3
-  //         }
-  //       ]
+  //       series: data3
   //     }))
 
   //     setTimeFrame("Monthly")

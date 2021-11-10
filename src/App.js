@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import LineChart from "./components/Graph/LineChart";
 //import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 //import Amplify from 'aws-amplify';
 //import aws_exports from './aws-exports';
@@ -10,7 +9,8 @@ import LineChart from "./components/Graph/LineChart";
 
 //Amplify.configure(aws_exports);
 
-import { data1, data2, data3 } from '../src/components/Graph/data2'
+import { data1, data2, data3 } from './components/Graph/data'
+import LineChart from "./components/Graph/LineChart";
 import HeatMap from "./components/Graph/Heatmap";
 
 
