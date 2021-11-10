@@ -1,35 +1,72 @@
 import React from "react";
 import classes from "./Overview.module.css";
+import instahubImage from "../images/dummy_data/instahub-office.png";
+import lightningIcon from "../images/card_data/lightning.png";
+import dollarIcon from "../images/card_data/dollar.png";
+import CardData from "../components/Dashboard/Canvas/CardData";
 
 const Overview = () => {
   return (
     <div className={`${classes.overview}`}>
       <div className={`${classes.grid}`}>
-        <div className={`${classes.location} ${classes["grid-item"]} card`}>
-          <h2>hi</h2>
-          <p>
-            einwefinweogweoefh gewegwgewgwe wq dqwdqwdwqfd qw wq qwf w qfwqfw f
-            qewewe weewewewew eweweweweww{" "}
-          </p>
+        <div className={`${classes.location} ${classes["grid--item"]} card`}>
+          <h2>InstaHub Office</h2>
+          <img
+            src={instahubImage}
+            alt="location"
+            className={`${classes["location"]}`}
+          />
         </div>
-        <div className={`${classes.rooms} ${classes["grid-item"]} card`}>
-          <h2>hi</h2>
-          <p>einwefinweogweoiewngoih</p>
+        <div
+          className={`${classes.rooms} ${classes["grid--item"]} ${classes["grid--item_small"]} card`}
+        >
+          <CardData
+            title="Rooms Occupied"
+            imageName1={lightningIcon}
+            imageAlt1="lightning"
+            imageName2={dollarIcon}
+            imageAlt2="dollar"
+            data="29"
+          />
         </div>
-        <div className={`${classes.co2} ${classes["grid-item"]} card`}>
-          <h2>hi</h2>
-          <p>einwefinweogweoiewngoih</p>
+        <div
+          className={`${classes.co2} ${classes["grid--item"]} ${classes["grid--item_small"]} card`}
+        >
+          <CardData
+            title="CO2 Reduction"
+            imageName1={lightningIcon}
+            imageAlt1="lightning"
+            imageName2={dollarIcon}
+            imageAlt2="dollar"
+            data="29"
+          />
         </div>
-        <div className={`${classes.lightwaste} ${classes["grid-item"]} card`}>
-          <h2>hi</h2>
-          <p>einwefinweogweoiewngoih</p>
+        <div
+          className={`${classes.lightwaste} ${classes["grid--item"]} ${classes["grid--item_small"]} card`}
+        >
+          <CardData
+            title="Light Wasted"
+            imageName1={lightningIcon}
+            imageAlt1="lightning"
+            imageName2={dollarIcon}
+            imageAlt2="dollar"
+            data="29"
+          />
         </div>
-        <div className={`${classes.hcwaste} ${classes["grid-item"]} card`}>
-          <h2>hi</h2>
-          <p>einwefinweogweoiewngoih</p>
+        <div
+          className={`${classes.hcwaste} ${classes["grid--item"]} ${classes["grid--item_small"]} card`}
+        >
+          <CardData
+            title="H/C Wasted"
+            imageName1={lightningIcon}
+            imageAlt1="lightning"
+            imageName2={dollarIcon}
+            imageAlt2="dollar"
+            data="29"
+          />
         </div>
       </div>
-      <div className={`${classes.graph} ${classes["grid-item"]} card`}>
+      <div className={`${classes.graph} ${classes["grid--item"]} card`}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           imperdiet lacinia orci id viverra. Vestibulum molestie mauris at nisi

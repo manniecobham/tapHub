@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 :root {
   /* colors */
   --main-color: rgba(15, 21, 68, 1);
@@ -21,7 +24,7 @@
 
   /* Typography */
   --font-one: "Helvetica Neue", Helvetica;
-  --front-two: 'Roboto';
+  --front-two: 'Roboto', sans-serif;
   --main-header-size: 36px;
   --title-size: 28px;
   --header-size: 20px;

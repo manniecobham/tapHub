@@ -4,20 +4,36 @@
 
 .grid {
   display: grid;
-  gap: 30px;
+  gap: 20px;
   grid-template-areas: 
     'location location rooms      co2'
     'location location lightwaste hcwaste';
 }
 
-.grid-item {
+.grid--item {
   padding: 17px;
+}
+
+.grid--item_small {
+  width: 258px;
+  height: 140px;
 }
 
 .location {
   grid-area: location;
   width: 546px;
   height: 302px;
+}
+
+.location > h2 {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.4px;
+}
+
+.location img {
+  width: 512px;
+  height: 220px;
 }
 
 .rooms {
