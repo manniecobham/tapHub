@@ -1,11 +1,17 @@
 import React from "react";
-import classes from "./Card.module.css";
+import { useTheme } from "styled-components";
+import StyledCard from "./Card.styled";
 
 const Card = (props) => {
+  const theme = useTheme();
+
   return (
-    <section className={`${props.className} ${classes.card}`}>
+    <StyledCard
+      backgroundColor={theme.colors.colorSecondaryWhite}
+      className={props.classes}
+    >
       {props.children}
-    </section>
+    </StyledCard>
   );
 };
 
