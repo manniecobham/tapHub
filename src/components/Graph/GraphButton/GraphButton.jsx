@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // styles
-import { Button, ButtonContainer, GraphNav, TimeDisplay, TimeDisplayContainer } from '../styles'
+import { Button, ButtonContainer, GraphNav, TimeDisplay, TimeDisplayContainer } from './GraphButtonStyles'
 
 const GraphButton = ({ setChartData, data1, data2, data3 }) => {
 

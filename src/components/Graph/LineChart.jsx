@@ -52,7 +52,7 @@ const LineChart = ({data1, data2, data3}) => {
         }
       },
       xaxis: {
-        type: "Hours",
+        // type: "category",
         // title: {
         //   text: "Day"
         // }
