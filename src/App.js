@@ -9,7 +9,8 @@ import "./App.css";
 
 //Amplify.configure(aws_exports);
 
-import { data1, data2, data3 } from './components/Graph/data'
+import { data1, data2, data3 } from './components/Graph/lineData'
+import { data4, data5, data6 } from './components/Graph/heatData'
 import LineChart from "./components/Graph/LineChart";
 import HeatMap from "./components/Graph/Heatmap";
 
@@ -20,7 +21,7 @@ function App() {
   return (
     <React.Fragment>
       <LineChart data1={data1} data2={data2} data3={data3} />
-      <HeatMap />
+      <HeatMap data1={data4} data2={data5} data3={data6}/>
       {/* <Dashboard /> */}
     </React.Fragment>
   );

@@ -1,44 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import GraphButton from "./GraphButton/GraphButton";
 
-
-const HeatMap = () => {
+const HeatMap = ({data1, data2, data3}) => {
 
   const initialState = {
-    series: [
-    {
-      name: "Series 1",
-      data: [{
-        x: 'W1',
-        y: 22
-      }, {
-        x: 'W2',
-        y: 29
-      }, {
-        x: 'W3',
-        y: 13
-      }, {
-        x: 'W4',
-        y: 32
-      }]
-    },
-    {
-      name: "Series 2",
-      data: [{
-        x: 'W1',
-        y: 43
-      }, {
-        x: 'W2',
-        y: 23
-      }, {
-        x: 'W3',
-        y: 5
-      }, {
-        x: 'W4',
-        y: 33
-      }]
-    }
-  ],
+    series: data1,
 
     options: {
       chart: {
@@ -86,7 +53,7 @@ const HeatMap = () => {
         width: 1
       },
       title: {
-        text: ''
+        text: 'HeatMap Chart with Color Range'
       },
     },
   };
@@ -94,6 +61,8 @@ const HeatMap = () => {
   const [heatMap, setHeatMap] = useState(initialState)
 
   return (
+    <>
+    <GraphButton setChartData={setHeatMap} data1={data1} data2={data2} data3={data3} />
     <div id="chart">
       <ReactApexChart 
       options={heatMap.options} 
@@ -101,49 +70,8 @@ const HeatMap = () => {
       type="heatmap" 
       height={350}/>
     </div>
+    </>
   );
 };
-
-
-
-  //  generateData(data) {
-  //    this.series = ''
-  //   // Get feature values
-  //   var newArr = [];
-  //   newArr = data.map (item => item[2]);
-
-  //   // Get date values
-  //   var newDateArr = []
-  //   newDateArr = data.map(item => (item[0]))
-  //   date.push(newDateArr.filter((v, i, a) => a.indexOf(v) === i));
-  //   console.log('unique date values are', date); 
-
-  //   if (data.length !== 0) {
-  //     for (let i = 0; i <= 23; i++) {
-  //       // console.log(data[i])
-  //       // arr.push([i, object[i].object.map(item => item[2]))
-  //       arr.push([i,newArr[i]]);
-       
-  //     }
-  //   }
-  //   const state = [];
-  //   date[0].forEach(item=>{
-  //     state.push({
-  //       name: item,
-  //       data: arr
-  //     })
-  //   })
-  //   console.log('state', state);
-  //   console.log('date', date);
-  //   this.setState({
-  //     series: state
-  //   });
-    
-  // };
-
-  
-  // componentDidMount = () => {
-  //   this.generateData(this.props.data);
-  // };
 
 export default HeatMap;
