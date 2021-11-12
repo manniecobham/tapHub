@@ -1,0 +1,11 @@
+.container {
+  max-width: 1450px;
+  padding: 30px 30px 0rem 230px;
+  overflow: hidden;
+  background: #E8EBF0;  
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+}
