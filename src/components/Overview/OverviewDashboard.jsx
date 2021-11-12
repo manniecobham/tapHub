@@ -1,13 +1,20 @@
 import React from "react";
+import { useTheme } from "styled-components";
 import Header from "./Header/Header";
 import OverviewContent from "./Content/OverviewContent";
+import Container from "../UI/Container.styled.js";
 
 const OverviewDashboard = () => {
+  const theme = useTheme();
+
   return (
-    <main className={`container`}>
+    <Container
+      width={theme.deviceWidths.desktopWidth}
+      backgroundColor={theme.colors.colorNeutralLight}
+    >
       <Header />
       <OverviewContent />
-    </main>
+    </Container>
   );
 };
 

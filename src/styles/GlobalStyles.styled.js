@@ -10,8 +10,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: white;
-    color: red;
+    /*background: white;*/
+    color: ${(props) => props.theme.colors.colorPrimaryDarkBlue};
     font-size: 1.15em;
     font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
