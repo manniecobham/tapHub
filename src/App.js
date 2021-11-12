@@ -9,6 +9,8 @@ Amplify.configure(aws_exports);
 
 function App () {
 
+  let a = 0;
+
   fetch("https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login", {
     method: 'GET',
     "username": "langyinan",
@@ -17,14 +19,15 @@ function App () {
   })
   .then((response) => {
     console.log(response);
+    a = response.headers
   })
   .catch((error) => {
     console.log(error);
   })
 
-  
     return (
       <div className="App">
+        {a}
         <AmplifySignOut />
           <DashBoard>
           </DashBoard>

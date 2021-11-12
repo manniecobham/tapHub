@@ -5,7 +5,6 @@ import Canvas from './Canvas/Canvas'
 import './DashBoard.css'
 
 function DashBoard(){
-
     return (
         <div className = "DashBoard">
             <Container>

@@ -4,5 +4,8 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
+	},
+	"auth_api": {
+		
 	}
 }
