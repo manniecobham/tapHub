@@ -6,8 +6,6 @@ import globalTheme from "./styles/GlobalTheme";
 //import Amplify from 'aws-amplify';
 //import aws_exports from './aws-exports';
 import Overview from "./views/Overview";
-import "./_utilities.css";
-
 //Amplify.configure(aws_exports);
 
 function App() {
@@ -17,7 +15,7 @@ function App() {
   //     method: 'GET',
   //     "username": "langyinan",
   //     "password": "12261226Ll."
-      
+
   //   })
   //   .then((response) => {
   //     console.log(response);
@@ -37,7 +35,6 @@ function App() {
       <Overview />
     </ThemeProvider>
   );
-
 }
 
 //export default withAuthenticator(App);

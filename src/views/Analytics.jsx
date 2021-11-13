@@ -1,11 +1,11 @@
 import React from "react";
-import classes from "./Analytics.module.css";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 const Analytics = () => {
   return (
-    <div>
-      <h1>Analytics</h1>
-    </div>
+    <React.Fragment>
+      <Sidebar />
+    </React.Fragment>
   );
 };
 

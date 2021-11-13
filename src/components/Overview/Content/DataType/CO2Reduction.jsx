@@ -1,30 +1,26 @@
 import React from "react";
-import classes from "./CO2Reduction.module.css";
 import lightningIcon from "../../../../images/card_data/lightning.png";
 import dollarIcon from "../../../../images/card_data/dollar.png";
+import ToggleGroup from "../../../UI/ToggleGroup";
+import CardHeader from "../../../../styles/UI/CardHeader.styled";
+import CardTitle from "../../../../styles/UI/CardTitle.styled";
+import { useTheme } from "styled-components";
 
 const CO2Reduction = (props) => {
+  const theme = useTheme();
+  const titleSize = theme.typography.headerSize;
+
   return (
     <React.Fragment>
-      <div className={`${classes["card--header"]}`}>
-        <h2 className={`${classes["card--title"]}`}>CO2 Reduction</h2>
-        <div className={`${classes["card--toggle"]}`}>
-          <button className={`${classes["toggle--container"]}`}>
-            <img
-              src={lightningIcon}
-              alt="lightning"
-              className={`${classes["card--img1"]}`}
-            />
-          </button>
-          <button className={`${classes["toggle--container"]}`}>
-            <img
-              src={dollarIcon}
-              alt="dollar"
-              className={`${classes["card--img2"]}`}
-            />
-          </button>
-        </div>
-      </div>
+      <CardHeader>
+        <CardTitle titleSize={titleSize}>CO2 Reduction</CardTitle>
+        <ToggleGroup
+          src1={lightningIcon}
+          alt1="lightning"
+          src2={dollarIcon}
+          alt2="dollar"
+        />
+      </CardHeader>
       <p>99%</p>
     </React.Fragment>
   );
