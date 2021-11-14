@@ -2,9 +2,11 @@ import React from "react";
 import lightningIcon from "../../../../images/card_data/lightning.png";
 import dollarIcon from "../../../../images/card_data/dollar.png";
 import ToggleGroup from "../../../UI/ToggleGroup";
-import CardHeader from "../../../../styles/UI/CardHeader.styled";
-import CardTitle from "../../../../styles/UI/CardTitle.styled";
+import CardHeader from "../../../../styles/UI/Card/CardHeader.styled";
+import CardTitle from "../../../../styles/UI/Card/CardTitle.styled";
 import { useTheme } from "styled-components";
+import CardContent from "../../../../styles/UI/Card/CardContent.styled";
+import CardFooter from "../../../../styles/UI/Card/CardFooter.styled";
 
 const CO2Reduction = (props) => {
   const theme = useTheme();
@@ -21,7 +23,15 @@ const CO2Reduction = (props) => {
           alt2="dollar"
         />
       </CardHeader>
-      <p>99%</p>
+      <CardContent>
+        <p>2,876 lbs/wk</p>
+      </CardContent>
+      <CardFooter>
+        <div>
+          <p>35.2% vs last week</p>
+        </div>
+        <img alt="?"></img>
+      </CardFooter>
     </React.Fragment>
   );
 };
