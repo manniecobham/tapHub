@@ -12,6 +12,7 @@ const theme = {
     colorNeutralDark: "#rgb(119, 119, 119)",
     colorNeutralLight: "rgb(241,241,245)",
     colorNeutralLightest: "rgb(248, 248, 248)",
+    colorHeader: "rgba(160, 168, 177, 1)",
   },
   typography: {
     mainHeaderSize: "36px",
