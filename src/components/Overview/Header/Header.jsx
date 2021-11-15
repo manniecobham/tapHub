@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderItem headerColor={headerColor}>
-        <h2>InstaHub Office</h2>
+        <h2>Current Date</h2>
       </HeaderItem>
       <HeaderItem headerColor={headerColor}>
         <h2>InstaHub Distribution Center</h2>

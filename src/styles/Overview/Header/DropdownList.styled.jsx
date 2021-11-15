@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-const Dropdown = styled.ul`
+const DropdownList = styled.ul`
   z-index: 10;
   position: absolute;
-  right: 0px;
   display: flex;
+  right: 0px;
   flex-direction: column;
   list-style: none;
   background: white;
   border-radius: 10px;
   border: 1px solid black;
-  padding: 5px;
+  padding: 4px;
 `;
 
-export default Dropdown;
+export default DropdownList;

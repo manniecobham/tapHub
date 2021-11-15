@@ -1,8 +1,13 @@
 import React from "react";
-import Dropdown from "../../../styles/Overview/Header/Dropdown.styled";
+import DropdownList from "../../../../styles/Overview/Header/DropdownList.styled";
+import NotificationItem from "./NotificationItem";
 
 const NotificationsDropdown = () => {
-  return <Dropdown></Dropdown>;
+  return (
+    <DropdownList>
+      <NotificationItem />
+    </DropdownList>
+  );
 };
 
 export default NotificationsDropdown;

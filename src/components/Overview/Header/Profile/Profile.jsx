@@ -3,10 +3,11 @@ import { useState } from "react";
 import profile from "../../../../images/profile.png";
 import ProfileDropdown from "./ProfileDropdown";
 import Button from "../../../../styles/UI/Button.styled";
+import Dropdown from "../../../../styles/Overview/Header/Dropdown.styled";
 import profileDropdownButton from "../../../../images/profileDropdownButton.svg";
 
 const Profile = () => {
-  const [profileIsShown, setProfileIsShown] = useState(true);
+  const [profileIsShown, setProfileIsShown] = useState(false);
 
   const onProfileClick = () => {
     setProfileIsShown((prevState) => {
@@ -20,9 +21,7 @@ const Profile = () => {
         <img src={profile} alt="photo" />
         <img src={profileDropdownButton} alt="^" />
       </Button>
-      <div style={{ position: "relative" }}>
-        {profileIsShown && <ProfileDropdown />}
-      </div>
+      <Dropdown>{profileIsShown && <ProfileDropdown />}</Dropdown>
     </React.Fragment>
   );
 };
