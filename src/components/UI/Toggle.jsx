@@ -1,12 +1,12 @@
 import { attachEventProps } from "@aws-amplify/ui-react/lib-esm/react-component-lib/utils";
 import React from "react";
-import ToggleButton from "../../styles/UI/ToggleButton.styled";
+import Button from "../../styles/UI/Button.styled";
 
 const Toggle = (props) => {
   return (
-    <ToggleButton>
+    <Button>
       <img src={props.src} alt={props.alt} />
-    </ToggleButton>
+    </Button>
   );
 };
 

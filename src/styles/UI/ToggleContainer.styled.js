@@ -4,6 +4,7 @@ const ToggleContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   background-color: #ececec;
   border-radius: 5px;
   width: 60px;
