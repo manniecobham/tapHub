@@ -24,7 +24,9 @@ const RoomsOccupied = () => {
         />
       </CardHeader>
       <CardContent>
-        <p>29/56</p>
+        <p>
+          <span className="lead">29</span>/56
+        </p>
       </CardContent>
       <CardFooter>
         <div></div>

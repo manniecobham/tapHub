@@ -24,7 +24,9 @@ const LightWasted = () => {
         />
       </CardHeader>
       <CardContent>
-        <p>743 hrs/wk</p>
+        <p>
+          <span className="lead">743</span> hrs/wk
+        </p>
       </CardContent>
       <CardFooter>
         <div>

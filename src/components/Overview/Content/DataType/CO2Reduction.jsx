@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import lightningIcon from "../../../../images/card_data/lightning.png";
 import dollarIcon from "../../../../images/card_data/dollar.png";
 import ToggleGroup from "../../../UI/ToggleGroup";
@@ -7,9 +7,11 @@ import CardTitle from "../../../../styles/UI/Card/CardTitle.styled";
 import { useTheme } from "styled-components";
 import CardContent from "../../../../styles/UI/Card/CardContent.styled";
 import CardFooter from "../../../../styles/UI/Card/CardFooter.styled";
+import Context from "../../../../context/context";
 
 const CO2Reduction = (props) => {
   const theme = useTheme();
+  const context = useContext(Context);
   const titleSize = theme.typography.headerSize;
 
   return (
@@ -24,7 +26,9 @@ const CO2Reduction = (props) => {
         />
       </CardHeader>
       <CardContent>
-        <p>2,876 lbs/wk</p>
+        <p>
+          <span className="lead">2,876</span> lbs/wk
+        </p>
       </CardContent>
       <CardFooter>
         <div>

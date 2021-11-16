@@ -24,7 +24,9 @@ const HCWasted = () => {
         />
       </CardHeader>
       <CardContent>
-        <p>$210/wk</p>
+        <p>
+          <span className="lead">$210</span>/wk
+        </p>
       </CardContent>
       <CardFooter>
         <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles.styled";
 import globalTheme from "./styles/GlobalTheme";
@@ -12,6 +12,7 @@ import Sensors from "./views/Sensors";
 import Property from "./views/Property";
 //Amplify.configure(aws_exports);
 import { Route, Routes } from "react-router-dom";
+import Context from "./context/context";
 
 function App() {
   // let a = 0;
@@ -34,18 +35,64 @@ function App() {
   //     <DashBoard>
   //     </DashBoard>
   // </div>
+
+  const logoutHandler = () => {
+    return "HELLO WORLD";
+  };
+
+  const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+  const [userData, setUserData] = useState({
+    username: "testuser",
+    notifications: {
+      1: {
+        msg: "Hello!",
+      },
+      2: {
+        msg: "World!",
+      },
+    },
+    floors: {
+      first: {
+        rooms_occupied: 10,
+        co2_reduction: 20,
+        light_wasted: 50,
+        hc_wasted: 200,
+        rooms: {
+          101: {
+            data: {
+              //graph data
+            },
+          },
+          102: {
+            data: {
+              //graph data
+            },
+          },
+        },
+      },
+    },
+  });
+
   return (
-    <ThemeProvider theme={globalTheme}>
-      <GlobalStyles />
-      <Routes>
-        <Route path="/" element={<Overview />} />
-        <Route path="/overview" element={<Overview />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/sensors" element={<Sensors />} />
-        <Route path="/property" element={<Property />} />
-      </Routes>
-    </ThemeProvider>
+    <Context.Provider
+      value={{
+        isLoggedIn: userIsLoggedIn,
+        onLogout: logoutHandler,
+        userData: userData,
+      }}
+    >
+      <ThemeProvider theme={globalTheme}>
+        <GlobalStyles />
+        <Routes>
+          <Route path="/" element={<Overview />} />
+          <Route path="/overview" element={<Overview />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/sensors" element={<Sensors />} />
+          <Route path="/property" element={<Property />} />
+        </Routes>
+      </ThemeProvider>
+    </Context.Provider>
   );
 }
 
