@@ -6,9 +6,12 @@ import globalTheme from "./styles/GlobalTheme";
 //import Amplify from 'aws-amplify';
 //import aws_exports from './aws-exports';
 import Overview from "./views/Overview";
-import "./_utilities.css";
-
+import Analytics from "./views/Analytics";
+import Reports from "./views/Reports";
+import Sensors from "./views/Sensors";
+import Property from "./views/Property";
 //Amplify.configure(aws_exports);
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   // let a = 0;
@@ -17,7 +20,7 @@ function App() {
   //     method: 'GET',
   //     "username": "langyinan",
   //     "password": "12261226Ll."
-      
+
   //   })
   //   .then((response) => {
   //     console.log(response);
@@ -34,10 +37,16 @@ function App() {
   return (
     <ThemeProvider theme={globalTheme}>
       <GlobalStyles />
-      <Overview />
+      <Routes>
+        <Route path="/" element={<Overview />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/sensors" element={<Sensors />} />
+        <Route path="/property" element={<Property />} />
+      </Routes>
     </ThemeProvider>
   );
-
 }
 
 //export default withAuthenticator(App);
