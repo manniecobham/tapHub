@@ -1,6 +1,5 @@
 import React from "react";
-import classes from "./CardData.module.css";
-import Location from "./DataType/Location";
+import Location from "./DataType/Location/Location";
 import RoomsOccupied from "./DataType/RoomsOccupied";
 import CO2Reduction from "./DataType/CO2Reduction";
 import LightWasted from "./DataType/LightWasted";

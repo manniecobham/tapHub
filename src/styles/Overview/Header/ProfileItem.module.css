@@ -1,0 +1,25 @@
+.profile_item {
+  width: 233px;
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
+}
+
+.profile_item > button {
+  background-color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.profile_item > button:hover {
+  background-color: gray;
+}
+
+.profile_image {
+  max-width: 100%;
+  height: auto;
+  margin: 11px 25px;
+}

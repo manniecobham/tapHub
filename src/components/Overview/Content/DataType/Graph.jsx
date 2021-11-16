@@ -1,17 +1,13 @@
 import React from "react";
-import classes from "./Graph.module.css";
+import LineChart from "../../../Graph/LineChart";
+import { data1, data2, data3 } from "../../../Graph/lineData";
+import GraphContainer from "../../../../styles/Overview/Content/DataType/GraphContainer.styled";
 
 const Graph = (props) => {
   return (
-    <section className={`${classes.graph}`}>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-        imperdiet lacinia orci id viverra. Vestibulum molestie mauris at nisi
-        volutpat imperdiet. Fusce sit amet massa ut nisl varius scelerisque.
-        Proin ut fringilla diam, sed ullamcorper est. Nunc lorem risus,
-        elementum eget ul.
-      </p>
-    </section>
+    <GraphContainer>
+      <LineChart data1={data1} data2={data2} data3={data3} />
+    </GraphContainer>
   );
 };
 

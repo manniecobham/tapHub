@@ -1,11 +1,15 @@
 import React from "react";
-import classes from "./Analytics.module.css";
+import Sidebar from "../components/Sidebar/Sidebar";
+import AnalyticsDashboard from "../components/Analytics/AnalyticsDashboard";
 
 const Analytics = () => {
   return (
-    <div>
-      <h1>Analytics</h1>
-    </div>
+    <React.Fragment>
+      <Sidebar />
+      <div
+        style={{ width: "100vw", height: "100vh", background: "yellow" }}
+      ></div>
+    </React.Fragment>
   );
 };
 

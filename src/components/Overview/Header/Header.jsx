@@ -1,12 +1,33 @@
 import React from "react";
-import classes from "./Header.module.css";
-import HeaderContent from "./HeaderContent";
+import Notifications from "./Notifications/Notification";
+import Profile from "./Profile/Profile";
+import SearchBar from "./SearchBar";
+import HeaderItem from "../../../styles/Overview/Header/HeaderItem.styled";
+import HeaderContainer from "../../../styles/Overview/Header/HeaderContainer.styled";
+import { useTheme } from "styled-components";
 
 const Header = () => {
+  const theme = useTheme();
+  const headerColor = theme.colors.colorHeader;
+
   return (
-    <div className={`${classes.header}`}>
-      <HeaderContent />
-    </div>
+    <HeaderContainer>
+      <HeaderItem headerColor={headerColor}>
+        <h2>November 16, 2021</h2>
+      </HeaderItem>
+      <HeaderItem headerColor={headerColor}>
+        <h2>InstaHub Distribution Center</h2>
+      </HeaderItem>
+      <HeaderItem headerColor={headerColor}>
+        <SearchBar />
+      </HeaderItem>
+      <HeaderItem headerColor={headerColor}>
+        <Notifications />
+      </HeaderItem>
+      <HeaderItem headerColor={headerColor}>
+        <Profile />
+      </HeaderItem>
+    </HeaderContainer>
   );
 };
 

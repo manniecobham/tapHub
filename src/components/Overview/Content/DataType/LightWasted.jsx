@@ -1,31 +1,37 @@
 import React from "react";
-import classes from "./LightWasted.module.css";
 import lightningIcon from "../../../../images/card_data/lightning.png";
 import dollarIcon from "../../../../images/card_data/dollar.png";
+import ToggleGroup from "../../../UI/ToggleGroup";
+import CardHeader from "../../../../styles/UI/Card/CardHeader.styled";
+import CardTitle from "../../../../styles/UI/Card/CardTitle.styled";
+import CardContent from "../../../../styles/UI/Card/CardContent.styled";
+import CardFooter from "../../../../styles/UI/Card/CardFooter.styled";
+import { useTheme } from "styled-components";
 
-const LightWasted = (props) => {
+const LightWasted = () => {
+  const theme = useTheme();
+  const titleSize = theme.typography.headerSize;
+
   return (
     <React.Fragment>
-      <div className={`${classes["card--header"]}`}>
-        <h2 className={`${classes["card--title"]}`}>Light Wasted</h2>
-        <div className={`${classes["card--toggle"]}`}>
-          <button className={`${classes["toggle--container"]}`}>
-            <img
-              src={lightningIcon}
-              alt="lightning"
-              className={`${classes["card--img1"]}`}
-            />
-          </button>
-          <button className={`${classes["toggle--container"]}`}>
-            <img
-              src={dollarIcon}
-              alt="dollar"
-              className={`${classes["card--img2"]}`}
-            />
-          </button>
+      <CardHeader>
+        <CardTitle titleSize={titleSize}>Light Wasted</CardTitle>
+        <ToggleGroup
+          src1={lightningIcon}
+          alt1="lightning"
+          src2={dollarIcon}
+          alt2="dollar"
+        />
+      </CardHeader>
+      <CardContent>
+        <p>743 hrs/wk</p>
+      </CardContent>
+      <CardFooter>
+        <div>
+          <p>6.5% vs last week</p>
         </div>
-      </div>
-      <p>{props.data}</p>
+        <img alt="?"></img>
+      </CardFooter>
     </React.Fragment>
   );
 };
