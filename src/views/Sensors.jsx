@@ -6,7 +6,9 @@ const Sensors = () => {
   return (
     <React.Fragment>
       <Sidebar />
-      <AnalyticsDashboard />
+      <div
+        style={{ width: "100vw", height: "100vh", background: "green" }}
+      ></div>
     </React.Fragment>
   );
 };

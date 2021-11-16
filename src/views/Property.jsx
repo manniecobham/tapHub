@@ -6,7 +6,7 @@ const Property = () => {
   return (
     <React.Fragment>
       <Sidebar />
-      <AnalyticsDashboard />
+      <div style={{ width: "100vw", height: "100vh", background: "red" }}></div>
     </React.Fragment>
   );
 };

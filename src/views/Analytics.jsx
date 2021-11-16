@@ -6,7 +6,9 @@ const Analytics = () => {
   return (
     <React.Fragment>
       <Sidebar />
-      <AnalyticsDashboard />
+      <div
+        style={{ width: "100vw", height: "100vh", background: "yellow" }}
+      ></div>
     </React.Fragment>
   );
 };
