@@ -6,7 +6,7 @@ import Dropdown from "../../../../styles/Overview/Header/Dropdown.styled";
 import { useState } from "react";
 
 const Notifications = () => {
-  const [notificationsAreShown, setNotificationsAreShown] = useState(true);
+  const [notificationsAreShown, setNotificationsAreShown] = useState(false);
 
   const onNotificationsClick = () => {
     setNotificationsAreShown((prevState) => {

@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
 import AnalyticsDashboard from "../components/Analytics/AnalyticsDashboard";
 
-const Analytics = () => {
+const Reports = () => {
   return (
     <React.Fragment>
       <Sidebar />
@@ -11,4 +11,4 @@ const Analytics = () => {
   );
 };
 
-export default Analytics;
+export default Reports;
