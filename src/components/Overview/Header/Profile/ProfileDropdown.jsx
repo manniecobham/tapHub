@@ -7,11 +7,11 @@ const ProfileDropdown = () => {
   return (
     <DropdownList>
       <ProfileItem icon={profileIcon} title="Profile" />
-      <ProfileItem icon={profileIcon} title="Profile" />
-      <ProfileItem icon={profileIcon} title="Profile" />
-      <ProfileItem icon={profileIcon} title="Profile" />
-      <ProfileItem icon={profileIcon} title="Profile" />
-      <ProfileItem icon={profileIcon} title="Profile" />
+      <ProfileItem icon={profileIcon} title="Tags" />
+      <ProfileItem icon={profileIcon} title="Connections" />
+      <ProfileItem icon={profileIcon} title="Privacy" />
+      <ProfileItem icon={profileIcon} title="Settings" />
+      <ProfileItem icon={profileIcon} title="Log out" />
     </DropdownList>
   );
 };
