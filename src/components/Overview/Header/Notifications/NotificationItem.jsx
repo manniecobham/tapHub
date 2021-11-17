@@ -4,7 +4,7 @@ const NotificationItem = (props) => {
   return (
     <li>
       <button>
-        <p>Hello</p>
+        <p>{props.message}</p>
       </button>
     </li>
   );

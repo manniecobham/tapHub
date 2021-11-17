@@ -45,10 +45,16 @@ function App() {
     username: "testuser",
     notifications: {
       1: {
-        msg: "Hello!",
+        msg: "Room 105 has a consistent pattern of lighting waste in past 24 hours.",
+        date: "Today: 5:27pm",
+        room: "Room 105",
+        analyticType: "Lighting Waste",
       },
       2: {
-        msg: "World!",
+        msg: "Room 205 has an irregular pattern of H/C waste in past 48 hours.",
+        date: "Today: 7:00am",
+        room: "Room 205",
+        analyticType: "H/C Waste",
       },
     },
     floors: {

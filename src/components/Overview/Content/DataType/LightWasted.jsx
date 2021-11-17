@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import lightningIcon from "../../../../images/card_data/lightning.png";
 import dollarIcon from "../../../../images/card_data/dollar.png";
 import ToggleGroup from "../../../UI/ToggleGroup";
@@ -7,9 +7,11 @@ import CardTitle from "../../../../styles/UI/Card/CardTitle.styled";
 import CardContent from "../../../../styles/UI/Card/CardContent.styled";
 import CardFooter from "../../../../styles/UI/Card/CardFooter.styled";
 import { useTheme } from "styled-components";
+import Context from "../../../../context/context";
 
 const LightWasted = () => {
   const theme = useTheme();
+  const context = useContext(Context);
   const titleSize = theme.typography.headerSize;
 
   return (
@@ -25,7 +27,10 @@ const LightWasted = () => {
       </CardHeader>
       <CardContent>
         <p>
-          <span className="lead">743</span> hrs/wk
+          <span className="lead">
+            {context["userData"]["floors"]["first"]["light_wasted"]}
+          </span>{" "}
+          hrs/wk
         </p>
       </CardContent>
       <CardFooter>
