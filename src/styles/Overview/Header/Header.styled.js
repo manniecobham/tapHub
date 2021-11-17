@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const HeaderItem = styled.div`
   & > * {
     font-size: 18px;
@@ -8,4 +15,4 @@ const HeaderItem = styled.div`
   }
 `;
 
-export default HeaderItem;
+export { HeaderContainer, HeaderItem };

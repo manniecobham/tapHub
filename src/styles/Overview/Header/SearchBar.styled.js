@@ -27,4 +27,4 @@ const SearchForm = styled.form`
   }
 `;
 
-export default SearchForm;
+export { SearchForm };

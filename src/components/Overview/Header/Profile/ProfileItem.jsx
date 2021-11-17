@@ -1,14 +1,15 @@
 import React from "react";
-import classes from "../../../../styles/Overview/Header/ProfileItem.module.css";
+import { ProfileIcon } from "../../../../styles/Overview/Header/Profile/Profile.styled";
+import { ProfileListItem } from "../../../../styles/Overview/Header/Profile/Profile.styled";
 
 const ProfileItem = (props) => {
   return (
-    <li className={classes["profile_item"]}>
+    <ProfileListItem>
       <button>
-        <img src={props.icon} className={classes["profile_image"]} />
+        <ProfileIcon src={props.icon} />
         <p>{props.title}</p>
       </button>
-    </li>
+    </ProfileListItem>
   );
 };
 

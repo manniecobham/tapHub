@@ -2,7 +2,7 @@ import React from "react";
 import notification from "../../../../images/notification.png";
 import Button from "../../../../styles/UI/Button.styled";
 import NotificationsDropdown from "./NotificationsDropdown";
-import Dropdown from "../../../../styles/Overview/Header/Dropdown.styled";
+import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
 import { useState } from "react";
 
 const Notifications = () => {

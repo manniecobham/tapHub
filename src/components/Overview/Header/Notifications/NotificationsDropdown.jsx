@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Context from "../../../../context/context";
-import DropdownList from "../../../../styles/Overview/Header/DropdownList.styled";
+import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
 import NotificationItem from "./NotificationItem";
 
 const NotificationsDropdown = () => {

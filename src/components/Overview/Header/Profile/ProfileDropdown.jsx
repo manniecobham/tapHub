@@ -1,5 +1,5 @@
 import React from "react";
-import DropdownList from "../../../../styles/Overview/Header/DropdownList.styled";
+import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
 import profileIcon from "../../../../images/profileIcon.png";
 import ProfileItem from "./ProfileItem";
 
