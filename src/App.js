@@ -11,7 +11,7 @@ import Reports from "./views/Reports";
 import Sensors from "./views/Sensors";
 import Property from "./views/Property";
 //Amplify.configure(aws_exports);
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
 
 function App() {
@@ -90,8 +90,8 @@ function App() {
       <ThemeProvider theme={globalTheme}>
         <GlobalStyles />
         <Routes>
-          <Route path="/" element={<Overview />} />
           <Route path="/overview" element={<Overview />} />
+          <Route path="/" element={<Navigate replace to="/overview" />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/sensors" element={<Sensors />} />

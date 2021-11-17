@@ -18,7 +18,11 @@ const Sidebar = () => {
   return (
     <nav>
       <StyledSidebar backgroundColor={bgColor} textColor={textColor}>
-        <SidebarItem path="/" icon={IH_icon} />
+        <li>
+          <a target="_blank" href="https://www.getinstahub.com/">
+            <img src={IH_icon} alt="home" style={{ width: "30px" }} />
+          </a>
+        </li>
         <SidebarItem icon={sep_line} />
         <SidebarItem path="/overview" page="Overview" icon={overview_icon} />
         <SidebarItem path="/analytics" page="Analytics" icon={analytics_icon} />
