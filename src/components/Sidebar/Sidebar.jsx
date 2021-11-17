@@ -2,13 +2,13 @@ import React from "react";
 import { useTheme } from "styled-components";
 import { StyledSidebar } from "../../styles/Sidebar/Sidebar.styled";
 import SidebarItem from "./SidebarItem";
-import IH_icon from "../../instahubIcon.png";
-import overview_icon from "../../images/Overview/overview.svg";
-import sep_line from "../../images//Overview/line.svg";
-import analytics_icon from "../../images/Overview/analytics.svg";
-import reports_icon from "../../images/Overview/reports.svg";
-import sensors_icon from "../../images/Overview/sensors.svg";
-import property_icon from "../../images/Overview/property.svg";
+import IH_icon from "../../images/Sidebar/instahubIcon.png";
+import overview_icon from "../../images/Sidebar/overview.svg";
+import sep_line from "../../images/Sidebar/line.svg";
+import analytics_icon from "../../images/Sidebar/analytics.svg";
+import reports_icon from "../../images/Sidebar/reports.svg";
+import sensors_icon from "../../images/Sidebar/sensors.svg";
+import property_icon from "../../images/Sidebar/property.svg";
 
 const Sidebar = () => {
   const theme = useTheme();
