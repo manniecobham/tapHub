@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import profile from "../../../../images/profile.png";
+import profile from "../../../../images/Overview/profile.png";
 import ProfileDropdown from "./ProfileDropdown";
 import Button from "../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
-import profileDropdownButton from "../../../../images/profileDropdownButton.svg";
+import profileDropdownButton from "../../../../images/Overview/profileDropdownButton.svg";
 
 const Profile = () => {
   const [profileIsShown, setProfileIsShown] = useState(false);

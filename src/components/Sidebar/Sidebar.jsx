@@ -3,12 +3,12 @@ import { useTheme } from "styled-components";
 import { StyledSidebar } from "../../styles/Sidebar/Sidebar.styled";
 import SidebarItem from "./SidebarItem";
 import IH_icon from "../../instahubIcon.png";
-import overview_icon from "../../images/overview.png";
-import sep_line from "../../images/line-separator.png";
-import analytics_icon from "../../images/analytics.png";
-import reports_icon from "../../images/reports.png";
-import sensors_icon from "../../images/sensors.png";
-import property_icon from "../../images/property.png";
+import overview_icon from "../../images/Overview/overview.png";
+import sep_line from "../../images//Overview/line-separator.png";
+import analytics_icon from "../../images/Overview/analytics.png";
+import reports_icon from "../../images/Overview/reports.png";
+import sensors_icon from "../../images/Overview/sensors.png";
+import property_icon from "../../images/Overview/property.png";
 
 const Sidebar = () => {
   const theme = useTheme();

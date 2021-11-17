@@ -1,6 +1,6 @@
 import React from "react";
 import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
-import profileIcon from "../../../../images/profileIcon.png";
+import profileIcon from "../../../../images/Overview/profileIcon.png";
 import ProfileItem from "./ProfileItem";
 
 const ProfileDropdown = () => {
