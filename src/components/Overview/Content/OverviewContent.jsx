@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "styled-components";
 import Card from "../../../styles/UI/Card/Card.styled";
 import CardData from "./CardData";
-import OverviewGrid from "../../../styles/Overview/Content/OverviewGrid.styled";
+import { OverviewGrid } from "../../../styles/Overview/Content/OverviewContent.styled";
 
 const OverviewContent = () => {
   const theme = useTheme();

@@ -45,4 +45,4 @@ const OverviewGrid = styled.div`
   }
 `;
 
-export default OverviewGrid;
+export { OverviewGrid };

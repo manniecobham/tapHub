@@ -12,4 +12,4 @@ const StateContainer = styled.div`
   margin-left: 10px;
 `;
 
-export default StateContainer;
+export { StateContainer };
