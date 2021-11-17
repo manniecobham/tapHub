@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import lightningIcon from "../../../../images/card_data/lightning.png";
 import dollarIcon from "../../../../images/card_data/dollar.png";
 import ToggleGroup from "../../../UI/ToggleGroup";
-import CardHeader from "../../../../styles/UI/Card/CardHeader.styled";
-import CardTitle from "../../../../styles/UI/Card/CardTitle.styled";
 import { useTheme } from "styled-components";
-import CardContent from "../../../../styles/UI/Card/CardContent.styled";
-import CardFooter from "../../../../styles/UI/Card/CardFooter.styled";
+import {
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "../../../../styles/UI/Card.styled";
 import Context from "../../../../context/context";
 
 const CO2Reduction = (props) => {

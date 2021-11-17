@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "styled-components";
-import Card from "../../../styles/UI/Card/Card.styled";
+import { Card } from "../../../styles/UI/Card.styled";
 import CardData from "./CardData";
 import { OverviewGrid } from "../../../styles/Overview/Content/OverviewContent.styled";
 

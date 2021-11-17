@@ -11,4 +11,4 @@ const ToggleContainer = styled.div`
   height: 24px;
 `;
 
-export default ToggleContainer;
+export { ToggleContainer };
