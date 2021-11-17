@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "styled-components";
-import StyledSidebar from "../../styles/Sidebar/Sidebar.styled";
+import { StyledSidebar } from "../../styles/Sidebar/Sidebar.styled";
 import SidebarItem from "./SidebarItem";
 import IH_icon from "../../instahubIcon.png";
 import overview_icon from "../../images/overview.png";

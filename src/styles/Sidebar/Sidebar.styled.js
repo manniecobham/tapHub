@@ -15,4 +15,20 @@ const StyledSidebar = styled.ul`
   padding-top: 45px;
 `;
 
-export default StyledSidebar;
+const SidebarListItem = styled.li`
+  .sidebar--item {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sidebar--icon {
+    max-width: 20px;
+  }
+`;
+
+export { SidebarListItem, StyledSidebar };
