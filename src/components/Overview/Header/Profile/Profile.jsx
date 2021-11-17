@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import profile from "../../../../images/Overview/profile.png";
+import profile from "../../../../images/Overview/profilePhoto.png";
 import ProfileDropdown from "./ProfileDropdown";
 import Button from "../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";

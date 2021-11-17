@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import lightningIcon from "../../../../images/Overview/card_data/lightning.png";
-import dollarIcon from "../../../../images/Overview/card_data/dollar.png";
+import lightningIcon from "../../../../images/Overview/lightning.svg";
+import dollarIcon from "../../../../images/Overview/dollar.svg";
 import ToggleGroup from "../../../UI/ToggleGroup";
 import { useTheme } from "styled-components";
 import {

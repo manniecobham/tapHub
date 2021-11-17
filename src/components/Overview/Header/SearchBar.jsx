@@ -1,5 +1,5 @@
 import React from "react";
-import searchIcon from "../../../images/Overview/searchIcon.png";
+import searchIcon from "../../../images/Overview/searchIcon.svg";
 import { SearchForm } from "../../../styles/Overview/Header/SearchBar.styled";
 
 const SearchBar = () => {

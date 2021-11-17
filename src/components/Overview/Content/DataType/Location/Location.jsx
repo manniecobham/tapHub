@@ -1,7 +1,7 @@
 import React from "react";
-import instahubImage from "../../../../../images/Overview/dummy_data/instahub-office.png";
-import lightningIcon from "../../../../../images/Overview/card_data/lightning.png";
-import dollarIcon from "../../../../../images/Overview/card_data/dollar.png";
+import instahubImage from "../../../../../images/Overview/instahub-office.png";
+import lightningIcon from "../../../../../images/Overview/lightning.svg";
+import dollarIcon from "../../../../../images/Overview/dollar.svg";
 import ToggleGroup from "../../../../UI/ToggleGroup";
 import {
   CardHeader,
