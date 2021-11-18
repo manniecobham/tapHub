@@ -5,38 +5,39 @@ const Context = React.createContext({
   onLogout: () => {},
   userData: {
     username: "testuser",
+    userToken: "ewioehwuihiwuqh4wuih4wuih",
     notifications: {
       1: {
-        msg: "Room 105 has a consistent pattern of lighting waste in past 24 hours.",
-        date: "Today: 5:27pm",
+        msg: "Room 105 has a consistent pattern of lighting waste in past 24 hours!",
+        date: "",
         room: "Room 105",
-        analyticType: "Lighting Waste",
+        alertType: "Lighting Waste",
       },
       2: {
-        msg: "Room 205 has an irregular pattern of H/C waste in past 48 hours.",
-        date: "Today: 7:00am",
+        msg: "Room 205 has a consistent pattern of H/C waste in past 24 hours!!",
+        date: "",
         room: "Room 205",
-        analyticType: "H/C Waste",
+        alertType: "H/C Waste",
       },
     },
-    floors: {
-      first: {
+    location: {
+      metrics: {
         rooms_occupied: 10,
         co2_reduction: 20,
         light_wasted: 50,
         hc_wasted: 200,
-        rooms: {
-          101: {
-            data: {
-              //graph data
-            },
-          },
-          102: {
-            data: {
-              //graph data
-            },
-          },
-        },
+      },
+      relativeChange: {
+        relChangeCo2: 35,
+        relChangeLight: 6.5,
+        relChangeHC: 12.6,
+      },
+      metricAverages: {
+        spaceUtilization: 52,
+        temperature: 68,
+        lightUsage: 60,
+        humidity: 40,
+        pressure: 101,
       },
     },
   },
