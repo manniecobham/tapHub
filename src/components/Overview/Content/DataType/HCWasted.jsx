@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
+import moreInfoIcon from "../../../../images/Overview/question.svg";
 import ToggleGroup from "../../../UI/ToggleGroup";
 import {
   CardHeader,
@@ -39,7 +40,7 @@ const HCWasted = () => {
         <div>
           <p>12.6% vs last week</p>
         </div>
-        <img alt="?"></img>
+        <img src={moreInfoIcon} alt="?"></img>
       </CardFooter>
     </React.Fragment>
   );

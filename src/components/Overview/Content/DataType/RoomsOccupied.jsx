@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
+import mouse from "../../../../images/Overview/mouse.svg";
 import ToggleGroup from "../../../UI/ToggleGroup";
 import {
   CardHeader,
@@ -37,7 +38,7 @@ const RoomsOccupied = () => {
       </CardContent>
       <CardFooter>
         <div></div>
-        <img alt="^"></img>
+        <img src={mouse} alt="^"></img>
       </CardFooter>
     </React.Fragment>
   );

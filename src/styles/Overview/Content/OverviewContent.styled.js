@@ -14,7 +14,7 @@ const OverviewGrid = styled.div`
   }
 
   .grid--item_small {
-    max-width: 256px;
+    min-width: 256px;
     height: 140px;
   }
 

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
+import moreInfoIcon from "../../../../images/Overview/question.svg";
 import ToggleGroup from "../../../UI/ToggleGroup";
 import { useTheme } from "styled-components";
 import {
@@ -39,7 +40,7 @@ const CO2Reduction = (props) => {
         <div>
           <p>35.2% vs last week</p>
         </div>
-        <img alt="?"></img>
+        <img src={moreInfoIcon} alt="?"></img>
       </CardFooter>
     </React.Fragment>
   );
