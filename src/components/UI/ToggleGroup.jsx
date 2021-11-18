@@ -1,6 +1,5 @@
-import { attachEventProps } from "@aws-amplify/ui-react/lib-esm/react-component-lib/utils";
 import React from "react";
-import ToggleContainer from "../../styles/UI/ToggleContainer.styled";
+import { ToggleContainer } from "../../styles/UI/Toggle.styled";
 import Toggle from "./Toggle";
 
 const ToggleGroup = (props) => {

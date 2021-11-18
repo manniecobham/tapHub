@@ -1,11 +1,13 @@
 import React from "react";
-import instahubImage from "../../../../../images/dummy_data/instahub-office.png";
-import lightningIcon from "../../../../../images/card_data/lightning.png";
-import dollarIcon from "../../../../../images/card_data/dollar.png";
+import instahubImage from "../../../../../images/Overview/instahub-office.png";
+import lightningIcon from "../../../../../images/Overview/lightning.svg";
+import dollarIcon from "../../../../../images/Overview/dollar.svg";
 import ToggleGroup from "../../../../UI/ToggleGroup";
-import CardHeader from "../../../../../styles/UI/Card/CardHeader.styled";
-import CardTitle from "../../../../../styles/UI/Card/CardTitle.styled";
-import CardContent from "../../../../../styles/UI/Card/CardContent.styled";
+import {
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "../../../../../styles/UI/Card.styled";
 import State from "./State";
 import { useTheme } from "styled-components";
 
