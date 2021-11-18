@@ -7,29 +7,50 @@ import { data4, data5, data6 } from "../../../Graph/heatData";
 //components
 import GraphButton from "../../../Graph/GraphButton/GraphButton";
 import LineChart from "../../../Graph/LineChart";
-import HeatMap from "../../../Graph/HeatMap";
+import HeatMap from "../../../Graph/Heatmap";
 
 const Graph = (props) => {
-  const [graph, setGraph] = useState("line");
-  const [graphData, setGraphData] = useState(data4)
+  //const [graphType, setGraphType] = useState("line");
+  const [graphData, setGraphData] = useState(data4);
+  const [isLineChartShown, setIsLineChartShown] = useState(true);
 
-  useEffect(() => {
-    console.log(graph);
-    console.log(graphData);
-  }, [graph, graphData]);
+  const onDateChange = (newGraph) => {
+    setGraphData(newGraph);
+  };
+
+  const onGraphTypeChange = (newGraphType) => {
+    setIsLineChartShown(newGraphType);
+  };
+
+  // useEffect(() => {
+  //   console.log(graphType);
+  //   console.log(graphData);
+  // }, [graphType, graphData]);
 
   return (
-    <>
-    {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
-    <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data4} data2={data5} data3={data6} />
-    <div>
-      {graph === "line" ? (
-        <LineChart graphData={graphData} />
-      ) : (
-        <HeatMap graphData={graphData} />
-      )}
-    </div>
-    </>
+    <GraphContainer>
+      {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
+      <GraphButton
+        setGraphData={onDateChange}
+        setGraphType={onGraphTypeChange}
+        data1={data4}
+        data2={data5}
+        data3={data6}
+      />
+      <div>
+        {isLineChartShown && (
+          <LineChart graphData={graphData} isShown={isLineChartShown} />
+        )}
+        {!isLineChartShown && (
+          <HeatMap graphData={graphData} isShown={isLineChartShown} />
+        )}
+        {/* {graphType === "line" ? (
+          <LineChart graphData={graphData} />
+        ) : (
+          <HeatMap graphData={graphData} />
+        )} */}
+      </div>
+    </GraphContainer>
   );
 };
 

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import GraphButton from "./GraphButton/GraphButton";
 
-const LineChart = ({ graphData }) => {
-
+const LineChart = ({ graphData, isShown }) => {
   const initialState = {
     series: graphData,
     options: {
@@ -14,23 +13,23 @@ const LineChart = ({ graphData }) => {
         zoom: {
           type: "x",
           enabled: true,
-          autoScaleYaxis: true
+          autoScaleYaxis: true,
         },
         toolbar: {
           autoSelected: "zoom",
           show: false,
-        }
+        },
       },
-      colors: ['#546E7A', '#E91E63'],
+      colors: ["#546E7A", "#E91E63"],
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
       markers: {
-        size: 0
+        size: 0,
       },
       title: {
         text: " Movement",
-        align: "left"
+        align: "left",
       },
       fill: {
         type: "gradient",
@@ -39,18 +38,18 @@ const LineChart = ({ graphData }) => {
           inverseColors: false,
           opacityFrom: 0.5,
           opacityTo: 0,
-          stops: [0, 90, 100]
-        }
+          stops: [0, 90, 100],
+        },
       },
       yaxis: {
         labels: {
           formatter: function (val) {
             return val;
-          }
+          },
         },
         title: {
-          text: "Feature"
-        }
+          text: "Feature",
+        },
       },
       xaxis: {
         // type: "category",
@@ -63,26 +62,36 @@ const LineChart = ({ graphData }) => {
         y: {
           formatter: function (val) {
             return val;
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   };
 
-  const [lineChart, setLineChart] = useState(initialState)
+  const [lineChart, setLineChart] = useState(initialState);
+
+  useEffect(() => {
+    if (isShown) {
+      //setLineChart(graphData);
+      setLineChart((prevState) => ({
+        ...prevState,
+        series: graphData,
+      }));
+    }
+  }, [graphData, isShown]);
 
   return (
     <>
-    <div id="chart">
-      <ReactApexChart
-        options={lineChart.options}
-        series={lineChart.series}
-        type="area"
-        height={350}
-      />
-    </div>
+      <div id="chart">
+        <ReactApexChart
+          options={lineChart.options}
+          series={lineChart.series}
+          type="area"
+          height={350}
+        />
+      </div>
     </>
   );
-}
+};
 
 export default LineChart;
