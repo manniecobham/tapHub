@@ -1,28 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../../styles/Sidebar/SidebarItem.module.css";
+import { SidebarListItem } from "../../styles/Sidebar/Sidebar.styled";
 
 const SidebarItem = (props) => {
   if (!props.path && !props.page) {
     return (
-      <li>
-        <div className={`${classes["sidebar--item"]}`}>
+      <SidebarListItem>
+        <div className="sidebar--item">
           <img src={props.icon} />
         </div>
-      </li>
+      </SidebarListItem>
     );
   } else {
     return (
-      <li>
-        <Link to={props.path} className={`${classes["sidebar--item"]}`}>
-          <img
-            src={props.icon}
-            alt={props.page}
-            className={`${classes["sidebar--icon"]}`}
-          />
+      <SidebarListItem>
+        <Link to={props.path} className="sidebar--item">
+          <img src={props.icon} alt={props.page} className="sidebar--icon" />
           <p>{props.page}</p>
         </Link>
-      </li>
+      </SidebarListItem>
     );
   }
 };

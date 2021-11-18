@@ -1,5 +1,5 @@
 import React from "react";
-import StateContainer from "../../../../../styles/Overview/Content/DataType/Location/StateContainer.styled";
+import { StateContainer } from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
 
 const State = (props) => {
   return (

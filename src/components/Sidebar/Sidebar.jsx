@@ -1,14 +1,14 @@
 import React from "react";
 import { useTheme } from "styled-components";
-import StyledSidebar from "../../styles/Sidebar/Sidebar.styled";
+import { StyledSidebar } from "../../styles/Sidebar/Sidebar.styled";
 import SidebarItem from "./SidebarItem";
-import IH_icon from "../../instahubIcon.png";
-import overview_icon from "../../images/overview.png";
-import sep_line from "../../images/line-separator.png";
-import analytics_icon from "../../images/analytics.png";
-import reports_icon from "../../images/reports.png";
-import sensors_icon from "../../images/sensors.png";
-import property_icon from "../../images/property.png";
+import IH_icon from "../../images/Sidebar/instahubIcon.png";
+import overview_icon from "../../images/Sidebar/overview.svg";
+import sep_line from "../../images/Sidebar/line.svg";
+import analytics_icon from "../../images/Sidebar/analytics.svg";
+import reports_icon from "../../images/Sidebar/reports.svg";
+import sensors_icon from "../../images/Sidebar/sensors.svg";
+import property_icon from "../../images/Sidebar/property.svg";
 
 const Sidebar = () => {
   const theme = useTheme();
@@ -18,7 +18,11 @@ const Sidebar = () => {
   return (
     <nav>
       <StyledSidebar backgroundColor={bgColor} textColor={textColor}>
-        <SidebarItem path="/" icon={IH_icon} />
+        <li>
+          <a target="_blank" href="https://www.getinstahub.com/">
+            <img src={IH_icon} alt="home" style={{ width: "30px" }} />
+          </a>
+        </li>
         <SidebarItem icon={sep_line} />
         <SidebarItem path="/overview" page="Overview" icon={overview_icon} />
         <SidebarItem path="/analytics" page="Analytics" icon={analytics_icon} />
