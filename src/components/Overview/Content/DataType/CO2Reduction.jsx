@@ -31,7 +31,7 @@ const CO2Reduction = (props) => {
       <CardContent>
         <p>
           <span className="lead">
-            {context["userData"]["floors"]["first"]["co2_reduction"]}
+            {context["userData"]["location"]["metrics"]["co2_reduction"]}
           </span>{" "}
           lbs/wk
         </p>

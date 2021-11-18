@@ -31,7 +31,7 @@ const LightWasted = () => {
       <CardContent>
         <p>
           <span className="lead">
-            {context["userData"]["floors"]["first"]["light_wasted"]}
+            {context["userData"]["location"]["metrics"]["light_wasted"]}
           </span>{" "}
           hrs/wk
         </p>

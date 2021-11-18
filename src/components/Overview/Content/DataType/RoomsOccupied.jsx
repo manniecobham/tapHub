@@ -31,7 +31,7 @@ const RoomsOccupied = () => {
       <CardContent>
         <p>
           <span className="lead">
-            {context["userData"]["floors"]["first"]["rooms_occupied"]}
+            {context["userData"]["location"]["metrics"]["rooms_occupied"]}
           </span>
           /56
         </p>
