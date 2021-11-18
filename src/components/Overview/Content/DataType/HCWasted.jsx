@@ -31,7 +31,7 @@ const HCWasted = () => {
       <CardContent>
         <p>
           <span className="lead">
-            ${context["userData"]["floors"]["first"]["hc_wasted"]}
+            ${context["userData"]["location"]["metrics"]["hc_wasted"]}
           </span>
           /wk
         </p>
