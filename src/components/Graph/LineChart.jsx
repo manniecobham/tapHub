@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import GraphButton from "./GraphButton/GraphButton";
 
-const LineChart = ({data1, data2, data3}) => {
+const LineChart = ({ graphData }) => {
 
   const initialState = {
-    series: data1,
+    series: graphData,
     options: {
       chart: {
         type: "area",
@@ -17,7 +17,8 @@ const LineChart = ({data1, data2, data3}) => {
           autoScaleYaxis: true
         },
         toolbar: {
-          autoSelected: "zoom"
+          autoSelected: "zoom",
+          show: false,
         }
       },
       colors: ['#546E7A', '#E91E63'],
@@ -72,7 +73,6 @@ const LineChart = ({data1, data2, data3}) => {
 
   return (
     <>
-    <GraphButton setChartData={setLineChart} data1={data1} data2={data2} data3={data3} />
     <div id="chart">
       <ReactApexChart
         options={lineChart.options}

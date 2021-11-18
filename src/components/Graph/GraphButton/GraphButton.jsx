@@ -3,106 +3,91 @@ import React, { useState, useEffect } from "react";
 // styles
 import { Button, ButtonContainer, GraphNav, TimeDisplay, TimeDisplayContainer } from './GraphButtonStyles'
 
-const GraphButton = ({ setChartData, data1, data2, data3 }) => {
+const GraphButton = ({ setGraph, setGraphData, data1, data2, data3 }) => {
 
-  const [clickedDay, setClickedDay] = useState(true);
-  const [clickedWeek, setClickedWeek] = useState(false);
-  const [clickedMonth, setClickedMonth] = useState(false);
+  //time frame toggle
+  const [timeFrame, setTimeFrame] = useState("Today's")
+
   const [buttonColorDay, setButtonColorDay] = useState('white')
   const [buttonColorWeek, setButtonColorWeek] = useState('lightgray')
   const [buttonColorMonth, setButtonColorMonth] = useState('lightgray')
+  
   const [colorDay, setColorDay] = useState('black')
   const [colorWeek, setColorWeek] = useState('gray')
   const [colorMonth, setColorMonth] = useState('gray')
 
-  const [timeFrame, setTimeFrame] = useState("Today's")
+  //graph style toggle
+  const [buttonColorLine, setButtonColorLine] = useState('white')
+  const [buttonColorHeat, setButtonColorHeat] = useState('lightgray')
 
-  useEffect(() => {
-    // console.log("ClickedDay is " + clickedDay);
-    // console.log("ClickedWeek is " + clickedWeek);
-    // console.log("ClickedMonth is " + clickedMonth);
-  }, [clickedDay, clickedWeek, clickedMonth]);
+  const [colorLine, setColorLine] = useState('black')
+  const [colorHeat, setColorHeat] = useState('gray')
 
   const onClickDay = () => {
-    if (!clickedDay) {
-      setClickedDay(true);
-      setButtonColorDay("white");
-      setColorDay("black");
+    setGraphData(data1)
 
-      setChartData(prevState => ({
-        ...prevState,
-        series: data1
-      }))
+    setTimeFrame("Today's")
 
-      setTimeFrame("Today's")
+    setButtonColorDay("white");
+    setColorDay("black");
 
-      setClickedWeek(false);
-      setButtonColorWeek('lightGray');
-      setColorWeek('gray');
+    setButtonColorWeek('lightGray');
+    setColorWeek('gray');
 
-      setClickedMonth(false);
-      setButtonColorMonth('lightGray');
-      setColorMonth('gray');
-    } else {
-      setClickedDay(false);
-      setButtonColorDay("lightGray");
-      setColorDay("gray");
-    }
+    setButtonColorMonth('lightGray');
+    setColorMonth('gray');
   };
 
   const onClickWeek = () => {
-    if (!clickedWeek) {
-      setClickedWeek(true);
-      setButtonColorWeek('white');
-      setColorWeek('black');
+    setGraphData(data2)
+    
+    setTimeFrame("Weekly")
 
-      setChartData(prevState => ({
-        ...prevState,
-        series: data2
-      }))
-      
-      setTimeFrame("Weekly")
+    setButtonColorWeek('white');
+    setColorWeek('black');
 
-      setClickedMonth(false);
-      setButtonColorMonth('lightGray');
-      setColorMonth('gray');
+    setButtonColorMonth('lightGray');
+    setColorMonth('gray');
 
-      setClickedDay(false);
-      setButtonColorDay("lightGray");
-      setColorDay("gray");
-    } else {
-      setClickedWeek(false);
-      setButtonColorWeek('lightGray');
-      setColorWeek('gray');
-    }
+    setButtonColorDay("lightGray");
+    setColorDay("gray");
   }
 
   const onClickMonth = () => {
-    if (!clickedMonth) {
-      setClickedMonth(true);
-      setButtonColorMonth('white');
-      setColorMonth('black');
+    setGraphData(data3)
 
-      setChartData(prevState => ({
-        ...prevState,
-        series: data3
-      }))
+    setTimeFrame("Monthly")
 
-      setTimeFrame("Monthly")
+    setButtonColorMonth('white');
+    setColorMonth('black');
 
-      setClickedDay(false);
-      setButtonColorDay("lightGray");
-      setColorDay("gray");
 
-      setClickedWeek(false);
-      setButtonColorWeek('lightGray');
-      setColorWeek('gray');
-    } else {
-      setClickedMonth(false);
-      setButtonColorMonth('lightGray');
-      setColorMonth('gray');
-    }
+    setButtonColorDay("lightGray");
+    setColorDay("gray");
+
+    setButtonColorWeek('lightGray');
+    setColorWeek('gray');
+
   } 
+  const onClickLine = () => {
+    setGraph("line");
+
+    setColorLine("black");
+    setButtonColorLine("white")
+
+    setColorHeat("gray");
+    setButtonColorHeat("lightgray");
+  }
+  
+  const onClickHeat = () => {
+    setGraph("heat");
+
+    setColorHeat("black");
+    setButtonColorHeat("white")
+
+    setColorLine("gray");
+    setButtonColorLine("lightgray");
+  }
 
   return (
     <>
@@ -110,6 +95,11 @@ const GraphButton = ({ setChartData, data1, data2, data3 }) => {
       <TimeDisplayContainer>
         <TimeDisplay>{timeFrame} Trends</TimeDisplay>
       </TimeDisplayContainer>
+
+      <ButtonContainer>
+        <Button onClick={onClickLine} background={buttonColorLine} color={colorLine}>Line</Button>
+        <Button onClick={onClickHeat} background={buttonColorHeat} color={colorHeat}>Heat</Button>
+      </ButtonContainer>
 
       <ButtonContainer>     
         <Button onClick={onClickDay} background={buttonColorDay} color={colorDay}>Day</Button>

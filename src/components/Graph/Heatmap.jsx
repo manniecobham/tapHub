@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import GraphButton from "./GraphButton/GraphButton";
 
-const HeatMap = ({data1, data2, data3}) => {
+const HeatMap = ({ graphData }) => {
 
   const initialState = {
-    series: data1,
+    series: graphData,
 
     options: {
       chart: {
         height: 350,
         type: 'heatmap',
+        toolbar: {
+          show: false,
+        }
       },
       plotOptions: {
         heatmap: {
@@ -62,7 +65,6 @@ const HeatMap = ({data1, data2, data3}) => {
 
   return (
     <>
-    <GraphButton setChartData={setHeatMap} data1={data1} data2={data2} data3={data3} />
     <div id="chart">
       <ReactApexChart 
       options={heatMap.options} 
