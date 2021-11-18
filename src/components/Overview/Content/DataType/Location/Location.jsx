@@ -1,7 +1,7 @@
 import React from "react";
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
-import lightningIcon from "../../../../../images/Overview/lightning.svg";
-import dollarIcon from "../../../../../images/Overview/dollar.svg";
+import imageIcon from "../../../../../images/Overview/imageIcon.svg";
+import mapIcon from "../../../../../images/Overview/mapIcon.svg";
 import ToggleGroup from "../../../../UI/ToggleGroup";
 import {
   CardHeader,
@@ -23,10 +23,10 @@ const Location = (props) => {
         <CardTitle titleSize={titleSize}>InstaHub Office</CardTitle>
         <div style={{ display: "flex" }}>
           <ToggleGroup
-            src1={lightningIcon}
-            alt1="lightning"
-            src2={dollarIcon}
-            alt2="dollar"
+            src1={imageIcon}
+            alt1="image"
+            src2={mapIcon}
+            alt2="map"
           />
           <State stateAbbr={"PA"} />
         </div>
