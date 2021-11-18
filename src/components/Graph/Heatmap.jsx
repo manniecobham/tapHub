@@ -64,14 +64,11 @@ const HeatMap = ({ graphData, isShown }) => {
   const [heatMap, setHeatMap] = useState(initialState);
 
   useEffect(() => {
-    if (!isShown) {
-      //setHeatMap(graphData);
-      setHeatMap((prevState) => ({
-        ...prevState,
-        series: graphData,
-      }));
-    }
-  }, [graphData, isShown]);
+    setHeatMap((prev) => ({
+      ...prev,
+      series: graphData,
+    }));
+  }, [graphData]);
 
   return (
     <>

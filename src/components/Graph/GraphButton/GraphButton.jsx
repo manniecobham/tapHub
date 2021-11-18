@@ -29,11 +29,7 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
   const [colorHeat, setColorHeat] = useState("gray");
 
   const onClickDay = () => {
-    //setGraphData(data1);
-    setGraphData((prevState) => ({
-      ...prevState,
-      series: data1,
-    }));
+    setGraphData(data1);
 
     setTimeFrame("Today's");
 
@@ -48,11 +44,7 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
   };
 
   const onClickWeek = () => {
-    //setGraphData(data2);
-    setGraphData((prevState) => ({
-      ...prevState,
-      series: data2,
-    }));
+    setGraphData(data2);
 
     setTimeFrame("Weekly");
 
@@ -67,11 +59,7 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
   };
 
   const onClickMonth = () => {
-    //setGraphData(data3);
-    setGraphData((prevState) => ({
-      ...prevState,
-      series: data3,
-    }));
+    setGraphData(data3);
 
     setTimeFrame("Monthly");
 

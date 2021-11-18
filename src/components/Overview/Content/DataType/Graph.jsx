@@ -27,6 +27,12 @@ const Graph = (props) => {
   //   console.log(graphData);
   // }, [graphType, graphData]);
 
+  const Chart = isLineChartShown ? (
+    <LineChart graphData={graphData} />
+  ) : (
+    <HeatMap graphData={graphData} />
+  );
+
   return (
     <GraphContainer>
       {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
@@ -37,19 +43,7 @@ const Graph = (props) => {
         data2={data5}
         data3={data6}
       />
-      <div>
-        {isLineChartShown && (
-          <LineChart graphData={graphData} isShown={isLineChartShown} />
-        )}
-        {!isLineChartShown && (
-          <HeatMap graphData={graphData} isShown={isLineChartShown} />
-        )}
-        {/* {graphType === "line" ? (
-          <LineChart graphData={graphData} />
-        ) : (
-          <HeatMap graphData={graphData} />
-        )} */}
-      </div>
+      {Chart}
     </GraphContainer>
   );
 };

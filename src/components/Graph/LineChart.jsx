@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import GraphButton from "./GraphButton/GraphButton";
 
-const LineChart = ({ graphData, isShown }) => {
+const LineChart = ({ graphData }) => {
   const initialState = {
     series: graphData,
     options: {
@@ -71,14 +71,11 @@ const LineChart = ({ graphData, isShown }) => {
   const [lineChart, setLineChart] = useState(initialState);
 
   useEffect(() => {
-    if (isShown) {
-      //setLineChart(graphData);
-      setLineChart((prevState) => ({
-        ...prevState,
-        series: graphData,
-      }));
-    }
-  }, [graphData, isShown]);
+    setLineChart((prev) => ({
+      ...prev,
+      series: graphData,
+    }));
+  }, [graphData]);
 
   return (
     <>
