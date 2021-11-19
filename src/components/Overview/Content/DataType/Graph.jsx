@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import GraphContainer from "../../../../styles/Overview/Content/DataType/GraphContainer.styled";
 
 //data
@@ -10,6 +10,7 @@ import LineChart from "../../../Graph/LineChart";
 import HeatMap from "../../../Graph/Heatmap";
 import { Card } from "../../../../styles/UI/Card.styled";
 import { useTheme } from "styled-components";
+import GraphSidebar from "../../../Graph/GraphSidebar";
 
 const Graph = (props) => {
   const theme = useTheme();
@@ -26,11 +27,6 @@ const Graph = (props) => {
     setIsLineChartShown(newGraphType);
   };
 
-  // useEffect(() => {
-  //   console.log(graphType);
-  //   console.log(graphData);
-  // }, [graphType, graphData]);
-
   const Chart = isLineChartShown ? (
     <LineChart graphData={graphData} />
   ) : (
@@ -39,6 +35,7 @@ const Graph = (props) => {
 
   return (
     <Card backgroundColor={bgColor} className={`${props.classes}`}>
+      <GraphSidebar />
       <GraphContainer>
         {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
         <GraphButton
