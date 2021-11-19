@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTheme } from "styled-components";
 import { StyledSidebar } from "../../styles/Sidebar/Sidebar.styled";
 import SidebarItem from "./SidebarItem";
+import Context from "../../context/context";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 import overview_icon from "../../images/Sidebar/overview.svg";
 import sep_line from "../../images/Sidebar/line.svg";
@@ -10,8 +11,9 @@ import reports_icon from "../../images/Sidebar/reports.svg";
 import sensors_icon from "../../images/Sidebar/sensors.svg";
 import property_icon from "../../images/Sidebar/property.svg";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const theme = useTheme();
+  const context = useContext(Context);
   const bgColor = theme.colors.colorPrimaryDarkBlue;
   const textColor = theme.colors.colorSecondaryWhite;
 
@@ -24,11 +26,11 @@ const Sidebar = () => {
           </a>
         </li>
         <SidebarItem icon={sep_line} />
-        <SidebarItem path="/overview" page="Overview" icon={overview_icon} />
-        <SidebarItem path="/analytics" page="Analytics" icon={analytics_icon} />
-        <SidebarItem path="/reports" page="Reports" icon={reports_icon} />
-        <SidebarItem path="/sensors" page="Sensors" icon={sensors_icon} />
-        <SidebarItem path="/property" page="Property" icon={property_icon} />
+        <SidebarItem path="/overview" page="overview" icon={overview_icon} />
+        <SidebarItem path="/analytics" page="analytics" icon={analytics_icon} />
+        <SidebarItem path="/reports" page="reports" icon={reports_icon} />
+        <SidebarItem path="/sensors" page="sensors" icon={sensors_icon} />
+        <SidebarItem path="/property" page="property" icon={property_icon} />
       </StyledSidebar>
     </nav>
   );

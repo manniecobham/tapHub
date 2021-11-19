@@ -1,4 +1,4 @@
-var a = {
+const jsonResponse = {
   username: "testuser",
   userToken: "ewioehwuihiwuqh4wuih4wuih",
   notifications: {
@@ -36,3 +36,5 @@ var a = {
     },
   },
 };
+
+export default jsonResponse;

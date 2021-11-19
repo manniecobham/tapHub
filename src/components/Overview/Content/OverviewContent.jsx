@@ -7,6 +7,8 @@ import CO2Reduction from "./DataType/CO2Reduction";
 import HCWasted from "./DataType/HCWasted";
 import LightWasted from "./DataType/LightWasted";
 import RoomsOccupied from "./DataType/RoomsOccupied";
+import Location from "./DataType/Location/Location";
+import Graph from "./DataType/Graph";
 
 const OverviewContent = () => {
   const theme = useTheme();
@@ -14,16 +16,12 @@ const OverviewContent = () => {
 
   return (
     <OverviewGrid>
-      <Card backgroundColor={bgColor} className="location grid--item">
-        <CardData type="LOCATION" />
-      </Card>
+      <Location classes="location grid--item" />
       <RoomsOccupied classes="rooms grid--item grid--item_small" />
       <CO2Reduction classes="co2 grid--item grid--item_small" />
       <LightWasted classes="lightwaste grid--item grid--item_small" />
       <HCWasted classes="hcwaste grid--item grid--item_small" />
-      <Card backgroundColor={bgColor} className="graph grid--item">
-        <CardData type="GRAPH" />
-      </Card>
+      <Graph classes="graph grid--item" />
     </OverviewGrid>
   );
 };

@@ -39,7 +39,6 @@ const RoomsOccupied = (props) => {
       }
       className={`${props.classes}`}
     >
-      {" "}
       <CardHeader>
         <CardTitle titleSize={titleSize}>Rooms Occupied</CardTitle>
         <ToggleGroup>

@@ -8,8 +8,12 @@ import { data4, data5, data6 } from "../../../Graph/heatData";
 import GraphButton from "../../../Graph/GraphButton/GraphButton";
 import LineChart from "../../../Graph/LineChart";
 import HeatMap from "../../../Graph/Heatmap";
+import { Card } from "../../../../styles/UI/Card.styled";
+import { useTheme } from "styled-components";
 
 const Graph = (props) => {
+  const theme = useTheme();
+  const bgColor = theme.colors.colorSecondaryWhite;
   //const [graphType, setGraphType] = useState("line");
   const [graphData, setGraphData] = useState(data4);
   const [isLineChartShown, setIsLineChartShown] = useState(true);
@@ -34,17 +38,19 @@ const Graph = (props) => {
   );
 
   return (
-    <GraphContainer>
-      {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
-      <GraphButton
-        setGraphData={onDateChange}
-        setGraphType={onGraphTypeChange}
-        data1={data4}
-        data2={data5}
-        data3={data6}
-      />
-      {Chart}
-    </GraphContainer>
+    <Card backgroundColor={bgColor} className={`${props.classes}`}>
+      <GraphContainer>
+        {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
+        <GraphButton
+          setGraphData={onDateChange}
+          setGraphType={onGraphTypeChange}
+          data1={data4}
+          data2={data5}
+          data3={data6}
+        />
+        {Chart}
+      </GraphContainer>
+    </Card>
   );
 };
 

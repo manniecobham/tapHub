@@ -40,7 +40,6 @@ const HCWasted = (props) => {
       }
       className={`${props.classes}`}
     >
-      {" "}
       <CardHeader>
         <CardTitle titleSize={titleSize}>H/C Wasted</CardTitle>
         <ToggleGroup>
