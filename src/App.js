@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles.styled";
 import globalTheme from "./styles/GlobalTheme";
@@ -13,6 +13,62 @@ import Property from "./views/Property";
 //Amplify.configure(aws_exports);
 import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
+import jsonResponse from "./context/api";
+
+const initialState = {
+  overview: "inactive",
+  analytics: "inactive",
+  reports: "inactive",
+  sensors: "inactive",
+  property: "inactive",
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "overview":
+      return {
+        overview: "active",
+        analytics: "inactive",
+        reports: "inactive",
+        sensors: "inactive",
+        property: "inactive",
+      };
+    case "analytics":
+      return {
+        overview: "inactive",
+        analytics: "active",
+        reports: "inactive",
+        sensors: "inactive",
+        property: "inactive",
+      };
+    case "reports":
+      return {
+        overview: "inactive",
+        analytics: "inactive",
+        reports: "active",
+        sensors: "inactive",
+        property: "inactive",
+      };
+    case "sensors":
+      return {
+        overview: "inactive",
+        analytics: "inactive",
+        reports: "inactive",
+        sensors: "active",
+        property: "inactive",
+      };
+    case "property":
+      return {
+        overview: "inactive",
+        analytics: "inactive",
+        reports: "inactive",
+        sensors: "inactive",
+        property: "active",
+      };
+    default:
+      console.log(action);
+  }
+};
 
 function App() {
   // let a = 0;
@@ -36,49 +92,14 @@ function App() {
   //     </DashBoard>
   // </div>
 
+  const [activePages, dispatchActivePages] = useReducer(reducer, initialState);
+
   const logoutHandler = () => {
     return "HELLO WORLD";
   };
 
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
-  const [userData, setUserData] = useState({
-    username: "testuser",
-    userToken: "ewioehwuihiwuqh4wuih4wuih",
-    notifications: {
-      1: {
-        msg: "Room 105 has a consistent pattern of lighting waste in past 24 hours!",
-        date: "",
-        room: "Room 105",
-        alertType: "Lighting Waste",
-      },
-      2: {
-        msg: "Room 205 has a consistent pattern of H/C waste in past 24 hours!!",
-        date: "",
-        room: "Room 205",
-        alertType: "H/C Waste",
-      },
-    },
-    location: {
-      metrics: {
-        rooms_occupied: 10,
-        co2_reduction: 20,
-        light_wasted: 50,
-        hc_wasted: 200,
-      },
-      relativeChange: {
-        relChangeCo2: 35,
-        relChangeLight: 6.5,
-        relChangeHC: 12.6,
-      },
-      metricAverages: {
-        spaceUtilization: 52,
-        temperature: 68,
-        lightUsage: 60,
-        humidity: 40,
-        pressure: 101,
-      },
-    },
-  });
+  const [userData, setUserData] = useState(jsonResponse);
 
   return (
     <Context.Provider
@@ -86,6 +107,8 @@ function App() {
         isLoggedIn: userIsLoggedIn,
         onLogout: logoutHandler,
         userData: userData,
+        activePages: activePages,
+        dispatchActivePages: dispatchActivePages,
       }}
     >
       <ThemeProvider theme={globalTheme}>

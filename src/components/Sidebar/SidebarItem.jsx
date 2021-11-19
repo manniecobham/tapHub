@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { SidebarListItem } from "../../styles/Sidebar/Sidebar.styled";
 
 const SidebarItem = (props) => {
@@ -14,10 +14,15 @@ const SidebarItem = (props) => {
   } else {
     return (
       <SidebarListItem>
-        <Link to={props.path} className="sidebar--item">
-          <img src={props.icon} alt={props.page} className="sidebar--icon" />
+        <NavLink
+          to={props.path}
+          className={(isActive) =>
+            `sidebar--item ${!isActive ? "inactive" : ""}`
+          }
+        >
+          <img src={props.icon} alt={props.page} className={`sidebar--icon`} />
           <p>{props.page}</p>
-        </Link>
+        </NavLink>
       </SidebarListItem>
     );
   }

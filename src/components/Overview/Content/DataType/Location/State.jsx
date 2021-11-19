@@ -1,10 +1,15 @@
 import React from "react";
+import locationIcon from "../../../../../images/Overview/locationIcon.svg";
 import { StateContainer } from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
 
 const State = (props) => {
   return (
     <StateContainer>
-      <p>^</p>
+      <img
+        src={locationIcon}
+        alt="location"
+        style={{ width: "11px", height: "14px" }}
+      />
       <p>{props.stateAbbr}</p>
     </StateContainer>
   );
