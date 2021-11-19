@@ -33,7 +33,9 @@ const RoomsOccupied = (props) => {
   return (
     <Card
       backgroundColor={
-        firstIconIsActive && !secondIconIsActive ? bgColor : "red"
+        firstIconIsActive && !secondIconIsActive
+          ? bgColor
+          : theme.colors.colorPrimaryNeutralBlue
       }
       className={`${props.classes}`}
     >
