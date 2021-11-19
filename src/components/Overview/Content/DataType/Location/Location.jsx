@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
-import lightningIcon from "../../../../../images/Overview/lightning.svg";
-import dollarIcon from "../../../../../images/Overview/dollar.svg";
-import ToggleGroup from "../../../../UI/ToggleGroup";
+import imageIcon from "../../../../../images/Overview/imageIcon.svg";
+import mapIcon from "../../../../../images/Overview/mapIcon.svg";
 import {
+  ToggleGroup,
+  ToggleButton,
+} from "../../../../../styles/UI/Toggle.styled";
+import {
+  Card,
   CardHeader,
   CardTitle,
   CardContent,
@@ -16,25 +20,61 @@ import { useTheme } from "styled-components";
 const Location = (props) => {
   const theme = useTheme();
   const titleSize = theme.typography.headerSize;
+  const bgColor = theme.colors.colorSecondaryWhite;
+  const [firstIconIsActive, setFirstIconIsActive] = useState(true);
+  const [secondIconIsActive, setSecondIsActive] = useState(false);
+
+  const onClickFirst = () => {
+    setFirstIconIsActive(true);
+    setSecondIsActive(false);
+  };
+
+  const onClickSecond = () => {
+    setSecondIsActive(true);
+    setFirstIconIsActive(false);
+  };
 
   return (
-    <React.Fragment>
+    <Card
+      backgroundColor={
+        firstIconIsActive && !secondIconIsActive
+          ? bgColor
+          : theme.colors.colorPrimaryNeutralBlue
+      }
+      className={`${props.classes}`}
+    >
       <CardHeader>
         <CardTitle titleSize={titleSize}>InstaHub Office</CardTitle>
         <div style={{ display: "flex" }}>
-          <ToggleGroup
-            src1={lightningIcon}
-            alt1="lightning"
-            src2={dollarIcon}
-            alt2="dollar"
-          />
+          <ToggleGroup>
+            <ToggleButton
+              className={firstIconIsActive ? "active" : null}
+              onClick={onClickFirst}
+            >
+              <img
+                src={imageIcon}
+                alt="image"
+                className={firstIconIsActive ? "filterBlack" : "filterGray"}
+              />
+            </ToggleButton>
+            <ToggleButton
+              className={secondIconIsActive ? "active" : null}
+              onClick={onClickSecond}
+            >
+              <img
+                src={mapIcon}
+                alt="map"
+                className={secondIconIsActive ? "filterBlack" : "filterGray"}
+              />
+            </ToggleButton>
+          </ToggleGroup>
           <State stateAbbr={"PA"} />
         </div>
       </CardHeader>
       <CardContent>
         <img src={instahubImage} alt="location" className="width:100%;" />
       </CardContent>
-    </React.Fragment>
+    </Card>
   );
 };
 

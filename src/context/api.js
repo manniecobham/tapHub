@@ -1,16 +1,16 @@
-var a = {
+const jsonResponse = {
   username: "testuser",
   userToken: "ewioehwuihiwuqh4wuih4wuih",
   notifications: {
     1: {
       msg: "Room 105 has a consistent pattern of lighting waste in past 24 hours!",
-      date: "",
+      date: "Today - 6:28 PM",
       room: "Room 105",
       alertType: "Lighting Waste",
     },
     2: {
       msg: "Room 205 has a consistent pattern of H/C waste in past 24 hours!!",
-      date: "",
+      date: "Today - 6:28 PM",
       room: "Room 205",
       alertType: "H/C Waste",
     },
@@ -36,3 +36,5 @@ var a = {
     },
   },
 };
+
+export default jsonResponse;

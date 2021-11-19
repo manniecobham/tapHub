@@ -26,6 +26,11 @@ const SidebarListItem = styled.li`
     color: inherit;
   }
 
+  .inactive {
+    filter: invert(52%) sepia(0%) saturate(1370%) hue-rotate(121deg)
+      brightness(97%) contrast(87%);
+  }
+
   .sidebar--icon {
     max-width: 20px;
   }
