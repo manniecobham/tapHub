@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
 import mouse from "../../../../images/Overview/mouse.svg";
-import ToggleGroup from "../../../UI/ToggleGroup";
+import { ToggleGroup, ToggleButton } from "../../../../styles/UI/Toggle.styled";
 import {
+  Card,
   CardHeader,
   CardTitle,
   CardContent,
@@ -12,21 +13,47 @@ import {
 import { useTheme } from "styled-components";
 import Context from "../../../../context/context";
 
-const RoomsOccupied = () => {
+const RoomsOccupied = (props) => {
   const theme = useTheme();
   const context = useContext(Context);
   const titleSize = theme.typography.headerSize;
+  const bgColor = theme.colors.colorSecondaryWhite;
+  const [firstIconIsActive, setFirstIconIsActive] = useState(true);
+  const [secondIconIsActive, setSecondIsActive] = useState(false);
 
+  const onClickFirst = () => {
+    setFirstIconIsActive(true);
+    setSecondIsActive(false);
+  };
+
+  const onClickSecond = () => {
+    setSecondIsActive(true);
+    setFirstIconIsActive(false);
+  };
   return (
-    <React.Fragment>
+    <Card
+      backgroundColor={
+        firstIconIsActive && !secondIconIsActive ? bgColor : "red"
+      }
+      className={`${props.classes}`}
+    >
+      {" "}
       <CardHeader>
         <CardTitle titleSize={titleSize}>Rooms Occupied</CardTitle>
-        <ToggleGroup
-          src1={lightningIcon}
-          alt1="lightning"
-          src2={dollarIcon}
-          alt2="dollar"
-        />
+        <ToggleGroup>
+          <ToggleButton
+            className={firstIconIsActive ? "active" : null}
+            onClick={onClickFirst}
+          >
+            <img src={lightningIcon} alt="lightning" />
+          </ToggleButton>
+          <ToggleButton
+            className={secondIconIsActive ? "active" : null}
+            onClick={onClickSecond}
+          >
+            <img src={dollarIcon} alt="dollar" />
+          </ToggleButton>
+        </ToggleGroup>
       </CardHeader>
       <CardContent>
         <p>
@@ -40,7 +67,7 @@ const RoomsOccupied = () => {
         <div></div>
         <img src={mouse} alt="^"></img>
       </CardFooter>
-    </React.Fragment>
+    </Card>
   );
 };
 

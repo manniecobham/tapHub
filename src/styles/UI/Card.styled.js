@@ -23,10 +23,15 @@ const CardTitle = styled.h2`
 `;
 
 const CardContent = styled.div`
+  background-color: ${(props) => props.backgroundColor};
+
   .lead {
     font-size: 40px;
     font-weight: bold;
     color: #172c41;
+  }
+
+  .toggle {
   }
 `;
 

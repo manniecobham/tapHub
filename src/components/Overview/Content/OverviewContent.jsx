@@ -3,6 +3,10 @@ import { useTheme } from "styled-components";
 import { Card } from "../../../styles/UI/Card.styled";
 import CardData from "./CardData";
 import { OverviewGrid } from "../../../styles/Overview/Content/OverviewContent.styled";
+import CO2Reduction from "./DataType/CO2Reduction";
+import HCWasted from "./DataType/HCWasted";
+import LightWasted from "./DataType/LightWasted";
+import RoomsOccupied from "./DataType/RoomsOccupied";
 
 const OverviewContent = () => {
   const theme = useTheme();
@@ -13,30 +17,10 @@ const OverviewContent = () => {
       <Card backgroundColor={bgColor} className="location grid--item">
         <CardData type="LOCATION" />
       </Card>
-      <Card
-        backgroundColor={bgColor}
-        className="rooms grid--item grid--item_small"
-      >
-        <CardData type="ROOM" />
-      </Card>
-      <Card
-        backgroundColor={bgColor}
-        className="co2 grid--item grid--item_small"
-      >
-        <CardData type="CO2" />
-      </Card>
-      <Card
-        backgroundColor={bgColor}
-        className="lightwaste grid--item grid--item_small"
-      >
-        <CardData type="LIGHT" />
-      </Card>
-      <Card
-        backgroundColor={bgColor}
-        className="hcwaste grid--item grid--item_small"
-      >
-        <CardData type="HC" />
-      </Card>
+      <RoomsOccupied classes="rooms grid--item grid--item_small" />
+      <CO2Reduction classes="co2 grid--item grid--item_small" />
+      <LightWasted classes="lightwaste grid--item grid--item_small" />
+      <HCWasted classes="hcwaste grid--item grid--item_small" />
       <Card backgroundColor={bgColor} className="graph grid--item">
         <CardData type="GRAPH" />
       </Card>
