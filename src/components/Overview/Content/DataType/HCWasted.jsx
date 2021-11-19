@@ -46,13 +46,21 @@ const HCWasted = (props) => {
             className={firstIconIsActive ? "active" : null}
             onClick={onClickFirst}
           >
-            <img src={lightningIcon} alt="lightning" />
+            <img
+              src={lightningIcon}
+              alt="lightning"
+              className={firstIconIsActive ? "filterBlack" : "filterGray"}
+            />
           </ToggleButton>
           <ToggleButton
             className={secondIconIsActive ? "active" : null}
             onClick={onClickSecond}
           >
-            <img src={dollarIcon} alt="dollar" />
+            <img
+              src={dollarIcon}
+              alt="dollar"
+              className={secondIconIsActive ? "filterBlack" : "filterGray"}
+            />
           </ToggleButton>
         </ToggleGroup>
       </CardHeader>

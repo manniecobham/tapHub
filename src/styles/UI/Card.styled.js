@@ -28,7 +28,7 @@ const CardContent = styled.div`
   .lead {
     font-size: 40px;
     font-weight: bold;
-    color: #172c41;
+    color: rgba(34, 34, 34, 1);
   }
 
   .toggle {

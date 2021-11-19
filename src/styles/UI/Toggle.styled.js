@@ -30,6 +30,16 @@ const ToggleButton = styled.button`
   &.inactive {
     background-color: inherit;
   }
+
+  & .filterBlack {
+    filter: invert(0%) sepia(4%) saturate(17%) hue-rotate(250deg)
+      brightness(101%) contrast(101%);
+  }
+
+  & .filterGray {
+    filter: invert(54%) sepia(0%) saturate(1%) hue-rotate(347deg)
+      brightness(93%) contrast(88%);
+  }
 `;
 
 export { ToggleGroup, ToggleButton };
