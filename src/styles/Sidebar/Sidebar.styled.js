@@ -23,12 +23,12 @@ const SidebarListItem = styled.li`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: inherit;
+    color: #575877;
   }
 
-  .inactive {
-    filter: invert(52%) sepia(0%) saturate(1370%) hue-rotate(121deg)
-      brightness(97%) contrast(87%);
+  .active {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(212deg)
+      brightness(104%) contrast(103%);
   }
 
   .sidebar--icon {
