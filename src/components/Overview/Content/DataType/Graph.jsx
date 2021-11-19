@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import GraphContainer from "../../../../styles/Overview/Content/DataType/GraphContainer.styled";
 
 //data
@@ -8,6 +8,7 @@ import { data4, data5, data6 } from "../../../Graph/heatData";
 import GraphButton from "../../../Graph/GraphButton/GraphButton";
 import LineChart from "../../../Graph/LineChart";
 import HeatMap from "../../../Graph/Heatmap";
+import GraphSidebar from "../../../Graph/GraphSidebar";
 
 const Graph = (props) => {
   //const [graphType, setGraphType] = useState("line");
@@ -22,11 +23,6 @@ const Graph = (props) => {
     setIsLineChartShown(newGraphType);
   };
 
-  // useEffect(() => {
-  //   console.log(graphType);
-  //   console.log(graphData);
-  // }, [graphType, graphData]);
-
   const Chart = isLineChartShown ? (
     <LineChart graphData={graphData} />
   ) : (
@@ -34,8 +30,9 @@ const Graph = (props) => {
   );
 
   return (
+    <>
+    <GraphSidebar />
     <GraphContainer>
-      {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
       <GraphButton
         setGraphData={onDateChange}
         setGraphType={onGraphTypeChange}
@@ -45,6 +42,7 @@ const Graph = (props) => {
       />
       {Chart}
     </GraphContainer>
+    </>
   );
 };
 
