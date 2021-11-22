@@ -74,10 +74,15 @@ const CO2Reduction = (props) => {
         </p>
       </CardContent>
       <CardFooter>
-        <div>
-          <p>35.2% vs last week</p>
-        </div>
-        <img src={moreInfoIcon} alt="?"></img>
+        <p>
+          {context["userData"]["location"]["relativeChange"]["relChangeCo2"]}%
+          vs last week
+        </p>
+        <img
+          src={moreInfoIcon}
+          alt="?"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper ac sapien eu hendrerit."
+        ></img>
       </CardFooter>
     </Card>
   );

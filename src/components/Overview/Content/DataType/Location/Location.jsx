@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
+import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.png";
 import imageIcon from "../../../../../images/Overview/imageIcon.svg";
 import mapIcon from "../../../../../images/Overview/mapIcon.svg";
 import {
@@ -72,7 +73,12 @@ const Location = (props) => {
         </div>
       </CardHeader>
       <CardContent>
-        <img src={instahubImage} alt="location" className="width:100%;" />
+        {firstIconIsActive && (
+          <img src={instahubImage} alt="location" className="img" />
+        )}
+        {secondIconIsActive && (
+          <img src={instaHubBuilding} alt="location" className="img" />
+        )}
       </CardContent>
     </Card>
   );
