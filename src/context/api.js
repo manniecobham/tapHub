@@ -14,6 +14,12 @@ const jsonResponse = {
       room: "Room 205",
       alertType: "H/C Waste",
     },
+    3: {
+      msg: "Room 305 is normal!",
+      date: "Today - 6:28 PM",
+      room: "Room 305",
+      alertType: "C02 Reduction",
+    },
   },
   location: {
     metrics: {

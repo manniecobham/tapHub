@@ -1,26 +1,43 @@
 import styled from "styled-components";
 
 const NotificationListItem = styled.li`
+  z-index: 11;
+
+  .read {
+    background-color: white;
+  }
+
   & > button {
     border: none;
     background: rgba(11, 123, 255, 0.05);
     border-radius: 5px;
     width: 100%;
-    display: grid;
-    grid-template-areas:
-      "icon title"
-      "icon message";
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    cursor: pointer;
+
+    &::hover {
+      background-color: red;
+    }
 
     .icon {
-      grid-area: icon;
+      margin: auto 10px auto 10px;
     }
 
-    .title {
-      grid-area: title;
-    }
+    .content {
+      flex-grow: 2;
 
-    .message {
-      grid-area: message;
+      .title {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px 5px 0px;
+      }
+
+      .message {
+        text-align: left;
+        padding: 5px 0px 10px 0px;
+      }
     }
   }
 `;
