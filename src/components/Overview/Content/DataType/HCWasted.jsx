@@ -78,7 +78,11 @@ const HCWasted = (props) => {
           {context["userData"]["location"]["relativeChange"]["relChangeHC"]}% vs
           last week
         </p>
-        <img src={moreInfoIcon} alt="?"></img>
+        <img
+          src={moreInfoIcon}
+          alt="?"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper ac sapien eu hendrerit."
+        ></img>
       </CardFooter>
     </Card>
   );
