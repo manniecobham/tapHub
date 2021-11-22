@@ -1,7 +1,5 @@
 import React from "react";
 import { useTheme } from "styled-components";
-import { Card } from "../../../styles/UI/Card.styled";
-import CardData from "./CardData";
 import { OverviewGrid } from "../../../styles/Overview/Content/OverviewContent.styled";
 import CO2Reduction from "./DataType/CO2Reduction";
 import HCWasted from "./DataType/HCWasted";

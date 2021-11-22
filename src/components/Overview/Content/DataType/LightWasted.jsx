@@ -73,9 +73,10 @@ const LightWasted = (props) => {
         </p>
       </CardContent>
       <CardFooter>
-        <div>
-          <p>6.5% vs last week</p>
-        </div>
+        <p>
+          {context["userData"]["location"]["relativeChange"]["relChangeLight"]}%
+          vs last week
+        </p>
         <img src={moreInfoIcon} alt="?"></img>
       </CardFooter>
     </Card>
