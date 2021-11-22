@@ -6,6 +6,7 @@ const GraphContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   overflow: auto;
+  padding: 20px 0 0 20px;
 `;
 
 export default GraphContainer;

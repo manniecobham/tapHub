@@ -10,12 +10,11 @@ import LineChart from "../../../Graph/LineChart";
 import HeatMap from "../../../Graph/Heatmap";
 import { Card } from "../../../../styles/UI/Card.styled";
 import { useTheme } from "styled-components";
-import GraphSidebar from "../../../Graph/GraphSidebar";
+import GraphSidebar from "../../../Graph/GraphSidebar/GraphSidebar";
 
 const Graph = (props) => {
   const theme = useTheme();
   const bgColor = theme.colors.colorSecondaryWhite;
-  //const [graphType, setGraphType] = useState("line");
   const [graphData, setGraphData] = useState(data4);
   const [isLineChartShown, setIsLineChartShown] = useState(true);
 
@@ -34,10 +33,10 @@ const Graph = (props) => {
   );
 
   return (
-    <Card backgroundColor={bgColor} className={`${props.classes}`}>
+    <>
+    <Card style={{flexDirection: "row", justifyContent: "flex-start"}} backgroundColor={bgColor} className={`${props.classes}`}>
       <GraphSidebar />
       <GraphContainer>
-        {/* <GraphButton setGraphData={setGraphData} setGraph={setGraph} data1={data1} data2={data2} data3={data3} /> */}
         <GraphButton
           setGraphData={onDateChange}
           setGraphType={onGraphTypeChange}
@@ -48,6 +47,7 @@ const Graph = (props) => {
         {Chart}
       </GraphContainer>
     </Card>
+    </>
   );
 };
 

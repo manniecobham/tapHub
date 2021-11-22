@@ -77,7 +77,7 @@ const HeatMap = ({ graphData, isShown }) => {
           options={heatMap.options}
           series={heatMap.series}
           type="heatmap"
-          height={350}
+          height={450}
         />
       </div>
     </>
