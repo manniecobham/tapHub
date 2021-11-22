@@ -16,9 +16,8 @@ const SidebarItem = (props) => {
       <SidebarListItem>
         <NavLink
           to={props.path}
-          className={(isActive) =>
-            `sidebar--item ${!isActive ? "inactive" : ""}`
-          }
+          className="sidebar--item"
+          activeClassName="active"
         >
           <img src={props.icon} alt={props.page} className={`sidebar--icon`} />
           <p>{props.page}</p>
@@ -29,3 +28,5 @@ const SidebarItem = (props) => {
 };
 
 export default SidebarItem;
+
+//           className={(isActive) => `sidebar--item ${isActive ? "active" : ""}`}

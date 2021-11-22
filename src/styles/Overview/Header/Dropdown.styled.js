@@ -7,14 +7,14 @@ const Dropdown = styled.div`
 const DropdownList = styled.ul`
   z-index: 10;
   position: absolute;
-  display: flex;
   right: 0px;
+  display: flex;
   flex-direction: column;
   list-style: none;
   background: white;
   border-radius: 10px;
-  border: 1px solid black;
   padding: 4px;
+  box-shadow: 0px 0px 5px;
 `;
 
 export { Dropdown, DropdownList };

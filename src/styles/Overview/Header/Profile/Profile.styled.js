@@ -16,7 +16,7 @@ const ProfileListItem = styled.li`
   }
 
   & > button:hover {
-    background-color: gray;
+    background-color: lightgray;
   }
 `;
 
