@@ -10,15 +10,20 @@ const NotificationItem = (props) => {
   };
 
   return (
-    <NotificationListItem className={hasBeenRead ? "read" : ""}>
-      <button onClick={onReadHandler}>
+    <NotificationListItem>
+      <button onClick={onReadHandler} className={hasBeenRead ? "read" : ""}>
+        <div id="vertical">
+          <div className={`fill ${hasBeenRead ? "light" : ""}`}></div>
+        </div>
         <div className="icon">
           <img src={bulbIcon} alt="image" />
         </div>
         <div className="content">
           <div className="title">
             <div>
-              {props.room} ({props.room})
+              <span class="lead">
+                {props.room} ({props.room})
+              </span>
             </div>
             {props.date}
           </div>

@@ -1,10 +1,19 @@
 import styled from "styled-components";
 
 const NotificationListItem = styled.li`
-  z-index: 11;
+  & #vertical {
+    width: 10px;
+    min-height: 120px;
+    background-color: rgba(11, 123, 255, 1);
+    border-radius: 5px 0px 0px 5px;
 
-  .read {
-    background-color: white;
+    .fill {
+      width: 100%;
+      height: 100%;
+    }
+    .light {
+      background-color: red;
+    }
   }
 
   & > button {
@@ -14,11 +23,16 @@ const NotificationListItem = styled.li`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 7px;
     cursor: pointer;
 
-    &::hover {
-      background-color: red;
+    &.read {
+      background-color: white;
+    }
+
+    &:hover {
+      background-color: lightgray;
     }
 
     .icon {
@@ -32,6 +46,13 @@ const NotificationListItem = styled.li`
         display: flex;
         justify-content: space-between;
         padding: 10px 0px 5px 0px;
+
+        .lead {
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: -0.2px;
+        }
       }
 
       .message {

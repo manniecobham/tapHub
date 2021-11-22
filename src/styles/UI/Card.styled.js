@@ -25,6 +25,12 @@ const CardTitle = styled.h2`
 const CardContent = styled.div`
   background-color: ${(props) => props.backgroundColor};
 
+  .img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+
   .lead {
     font-size: 40px;
     font-weight: bold;
