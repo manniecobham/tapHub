@@ -84,7 +84,7 @@ const LineChart = ({ graphData }) => {
           options={lineChart.options}
           series={lineChart.series}
           type="area"
-          height={350}
+          height={450}
         />
       </div>
     </>
