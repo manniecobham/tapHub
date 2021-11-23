@@ -4,6 +4,12 @@ import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled
 import { NotificationDropdownContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
 import NotificationItem from "./NotificationItem";
 
+/*
+IMPORTANT:
+In the future, replace with an API call to update the backend that the notification has been read.
+The current structure for the notifications only works for initial API call.
+*/
+
 const NotificationsDropdown = (props) => {
   const context = useContext(Context);
   const userNotifications = context.userData.notifications;

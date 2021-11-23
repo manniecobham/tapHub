@@ -15,8 +15,15 @@ const NotificationItem = (props) => {
   return (
     <NotificationListItem>
       <button onClick={onReadHandler} className={hasBeenRead ? "read" : ""}>
-        <div id="vertical">
-          <div className={`fill ${hasBeenRead ? "light" : ""}`}></div>
+        <div
+          className="vertical"
+          style={{
+            backgroundColor: hasBeenRead
+              ? "rgba(11, 123, 255, 0.1)"
+              : "rgba(11, 123, 255, 1)",
+          }}
+        >
+          <div className={`fill`}></div>
         </div>
         <div className="icon">
           <img src={bulbIcon} alt="image" />
