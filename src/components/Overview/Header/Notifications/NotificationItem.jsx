@@ -32,7 +32,7 @@ const NotificationItem = (props) => {
           <div className="title">
             <div>
               <span className="lead">
-                {props.room} ({props.room})
+                {props.alertType} ({props.room})
               </span>
             </div>
             {props.date}
