@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import Context from "../../../../context/context";
 import bulbIcon from "../../../../images/Overview/bulbIcon.svg";
 import { NotificationListItem } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
 
 const NotificationItem = (props) => {
-  const [hasBeenRead, setHasBeenRead] = useState(false);
+  const context = useContext(Context);
+  const [hasBeenRead, setHasBeenRead] = useState(props.read);
 
   const onReadHandler = () => {
     setHasBeenRead(true);
+    props.readNotification(props.id);
   };
 
   return (
@@ -21,7 +24,7 @@ const NotificationItem = (props) => {
         <div className="content">
           <div className="title">
             <div>
-              <span class="lead">
+              <span className="lead">
                 {props.room} ({props.room})
               </span>
             </div>

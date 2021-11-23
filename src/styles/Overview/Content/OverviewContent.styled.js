@@ -42,6 +42,7 @@ const OverviewGrid = styled.div`
 
   .graph {
     grid-area: graph;
+    max-width: 1200px;
   }
 `;
 
