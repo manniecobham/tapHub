@@ -35,6 +35,7 @@ const jsonResponse = {
       light_wasted: 50,
       hc_wasted: 200,
     },
+    // I need a way of knowing if its 35% increase or decrease; how?
     relativeChange: {
       relChangeCo2: 35,
       relChangeLight: 6.5,
