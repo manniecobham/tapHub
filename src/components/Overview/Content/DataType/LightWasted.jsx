@@ -67,15 +67,23 @@ const LightWasted = (props) => {
       <CardContent>
         <p>
           <span className="lead">
-            {context["userData"]["location"]["metrics"]["light_wasted"]}
+            {
+              context["userData"]["devices"][0]["metrics"]["lightWasted"][
+                "avgHoursPerWk"
+              ]
+            }
           </span>{" "}
           hrs/wk
         </p>
       </CardContent>
       <CardFooter>
         <p>
-          {context["userData"]["location"]["relativeChange"]["relChangeLight"]}%
-          vs last week
+          {
+            context["userData"]["devices"][0]["metrics"]["lightWasted"][
+              "relChange"
+            ]
+          }
+          % vs last week
         </p>
         <img
           src={moreInfoIcon}
