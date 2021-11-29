@@ -74,10 +74,10 @@ const Location = (props) => {
       </CardHeader>
       <CardContent>
         {firstIconIsActive && (
-          <img src={instahubImage} alt="location" className="img" />
+          <img src={instaHubBuilding} alt="location" className="img" />
         )}
         {secondIconIsActive && (
-          <img src={instaHubBuilding} alt="location" className="img" />
+          <img src={instahubImage} alt="location" className="img" />
         )}
       </CardContent>
     </Card>

@@ -28,8 +28,8 @@ const CardContent = styled.div`
   color: rgba(119, 119, 119, 1);
 
   .img {
+    margin-top: 10px;
     width: 100%;
-    height: 90%;
     object-fit: cover;
   }
 
