@@ -28,9 +28,18 @@ const RoomsOccupied = (props) => {
       <CardContent>
         <p>
           <span className="lead">
-            {context["userData"]["location"]["metrics"]["rooms_occupied"]}
+            {
+              context["userData"]["devices"][0]["metrics"]["roomsOccupied"][
+                "currentOccupied"
+              ]
+            }
           </span>
-          /56
+          /{" "}
+          {
+            context["userData"]["devices"][0]["metrics"]["roomsOccupied"][
+              "totalDevices"
+            ]
+          }
         </p>
       </CardContent>
       <CardFooter>

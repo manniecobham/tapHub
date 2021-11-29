@@ -68,15 +68,23 @@ const CO2Reduction = (props) => {
       <CardContent>
         <p>
           <span className="lead">
-            {context["userData"]["location"]["metrics"]["co2_reduction"]}
+            {
+              context["userData"]["devices"][0]["metrics"]["co2Reduction"][
+                "avgLbsPerWk"
+              ]
+            }
           </span>
           lbs/wk
         </p>
       </CardContent>
       <CardFooter>
         <p>
-          {context["userData"]["location"]["relativeChange"]["relChangeCo2"]}%
-          vs last week
+          {
+            context["userData"]["devices"][0]["metrics"]["co2Reduction"][
+              "relChange"
+            ]
+          }
+          % vs last week
         </p>
         <img
           src={moreInfoIcon}

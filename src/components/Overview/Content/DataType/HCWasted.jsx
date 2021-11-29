@@ -68,15 +68,24 @@ const HCWasted = (props) => {
       <CardContent>
         <p>
           <span className="lead">
-            ${context["userData"]["location"]["metrics"]["hc_wasted"]}
+            ${" "}
+            {
+              context["userData"]["devices"][0]["metrics"]["hcWasted"][
+                "avgDollarsPerWk"
+              ]
+            }
           </span>
           /wk
         </p>
       </CardContent>
       <CardFooter>
         <p>
-          {context["userData"]["location"]["relativeChange"]["relChangeHC"]}% vs
-          last week
+          {
+            context["userData"]["devices"][0]["metrics"]["hcWasted"][
+              "relChange"
+            ]
+          }
+          % vs last week
         </p>
         <img
           src={moreInfoIcon}
