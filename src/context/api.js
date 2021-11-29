@@ -37,7 +37,7 @@ const jsonResponse = {
   devices: [
     {
       name: "InstaHub Office",
-      id: 23,
+      id: 1,
       metrics: {
         roomsOccupied: {
           currentOccupied: 3,

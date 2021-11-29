@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import { SidebarContentContainer, 
-        SidebarContentTop, 
-        SidebarText, 
-        SidebarContentBottom, 
-        SidebarRelativeChange 
-      } from '../GraphSidebar.styles'
+import React, { useContext } from "react";
+import {
+  SidebarContentContainer,
+  SidebarContentTop,
+  SidebarText,
+  SidebarContentBottom,
+  SidebarRelativeChange,
+} from "../GraphSidebar.styles";
 import Context from "../../../../context/context";
-
 
 const Humidity = () => {
   const context = useContext(Context);
@@ -14,18 +14,19 @@ const Humidity = () => {
   return (
     <SidebarContentContainer>
       <SidebarContentTop>
-        <SidebarText>
-          Humidity
-        </SidebarText>
-        <SidebarRelativeChange>
-          Comfort
-        </SidebarRelativeChange>
+        <SidebarText>Humidity</SidebarText>
+        <SidebarRelativeChange>Comfort</SidebarRelativeChange>
       </SidebarContentTop>
       <SidebarContentBottom>
-        {context["userData"]["location"]["metricAverages"]["humidity"]}%
+        {
+          context["userData"]["devices"][0]["metricAverages"]["humidity"][
+            "currAvg"
+          ]
+        }
+        %
       </SidebarContentBottom>
     </SidebarContentContainer>
-  )
-}
+  );
+};
 
-export default Humidity
+export default Humidity;
