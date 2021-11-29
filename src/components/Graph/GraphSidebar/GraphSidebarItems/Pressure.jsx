@@ -18,7 +18,12 @@ const Pressure = () => {
         <SidebarRelativeChange>Normal</SidebarRelativeChange>
       </SidebarContentTop>
       <SidebarContentBottom>
-        {context["userData"]["devices"][0]["metricAverages"]["currAvg"]}kPa
+        {
+          context["userData"]["devices"][0]["metricAverages"]["pressure"][
+            "currAvg"
+          ]
+        }
+        kPa
       </SidebarContentBottom>
     </SidebarContentContainer>
   );
