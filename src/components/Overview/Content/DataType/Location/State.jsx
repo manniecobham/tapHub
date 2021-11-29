@@ -8,7 +8,7 @@ const State = (props) => {
       <img
         src={locationIcon}
         alt="location"
-        style={{ width: "11px", height: "14px" }}
+        style={{ width: "11px", height: "14px", margin: "auto" }}
       />
       <p>{props.stateAbbr}</p>
     </StateContainer>
