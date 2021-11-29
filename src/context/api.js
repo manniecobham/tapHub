@@ -1,26 +1,33 @@
 const jsonResponse = {
   username: "testuser",
   userToken: "ewioehwuihiwuqh4wuih4wuih",
-  notifications: {
-    1: {
+  newNotifications: true,
+  notifications: [
+    {
+      id: 1,
       msg: "Room 105 has a consistent pattern of lighting waste in past 24 hours!",
       date: "Today - 6:28 PM",
       room: "Room 105",
       alertType: "Lighting Waste",
+      read: false,
     },
-    2: {
+    {
+      id: 2,
       msg: "Room 205 has a consistent pattern of H/C waste in past 24 hours!!",
       date: "Today - 6:28 PM",
       room: "Room 205",
       alertType: "H/C Waste",
+      read: false,
     },
-    3: {
+    {
+      id: 3,
       msg: "Room 305 is normal!",
       date: "Today - 6:28 PM",
       room: "Room 305",
       alertType: "C02 Reduction",
+      read: false,
     },
-  },
+  ],
   location: {
     metrics: {
       rooms_occupied: 10,
@@ -28,6 +35,7 @@ const jsonResponse = {
       light_wasted: 50,
       hc_wasted: 200,
     },
+    // I need a way of knowing if its 35% increase or decrease; how?
     relativeChange: {
       relChangeCo2: 35,
       relChangeLight: 6.5,

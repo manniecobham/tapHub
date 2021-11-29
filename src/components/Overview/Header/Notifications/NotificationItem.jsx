@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import Context from "../../../../context/context";
 import bulbIcon from "../../../../images/Overview/bulbIcon.svg";
 import { NotificationListItem } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
 
 const NotificationItem = (props) => {
-  const [hasBeenRead, setHasBeenRead] = useState(false);
+  const context = useContext(Context);
+  const [hasBeenRead, setHasBeenRead] = useState(props.read);
 
   const onReadHandler = () => {
     setHasBeenRead(true);
+    props.readNotification(props.id);
   };
 
   return (
     <NotificationListItem>
       <button onClick={onReadHandler} className={hasBeenRead ? "read" : ""}>
-        <div id="vertical">
-          <div className={`fill ${hasBeenRead ? "light" : ""}`}></div>
+        <div
+          className="vertical"
+          style={{
+            backgroundColor: hasBeenRead
+              ? "rgba(11, 123, 255, 0.1)"
+              : "rgba(11, 123, 255, 1)",
+          }}
+        >
+          <div className={`fill`}></div>
         </div>
         <div className="icon">
           <img src={bulbIcon} alt="image" />
@@ -21,8 +31,8 @@ const NotificationItem = (props) => {
         <div className="content">
           <div className="title">
             <div>
-              <span class="lead">
-                {props.room} ({props.room})
+              <span className="lead">
+                {props.alertType} ({props.room})
               </span>
             </div>
             {props.date}
