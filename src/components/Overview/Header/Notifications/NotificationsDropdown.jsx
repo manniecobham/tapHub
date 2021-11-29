@@ -8,6 +8,9 @@ import NotificationItem from "./NotificationItem";
 IMPORTANT:
 In the future, replace with an API call to update the backend that the notification has been read.
 The current structure for the notifications only works for initial API call.
+
+In future, when user clicks on notification, a post request is sent to update the notification
+in the backend that it has been read
 */
 
 const NotificationsDropdown = (props) => {
