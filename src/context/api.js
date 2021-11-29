@@ -28,27 +28,59 @@ const jsonResponse = {
       read: false,
     },
   ],
-  location: {
-    metrics: {
-      rooms_occupied: 10,
-      co2_reduction: 20,
-      light_wasted: 50,
-      hc_wasted: 200,
-    },
-    // I need a way of knowing if its 35% increase or decrease; how?
-    relativeChange: {
-      relChangeCo2: 35,
-      relChangeLight: 6.5,
-      relChangeHC: 12.6,
-    },
-    metricAverages: {
-      spaceUtilization: 52,
-      temperature: 68,
-      lightUsage: 60,
-      humidity: 40,
-      pressure: 101,
-    },
+  // Nov 29 For Backend: Don't worry about metric tooltip information for now
+  metricTooltipInformation: {
+    co2Reduction: "",
+    lightWasted: "",
+    co2Reduction: "",
   },
+  devices: [
+    {
+      name: "InstaHub Office",
+      id: 23,
+      metrics: {
+        roomsOccupied: {
+          currentOccupied: 3,
+          totalDevices: 52,
+        },
+        co2Reduction: {
+          avgLbsPerWk: 20,
+          relChange: 35,
+        },
+        lightWasted: {
+          avgHoursPerWk: 20,
+          relChange: 35,
+        },
+        hcWasted: {
+          avgDollarsPerWk: 20,
+          relChange: 35,
+        },
+      },
+      metricAverages: {
+        spaceUtilization: {
+          currPercentOccupied: 52,
+          relChangePerDay: 2.1,
+        },
+        temperature: {
+          currAvgTemp: 52,
+          relChangePerDay: 2.1,
+        },
+        lightUsage: {
+          // Clarify incoming units
+          currAvgMinPerMonth: 10,
+          relChangePerMonth: 2.1,
+        },
+        humidity: {
+          currAvg: 52,
+          comfortLevel: "Comfort",
+        },
+        pressure: {
+          currAvg: 52,
+          pressureLevel: "Normal",
+        },
+      },
+    },
+  ],
 };
 
 export default jsonResponse;
