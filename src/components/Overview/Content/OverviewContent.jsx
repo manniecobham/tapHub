@@ -13,6 +13,7 @@ const OverviewContent = () => {
   const bgColor = theme.colors.colorSecondaryWhite;
 
   return (
+    <>
     <OverviewGrid>
       <Location classes="location grid--item" />
       <RoomsOccupied classes="rooms grid--item grid--item_small" />
@@ -21,6 +22,7 @@ const OverviewContent = () => {
       <HCWasted classes="hcwaste grid--item grid--item_small" />
       <Graph classes="graph grid--item" />
     </OverviewGrid>
+    </>
   );
 };
 

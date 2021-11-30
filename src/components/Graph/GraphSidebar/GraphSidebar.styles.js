@@ -5,24 +5,22 @@ export const SidebarContainer = styled.div`
   flex-direction: column;
   width: 400px;
   height: 546px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 5px 0 20px 5px;
   overflow: auto;
   `
 
 export const SidebarContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background: lavender;
+  background: azure;
   height:100%;
   width:100%;
-  /* align-items: center; */
-  /* justify-content: center; */
-  padding-left: 30px;
-  border-bottom: 1px solid gray;
+  padding-left: 20px;
+  border-bottom: 1px solid lightgray;
+  /* border-right: 1px solid lightgray; */
   transition: background .2s ease-out;
   &:hover {
-    background: ivory;
+    background: white;
   }
 `
 
@@ -41,7 +39,7 @@ export const SidebarText = styled.span`
 
 export const SidebarRelativeChange = styled.span`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-right: 30px;
   background: lightgray;
   border-radius: 5px;
