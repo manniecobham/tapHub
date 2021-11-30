@@ -15,8 +15,6 @@ export const SidebarContentContainer = styled.div`
   background: azure;
   height:100%;
   width:100%;
-  /* align-items: center; */
-  /* justify-content: center; */
   padding-left: 20px;
   border-bottom: 1px solid lightgray;
   /* border-right: 1px solid lightgray; */
