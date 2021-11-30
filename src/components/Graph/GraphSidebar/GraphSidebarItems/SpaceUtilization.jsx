@@ -7,6 +7,7 @@ import {
   SidebarRelativeChange,
 } from "../GraphSidebar.styles";
 import Context from "../../../../context/context";
+import upPolygon from '../../../../images/Sidebar/upPolygon.svg'
 
 const SpaceUtilization = () => {
   const context = useContext(Context);
@@ -15,7 +16,10 @@ const SpaceUtilization = () => {
     <SidebarContentContainer>
       <SidebarContentTop>
         <SidebarText>Space Utilization</SidebarText>
-        <SidebarRelativeChange>2.1% dd/dd</SidebarRelativeChange>
+        <SidebarRelativeChange>
+          <img style={{width: "15px", paddingRight: "5px"}} src={upPolygon} alt="up" />
+          2.1% dd/dd
+        </SidebarRelativeChange>
       </SidebarContentTop>
       <SidebarContentBottom>
         {

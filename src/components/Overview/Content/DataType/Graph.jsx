@@ -34,7 +34,7 @@ const Graph = (props) => {
 
   return (
     <>
-    <Card style={{flexDirection: "row", justifyContent: "flex-start"}} backgroundColor={bgColor} className={`${props.classes}`}>
+    <Card style={{padding: "0", flexDirection: "row", justifyContent: "flex-start"}} backgroundColor={bgColor} className={`${props.classes}`}>
       <GraphSidebar />
       <GraphContainer>
         <GraphButton

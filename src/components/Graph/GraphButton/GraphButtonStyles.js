@@ -23,6 +23,7 @@ export const Button = styled.button`
   padding: 5px;
   margin: 2px;
   border-radius: 5px;
+  cursor: pointer;
 `;
 export const TimeDisplayContainer = styled.div`
   display: flex;
