@@ -20,7 +20,7 @@ const LineChart = ({ graphData }) => {
           show: false,
         },
       },
-      colors: ["#546E7A", "#E91E63"],
+      colors: ["#546E7A", "#E91E63", "#1ee9a5", "#321ee9", "#c44c3c", "#e91e1e", "#030303" ],
       dataLabels: {
         enabled: false,
       },

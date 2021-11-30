@@ -7,6 +7,7 @@ import {
   SidebarRelativeChange,
 } from "../GraphSidebar.styles";
 import Context from "../../../../context/context";
+import downPolygon from '../../../../images/Sidebar/downPolygon.svg'
 
 const Temperature = () => {
   const context = useContext(Context);
@@ -15,7 +16,10 @@ const Temperature = () => {
     <SidebarContentContainer>
       <SidebarContentTop>
         <SidebarText>Temperature</SidebarText>
-        <SidebarRelativeChange>11.1% dd/dd</SidebarRelativeChange>
+        <SidebarRelativeChange>
+          <img style={{width: "15px", paddingRight: "5px"}} src={downPolygon} alt="up" />
+          11.1% dd/dd
+        </SidebarRelativeChange>
       </SidebarContentTop>
       <SidebarContentBottom>
         {
