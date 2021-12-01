@@ -36,24 +36,24 @@ const jsonResponse = {
   },
   devices: [
     {
-      name: "InstaHub Office",
+      name: "Test Office",
       id: 1,
       metrics: {
         roomsOccupied: {
-          currentOccupied: 3,
-          totalDevices: 52,
+          currentOccupied: 99,
+          totalDevices: 99,
         },
         co2Reduction: {
-          avgLbsPerWk: 20,
-          relChange: 35,
+          avgLbsPerWk: 99,
+          relChange: 99,
         },
         lightWasted: {
-          avgHoursPerWk: 20,
-          relChange: 35,
+          avgHoursPerWk: 99,
+          relChange: 99,
         },
         hcWasted: {
-          avgDollarsPerWk: 20,
-          relChange: 35,
+          avgDollarsPerWk: 99,
+          relChange: 99,
         },
       },
       metricAverages: {

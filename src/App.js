@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles.styled";
 import globalTheme from "./styles/GlobalTheme";
@@ -16,39 +16,40 @@ import Context from "./context/context";
 import jsonResponse from "./context/api";
 
 function App() {
-  // let a = 0;
+  //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+  const [userData, setUserData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-  //   fetch("https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login", {
-  //     method: 'GET',
-  //     "username": "langyinan",
-  //     "password": "12261226Ll."
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://udd7rn11bi.execute-api.us-east-1.amazonaws.com/overview/json"
+      );
 
-  //   })
-  //   .then((response) => {
-  //     console.log(response);
-  //     a = response.headers
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   })
-  // <div className="App">
-  //   <AmplifySignOut />
-  //     <DashBoard>
-  //     </DashBoard>
-  // </div>
+      if (!response.ok) {
+        throw new Error("No data acquired");
+      }
 
-  const logoutHandler = () => {
-    return "HELLO WORLD";
-  };
+      const responseData = await response.json();
 
-  const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
-  const [userData, setUserData] = useState(jsonResponse);
+      console.log(JSON.stringify(responseData.body));
+      setUserData(responseData.body);
+      setIsLoading(false);
+    };
+
+    fetchData().catch((error) => {
+      setIsLoading(false);
+      // setHttpError(error.message);
+    });
+  }, []);
+
+  if (isLoading) {
+    return <p>Loading the app{isLoading}</p>;
+  }
 
   return (
     <Context.Provider
       value={{
-        isLoggedIn: userIsLoggedIn,
-        onLogout: logoutHandler,
         userData: userData,
       }}
     >
@@ -69,3 +70,24 @@ function App() {
 
 //export default withAuthenticator(App);
 export default App;
+
+// let a = 0;
+
+//   fetch("https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login", {
+//     method: 'GET',
+//     "username": "langyinan",
+//     "password": "12261226Ll."
+
+//   })
+//   .then((response) => {
+//     console.log(response);
+//     a = response.headers
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+// <div className="App">
+//   <AmplifySignOut />
+//     <DashBoard>
+//     </DashBoard>
+// </div>
