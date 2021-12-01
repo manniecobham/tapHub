@@ -5,8 +5,9 @@ import AnalyticsDashboard from "../components/Analytics/AnalyticsDashboard";
 const Analytics = () => {
   return (
     <React.Fragment>
-      <Sidebar />
+      <Sidebar id="left" />
       <div
+        id="right"
         style={{ width: "100vw", height: "100vh", background: "yellow" }}
       ></div>
     </React.Fragment>

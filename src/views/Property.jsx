@@ -5,8 +5,11 @@ import AnalyticsDashboard from "../components/Analytics/AnalyticsDashboard";
 const Property = () => {
   return (
     <React.Fragment>
-      <Sidebar />
-      <div style={{ width: "100vw", height: "100vh", background: "red" }}></div>
+      <Sidebar id="left" />
+      <div
+        id="right"
+        style={{ width: "100vw", height: "100vh", background: "red" }}
+      ></div>
     </React.Fragment>
   );
 };
