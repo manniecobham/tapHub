@@ -15,61 +15,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
 import jsonResponse from "./context/api";
 
-const initialState = {
-  overview: "inactive",
-  analytics: "inactive",
-  reports: "inactive",
-  sensors: "inactive",
-  property: "inactive",
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "overview":
-      return {
-        overview: "active",
-        analytics: "inactive",
-        reports: "inactive",
-        sensors: "inactive",
-        property: "inactive",
-      };
-    case "analytics":
-      return {
-        overview: "inactive",
-        analytics: "active",
-        reports: "inactive",
-        sensors: "inactive",
-        property: "inactive",
-      };
-    case "reports":
-      return {
-        overview: "inactive",
-        analytics: "inactive",
-        reports: "active",
-        sensors: "inactive",
-        property: "inactive",
-      };
-    case "sensors":
-      return {
-        overview: "inactive",
-        analytics: "inactive",
-        reports: "inactive",
-        sensors: "active",
-        property: "inactive",
-      };
-    case "property":
-      return {
-        overview: "inactive",
-        analytics: "inactive",
-        reports: "inactive",
-        sensors: "inactive",
-        property: "active",
-      };
-    default:
-      console.log(action);
-  }
-};
-
 function App() {
   // let a = 0;
 
@@ -92,8 +37,6 @@ function App() {
   //     </DashBoard>
   // </div>
 
-  const [activePages, dispatchActivePages] = useReducer(reducer, initialState);
-
   const logoutHandler = () => {
     return "HELLO WORLD";
   };
@@ -107,8 +50,6 @@ function App() {
         isLoggedIn: userIsLoggedIn,
         onLogout: logoutHandler,
         userData: userData,
-        activePages: activePages,
-        dispatchActivePages: dispatchActivePages,
       }}
     >
       <ThemeProvider theme={globalTheme}>

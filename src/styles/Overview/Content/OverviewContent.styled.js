@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const OverviewGrid = styled.div`
-  max-width: 1024px;
+  /* max-width: 1024px; */
   margin-top: 20px;
   display: grid;
   gap: 30px;
@@ -15,12 +15,12 @@ const OverviewGrid = styled.div`
   }
 
   .grid--item_small {
-    min-width: 258px;
+    /* min-width: 258px; */
   }
 
   .location {
     grid-area: location;
-    min-width: 546px;
+    /* min-width: 546px; */
   }
 
   .rooms {
@@ -41,7 +41,7 @@ const OverviewGrid = styled.div`
 
   .graph {
     grid-area: graph;
-    max-width: 1200px;
+    /* max-width: 1200px; */
   }
 `;
 

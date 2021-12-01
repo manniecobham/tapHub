@@ -1,5 +1,6 @@
 const theme = {
   colors: {
+    // change this to titleColor, headerColor, etc...
     colorPrimaryDarkBlue: "rgb(15, 21, 68)",
     colorPrimaryNeutralBlue: "rgb(58, 136, 227)",
     colorPrimaryLightGray: "rgb(212, 212, 212)",
@@ -15,6 +16,8 @@ const theme = {
     colorHeader: "rgba(160, 168, 177, 1)",
   },
   typography: {
+    // What does each property belong to?
+    // What would a mainHeader, subHeader refer to, etc...
     mainHeaderSize: "36px",
     titleSize: "28px",
     headerSize: "20px",
@@ -23,7 +26,6 @@ const theme = {
     captionSize: "12px",
     footerSize: "12px",
   },
-  images: {},
   deviceWidths: {
     desktopWidth: "1440px",
     laptopWidth: "1024px",

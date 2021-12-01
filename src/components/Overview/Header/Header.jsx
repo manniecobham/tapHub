@@ -18,9 +18,6 @@ const Header = () => {
         <h2>November 16, 2021</h2>
       </HeaderItem>
       <HeaderItem headerColor={headerColor}>
-        <h2>InstaHub Distribution Center</h2>
-      </HeaderItem>
-      <HeaderItem headerColor={headerColor}>
         <SearchBar />
       </HeaderItem>
       <HeaderItem headerColor={headerColor}>

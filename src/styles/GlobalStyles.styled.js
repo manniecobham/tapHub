@@ -9,28 +9,45 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  html {
+    height: 100%;
+  }
+
   body {
-    /*background: white;*/
+    height: 100%;
     color: ${(props) => props.theme.colors.colorPrimaryDarkBlue};
+    background-color: ${(props) => props.theme.colors.colorNeutralLight};
     font-size: 1.15em;
     font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+    p {
+      line-height: 1.5;
+    }
+    
+    img {
+      max-width: 100%;
+    }
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+    }
+
+    #root {
+      display: flex;
+      #left {
+        flex-shrink: 0;
+      }
+      #right {
+        flex-grow: 2;
+      }
+    }
   }
 
-  p {
-    line-height: 1.5;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-  }
 `;
 
 export default GlobalStyles;
+
+/* -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale; */
