@@ -1,51 +1,53 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 546px;
-  margin: 5px 0 20px 5px;
+  /* width: 400px;
+  height: 546px; */
+  height: 100%;
+  margin: 0;
+  border: 4px solid white;
+  border-radius: 10px;
   overflow: auto;
-  `
+`;
 
 export const SidebarContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background: azure;
-  height:100%;
-  width:100%;
-  padding-left: 20px;
+  padding: 10px;
+  background: rgba(242, 242, 242, 1);
+  height: 100%;
+  width: 100%;
   border-bottom: 1px solid lightgray;
   /* border-right: 1px solid lightgray; */
-  transition: background .2s ease-out;
+  transition: background 0.2s ease-out;
   &:hover {
     background: white;
   }
-`
+`;
 
 export const SidebarContentTop = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
   justify-content: space-between;
-`
+`;
 
 export const SidebarText = styled.span`
   display: flex;
   flex-direction: column;
   color: darkslategray;
-`
+  margin-right: 30px;
+`;
 
 export const SidebarRelativeChange = styled.span`
   display: flex;
   flex-direction: row;
-  margin-right: 30px;
   background: lightgray;
   border-radius: 5px;
   padding: 2px 10px 2px 10px;
   color: darkslategray;
-`
+`;
 
 export const SidebarContentBottom = styled.div`
   display: flex;
@@ -53,4 +55,4 @@ export const SidebarContentBottom = styled.div`
   font-size: 32px;
   font-weight: 600;
   color: black;
-`
+`;
