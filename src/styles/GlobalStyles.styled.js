@@ -43,6 +43,16 @@ const GlobalStyles = createGlobalStyle`
         flex-grow: 2;
       }
     }
+
+    @media (max-width: 768px) {
+      #root {
+        flex-direction: column;
+        #right {
+          height: 80%;
+        }
+      }
+    }
+
   }
 
 `;

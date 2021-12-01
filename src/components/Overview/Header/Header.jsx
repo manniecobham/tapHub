@@ -15,12 +15,10 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderItem headerColor={headerColor} class="header__left-content">
-        <h2>November 16, 2021</h2>
+        <h2>August 14</h2>
       </HeaderItem>
       <div class="header__right-content">
-        <HeaderItem headerColor={headerColor}>
-          <SearchBar />
-        </HeaderItem>
+        <SearchBar />
         <HeaderItem headerColor={headerColor}>
           <Notifications />
         </HeaderItem>

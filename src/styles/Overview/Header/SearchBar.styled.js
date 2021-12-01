@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SearchForm = styled.form`
-  width: 516px;
+  min-width: 400px;
   display: flex;
   & > input[type="text"] {
     width: 90%;

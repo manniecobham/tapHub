@@ -43,6 +43,14 @@ const OverviewGrid = styled.div`
     grid-area: graph;
     /* max-width: 1200px; */
   }
+
+  @media (max-width: 768px) {
+    grid-template-areas:
+      "location location"
+      "rooms co2"
+      "lightwaste hcwaste"
+      "graph graph";
+  }
 `;
 
 export { OverviewGrid };

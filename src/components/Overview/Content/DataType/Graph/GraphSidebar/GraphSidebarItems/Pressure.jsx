@@ -5,8 +5,8 @@ import {
   SidebarText,
   SidebarContentBottom,
   SidebarRelativeChange,
-} from "../GraphSidebar.styles";
-import Context from "../../../../context/context";
+} from "../../../../../../../styles/Overview/Content/DataType/Graph.styled";
+import Context from "../../../../../../../context/context";
 
 const Pressure = () => {
   const context = useContext(Context);

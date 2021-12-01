@@ -14,6 +14,9 @@ const HeaderContainer = styled.div`
     gap: 30px;
     align-items: center;
     justify-content: space-around;
+    & > * {
+      flex-shrink: 0;
+    }
   }
 `;
 

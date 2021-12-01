@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import GraphButton from "./GraphButton/GraphButton";
 
 const HeatMap = ({ graphData, isShown }) => {
   const initialState = {

@@ -43,9 +43,10 @@ const SideNav = styled.nav`
 
         &:first-child {
           margin: 1rem 0 0 0;
+          flex-shrink: 0;
 
           & img {
-            width: 2.5rem;
+            width: 2rem;
           }
         }
 
@@ -99,6 +100,27 @@ const SideNav = styled.nav`
   &.nav--closed .nav__list-item img#line {
     width: 20px;
     height: 5px;
+  }
+
+  @media (max-width: 768px) {
+    &.nav {
+      width: 100%;
+      height: 20%;
+      .nav__expand {
+        display: none;
+      }
+      .nav__list {
+        flex-direction: row;
+        &-item {
+          &:first-child {
+            margin: 0;
+          }
+        }
+        .nav__list-item--disabled {
+          display: none;
+        }
+      }
+    }
   }
 `;
 
