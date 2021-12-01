@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+const NotificationContainer = styled.div`
+  position: relative;
+  .notification__new--alert {
+    fill: lightblue;
+    position: absolute;
+    top: 0;
+    right: -5px;
+  }
+`;
+
 const NotificationListItem = styled.li`
   & > button {
     border: none;
@@ -80,4 +90,8 @@ const NotificationDropdownContainer = styled.div`
   }
 `;
 
-export { NotificationListItem, NotificationDropdownContainer };
+export {
+  NotificationContainer,
+  NotificationListItem,
+  NotificationDropdownContainer,
+};
