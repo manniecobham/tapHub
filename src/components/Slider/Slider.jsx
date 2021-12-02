@@ -4,7 +4,6 @@ import {
   Circle,
   Container,
   DotContainer,
-  HighlightedCircle,
   Slide,
   TextContainer,
   TitleContainer,
@@ -43,30 +42,30 @@ const Slider = () => {
     };
   }, [slideIndex]);
 
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length - 1);
-      console.log(slideIndex);
-    } else {
-      setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
-      console.log(slideIndex);
-    }
-  };
+  // const handleClick = (direction) => {
+  //   if (direction === "left") {
+  //     setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length - 1);
+  //     console.log(slideIndex);
+  //   } else {
+  //     setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
+  //     console.log(slideIndex);
+  //   }
+  // };
 
   return (
     <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}></Arrow>
+      {/* <Arrow direction="left" onClick={() => handleClick("left")}></Arrow> */}
       <Wrapper slideIndex={slideIndex}>{SliderItems}</Wrapper>
       <DotContainer>
-        {sliderItems.map((_, index) => {
+        {/* <Circle></Circle> */}
+        {sliderItems.map((_, index) => (
           <Circle
             key={index}
-            className={slideIndex == index ? "active" : ""}
-          ></Circle>;
-        })}
+            className={slideIndex === index ? "active" : ""}
+          ></Circle>
+        ))}
       </DotContainer>
-
-      <Arrow direction="right" onClick={() => handleClick("right")}></Arrow>
+      {/* <Arrow direction="right" onClick={() => handleClick("right")}></Arrow> */}
     </Container>
   );
 };

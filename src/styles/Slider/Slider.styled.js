@@ -68,13 +68,6 @@ export const DotContainer = styled.div`
   transform: translateX(-50%);
   display: flex;
 `;
-export const HighlightedCircle = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 0 5px;
-  background: white;
-`;
 
 export const Circle = styled.div`
   width: 20px;
@@ -83,7 +76,7 @@ export const Circle = styled.div`
   margin: 0 5px;
   background: gray;
 
-  .active {
+  &.active {
     background: white;
   }
 `;
