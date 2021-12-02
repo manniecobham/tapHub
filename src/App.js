@@ -34,7 +34,10 @@ function App() {
 
       console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
-      setIsLoading(false);
+      //setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 5000);
     };
 
     fetchData().catch((error) => {
@@ -43,9 +46,11 @@ function App() {
     });
   }, []);
 
-  if (isLoading) {
-    return <p>Loading the app{isLoading}</p>;
-  }
+  const loadingSpinner = (
+    <div className="lds-circle">
+      <div></div>
+    </div>
+  );
 
   return (
     <Context.Provider
@@ -55,14 +60,18 @@ function App() {
     >
       <ThemeProvider theme={globalTheme}>
         <GlobalStyles />
-        <Routes>
-          <Route path="/overview" element={<Overview />} />
-          <Route path="/" element={<Navigate replace to="/overview" />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/sensors" element={<Sensors />} />
-          <Route path="/property" element={<Property />} />
-        </Routes>
+        {isLoading ? (
+          loadingSpinner
+        ) : (
+          <Routes>
+            <Route path="/overview" element={<Overview />} />
+            <Route path="/" element={<Navigate replace to="/overview" />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/sensors" element={<Sensors />} />
+            <Route path="/property" element={<Property />} />
+          </Routes>
+        )}
       </ThemeProvider>
     </Context.Provider>
   );

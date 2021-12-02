@@ -1,3 +1,4 @@
+// Used for dummy data. Not needed once api calls are implemented.
 const jsonResponse = {
   username: "testuser",
   userToken: "ewioehwuihiwuqh4wuih4wuih",
