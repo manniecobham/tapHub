@@ -66,7 +66,7 @@ function App() {
           loadingSpinner
         ) : (
           <Routes>
-            <Route path="/overview" element={<Login />} />
+            <Route path="/overview" element={<Overview />} />
             <Route path="/" element={<Navigate replace to="/overview" />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/reports" element={<Reports />} />
