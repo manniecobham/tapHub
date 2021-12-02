@@ -15,6 +15,10 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
 import jsonResponse from "./context/api";
 
+import Slider from "./components/Slider/Slider";
+import LoginComponent from './components/LoginComponent/LoginComponent';
+import Login from './views/Login'
+
 const initialState = {
   overview: "inactive",
   analytics: "inactive",
@@ -114,7 +118,8 @@ function App() {
       <ThemeProvider theme={globalTheme}>
         <GlobalStyles />
         <Routes>
-          <Route path="/overview" element={<Overview />} />
+          <Route path="/overview" element={<Login />} />
+          {/* <Route path="/overview" element={<Overview />} /> */}
           <Route path="/" element={<Navigate replace to="/overview" />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/reports" element={<Reports />} />
