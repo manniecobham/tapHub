@@ -50,6 +50,25 @@ const CardFooter = styled.div`
   justify-content: space-between;
   align-items: center;
   color: rgba(119, 119, 119, 1);
+
+  .relative-change {
+    display: flex;
+    gap: 7px;
+
+    span {
+      margin-right: 2px;
+    }
+
+    &--active {
+      & img {
+        filter: invert(45%) sepia(58%) saturate(1942%) hue-rotate(193deg)
+          brightness(95%) contrast(87%);
+      }
+      & p span {
+        color: #3a88e3;
+      }
+    }
+  }
 `;
 
 export { Card, CardHeader, CardTitle, CardContent, CardFooter };
