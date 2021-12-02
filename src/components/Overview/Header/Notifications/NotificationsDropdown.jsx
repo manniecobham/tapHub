@@ -1,8 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import Context from "../../../../context/context";
+import a from "../../../../";
 import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
 import { NotificationDropdownContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
 import NotificationItem from "./NotificationItem";
+import selectionDropdownIcon from "../../../../images/Overview/selectionDropdownIcon.svg";
+import SpaceSelectionDropdown from "../../../../styles/Overview/Content/DataType/Location/SpaceSelectionDropdown";
+import Button from "../../../../styles/UI/Button.styled";
+import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
+import {
+  SpaceSelectionContainer,
+  SpaceSelectionDropdownContainer,
+} from "../../../../styles/Overview/Content/DataType/Location/Location.styled";
 
 /*
 IMPORTANT:
@@ -35,6 +44,7 @@ const NotificationsDropdown = (props) => {
   for (const notification of userNotifications) {
     Notifications.push(
       <NotificationItem
+        tem
         key={notification.id}
         id={notification.id}
         message={notification.msg}
@@ -47,9 +57,47 @@ const NotificationsDropdown = (props) => {
     );
   }
 
+  const ref = useRef();
+  const [spaceDropdownIsShown, setSpaceDropdownIsShown] = useState(false);
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (
+        spaceDropdownIsShown &&
+        ref.current &&
+        !ref.current.contains(e.target)
+      ) {
+        setSpaceDropdownIsShown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [spaceDropdownIsShown]);
+
+  const onSpaceSelectionClick = () => {
+    setSpaceDropdownIsShown((prevState) => {
+      return !prevState;
+    });
+  };
+
   return (
     <NotificationDropdownContainer>
-      <h3>InstaHub Building</h3>
+      <SpaceSelectionContainer ref={ref}>
+        <Button onClick={onSpaceSelectionClick}>
+          <h2>InstaHub Office</h2>
+          <img className={``} src={selectionDropdownIcon} alt="^" />
+        </Button>
+        <Dropdown>
+          {spaceDropdownIsShown && <SpaceSelectionDropdown />}
+        </Dropdown>
+      </SpaceSelectionContainer>
       <hr />
       <ul>{Notifications}</ul>
     </NotificationDropdownContainer>
