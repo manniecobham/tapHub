@@ -29,8 +29,8 @@ const GraphContainer = styled.div`
 const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 400px;
-  height: 546px; */
+  /* width: 20%; */
+  /* height: 546px; */
   height: 100%;
   margin: 0;
   border: 4px solid white;
@@ -47,7 +47,7 @@ const SidebarContainer = styled.div`
 const SidebarContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px 10px;
+  padding: 20px 20px;
   background: rgba(242, 242, 242, 1);
   height: 100%;
   width: 100%;
@@ -100,7 +100,7 @@ const SidebarRelativeChange = styled.span`
 const SidebarContentBottom = styled.div`
   display: flex;
   padding-top: 5px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
   color: black;
 `;

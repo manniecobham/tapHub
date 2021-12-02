@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
+import Heat_Icon from '../../../../../../images/Overview/gridicon.svg';
+import Line_Icon from "../../../../../../images/Overview/Vector.svg";
 
 // styles
 import {
+  Container,
   Button,
   ButtonContainer,
   GraphNav,
   TimeDisplay,
   TimeDisplayContainer,
+  IconImageContainer,
+  Icon,
+  RelativeChange,
 } from "./GraphButtonStyles";
 
 const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
@@ -94,10 +100,12 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
 
   return (
     <>
+    <Container>
+      <TimeDisplayContainer>
+        <TimeDisplay>{timeFrame} Trends of Instahub Office</TimeDisplay>
+        {/* <RelativeChange>hello</RelativeChange> */}
+      </TimeDisplayContainer>
       <GraphNav>
-        <TimeDisplayContainer>
-          <TimeDisplay>{timeFrame} Trends</TimeDisplay>
-        </TimeDisplayContainer>
 
         <ButtonContainer>
           <Button
@@ -105,18 +113,23 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
             background={buttonColorLine}
             color={colorLine}
           >
-            Line
+            <IconImageContainer>
+              <Icon className="icon" src={Line_Icon} alt="Line" />
+            </IconImageContainer>
           </Button>
           <Button
             onClick={onClickHeat}
             background={buttonColorHeat}
             color={colorHeat}
           >
-            Heat
+            <IconImageContainer>
+              <Icon className="icon" src={Heat_Icon} alt="Heat" />
+            </IconImageContainer>
           </Button>
         </ButtonContainer>
 
         <ButtonContainer>
+          
           <Button
             onClick={onClickDay}
             background={buttonColorDay}
@@ -140,6 +153,7 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
           </Button>
         </ButtonContainer>
       </GraphNav>
+    </Container>
     </>
   );
 };
