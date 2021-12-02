@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles.styled";
 import globalTheme from "./styles/GlobalTheme";
@@ -15,117 +15,65 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
 import jsonResponse from "./context/api";
 
-import Slider from "./components/Slider/Slider";
-import LoginComponent from './components/LoginComponent/LoginComponent';
-import Login from './views/Login'
-
-const initialState = {
-  overview: "inactive",
-  analytics: "inactive",
-  reports: "inactive",
-  sensors: "inactive",
-  property: "inactive",
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "overview":
-      return {
-        overview: "active",
-        analytics: "inactive",
-        reports: "inactive",
-        sensors: "inactive",
-        property: "inactive",
-      };
-    case "analytics":
-      return {
-        overview: "inactive",
-        analytics: "active",
-        reports: "inactive",
-        sensors: "inactive",
-        property: "inactive",
-      };
-    case "reports":
-      return {
-        overview: "inactive",
-        analytics: "inactive",
-        reports: "active",
-        sensors: "inactive",
-        property: "inactive",
-      };
-    case "sensors":
-      return {
-        overview: "inactive",
-        analytics: "inactive",
-        reports: "inactive",
-        sensors: "active",
-        property: "inactive",
-      };
-    case "property":
-      return {
-        overview: "inactive",
-        analytics: "inactive",
-        reports: "inactive",
-        sensors: "inactive",
-        property: "active",
-      };
-    default:
-      console.log(action);
-  }
-};
+import Login from "./views/Login";
 
 function App() {
-  // let a = 0;
+  //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+  const [userData, setUserData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-  //   fetch("https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login", {
-  //     method: 'GET',
-  //     "username": "langyinan",
-  //     "password": "12261226Ll."
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://udd7rn11bi.execute-api.us-east-1.amazonaws.com/overview/json"
+      );
 
-  //   })
-  //   .then((response) => {
-  //     console.log(response);
-  //     a = response.headers
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   })
-  // <div className="App">
-  //   <AmplifySignOut />
-  //     <DashBoard>
-  //     </DashBoard>
-  // </div>
+      if (!response.ok) {
+        throw new Error("No data acquired");
+      }
 
-  const [activePages, dispatchActivePages] = useReducer(reducer, initialState);
+      const responseData = await response.json();
 
-  const logoutHandler = () => {
-    return "HELLO WORLD";
-  };
+      console.log(JSON.stringify(responseData.body));
+      setUserData(responseData.body);
+      //setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 5000);
+    };
 
-  const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
-  const [userData, setUserData] = useState(jsonResponse);
+    fetchData().catch((error) => {
+      setIsLoading(false);
+      // setHttpError(error.message);
+    });
+  }, []);
+
+  const loadingSpinner = (
+    <div className="lds-circle">
+      <div></div>
+    </div>
+  );
 
   return (
     <Context.Provider
       value={{
-        isLoggedIn: userIsLoggedIn,
-        onLogout: logoutHandler,
         userData: userData,
-        activePages: activePages,
-        dispatchActivePages: dispatchActivePages,
       }}
     >
       <ThemeProvider theme={globalTheme}>
         <GlobalStyles />
-        <Routes>
-          <Route path="/overview" element={<Login />} />
-          {/* <Route path="/overview" element={<Overview />} /> */}
-          <Route path="/" element={<Navigate replace to="/overview" />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/sensors" element={<Sensors />} />
-          <Route path="/property" element={<Property />} />
-        </Routes>
+        {isLoading ? (
+          loadingSpinner
+        ) : (
+          <Routes>
+            <Route path="/overview" element={<Overview />} />
+            <Route path="/" element={<Navigate replace to="/overview" />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/sensors" element={<Sensors />} />
+            <Route path="/property" element={<Property />} />
+          </Routes>
+        )}
       </ThemeProvider>
     </Context.Provider>
   );
@@ -133,3 +81,24 @@ function App() {
 
 //export default withAuthenticator(App);
 export default App;
+
+// let a = 0;
+
+//   fetch("https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login", {
+//     method: 'GET',
+//     "username": "langyinan",
+//     "password": "12261226Ll."
+
+//   })
+//   .then((response) => {
+//     console.log(response);
+//     a = response.headers
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+// <div className="App">
+//   <AmplifySignOut />
+//     <DashBoard>
+//     </DashBoard>
+// </div>

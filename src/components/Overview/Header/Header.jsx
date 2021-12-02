@@ -14,21 +14,18 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <HeaderItem headerColor={headerColor}>
-        <h2>November 16, 2021</h2>
+      <HeaderItem headerColor={headerColor} class="header__left-content">
+        <h2>August 14</h2>
       </HeaderItem>
-      <HeaderItem headerColor={headerColor}>
-        <h2>InstaHub Distribution Center</h2>
-      </HeaderItem>
-      <HeaderItem headerColor={headerColor}>
+      <div class="header__right-content">
         <SearchBar />
-      </HeaderItem>
-      <HeaderItem headerColor={headerColor}>
-        <Notifications />
-      </HeaderItem>
-      <HeaderItem headerColor={headerColor}>
-        <Profile />
-      </HeaderItem>
+        <HeaderItem headerColor={headerColor}>
+          <Notifications />
+        </HeaderItem>
+        <HeaderItem headerColor={headerColor}>
+          <Profile />
+        </HeaderItem>
+      </div>
     </HeaderContainer>
   );
 };

@@ -5,28 +5,28 @@ import {
   SidebarText,
   SidebarContentBottom,
   SidebarRelativeChange,
-} from "../GraphSidebar.styles";
-import Context from "../../../../context/context";
+} from "../../../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
+import Context from "../../../../../../../context/context";
 
-const Pressure = () => {
+const Humidity = () => {
   const context = useContext(Context);
 
   return (
     <SidebarContentContainer>
       <SidebarContentTop>
-        <SidebarText>Pressure</SidebarText>
-        <SidebarRelativeChange>Normal</SidebarRelativeChange>
+        <SidebarText>Humidity</SidebarText>
+        <SidebarRelativeChange>Comfort</SidebarRelativeChange>
       </SidebarContentTop>
       <SidebarContentBottom>
         {
-          context["userData"]["devices"][0]["metricAverages"]["pressure"][
+          context["userData"]["devices"][0]["metricAverages"]["humidity"][
             "currAvg"
           ]
         }
-        kPa
+        %
       </SidebarContentBottom>
     </SidebarContentContainer>
   );
 };
 
-export default Pressure;
+export default Humidity;

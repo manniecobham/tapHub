@@ -4,14 +4,11 @@ import Header from "./Header/Header";
 import OverviewContent from "./Content/OverviewContent";
 import Container from "../../styles/UI/Container.styled.js";
 
-const OverviewDashboard = () => {
+const OverviewDashboard = (props) => {
   const theme = useTheme();
 
   return (
-    <Container
-      width={theme.deviceWidths.desktopWidth}
-      backgroundColor={theme.colors.colorNeutralLight}
-    >
+    <Container id={props.id}>
       <Header />
       <OverviewContent />
     </Container>

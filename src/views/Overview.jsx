@@ -5,8 +5,8 @@ import Sidebar from "../components/Sidebar/Sidebar";
 const Overview = (props) => {
   return (
     <React.Fragment>
-      <Sidebar />
-      <OverviewDashboard />
+      <Sidebar id="left" />
+      <OverviewDashboard id="right" />
     </React.Fragment>
   );
 };

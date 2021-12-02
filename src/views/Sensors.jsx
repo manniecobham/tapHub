@@ -5,8 +5,9 @@ import AnalyticsDashboard from "../components/Analytics/AnalyticsDashboard";
 const Sensors = () => {
   return (
     <React.Fragment>
-      <Sidebar />
+      <Sidebar id="left" />
       <div
+        id="right"
         style={{ width: "100vw", height: "100vh", background: "green" }}
       ></div>
     </React.Fragment>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import GraphButton from "./GraphButton/GraphButton";
 
 const LineChart = ({ graphData }) => {
   const initialState = {
@@ -20,7 +19,15 @@ const LineChart = ({ graphData }) => {
           show: false,
         },
       },
-      colors: ["#546E7A", "#E91E63", "#1ee9a5", "#321ee9", "#c44c3c", "#e91e1e", "#030303" ],
+      colors: [
+        "#546E7A",
+        "#E91E63",
+        "#1ee9a5",
+        "#321ee9",
+        "#c44c3c",
+        "#e91e1e",
+        "#030303",
+      ],
       dataLabels: {
         enabled: false,
       },
