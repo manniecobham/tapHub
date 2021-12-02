@@ -11,19 +11,20 @@ const SideNav = styled.nav`
       position: absolute;
       width: 1.7rem;
       height: 1.7rem;
-      filter: invert(100%) sepia(16%) saturate(2%) hue-rotate(43deg)
-        brightness(110%) contrast(100%);
+      /* filter: invert(100%) sepia(16%) saturate(2%) hue-rotate(43deg)
+        brightness(110%) contrast(100%); */
+      background-color: white;
+      padding: 2px;
       border-radius: 50%;
-      right: 0rem;
-      top: 1%;
+      right: 40%;
+      top: 90%;
       z-index: 100;
       cursor: pointer;
       transform: rotateZ(-180deg);
       transition: transform 200ms ease-in-out;
 
       &:hover {
-        filter: invert(7%) sepia(100%) saturate(6882%) hue-rotate(247deg)
-          brightness(116%) contrast(145%);
+        background-color: lightgray;
         box-shadow: 0px 0px 10px rgba(15, 21, 68, 1);
       }
     }
