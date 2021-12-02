@@ -39,7 +39,7 @@ function App() {
       //setIsLoading(false);
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000);
+      }, 2000);
     };
 
     fetchData().catch((error) => {
@@ -68,6 +68,7 @@ function App() {
           <Routes>
             <Route path="/overview" element={<Overview />} />
             <Route path="/" element={<Navigate replace to="/overview" />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/sensors" element={<Sensors />} />
