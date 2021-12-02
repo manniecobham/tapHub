@@ -75,9 +75,7 @@ const Location = (props) => {
   return (
     <Card
       backgroundColor={
-        firstIconIsActive && !secondIconIsActive
-          ? bgColor
-          : theme.colors.colorPrimaryNeutralBlue
+        firstIconIsActive && !secondIconIsActive ? bgColor : "azure"
       }
       className={`${props.classes}`}
     >

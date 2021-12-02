@@ -18,7 +18,9 @@ const CardHeader = styled.div`
 `;
 
 const CardTitle = styled.h2`
-  font-size: ${(props) => props.titleSize};
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 21px;
   letter-spacing: 0.4px;
 `;

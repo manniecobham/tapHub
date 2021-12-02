@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 const SpaceSelectionContainer = styled.div`
   & button {
-    background-color: white;
+    background-color: inherit;
 
     & > h2 {
       margin-right: 10px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 0.4px;
     }
   }
 `;

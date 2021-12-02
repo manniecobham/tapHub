@@ -59,6 +59,9 @@ export const TimeDisplayContainer = styled.div`
 
 export const TimeDisplay = styled.span`
   font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  line-height: 22px;
 `;
 
 export const RelativeChange = styled.div``;
