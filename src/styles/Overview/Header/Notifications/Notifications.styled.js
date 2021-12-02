@@ -1,7 +1,18 @@
 import styled from "styled-components";
 
+const NotificationContainer = styled.div`
+  position: relative;
+  .notification__new--alert {
+    fill: lightblue;
+    position: absolute;
+    top: 0;
+    right: -5px;
+  }
+`;
+
 const NotificationListItem = styled.li`
   & > button {
+    padding-right: 18px;
     border: none;
     background: rgba(11, 123, 255, 0.05);
     border-radius: 5px;
@@ -69,7 +80,7 @@ const NotificationDropdownContainer = styled.div`
   list-style: none;
   background: white;
   border-radius: 10px;
-  padding: 4px;
+  padding: 16px 26px 4px 22px;
   box-shadow: 0px 0px 5px;
   width: 529px;
   max-height: 660px;
@@ -80,4 +91,8 @@ const NotificationDropdownContainer = styled.div`
   }
 `;
 
-export { NotificationListItem, NotificationDropdownContainer };
+export {
+  NotificationContainer,
+  NotificationListItem,
+  NotificationDropdownContainer,
+};

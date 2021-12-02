@@ -12,6 +12,7 @@ import {
 } from "../../../../styles/UI/Card.styled";
 import { useTheme } from "styled-components";
 import Context from "../../../../context/context";
+import arrow from "../../../../images/Overview/selectionDropdownIcon.svg";
 
 const HCWasted = (props) => {
   const theme = useTheme();
@@ -20,6 +21,7 @@ const HCWasted = (props) => {
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
   const [secondIconIsActive, setSecondIsActive] = useState(false);
+  const [isPositive, setIsPositive] = useState(true);
 
   const onClickFirst = () => {
     setFirstIconIsActive(true);
@@ -34,9 +36,7 @@ const HCWasted = (props) => {
   return (
     <Card
       backgroundColor={
-        firstIconIsActive && !secondIconIsActive
-          ? bgColor
-          : theme.colors.colorPrimaryNeutralBlue
+        firstIconIsActive && !secondIconIsActive ? bgColor : "azure"
       }
       className={`${props.classes}`}
     >
@@ -79,14 +79,24 @@ const HCWasted = (props) => {
         </p>
       </CardContent>
       <CardFooter>
-        <p>
-          {
-            context["userData"]["devices"][0]["metrics"]["hcWasted"][
-              "relChange"
-            ]
-          }
-          % vs last week
-        </p>
+        <div
+          className={`relative-change ${
+            isPositive ? "relative-change--active" : ""
+          }`}
+        >
+          <img src={arrow} alt="arrow" />
+          <p>
+            <span>
+              {
+                context["userData"]["devices"][0]["metrics"]["hcWasted"][
+                  "relChange"
+                ]
+              }
+              %
+            </span>
+            vs last week
+          </p>
+        </div>
         <img
           src={moreInfoIcon}
           alt="?"

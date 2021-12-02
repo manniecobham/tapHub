@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
 import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.png";
 import imageIcon from "../../../../../images/Overview/imageIcon.svg";
@@ -13,10 +13,18 @@ import {
   CardTitle,
   CardContent,
 } from "../../../../../styles/UI/Card.styled";
+import Button from "../../../../../styles/UI/Button.styled";
+import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
+import {
+  SpaceSelectionContainer,
+  SpaceSelectionDropdownContainer,
+} from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
 import State from "./State";
 import { useTheme } from "styled-components";
-
-// CONVERT THE DIV INSIDE CARDHEADER INTO COMPONENT
+import profileDropdownButton from "../../../../../images/Overview/profileDropdownButton.svg";
+import ProfileDropdown from "../../../Header/Profile/ProfileDropdown";
+import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
+import SpaceSelectionDropdown from "../../../../../styles/Overview/Content/DataType/Location/SpaceSelectionDropdown";
 
 const Location = (props) => {
   const theme = useTheme();
@@ -24,6 +32,35 @@ const Location = (props) => {
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
   const [secondIconIsActive, setSecondIsActive] = useState(false);
+  const ref = useRef();
+  const [spaceDropdownIsShown, setSpaceDropdownIsShown] = useState(false);
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (
+        spaceDropdownIsShown &&
+        ref.current &&
+        !ref.current.contains(e.target)
+      ) {
+        setSpaceDropdownIsShown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [spaceDropdownIsShown]);
+
+  const onSpaceSelectionClick = () => {
+    setSpaceDropdownIsShown((prevState) => {
+      return !prevState;
+    });
+  };
 
   const onClickFirst = () => {
     setFirstIconIsActive(true);
@@ -38,14 +75,20 @@ const Location = (props) => {
   return (
     <Card
       backgroundColor={
-        firstIconIsActive && !secondIconIsActive
-          ? bgColor
-          : theme.colors.colorPrimaryNeutralBlue
+        firstIconIsActive && !secondIconIsActive ? bgColor : "azure"
       }
       className={`${props.classes}`}
     >
       <CardHeader>
-        <CardTitle titleSize={titleSize}>InstaHub Office</CardTitle>
+        <SpaceSelectionContainer ref={ref}>
+          <Button onClick={onSpaceSelectionClick}>
+            <h2>InstaHub Office</h2>
+            <img className={``} src={selectionDropdownIcon} alt="^" />
+          </Button>
+          <Dropdown>
+            {spaceDropdownIsShown && <SpaceSelectionDropdown />}
+          </Dropdown>
+        </SpaceSelectionContainer>
         <div style={{ display: "flex" }}>
           <ToggleGroup>
             <ToggleButton

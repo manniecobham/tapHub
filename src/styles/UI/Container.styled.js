@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /*width: ${(props) => props.width};*/
   max-width: 100%;
-  padding: 30px 30px 0rem 230px;
+  height: 100vh;
+  padding: 20px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: auto;
   background-color: ${(props) => props.backgroundColor};
 `;
 

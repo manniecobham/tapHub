@@ -5,6 +5,7 @@ import ProfileDropdown from "./ProfileDropdown";
 import Button from "../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
 import profileDropdownButton from "../../../../images/Overview/profileDropdownButton.svg";
+import { ProfileContainer } from "../../../../styles/Overview/Header/Profile/Profile.styled";
 
 const Profile = () => {
   const ref = useRef();
@@ -36,13 +37,19 @@ const Profile = () => {
   };
 
   return (
-    <div ref={ref}>
+    <ProfileContainer ref={ref}>
       <Button onClick={onProfileClick}>
         <img src={profile} alt="photo" />
-        <img src={profileDropdownButton} alt="^" />
+        <img
+          className={`profile__arrow ${
+            profileIsShown ? "profile__arrow-active" : ""
+          }`}
+          src={profileDropdownButton}
+          alt="^"
+        />
       </Button>
       <Dropdown>{profileIsShown && <ProfileDropdown />}</Dropdown>
-    </div>
+    </ProfileContainer>
   );
 };
 
