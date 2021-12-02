@@ -15,6 +15,8 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
 import jsonResponse from "./context/api";
 
+import Login from "./views/Login";
+// import Slider from './components/Slider/Slider'
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
   const [userData, setUserData] = useState({});
@@ -37,7 +39,7 @@ function App() {
       //setIsLoading(false);
       setTimeout(() => {
         setIsLoading(false);
-      }, 5000);
+      }, 1000);
     };
 
     fetchData().catch((error) => {
@@ -64,7 +66,7 @@ function App() {
           loadingSpinner
         ) : (
           <Routes>
-            <Route path="/overview" element={<Overview />} />
+            <Route path="/overview" element={<Login />} />
             <Route path="/" element={<Navigate replace to="/overview" />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/reports" element={<Reports />} />

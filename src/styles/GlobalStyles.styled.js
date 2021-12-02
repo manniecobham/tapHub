@@ -34,8 +34,15 @@ const GlobalStyles = createGlobalStyle`
       monospace;
     }
 
+
     #root {
       display: flex;
+
+      /* only for login*/
+      #login {
+        width: 100vw;
+      }
+
       #left {
         flex-shrink: 0;
       }
