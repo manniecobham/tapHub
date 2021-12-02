@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import GraphContainer from "../../../../styles/Overview/Content/DataType/GraphContainer.styled";
+import {
+  GraphCard,
+  GraphContainer,
+} from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 
 //data
-import { data1, data2, data3 } from "../../../Graph/lineData";
-import { data4, data5, data6 } from "../../../Graph/heatData";
+import { data1, data2, data3 } from "./lineData";
+import { data4, data5, data6 } from "./heatData";
 //components
-import GraphButton from "../../../Graph/GraphButton/GraphButton";
-import LineChart from "../../../Graph/LineChart";
-import HeatMap from "../../../Graph/Heatmap";
-import { Card } from "../../../../styles/UI/Card.styled";
+import GraphButton from "./GraphButton/GraphButton";
+import LineChart from "./LineChart";
+import HeatMap from "./Heatmap";
 import { useTheme } from "styled-components";
-import GraphSidebar from "../../../Graph/GraphSidebar/GraphSidebar";
+import GraphSidebar from "./GraphSidebar/GraphSidebar";
 
 const Graph = (props) => {
   const theme = useTheme();
@@ -33,8 +35,7 @@ const Graph = (props) => {
   );
 
   return (
-    <>
-    <Card style={{padding: "0", flexDirection: "row", justifyContent: "flex-start"}} backgroundColor={bgColor} className={`${props.classes}`}>
+    <GraphCard backgroundColor={bgColor} className={`${props.classes}`}>
       <GraphSidebar />
       <GraphContainer>
         <GraphButton
@@ -46,8 +47,7 @@ const Graph = (props) => {
         />
         {Chart}
       </GraphContainer>
-    </Card>
-    </>
+    </GraphCard>
   );
 };
 

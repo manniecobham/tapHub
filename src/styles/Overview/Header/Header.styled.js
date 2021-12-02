@@ -5,7 +5,19 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  .header__left-content {
+  }
+
+  .header__right-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-around;
+    & > * {
+      flex-shrink: 0;
+    }
+  }
 `;
 
 const HeaderItem = styled.div`

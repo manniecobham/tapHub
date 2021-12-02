@@ -4,6 +4,7 @@ import newNotification from "../../../../images/Overview/newNotification.svg";
 import Button from "../../../../styles/UI/Button.styled";
 import NotificationsDropdown from "./NotificationsDropdown";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
+import { NotificationContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
 
 const Notifications = () => {
   const ref = useRef();
@@ -39,10 +40,16 @@ const Notifications = () => {
   };
 
   return (
-    <div ref={ref}>
+    <NotificationContainer ref={ref}>
       <Button onClick={onNotificationsClick}>
         <img src={notification} alt="bell" />
-        {!hasReadAllNotifications && <img src={newNotification} alt="new" />}
+        {!hasReadAllNotifications && (
+          <img
+            className="notification__new--alert"
+            src={newNotification}
+            alt="new"
+          />
+        )}
       </Button>
       <Dropdown>
         {notificationsAreShown && (
@@ -51,7 +58,7 @@ const Notifications = () => {
           />
         )}
       </Dropdown>
-    </div>
+    </NotificationContainer>
   );
 };
 
