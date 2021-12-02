@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   GraphCard,
   GraphContainer,
-} from "../../../../../styles/Overview/Content/DataType/Graph.styled";
+} from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 
 //data
 import { data1, data2, data3 } from "./lineData";

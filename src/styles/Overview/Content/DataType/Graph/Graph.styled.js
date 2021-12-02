@@ -6,6 +6,7 @@ const GraphCard = styled.div`
   display: flex;
   padding: 0;
   flex-direction: row;
+  font-size: 16px;
   @media (max-width: 1024px) {
     flex-direction: column;
   }
@@ -17,7 +18,7 @@ const GraphCard = styled.div`
 const GraphContainer = styled.div`
   /* width: 1000px;
   height: 546px; */
-  width: 100%;
+  flex-grow: 2;
   margin-top: 20px;
   margin-bottom: 20px;
   /* overflow: auto; */
@@ -46,7 +47,7 @@ const SidebarContainer = styled.div`
 const SidebarContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 15px 10px;
   background: rgba(242, 242, 242, 1);
   height: 100%;
   width: 100%;

@@ -5,7 +5,7 @@ import {
   SidebarText,
   SidebarContentBottom,
   SidebarRelativeChange,
-} from "../../../../../../../styles/Overview/Content/DataType/Graph.styled";
+} from "../../../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 import Context from "../../../../../../../context/context";
 import upPolygon from "../../../../../../../images/Sidebar/upPolygon.svg";
 
