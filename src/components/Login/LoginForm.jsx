@@ -1,8 +1,17 @@
-import React from 'react'
-import { Container, Footer, ImageContainer, Logo, TextContainer, Text, Title, LoginContainer } from '../../styles/LoginComponent/LoginComponent.styled'
+import React from "react";
+import {
+  Container,
+  Footer,
+  ImageContainer,
+  Logo,
+  TextContainer,
+  Text,
+  Title,
+  LoginContainer,
+} from "../../styles/Login/Login.styled";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 
-const Login = () => {
+const LoginForm = () => {
   return (
     <Container>
       <ImageContainer>
@@ -14,12 +23,10 @@ const Login = () => {
         <Text>Automation Simplified.</Text>
       </TextContainer>
 
-      <LoginContainer>
-        @@@@@@@@@
-      </LoginContainer>
+      <LoginContainer>Form</LoginContainer>
       <Footer>Make your building intelligent. Avoid static loops!</Footer>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default LoginForm;

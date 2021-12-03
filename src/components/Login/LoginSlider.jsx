@@ -8,10 +8,10 @@ import {
   TextContainer,
   TitleContainer,
   Wrapper,
-} from "../../styles/Slider/Slider.styled";
+} from "../../styles/Login/Slider.styled";
 import { sliderItems } from "./data";
 
-const Slider = () => {
+const LoginSlider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -70,4 +70,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default LoginSlider;
