@@ -6,7 +6,7 @@ import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
 import moreInfoIcon from "../../../../images/Overview/question.svg";
 import arrow from "../../../../images/Overview/selectionDropdownIcon.svg";
-import { ToggleGroup, ToggleButton } from "../../../../styles/UI/Toggle.styled";
+import { ToggleGroup } from "../../../../styles/UI/Toggle.styled";
 import { Card } from "../../../../styles/UI/Card.styled";
 
 const CO2Reduction = (props) => {
@@ -39,9 +39,11 @@ const CO2Reduction = (props) => {
         <h2 className="card__header-title" titleSize={titleSize}>
           CO2 Reduction
         </h2>
-        <ToggleGroup>
-          <ToggleButton
-            className={firstIconIsActive ? "active" : null}
+        <ToggleGroup className="toggle-group">
+          <button
+            className={`toggle-group__button ${
+              firstIconIsActive ? "active" : null
+            }`}
             onClick={onClickFirst}
           >
             <img
@@ -49,9 +51,11 @@ const CO2Reduction = (props) => {
               alt="lightning"
               className={firstIconIsActive ? "filterBlack" : "filterGray"}
             />
-          </ToggleButton>
-          <ToggleButton
-            className={secondIconIsActive ? "active" : null}
+          </button>
+          <button
+            className={`toggle-group__button ${
+              secondIconIsActive ? "active" : null
+            }`}
             onClick={onClickSecond}
           >
             <img
@@ -59,7 +63,7 @@ const CO2Reduction = (props) => {
               alt="dollar"
               className={secondIconIsActive ? "filterBlack" : "filterGray"}
             />
-          </ToggleButton>
+          </button>
         </ToggleGroup>
       </div>
       <div className="card__content">
@@ -74,7 +78,7 @@ const CO2Reduction = (props) => {
           lbs/wk
         </p>
       </div>
-      <div className="card__foter">
+      <div className="card__footer">
         <div
           className={`relative-change ${
             isPositive ? "relative-change--active" : ""

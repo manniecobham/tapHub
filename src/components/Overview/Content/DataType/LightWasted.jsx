@@ -6,7 +6,7 @@ import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
 import moreInfoIcon from "../../../../images/Overview/question.svg";
 import arrow from "../../../../images/Overview/selectionDropdownIcon.svg";
-import { ToggleGroup, ToggleButton } from "../../../../styles/UI/Toggle.styled";
+import { ToggleGroup } from "../../../../styles/UI/Toggle.styled";
 import { Card } from "../../../../styles/UI/Card.styled";
 
 const LightWasted = (props) => {
@@ -38,9 +38,11 @@ const LightWasted = (props) => {
         <h2 className="card__header-title" titleSize={titleSize}>
           Light Wasted
         </h2>
-        <ToggleGroup>
-          <ToggleButton
-            className={firstIconIsActive ? "active" : null}
+        <ToggleGroup className="toggle-group">
+          <button
+            className={`toggle-group__button ${
+              firstIconIsActive ? "active" : null
+            }`}
             onClick={onClickFirst}
           >
             <img
@@ -48,9 +50,11 @@ const LightWasted = (props) => {
               alt="lightning"
               className={firstIconIsActive ? "filterBlack" : "filterGray"}
             />
-          </ToggleButton>
-          <ToggleButton
-            className={secondIconIsActive ? "active" : null}
+          </button>
+          <button
+            className={`toggle-group__button ${
+              secondIconIsActive ? "active" : null
+            }`}
             onClick={onClickSecond}
           >
             <img
@@ -58,7 +62,7 @@ const LightWasted = (props) => {
               alt="dollar"
               className={secondIconIsActive ? "filterBlack" : "filterGray"}
             />
-          </ToggleButton>
+          </button>
         </ToggleGroup>
       </div>
       <div className="card__content">

@@ -5,10 +5,7 @@ import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.pn
 import imageIcon from "../../../../../images/Overview/imageIcon.svg";
 import mapIcon from "../../../../../images/Overview/mapIcon.svg";
 import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
-import {
-  ToggleGroup,
-  ToggleButton,
-} from "../../../../../styles/UI/Toggle.styled";
+import { ToggleGroup } from "../../../../../styles/UI/Toggle.styled";
 import { Card } from "../../../../../styles/UI/Card.styled";
 import Button from "../../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
@@ -82,9 +79,11 @@ const Spaces = (props) => {
           </Dropdown>
         </SpaceSelectionContainer>
         <div style={{ display: "flex" }}>
-          <ToggleGroup>
-            <ToggleButton
-              className={firstIconIsActive ? "active" : null}
+          <ToggleGroup className="toggle-group">
+            <button
+              className={`toggle-group__button ${
+                firstIconIsActive ? "active" : null
+              }`}
               onClick={onClickFirst}
             >
               <img
@@ -92,9 +91,11 @@ const Spaces = (props) => {
                 alt="image"
                 className={firstIconIsActive ? "filterBlack" : "filterGray"}
               />
-            </ToggleButton>
-            <ToggleButton
-              className={secondIconIsActive ? "active" : null}
+            </button>
+            <button
+              className={`toggle-group__button ${
+                secondIconIsActive ? "active" : null
+              }`}
               onClick={onClickSecond}
             >
               <img
@@ -102,7 +103,7 @@ const Spaces = (props) => {
                 alt="map"
                 className={secondIconIsActive ? "filterBlack" : "filterGray"}
               />
-            </ToggleButton>
+            </button>
           </ToggleGroup>
           <State stateAbbr={"PA"} />
         </div>
