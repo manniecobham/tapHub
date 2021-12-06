@@ -1,11 +1,13 @@
 import React from "react";
-import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
+
 import profileIcon from "../../../../images/Overview/profileIcon.svg";
 import profileTagsIcon from "../../../../images/Overview/profileTagsIcon.svg";
 import profileConnectionsIcon from "../../../../images/Overview/profileConnectionsIcon.svg";
 import profilePrivacyIcon from "../../../../images/Overview/profilePrivacyIcon.svg";
 import profileSettingsIcon from "../../../../images/Overview/profileSettingsIcon.svg";
 import profileLogoutIcon from "../../../../images/Overview/profileLogoutIcon.svg";
+import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
+
 import ProfileItem from "./ProfileItem";
 
 const ProfileDropdown = () => {

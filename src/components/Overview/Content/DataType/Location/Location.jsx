@@ -1,8 +1,10 @@
 import React, { useRef, useEffect, useState, useContext } from "react";
+
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
 import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.png";
 import imageIcon from "../../../../../images/Overview/imageIcon.svg";
 import mapIcon from "../../../../../images/Overview/mapIcon.svg";
+import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
 import {
   ToggleGroup,
   ToggleButton,
@@ -10,21 +12,15 @@ import {
 import {
   Card,
   CardHeader,
-  CardTitle,
   CardContent,
 } from "../../../../../styles/UI/Card.styled";
 import Button from "../../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
-import {
-  SpaceSelectionContainer,
-  SpaceSelectionDropdownContainer,
-} from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
-import State from "./State";
+import { SpaceSelectionContainer } from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
 import { useTheme } from "styled-components";
-import profileDropdownButton from "../../../../../images/Overview/profileDropdownButton.svg";
-import ProfileDropdown from "../../../Header/Profile/ProfileDropdown";
-import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
-import SpaceSelectionDropdown from "../../../../../styles/Overview/Content/DataType/Location/SpaceSelectionDropdown";
+import SpaceSelectionDropdown from "./SpaceSelectionDropdown";
+
+import State from "./State";
 
 const Location = (props) => {
   const theme = useTheme();

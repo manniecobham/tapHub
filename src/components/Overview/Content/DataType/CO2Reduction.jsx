@@ -1,18 +1,19 @@
 import React, { useContext, useState } from "react";
+import { useTheme } from "styled-components";
+import Context from "../../../../context/context";
+
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
 import moreInfoIcon from "../../../../images/Overview/question.svg";
+import arrow from "../../../../images/Overview/selectionDropdownIcon.svg";
 import { ToggleGroup, ToggleButton } from "../../../../styles/UI/Toggle.styled";
 import { Card } from "../../../../styles/UI/Card.styled";
-import { useTheme } from "styled-components";
 import {
   CardHeader,
   CardTitle,
   CardContent,
   CardFooter,
 } from "../../../../styles/UI/Card.styled";
-import Context from "../../../../context/context";
-import arrow from "../../../../images/Overview/selectionDropdownIcon.svg";
 
 const CO2Reduction = (props) => {
   const context = useContext(Context);

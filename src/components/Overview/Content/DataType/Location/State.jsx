@@ -1,4 +1,5 @@
 import React from "react";
+
 import locationIcon from "../../../../../images/Overview/locationIcon.svg";
 import { StateContainer } from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
 

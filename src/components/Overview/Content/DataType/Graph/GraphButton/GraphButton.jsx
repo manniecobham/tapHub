@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import Heat_Icon from "../../../../../../images/Overview/gridicon.svg";
 import Line_Icon from "../../../../../../images/Overview/Vector.svg";
 
-// styles
 import {
   Container,
   Button,

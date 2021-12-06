@@ -1,6 +1,8 @@
 import React from "react";
 import { useTheme } from "styled-components";
+
 import { OverviewGrid } from "../../../styles/Overview/Content/OverviewContent.styled";
+
 import CO2Reduction from "./DataType/CO2Reduction";
 import HCWasted from "./DataType/HCWasted";
 import LightWasted from "./DataType/LightWasted";
@@ -8,12 +10,12 @@ import RoomsOccupied from "./DataType/RoomsOccupied";
 import Location from "./DataType/Location/Location";
 import Graph from "./DataType/Graph/Graph";
 
-const OverviewContent = () => {
+const Content = () => {
   const theme = useTheme();
   const bgColor = theme.colors.colorSecondaryWhite;
 
   return (
-    <>
+    <React.Fragment>
       <OverviewGrid>
         <Location classes="location grid--item" />
         <RoomsOccupied classes="rooms grid--item grid--item_small" />
@@ -22,8 +24,8 @@ const OverviewContent = () => {
         <HCWasted classes="hcwaste grid--item grid--item_small" />
         <Graph classes="graph" />
       </OverviewGrid>
-    </>
+    </React.Fragment>
   );
 };
 
-export default OverviewContent;
+export default Content;

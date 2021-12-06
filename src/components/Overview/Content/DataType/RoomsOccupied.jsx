@@ -1,4 +1,7 @@
 import React, { useContext } from "react";
+import { useTheme } from "styled-components";
+import Context from "../../../../context/context";
+
 import liveIcon from "../../../../images/Overview/liveIcon.svg";
 import mouse from "../../../../images/Overview/mouse.svg";
 import {
@@ -8,8 +11,6 @@ import {
   CardContent,
   CardFooter,
 } from "../../../../styles/UI/Card.styled";
-import { useTheme } from "styled-components";
-import Context from "../../../../context/context";
 
 const RoomsOccupied = (props) => {
   const theme = useTheme();

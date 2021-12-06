@@ -1,17 +1,14 @@
 import React, { useEffect, useRef, useContext, useState } from "react";
 import Context from "../../../../context/context";
-import a from "../../../../";
-import { DropdownList } from "../../../../styles/Overview/Header/Dropdown.styled";
-import { NotificationDropdownContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
-import NotificationItem from "./NotificationItem";
+
 import selectionDropdownIcon from "../../../../images/Overview/selectionDropdownIcon.svg";
-import SpaceSelectionDropdown from "../../../../styles/Overview/Content/DataType/Location/SpaceSelectionDropdown";
+import SpaceSelectionDropdown from "../../Content/DataType/Location/SpaceSelectionDropdown";
 import Button from "../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
-import {
-  SpaceSelectionContainer,
-  SpaceSelectionDropdownContainer,
-} from "../../../../styles/Overview/Content/DataType/Location/Location.styled";
+import { SpaceSelectionContainer } from "../../../../styles/Overview/Content/DataType/Location/Location.styled";
+import { NotificationDropdownContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
+
+import NotificationItem from "./NotificationItem";
 
 /*
 IMPORTANT:
