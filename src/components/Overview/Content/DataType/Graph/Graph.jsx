@@ -1,18 +1,21 @@
 import React, { useState } from "react";
+import { useTheme } from "styled-components";
+
+// data
+import { data1, data2, data3 } from "./lineData";
+import { data4, data5, data6 } from "./heatData";
+
+// styles
 import {
   GraphCard,
   GraphContainer,
 } from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 
-//data
-import { data1, data2, data3 } from "./lineData";
-import { data4, data5, data6 } from "./heatData";
-//components
-import GraphButton from "./GraphButton/GraphButton";
+// components
+import GraphSidebar from "./GraphSidebar/GraphSidebar";
 import LineChart from "./LineChart";
 import HeatMap from "./Heatmap";
-import { useTheme } from "styled-components";
-import GraphSidebar from "./GraphSidebar/GraphSidebar";
+import GraphButton from "./GraphButton/GraphButton";
 
 const Graph = (props) => {
   const theme = useTheme();

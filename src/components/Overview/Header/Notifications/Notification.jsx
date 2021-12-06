@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import notification from "../../../../images/Overview/notification.svg";
 import newNotification from "../../../../images/Overview/newNotification.svg";
 import Button from "../../../../styles/UI/Button.styled";
-import NotificationsDropdown from "./NotificationsDropdown";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
 import { NotificationContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
+
+import NotificationsDropdown from "./NotificationsDropdown";
 
 const Notifications = () => {
   const ref = useRef();

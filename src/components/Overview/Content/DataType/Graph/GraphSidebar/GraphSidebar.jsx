@@ -1,5 +1,7 @@
 import React from "react";
+
 import { SidebarContainer } from "../../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
+
 import SpaceUtilization from "./GraphSidebarItems/SpaceUtilization";
 import Temperature from "./GraphSidebarItems/Temperature";
 import LightUsage from "./GraphSidebarItems/LightUsage";

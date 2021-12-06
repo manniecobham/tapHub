@@ -1,14 +1,13 @@
 import React from "react";
-import Slider from "../components/Slider/Slider";
-import LoginComponent from "../components/LoginComponent/LoginComponent";
-import { Container } from "../styles/Login/Login.styled";
+import LoginSlider from "../components/Login/LoginSlider";
+import LoginForm from "../components/Login/LoginForm";
 
 const Login = () => {
   return (
-    <Container id="login">
-      <LoginComponent id="left" />
-      <Slider id="right" />
-    </Container>
+    <div id="login">
+      <LoginForm id="left" />
+      <LoginSlider id="right" />
+    </div>
   );
 };
 

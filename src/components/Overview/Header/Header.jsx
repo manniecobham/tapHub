@@ -1,12 +1,14 @@
 import React from "react";
-import Notifications from "./Notifications/Notification";
-import Profile from "./Profile/Profile";
-import SearchBar from "./SearchBar";
+import { useTheme } from "styled-components";
+
 import {
   HeaderContainer,
   HeaderItem,
 } from "../../../styles/Overview/Header/Header.styled";
-import { useTheme } from "styled-components";
+
+import Notifications from "./Notifications/Notification";
+import Profile from "./Profile/Profile";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const theme = useTheme();

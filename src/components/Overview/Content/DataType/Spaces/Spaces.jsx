@@ -1,32 +1,21 @@
 import React, { useRef, useEffect, useState, useContext } from "react";
+
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
 import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.png";
 import imageIcon from "../../../../../images/Overview/imageIcon.svg";
 import mapIcon from "../../../../../images/Overview/mapIcon.svg";
-import {
-  ToggleGroup,
-  ToggleButton,
-} from "../../../../../styles/UI/Toggle.styled";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "../../../../../styles/UI/Card.styled";
+import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
+import { ToggleGroup } from "../../../../../styles/UI/Toggle.styled";
+import { Card } from "../../../../../styles/UI/Card.styled";
 import Button from "../../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
-import {
-  SpaceSelectionContainer,
-  SpaceSelectionDropdownContainer,
-} from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
-import State from "./State";
+import { SpaceSelectionContainer } from "../../../../../styles/Overview/Content/DataType/Spaces/Spaces.styled";
 import { useTheme } from "styled-components";
-import profileDropdownButton from "../../../../../images/Overview/profileDropdownButton.svg";
-import ProfileDropdown from "../../../Header/Profile/ProfileDropdown";
-import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
-import SpaceSelectionDropdown from "../../../../../styles/Overview/Content/DataType/Location/SpaceSelectionDropdown";
+import SpaceSelectionDropdown from "./SpaceSelectionDropdown";
 
-const Location = (props) => {
+import State from "./State";
+
+const Spaces = (props) => {
   const theme = useTheme();
   const titleSize = theme.typography.headerSize;
   const bgColor = theme.colors.colorSecondaryWhite;
@@ -77,9 +66,9 @@ const Location = (props) => {
       backgroundColor={
         firstIconIsActive && !secondIconIsActive ? bgColor : "azure"
       }
-      className={`${props.classes}`}
+      className={`card ${props.classes}`}
     >
-      <CardHeader>
+      <div className="card__header">
         <SpaceSelectionContainer ref={ref}>
           <Button onClick={onSpaceSelectionClick}>
             <h2>InstaHub Office</h2>
@@ -90,9 +79,11 @@ const Location = (props) => {
           </Dropdown>
         </SpaceSelectionContainer>
         <div style={{ display: "flex" }}>
-          <ToggleGroup>
-            <ToggleButton
-              className={firstIconIsActive ? "active" : null}
+          <ToggleGroup className="toggle-group">
+            <button
+              className={`toggle-group__button ${
+                firstIconIsActive ? "active" : null
+              }`}
               onClick={onClickFirst}
             >
               <img
@@ -100,9 +91,11 @@ const Location = (props) => {
                 alt="image"
                 className={firstIconIsActive ? "filterBlack" : "filterGray"}
               />
-            </ToggleButton>
-            <ToggleButton
-              className={secondIconIsActive ? "active" : null}
+            </button>
+            <button
+              className={`toggle-group__button ${
+                secondIconIsActive ? "active" : null
+              }`}
               onClick={onClickSecond}
             >
               <img
@@ -110,21 +103,21 @@ const Location = (props) => {
                 alt="map"
                 className={secondIconIsActive ? "filterBlack" : "filterGray"}
               />
-            </ToggleButton>
+            </button>
           </ToggleGroup>
           <State stateAbbr={"PA"} />
         </div>
-      </CardHeader>
-      <CardContent>
+      </div>
+      <div className="card__content">
         {firstIconIsActive && (
           <img src={instaHubBuilding} alt="location" className="img" />
         )}
         {secondIconIsActive && (
           <img src={instahubImage} alt="location" className="img" />
         )}
-      </CardContent>
+      </div>
     </Card>
   );
 };
 
-export default Location;
+export default Spaces;
