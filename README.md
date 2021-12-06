@@ -34,12 +34,8 @@ The Amplify Console will fork this repo in your GitHub account, and then build a
   amplify pull
   ```
 
-![img](src/images/amplify-pull.mov)
-
 4. Run locally
 
   ```
   npm start
   ```
-
-Checkout Nader Dabit's [Complete Guide to User Authentication](https://dev.to/dabit3/the-complete-guide-to-user-authentication-with-the-amplify-framework-2inh).
