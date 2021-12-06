@@ -1,11 +1,12 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 import profile from "../../../../images/Overview/profilePhoto.png";
-import ProfileDropdown from "./ProfileDropdown";
-import Button from "../../../../styles/UI/Button.styled";
-import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
 import profileDropdownButton from "../../../../images/Overview/profileDropdownButton.svg";
+import Button from "../../../../styles/UI/Button.styled";
 import { ProfileContainer } from "../../../../styles/Overview/Header/Profile/Profile.styled";
+import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
+
+import ProfileDropdown from "./ProfileDropdown";
 
 const Profile = () => {
   const ref = useRef();

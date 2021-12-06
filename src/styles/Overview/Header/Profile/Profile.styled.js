@@ -10,6 +10,19 @@ const ProfileContainer = styled.div`
   }
 `;
 
+const ProfileDropdownList = styled.ul`
+  z-index: 10;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background: white;
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 0px 0px 5px;
+`;
+
 const ProfileListItem = styled.li`
   width: 233px;
   background-color: white;
@@ -36,4 +49,4 @@ const ProfileIcon = styled.img`
   margin: 11px 25px;
 `;
 
-export { ProfileContainer, ProfileIcon, ProfileListItem };
+export { ProfileContainer, ProfileIcon, ProfileDropdownList, ProfileListItem };

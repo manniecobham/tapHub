@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { SpaceSelectionDropdownContainer } from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
+import { SpaceSelectionDropdownContainer } from "../../../../../styles/Overview/Content/DataType/Spaces/Spaces.styled";
 import checkmark from "../../../../../images/Overview/checkmark.svg";
 import searchIcon from "../../../../../images/Overview/searchIcon.svg";
 import Context from "../../../../../context/context";

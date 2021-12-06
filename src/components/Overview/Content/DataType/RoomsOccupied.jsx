@@ -1,15 +1,10 @@
 import React, { useContext } from "react";
-import liveIcon from "../../../../images/Overview/liveIcon.svg";
-import mouse from "../../../../images/Overview/mouse.svg";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "../../../../styles/UI/Card.styled";
 import { useTheme } from "styled-components";
 import Context from "../../../../context/context";
+
+import liveIcon from "../../../../images/Overview/liveIcon.svg";
+import mouse from "../../../../images/Overview/mouse.svg";
+import { Card } from "../../../../styles/UI/Card.styled";
 
 const RoomsOccupied = (props) => {
   const theme = useTheme();
@@ -18,14 +13,16 @@ const RoomsOccupied = (props) => {
   const bgColor = theme.colors.colorSecondaryWhite;
 
   return (
-    <Card backgroundColor={bgColor} className={`${props.classes}`}>
-      <CardHeader>
-        <CardTitle titleSize={titleSize}>Rooms Occupied</CardTitle>
+    <Card backgroundColor={bgColor} className={`card ${props.classes}`}>
+      <div className="card__header">
+        <h2 className="card__header-title" titleSize={titleSize}>
+          Rooms Occupied
+        </h2>
         <div>
           <img src={liveIcon} alt="live" />
         </div>
-      </CardHeader>
-      <CardContent>
+      </div>
+      <div className="card__content">
         <p>
           <span className="lead">
             {
@@ -41,11 +38,11 @@ const RoomsOccupied = (props) => {
             ]
           }
         </p>
-      </CardContent>
-      <CardFooter>
+      </div>
+      <div className="card__footer">
         <div></div>
         <img src={mouse} alt="^"></img>
-      </CardFooter>
+      </div>
     </Card>
   );
 };

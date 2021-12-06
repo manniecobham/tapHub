@@ -40,6 +40,7 @@ const GlobalStyles = createGlobalStyle`
 
       /* only for login*/
       #login {
+        display: flex;
         width: 100vw;
       }
 
