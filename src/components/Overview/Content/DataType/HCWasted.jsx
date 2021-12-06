@@ -7,13 +7,7 @@ import dollarIcon from "../../../../images/Overview/dollar.svg";
 import moreInfoIcon from "../../../../images/Overview/question.svg";
 import arrow from "../../../../images/Overview/selectionDropdownIcon.svg";
 import { ToggleGroup, ToggleButton } from "../../../../styles/UI/Toggle.styled";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "../../../../styles/UI/Card.styled";
+import { Card } from "../../../../styles/UI/Card.styled";
 
 const HCWasted = (props) => {
   const theme = useTheme();
@@ -39,10 +33,12 @@ const HCWasted = (props) => {
       backgroundColor={
         firstIconIsActive && !secondIconIsActive ? bgColor : "azure"
       }
-      className={`${props.classes}`}
+      className={`card ${props.classes}`}
     >
-      <CardHeader>
-        <CardTitle titleSize={titleSize}>H/C Wasted</CardTitle>
+      <div className="card__header">
+        <h2 className="card__header-title" titleSize={titleSize}>
+          H/C Wasted
+        </h2>
         <ToggleGroup>
           <ToggleButton
             className={firstIconIsActive ? "active" : null}
@@ -65,8 +61,8 @@ const HCWasted = (props) => {
             />
           </ToggleButton>
         </ToggleGroup>
-      </CardHeader>
-      <CardContent>
+      </div>
+      <div className="card__content">
         <p>
           <span className="lead">
             ${" "}
@@ -78,8 +74,8 @@ const HCWasted = (props) => {
           </span>
           /wk
         </p>
-      </CardContent>
-      <CardFooter>
+      </div>
+      <div className="card__footer">
         <div
           className={`relative-change ${
             isPositive ? "relative-change--active" : ""
@@ -103,7 +99,7 @@ const HCWasted = (props) => {
           alt="?"
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper ac sapien eu hendrerit."
         ></img>
-      </CardFooter>
+      </div>
     </Card>
   );
 };

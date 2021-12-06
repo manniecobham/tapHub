@@ -9,11 +9,7 @@ import {
   ToggleGroup,
   ToggleButton,
 } from "../../../../../styles/UI/Toggle.styled";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-} from "../../../../../styles/UI/Card.styled";
+import { Card } from "../../../../../styles/UI/Card.styled";
 import Button from "../../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
 import { SpaceSelectionContainer } from "../../../../../styles/Overview/Content/DataType/Spaces/Spaces.styled";
@@ -73,9 +69,9 @@ const Spaces = (props) => {
       backgroundColor={
         firstIconIsActive && !secondIconIsActive ? bgColor : "azure"
       }
-      className={`${props.classes}`}
+      className={`card ${props.classes}`}
     >
-      <CardHeader>
+      <div className="card__header">
         <SpaceSelectionContainer ref={ref}>
           <Button onClick={onSpaceSelectionClick}>
             <h2>InstaHub Office</h2>
@@ -110,15 +106,15 @@ const Spaces = (props) => {
           </ToggleGroup>
           <State stateAbbr={"PA"} />
         </div>
-      </CardHeader>
-      <CardContent>
+      </div>
+      <div className="card__content">
         {firstIconIsActive && (
           <img src={instaHubBuilding} alt="location" className="img" />
         )}
         {secondIconIsActive && (
           <img src={instahubImage} alt="location" className="img" />
         )}
-      </CardContent>
+      </div>
     </Card>
   );
 };
