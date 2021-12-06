@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useContext, useState } from "react";
 import Context from "../../../../context/context";
 
 import selectionDropdownIcon from "../../../../images/Overview/selectionDropdownIcon.svg";
-import SpaceSelectionDropdown from "../../Content/DataType/Location/SpaceSelectionDropdown";
+import SpaceSelectionDropdown from "../../Content/DataType/Spaces/SpaceSelectionDropdown";
 import Button from "../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
-import { SpaceSelectionContainer } from "../../../../styles/Overview/Content/DataType/Location/Location.styled";
+import { SpaceSelectionContainer } from "../../../../styles/Overview/Content/DataType/Spaces/Spaces.styled";
 import { NotificationDropdownContainer } from "../../../../styles/Overview/Header/Notifications/Notifications.styled";
 
 import NotificationItem from "./NotificationItem";

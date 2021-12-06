@@ -16,13 +16,13 @@ import {
 } from "../../../../../styles/UI/Card.styled";
 import Button from "../../../../../styles/UI/Button.styled";
 import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
-import { SpaceSelectionContainer } from "../../../../../styles/Overview/Content/DataType/Location/Location.styled";
+import { SpaceSelectionContainer } from "../../../../../styles/Overview/Content/DataType/Spaces/Spaces.styled";
 import { useTheme } from "styled-components";
 import SpaceSelectionDropdown from "./SpaceSelectionDropdown";
 
 import State from "./State";
 
-const Location = (props) => {
+const Spaces = (props) => {
   const theme = useTheme();
   const titleSize = theme.typography.headerSize;
   const bgColor = theme.colors.colorSecondaryWhite;
@@ -123,4 +123,4 @@ const Location = (props) => {
   );
 };
 
-export default Location;
+export default Spaces;

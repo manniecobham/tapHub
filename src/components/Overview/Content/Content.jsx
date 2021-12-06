@@ -7,7 +7,7 @@ import CO2Reduction from "./DataType/CO2Reduction";
 import HCWasted from "./DataType/HCWasted";
 import LightWasted from "./DataType/LightWasted";
 import RoomsOccupied from "./DataType/RoomsOccupied";
-import Location from "./DataType/Location/Location";
+import Spaces from "./DataType/Spaces/Spaces";
 import Graph from "./DataType/Graph/Graph";
 
 const Content = () => {
@@ -17,7 +17,7 @@ const Content = () => {
   return (
     <React.Fragment>
       <OverviewGrid>
-        <Location classes="location grid--item" />
+        <Spaces classes="location grid--item" />
         <RoomsOccupied classes="rooms grid--item grid--item_small" />
         <CO2Reduction classes="co2 grid--item grid--item_small" />
         <LightWasted classes="lightwaste grid--item grid--item_small" />
