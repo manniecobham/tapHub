@@ -8,7 +8,7 @@ import { NotificationContainer } from "../../../../styles/Overview/Header/Notifi
 
 import NotificationsDropdown from "./NotificationsDropdown";
 
-const Notifications = () => {
+const Notifications = (props) => {
   const ref = useRef();
   const [notificationsAreShown, setNotificationsAreShown] = useState(false);
   const [hasReadAllNotifications, setHasReadAllNotifications] = useState(false);
@@ -42,12 +42,19 @@ const Notifications = () => {
   };
 
   return (
-    <NotificationContainer ref={ref}>
-      <Button onClick={onNotificationsClick}>
-        <img src={notification} alt="bell" />
+    <NotificationContainer
+      ref={ref}
+      className={`notifications ${props.className}`}
+    >
+      <Button onClick={onNotificationsClick} className="notifications__button">
+        <img
+          src={notification}
+          alt="bell"
+          classname="notifications__button-icon"
+        />
         {!hasReadAllNotifications && (
           <img
-            className="notification__new--alert"
+            className="notifications__button-new"
             src={newNotification}
             alt="new"
           />

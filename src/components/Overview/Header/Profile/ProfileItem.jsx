@@ -1,18 +1,13 @@
 import React from "react";
 
-import {
-  ProfileIcon,
-  ProfileListItem,
-} from "../../../../styles/Overview/Header/Profile/Profile.styled";
-
 const ProfileItem = (props) => {
   return (
-    <ProfileListItem>
+    <li className={props.className}>
       <button>
-        <ProfileIcon src={props.icon} />
+        <img src={props.icon} className="profile-dropdown__item-icon" />
         <p>{props.title}</p>
       </button>
-    </ProfileListItem>
+    </li>
   );
 };
 

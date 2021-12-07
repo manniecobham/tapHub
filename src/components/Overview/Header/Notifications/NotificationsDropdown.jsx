@@ -85,18 +85,18 @@ const NotificationsDropdown = (props) => {
   };
 
   return (
-    <NotificationDropdownContainer>
+    <NotificationDropdownContainer className="notifications-dropdown">
       <SpaceSelectionContainer ref={ref}>
         <Button onClick={onSpaceSelectionClick}>
           <h2>InstaHub Office</h2>
-          <img className={``} src={selectionDropdownIcon} alt="^" />
+          <img src={selectionDropdownIcon} alt="^" />
         </Button>
         <Dropdown>
           {spaceDropdownIsShown && <SpaceSelectionDropdown />}
         </Dropdown>
       </SpaceSelectionContainer>
       <hr />
-      <ul>{Notifications}</ul>
+      <ul className="notifications-dropdown__list">{Notifications}</ul>
     </NotificationDropdownContainer>
   );
 };

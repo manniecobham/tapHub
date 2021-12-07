@@ -1,14 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import {
-  Arrow,
-  Circle,
-  Container,
-  DotContainer,
-  Slide,
-  TextContainer,
-  TitleContainer,
-  Wrapper,
-} from "../../styles/Login/Slider.styled";
+import { LoginSliderContainer } from "../../styles/Login/Slider.styled";
 import { sliderItems } from "./data";
 
 const LoginSlider = () => {
@@ -16,10 +7,10 @@ const LoginSlider = () => {
   const timeoutRef = useRef(null);
 
   const SliderItems = sliderItems.map((item) => (
-    <Slide>
-      <TitleContainer>{item.title}</TitleContainer>
-      <TextContainer>{item.text}</TextContainer>
-    </Slide>
+    <div className="slide">
+      <p className="slide__title">{item.title}</p>
+      <p className="slide__text">{item.text}</p>
+    </div>
   ));
 
   const resetTimeout = () => {
@@ -53,20 +44,19 @@ const LoginSlider = () => {
   // };
 
   return (
-    <Container>
+    <LoginSliderContainer className="slider" slideIndex={slideIndex}>
       {/* <Arrow direction="left" onClick={() => handleClick("left")}></Arrow> */}
-      <Wrapper slideIndex={slideIndex}>{SliderItems}</Wrapper>
-      <DotContainer>
-        {/* <Circle></Circle> */}
+      <div className="slider__wrapper">{SliderItems}</div>
+      <div className="slider__slide-dots">
         {sliderItems.map((_, index) => (
-          <Circle
+          <div
             key={index}
             className={slideIndex === index ? "active" : ""}
-          ></Circle>
+          ></div>
         ))}
-      </DotContainer>
+      </div>
       {/* <Arrow direction="right" onClick={() => handleClick("right")}></Arrow> */}
-    </Container>
+    </LoginSliderContainer>
   );
 };
 

@@ -12,13 +12,37 @@ import ProfileItem from "./ProfileItem";
 
 const ProfileDropdown = () => {
   return (
-    <ProfileDropdownList>
-      <ProfileItem icon={profileIcon} title="Profile" />
-      <ProfileItem icon={profileTagsIcon} title="Tags" />
-      <ProfileItem icon={profileConnectionsIcon} title="Connections" />
-      <ProfileItem icon={profilePrivacyIcon} title="Privacy" />
-      <ProfileItem icon={profileSettingsIcon} title="Settings" />
-      <ProfileItem icon={profileLogoutIcon} title="Log out" />
+    <ProfileDropdownList className="profile-dropdown">
+      <ProfileItem
+        icon={profileIcon}
+        title="Profile"
+        className="profile-dropdown__item"
+      />
+      <ProfileItem
+        icon={profileTagsIcon}
+        title="Tags"
+        className="profile-dropdown__item"
+      />
+      <ProfileItem
+        icon={profileConnectionsIcon}
+        title="Connections"
+        className="profile-dropdown__item"
+      />
+      <ProfileItem
+        icon={profilePrivacyIcon}
+        title="Privacy"
+        className="profile-dropdown__item"
+      />
+      <ProfileItem
+        icon={profileSettingsIcon}
+        title="Settings"
+        className="profile-dropdown__item"
+      />
+      <ProfileItem
+        icon={profileLogoutIcon}
+        title="Log out"
+        className="profile-dropdown__item"
+      />
     </ProfileDropdownList>
   );
 };

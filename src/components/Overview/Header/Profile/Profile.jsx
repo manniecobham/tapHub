@@ -8,7 +8,7 @@ import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
 
 import ProfileDropdown from "./ProfileDropdown";
 
-const Profile = () => {
+const Profile = (props) => {
   const ref = useRef();
   const [profileIsShown, setProfileIsShown] = useState(false);
 
@@ -38,12 +38,12 @@ const Profile = () => {
   };
 
   return (
-    <ProfileContainer ref={ref}>
-      <Button onClick={onProfileClick}>
-        <img src={profile} alt="photo" />
+    <ProfileContainer ref={ref} className={`profile ${props.className}`}>
+      <Button onClick={onProfileClick} className="profile__button">
+        <img src={profile} alt="photo" className="profile__button-photo" />
         <img
-          className={`profile__arrow ${
-            profileIsShown ? "profile__arrow-active" : ""
+          className={`profile__button-arrow ${
+            profileIsShown ? "profile__button-arrow-active" : ""
           }`}
           src={profileDropdownButton}
           alt="^"
