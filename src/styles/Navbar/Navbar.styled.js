@@ -77,7 +77,7 @@ const NavbarStyled = styled.header`
           width: 20px;
         }
 
-        &:hover {
+        &:not(:first-child):hover {
           a {
             border-bottom: 2px solid gray;
           }

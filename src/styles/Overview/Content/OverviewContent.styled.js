@@ -46,6 +46,12 @@ const OverviewGrid = styled.div`
         "rooms co2"
         "lightwaste hcwaste"
         "graph graph";
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
     }
   }
 `;

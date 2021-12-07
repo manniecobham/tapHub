@@ -6,6 +6,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   /* margin-left: 50px; */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const GraphNav = styled.div`
@@ -55,6 +59,7 @@ export const Icon = styled.img`
 export const TimeDisplayContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
 `;
 
 export const TimeDisplay = styled.span`

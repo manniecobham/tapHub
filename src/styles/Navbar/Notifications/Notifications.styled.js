@@ -42,6 +42,21 @@ const NotificationDropdownContainer = styled.div`
         list-style: none;
       }
     }
+
+    @media (max-width: 650px) {
+      right: -4rem;
+      width: 500px;
+    }
+
+    @media (max-width: 600px) {
+      right: -4rem;
+      width: 400px;
+    }
+
+    @media (max-width: 550px) {
+      right: -4rem;
+      width: 300px;
+    }
   }
 `;
 
@@ -99,6 +114,12 @@ const NotificationListItem = styled.li`
               font-size: 20px;
               line-height: 28px;
               letter-spacing: -0.2px;
+            }
+            @media (max-width: 600px) {
+              flex-direction: column;
+              .lead {
+                font-size: 16px;
+              }
             }
           }
 
