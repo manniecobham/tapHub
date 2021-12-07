@@ -19,34 +19,34 @@ import Login from "./views/Login";
 // import Slider from './components/Slider/Slider'
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
-  const [userData, setUserData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [userData, setUserData] = useState(jsonResponse);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://udd7rn11bi.execute-api.us-east-1.amazonaws.com/overview/json"
-      );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch(
+  //       "https://udd7rn11bi.execute-api.us-east-1.amazonaws.com/overview/json"
+  //     );
 
-      if (!response.ok) {
-        throw new Error("No data acquired");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("No data acquired");
+  //     }
 
-      const responseData = await response.json();
+  //     const responseData = await response.json();
 
-      console.log(JSON.stringify(responseData.body));
-      setUserData(responseData.body);
-      //setIsLoading(false);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
-    };
+  //     console.log(JSON.stringify(responseData.body));
+  //     setUserData(responseData.body);
+  //     //setIsLoading(false);
+  //     setTimeout(() => {
+  //       setIsLoading(false);
+  //     }, 2000);
+  //   };
 
-    fetchData().catch((error) => {
-      setIsLoading(false);
-      // setHttpError(error.message);
-    });
-  }, []);
+  //   fetchData().catch((error) => {
+  //     setIsLoading(false);
+  //     // setHttpError(error.message);
+  //   });
+  // }, []);
 
   const loadingSpinner = (
     <div className="lds-circle">
