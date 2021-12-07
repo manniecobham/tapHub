@@ -15,16 +15,14 @@ const Content = () => {
   const bgColor = theme.colors.colorSecondaryWhite;
 
   return (
-    <React.Fragment>
-      <OverviewGrid>
-        <Spaces classes="location grid--item" />
-        <RoomsOccupied classes="rooms grid--item grid--item_small" />
-        <CO2Reduction classes="co2 grid--item grid--item_small" />
-        <LightWasted classes="lightwaste grid--item grid--item_small" />
-        <HCWasted classes="hcwaste grid--item grid--item_small" />
-        <Graph classes="graph" />
-      </OverviewGrid>
-    </React.Fragment>
+    <OverviewGrid className="overview-grid">
+      <Spaces classes="overview-grid__item overview-grid__item-location" />
+      <RoomsOccupied classes="overview-grid__item overview-grid__item-rooms" />
+      <CO2Reduction classes="overview-grid__item overview-grid__item-co2" />
+      <LightWasted classes="overview-grid__item overview-grid__item-lightwaste" />
+      <HCWasted classes="overview-grid__item overview-grid__item-hcwaste" />
+      <Graph classes="overview-grid__item-graph" />
+    </OverviewGrid>
   );
 };
 
