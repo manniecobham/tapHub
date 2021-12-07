@@ -5,15 +5,7 @@ import Line_Icon from "../../../../../../images/Overview/Vector.svg";
 
 import {
   Container,
-  Button,
-  ButtonContainer,
-  GraphNav,
-  TimeDisplay,
-  TimeDisplayContainer,
-  IconImageContainer,
-  Icon,
-  RelativeChange,
-} from "./GraphButtonStyles";
+} from "../../../../../../styles/Overview/Content/DataType/Graph/GraphButton/GraphButtonStyles";
 
 const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
   //time frame toggle
@@ -100,59 +92,55 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
 
   return (
     <>
-      <Container>
-        <TimeDisplayContainer>
-          <TimeDisplay>{timeFrame} Trends of Instahub Office</TimeDisplay>
-          {/* <RelativeChange>hello</RelativeChange> */}
-        </TimeDisplayContainer>
-        <GraphNav>
-          <ButtonContainer>
-            <Button
+      <Container className="graph-button-container">
+        <div className="time-display">
+          <span className="time-display__timeframe">{timeFrame} Trends of Instahub Office</span>
+        </div>
+        <div className="graph-button-container__nav">
+          <div>
+            <button
+              className="graph-button-container__button-icon"
               onClick={onClickLine}
               background={buttonColorLine}
               color={colorLine}
-              className="icon"
             >
-              <IconImageContainer>
-                <Icon src={Line_Icon} alt="Line" />
-              </IconImageContainer>
-            </Button>
-            <Button
+              <div className="graph-button-container__icon-container">
+                <img src={Line_Icon} alt="Line" />
+              </div>
+            </button>
+            <button
+              className="graph-button-container__button-icon"
               onClick={onClickHeat}
               background={buttonColorHeat}
               color={colorHeat}
-              className="icon"
             >
-              <IconImageContainer>
-                <Icon src={Heat_Icon} alt="Heat" />
-              </IconImageContainer>
-            </Button>
-          </ButtonContainer>
+              <div className="graph-button-container__icon-container">
+                <img src={Heat_Icon} alt="Heat" />
+              </div>
+            </button>
+          </div>
 
-          <ButtonContainer>
-            <Button
+          <div>
+            <button
               onClick={onClickDay}
               background={buttonColorDay}
               color={colorDay}
             >
               Day
-            </Button>
-            <Button
+            </button>
+            <button
               onClick={onClickWeek}
               background={buttonColorWeek}
               color={colorWeek}
             >
               Week
-            </Button>
-            <Button
-              onClick={onClickMonth}
-              background={buttonColorMonth}
-              color={colorMonth}
+            </button>
+            <button onClick={onClickMonth} background={buttonColorMonth} color={colorMonth}
             >
               Month
-            </Button>
-          </ButtonContainer>
-        </GraphNav>
+            </button>
+          </div>
+        </div>
       </Container>
     </>
   );

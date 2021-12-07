@@ -8,7 +8,6 @@ import { data4, data5, data6 } from "./heatData";
 // styles
 import {
   GraphCard,
-  GraphContainer,
 } from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 
 // components
@@ -38,9 +37,9 @@ const Graph = (props) => {
   );
 
   return (
-    <GraphCard backgroundColor={bgColor} className={`${props.classes}`}>
+    <GraphCard backgroundColor={bgColor} className={`graph ${props.classes}`}>
       <GraphSidebar />
-      <GraphContainer>
+      <div className="graph__container">
         <GraphButton
           setGraphData={onDateChange}
           setGraphType={onGraphTypeChange}
@@ -49,7 +48,7 @@ const Graph = (props) => {
           data3={data6}
         />
         {Chart}
-      </GraphContainer>
+      </div>
     </GraphCard>
   );
 };
