@@ -14,10 +14,15 @@ const NotificationItem = (props) => {
   };
 
   return (
-    <NotificationListItem>
-      <button onClick={onReadHandler} className={hasBeenRead ? "read" : ""}>
+    <NotificationListItem className="notif-list">
+      <button
+        onClick={onReadHandler}
+        className={`notif-list__button ${
+          hasBeenRead ? "notif-list__button--read" : ""
+        }`}
+      >
         <div
-          className="vertical"
+          className="notif-list__item--vertical"
           style={{
             backgroundColor: hasBeenRead
               ? "rgba(11, 123, 255, 0.1)"
@@ -26,11 +31,11 @@ const NotificationItem = (props) => {
         >
           <div className={`fill`}></div>
         </div>
-        <div className="icon">
+        <div className="notif-list__item-icon">
           <img src={bulbIcon} alt="image" />
         </div>
-        <div className="content">
-          <div className="title">
+        <div className="notif-list__item-content">
+          <div className="notif-list__item-content-title">
             <div>
               <span className="lead">
                 {props.alertType} ({props.room})
@@ -38,7 +43,7 @@ const NotificationItem = (props) => {
             </div>
             {props.date}
           </div>
-          <div className="message">
+          <div className="notif-list__item-content-message">
             <p>{props.message}</p>
           </div>
         </div>

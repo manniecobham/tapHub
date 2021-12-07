@@ -42,12 +42,19 @@ const Notifications = (props) => {
   };
 
   return (
-    <NotificationContainer ref={ref} className={props.className}>
-      <Button onClick={onNotificationsClick}>
-        <img src={notification} alt="bell" />
+    <NotificationContainer
+      ref={ref}
+      className={`notifications ${props.className}`}
+    >
+      <Button onClick={onNotificationsClick} className="notifications__button">
+        <img
+          src={notification}
+          alt="bell"
+          classname="notifications__button-icon"
+        />
         {!hasReadAllNotifications && (
           <img
-            className="notification__new--alert"
+            className="notifications__button-new"
             src={newNotification}
             alt="new"
           />
