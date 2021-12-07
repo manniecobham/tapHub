@@ -8,7 +8,7 @@ import { Dropdown } from "../../../../styles/Overview/Header/Dropdown.styled";
 
 import ProfileDropdown from "./ProfileDropdown";
 
-const Profile = () => {
+const Profile = (props) => {
   const ref = useRef();
   const [profileIsShown, setProfileIsShown] = useState(false);
 
@@ -38,7 +38,7 @@ const Profile = () => {
   };
 
   return (
-    <ProfileContainer ref={ref}>
+    <ProfileContainer ref={ref} className={props.className}>
       <Button onClick={onProfileClick}>
         <img src={profile} alt="photo" />
         <img
