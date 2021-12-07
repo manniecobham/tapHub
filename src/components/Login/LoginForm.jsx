@@ -1,31 +1,27 @@
 import React from "react";
-import {
-  Container,
-  Footer,
-  ImageContainer,
-  Logo,
-  TextContainer,
-  Text,
-  Title,
-  LoginContainer,
-} from "../../styles/Login/Login.styled";
+import { LoginContainer } from "../../styles/Login/Login.styled";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 
 const LoginForm = () => {
   return (
-    <Container>
-      <ImageContainer>
-        <Logo src={IH_icon} />
-      </ImageContainer>
+    <LoginContainer className="login-form">
+      <div className="login-form__image">
+        <img src={IH_icon} />
+      </div>
 
-      <TextContainer>
-        <Title>Instahub</Title>
-        <Text>Automation Simplified.</Text>
-      </TextContainer>
+      <div className="login-form__tagline">
+        <p>
+          <span className="lead">Instahub</span>
+          <br />
+          Automation Simplified.
+        </p>
+      </div>
 
-      <LoginContainer>Form</LoginContainer>
-      <Footer>Make your building intelligent. Avoid static loops!</Footer>
-    </Container>
+      <div className="login-form__form">Form</div>
+      <div className="login-form__footer">
+        Make your building intelligent. Avoid static loops!
+      </div>
+    </LoginContainer>
   );
 };
 
