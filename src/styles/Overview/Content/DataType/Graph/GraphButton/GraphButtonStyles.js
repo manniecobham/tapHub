@@ -1,20 +1,33 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  &.graph-button-container {
+  &.buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     /* margin-left: 50px; */
   }
-  .graph-button-container {
-    &__nav {
+
+  .time-display {
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      line-height: 22px;
+    }
+  }
+
+  .buttons {
+    &__outer-container {
       display: flex;
       justify-content: space-around;
     }
 
-    &__nav > div {
+    &__inner-container {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -24,7 +37,11 @@ export const Container = styled.div`
       max-width: 200px;
     }
 
-    &__button {
+    &__icon {
+      width: 20px;
+    }
+
+    /* &__button {
       border: none;
       font-weight: 600;
       font-size: 12px;
@@ -35,47 +52,70 @@ export const Container = styled.div`
       border-radius: 10px;
       cursor: pointer;
 
-      &-icon {
+      &.icon {
         text-align: center;
         padding: 2px 10px 0px;
+
+        & img {
+          width: 80%;
+        }
       }
-    }
-
-    &__button-icon {
-      width: 20px;
-    }
+    } */
   }
+`;
 
-  .time-display {
-    display: flex;
-    flex-direction: column;
+// export const GraphNav = styled.div`
+//   display: flex;
+//   justify-content: space-around;
+// `;
 
-    &__timeframe {
-      font-size: 19px;
-      font-weight: bold;
-      letter-spacing: 0.4px;
-      line-height: 22px;
+// export const ButtonContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 12px;
+//   background: lightgray;
+//   margin-right: 30px;
+//   max-width: 200px;
+// `;
+
+export const Button = styled.button`
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  color: ${(props) => props.color};
+  background: ${(props) => props.background};
+  padding: 2px 10px;
+  margin: 2px 3px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &.icon {
+    text-align: center;
+    padding: 2px 10px 0px;
+
+    & img {
+      width: 80%;
     }
   }
 `;
 
-// export const Button = styled.button`
-//   border: none;
-//   font-weight: 600;
-//   font-size: 12px;
-//   color: ${(props) => props.color};
-//   background: ${(props) => props.background};
-//   padding: 2px 10px;
-//   margin: 2px 3px;
-//   border-radius: 10px;
-//   cursor: pointer;
+// export const IconImageContainer = styled.div`
+//   width: 20px;
+// `;
 
-//   &.icon {
-//     text-align: center;
-//     padding: 2px 10px 0px;
+// export const Icon = styled.img`
+//   /* width: 20px; */
+// `;
 
-//     & img {
-//       width: 80%;
-//     }
-//   }
-//`;
+// export const TimeDisplayContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
+
+// export const TimeDisplay = styled.span`
+//   font-size: 19px;
+//   font-weight: bold;
+//   letter-spacing: 0.4px;
+//   line-height: 22px;
+// `;

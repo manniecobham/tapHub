@@ -5,11 +5,11 @@ import {
 import Context from "../../../../../../../context/context";
 import upPolygon from "../../../../../../../images/Sidebar/upPolygon.svg";
 
-const SpaceUtilization = (props) => {
+const SpaceUtilization = ({className, contextProp}) => {
   const context = useContext(Context);
 
   return (
-    <SidebarContentContainer className={`${props.className}`}>
+    <SidebarContentContainer className={`${className}`}>
       <div className="sidebar-content__top">
         <h3>Space Utilization</h3>
         <div>
