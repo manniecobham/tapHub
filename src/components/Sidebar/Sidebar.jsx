@@ -1,7 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import { useTheme } from "styled-components";
 import { SideNav } from "../../styles/Sidebar/Sidebar.styled";
-import SidebarItem from "./SidebarItem";
 import { NavLink } from "react-router-dom";
 import Context from "../../context/context";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
@@ -12,7 +11,6 @@ import analytics_icon from "../../images/Sidebar/analytics.svg";
 import reports_icon from "../../images/Sidebar/reports.svg";
 import sensors_icon from "../../images/Sidebar/sensors.svg";
 import property_icon from "../../images/Sidebar/property.svg";
-import { nav } from "@aws-amplify/ui";
 
 const Sidebar = (props) => {
   const theme = useTheme();
