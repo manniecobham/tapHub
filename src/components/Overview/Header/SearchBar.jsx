@@ -5,10 +5,15 @@ import { SearchForm } from "../../../styles/Overview/Header/SearchBar.styled";
 
 const SearchBar = (props) => {
   return (
-    <SearchForm action="" className={props.className}>
-      <input type="text" placeholder="Search ..." name="search" />
-      <button type="submit">
-        <img src={searchIcon} alt="?" />
+    <SearchForm action="" className={`search-form ${props.className}`}>
+      <input
+        type="text"
+        placeholder="Search ..."
+        name="search"
+        className="search-form__input"
+      />
+      <button type="submit" className="search-form__button">
+        <img src={searchIcon} alt="?" className="search-form__button-icon" />
       </button>
     </SearchForm>
   );
