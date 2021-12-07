@@ -86,6 +86,12 @@ const StateContainer = styled.div`
   height: 24px;
   padding: 0 7px;
   margin-left: 10px;
+
+  & img {
+    width: 11px;
+    height: 14px;
+    margin: auto;
+  }
 `;
 
 export {
