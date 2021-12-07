@@ -6,11 +6,7 @@ import { StateContainer } from "../../../../../styles/Overview/Content/DataType/
 const State = (props) => {
   return (
     <StateContainer>
-      <img
-        src={locationIcon}
-        alt="location"
-        style={{ width: "11px", height: "14px", margin: "auto" }}
-      />
+      <img src={locationIcon} alt="location" />
       <p>{props.stateAbbr}</p>
     </StateContainer>
   );
