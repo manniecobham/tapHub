@@ -19,7 +19,7 @@ import Login from "./views/Login";
 // import Slider from './components/Slider/Slider'
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
-  const [userData, setUserData] = useState(jsonResponse);
+  const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

@@ -38,68 +38,83 @@ const jsonResponse = {
     {
       name: "Test Office",
       id: 1,
-      metrics: {
-        roomsOccupied: {
-          currentOccupied: 99,
-          totalDevices: 99,
+      metrics: [
+        {
+          roomsOccupied: {
+            // currentOccupied
+            value1: 99,
+            // totalDevices
+            value2: 99,
+          },
         },
-        co2Reduction: {
-          avgLbsPerWk: 99,
-          relChange: 99,
+        {
+          co2Reduction: {
+            // avgLbsPerWk
+            value1: 99,
+            // relChange
+          },
         },
-        lightWasted: {
-          avgHoursPerWk: 99,
-          relChange: 99,
+        {
+          lightWasted: {
+            // avgHoursPerWk
+            value1: 99,
+            // relChange
+            value2: 99,
+          },
         },
-        hcWasted: {
-          avgDollarsPerWk: 99,
-          relChange: 99,
+        {
+          hcWasted: {
+            // avgDollarsPerWk
+            value1: 99,
+            // relChange
+            value2: 99,
+          },
         },
-      },
+      ],
       metricAverages: [
         {
           title: "Space Utilization",
           data: {
-            // currPercentOccupied: 52,
-            current: 52,
-            // relChangePerDay: 2.1,
-            changeComfort: 2.1,
+            // currPercentOccupied
+            value1: 52,
+            // relChangePerDay
+            value2: 2.1,
           },
         },
         {
           title: "temperature",
           data: {
-            // currAvgTemp: 52,
-            current: 65,
-            // relChangePerDay: 2.1,
-            changeComfort: 4.1,
+            // currAvgTemp
+            value1: 65,
+            // relChangePerDay
+            value2: 4.1,
           },
         },
         {
           title: "Light Usage",
           data: {
-            // currAvgMinPerMonth: 10,
-            current: 10,
-            // relChangePerMonth: 2.1,
-            changeComfort: 3,
+            // currAvgMinPerMonth
+            value1: 10,
+            // relChangePerMonth
+            value2: 3,
           },
         },
         {
           title: "Humidity",
           data: {
-            // currAvg: 52,
-            current: 45,
-            // comfortLevel: "Comfort",
-            changeComfort: "Comfortable",
+            // currAvg
+            value1: 45,
+            // comfortLevel
+            value2: "Comfortable",
           },
         },
         {
           title: "Pressure",
           data: {
-            // currAvg: 52,
-            current: 70,
-            // pressureLevel: "Normal",
-            changeComfort: "Normal",
+            // currAvg
+            value1: 70,
+            // pressureLevel
+            value2: "Normal",
           },
         },
       ],
