@@ -215,7 +215,28 @@ const NavbarStyled = styled.header`
     }
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 480px) {
+    &.header--full {
+      .nav {
+        &--open {
+          .nav__list {
+            left: 35%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 380px) {
+    &.header--full {
+      .nav {
+        &--open {
+          .nav__list {
+            left: 30%;
+          }
+        }
+      }
+    }
   }
 `;
 
