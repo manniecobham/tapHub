@@ -8,25 +8,28 @@ import upPolygon from "../../../../../../../images/Sidebar/upPolygon.svg";
 const SpaceUtilization = ({className, contextProp}) => {
   const context = useContext(Context);
 
+  console.log(contextProp)
   return (
     <SidebarContentContainer className={`${className}`}>
       <div className="sidebar-content__top">
-        <h3>Space Utilization</h3>
+        <h3>{contextProp.title}</h3>
         <div>
-          <img
+          {/* <img
             style={{ width: "15px", paddingRight: "5px" }}
             src={upPolygon}
             alt="up"
-          />
-          2.1% dd/dd
+          /> */}
+          {contextProp.data.changeComfort}
+          {/* 2.1% dd/dd */}
         </div>
       </div>
       <div className="sidebar-content__bottom">
-        {
+        {contextProp.data.current}
+        {/* {
           context["userData"]["devices"][0]["metricAverages"][
             "spaceUtilization"
           ]["currPercentOccupied"]
-        }
+        } */}
         %
       </div>
     </SidebarContentContainer>

@@ -2,7 +2,7 @@ import React from "react";
 import jsonResponse from "./api";
 
 const Context = React.createContext({
-  userData: jsonResponse,
+  userData: {},
 });
 
 export default Context;

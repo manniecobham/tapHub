@@ -33,7 +33,6 @@ const jsonResponse = {
   metricTooltipInformation: {
     co2Reduction: "",
     lightWasted: "",
-    co2Reduction: "",
   },
   devices: [
     {
@@ -57,29 +56,53 @@ const jsonResponse = {
           relChange: 99,
         },
       },
-      metricAverages: {
-        spaceUtilization: {
-          currPercentOccupied: 52,
-          relChangePerDay: 2.1,
+      metricAverages: [
+        {
+          title: "Space Utilization",
+          data: {
+            // currPercentOccupied: 52,
+            current: 52,
+            // relChangePerDay: 2.1,
+            changeComfort: 2.1,
+          },
         },
-        temperature: {
-          currAvgTemp: 52,
-          relChangePerDay: 2.1,
+        {
+          title: "temperature",
+          data: {
+            // currAvgTemp: 52,
+            current: 65,
+            // relChangePerDay: 2.1,
+            changeComfort: 4.1,
+          },
         },
-        lightUsage: {
-          // Clarify incoming units
-          currAvgMinPerMonth: 10,
-          relChangePerMonth: 2.1,
+        {
+          title: "Light Usage",
+          data: {
+            // currAvgMinPerMonth: 10,
+            current: 10,
+            // relChangePerMonth: 2.1,
+            changeComfort: 3,
+          },
         },
-        humidity: {
-          currAvg: 52,
-          comfortLevel: "Comfort",
+        {
+          title: "Humidity",
+          data: {
+            // currAvg: 52,
+            current: 45,
+            // comfortLevel: "Comfort",
+            changeComfort: "Comfortable",
+          },
         },
-        pressure: {
-          currAvg: 52,
-          pressureLevel: "Normal",
+        {
+          title: "Pressure",
+          data: {
+            // currAvg: 52,
+            current: 70,
+            // pressureLevel: "Normal",
+            changeComfort: "Normal",
+          },
         },
-      },
+      ],
     },
   ],
 };
