@@ -10,12 +10,12 @@ const SidebarContainer = styled.div`
     border-radius: 10px;
     overflow: auto;
 
-    /* @media (max-width: 1024px) {
+    @media (max-width: 1024px) {
       flex-direction: row;
     }
     @media (max-width: 768px) {
-      flex-direction: row;
-    } */
+      flex-direction: column;
+    }
     .graph-sidebar {
       &__item {
         display: flex;
@@ -25,6 +25,7 @@ const SidebarContainer = styled.div`
         height: 100%;
         width: 100%;
         border-bottom: 1px solid lightgray;
+        /* border-right: 1px solid lightgray; */
         transition: background 0.2s ease-out;
         &:hover {
           background: white;

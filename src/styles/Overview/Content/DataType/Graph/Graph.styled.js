@@ -9,13 +9,19 @@ const GraphCard = styled.div`
     flex-direction: row;
     font-size: 16px;
     grid-template-areas: "sidebar graph";
+    grid-template-columns: 1fr 4fr;
 
     @media (max-width: 1024px) {
-      flex-direction: column;
+      grid-template-areas:
+        "sidebar"
+        "graph";
     }
     @media (max-width: 768px) {
-      flex-direction: column;
+      grid-template-areas:
+        "sidebar"
+        "graph";
     }
+
     .graph-grid {
       &__sidebar {
         grid-area: sidebar;
@@ -27,7 +33,6 @@ const GraphCard = styled.div`
           width: 100%;
         }
         &-inner {
-          flex-grow: 2;
           margin-top: 20px;
           margin-bottom: 20px;
           padding: 0;

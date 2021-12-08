@@ -7,6 +7,10 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     /* margin-left: 50px; */
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .time-display {
@@ -18,6 +22,9 @@ export const Container = styled.div`
       font-weight: bold;
       letter-spacing: 0.4px;
       line-height: 22px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
     }
   }
 
