@@ -83,7 +83,7 @@ const jsonResponse = {
           },
         },
         {
-          title: "temperature",
+          title: "Temperature",
           data: {
             // currAvgTemp
             value1: 65,

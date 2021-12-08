@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   SidebarContentContainer,
-} from "../../../../../../../styles/Overview/Content/DataType/Graph/GraphSidebar/GraphSider.styled";
-import Context from "../../../../../../../context/context";
+} from "../../../../../../../styles/Overview/Content/DataType/Graph/GraphSidebar/GraphSidebar.styled";
+// import Context from "../../../../../../../context/context";
 import upPolygon from "../../../../../../../images/Sidebar/upPolygon.svg";
 
 const SpaceUtilization = ({className, contextProp}) => {
-  const context = useContext(Context);
 
-  console.log(contextProp)
   return (
     <SidebarContentContainer className={`${className}`}>
       <div className="sidebar-content__top">
@@ -19,17 +17,11 @@ const SpaceUtilization = ({className, contextProp}) => {
             src={upPolygon}
             alt="up"
           /> */}
-          {contextProp.data.changeComfort}
-          {/* 2.1% dd/dd */}
+          {contextProp.data.value2}
         </div>
       </div>
       <div className="sidebar-content__bottom">
-        {contextProp.data.current}
-        {/* {
-          context["userData"]["devices"][0]["metricAverages"][
-            "spaceUtilization"
-          ]["currPercentOccupied"]
-        } */}
+        {contextProp.data.value1}
         %
       </div>
     </SidebarContentContainer>
