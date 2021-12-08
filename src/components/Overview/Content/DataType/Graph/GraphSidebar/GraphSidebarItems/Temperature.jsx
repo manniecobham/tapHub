@@ -1,38 +1,34 @@
 import React, { useContext } from "react";
 import {
   SidebarContentContainer,
-  SidebarContentTop,
-  SidebarText,
-  SidebarContentBottom,
-  SidebarRelativeChange,
-} from "../../../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
+} from "../../../../../../../styles/Overview/Content/DataType/Graph/GraphSidebar/GraphSider.styled";
 import Context from "../../../../../../../context/context";
 import downPolygon from "../../../../../../../images/Sidebar/downPolygon.svg";
 
-const Temperature = () => {
+const Temperature = (props) => {
   const context = useContext(Context);
 
   return (
-    <SidebarContentContainer>
-      <SidebarContentTop>
-        <SidebarText>Temperature</SidebarText>
-        <SidebarRelativeChange>
+    <SidebarContentContainer className={`${props.className}`}>
+      <div className="sidebar-content__top">
+        <h3>Temperature</h3>
+        <div>
           <img
             style={{ width: "15px", paddingRight: "5px" }}
             src={downPolygon}
             alt="up"
           />
           11.1% dd/dd
-        </SidebarRelativeChange>
-      </SidebarContentTop>
-      <SidebarContentBottom>
+        </div>
+      </div>
+      <div className="sidebar-content__bottom">
         {
           context["userData"]["devices"][0]["metricAverages"]["temperature"][
             "currAvgTemp"
           ]
         }
         &deg;F
-      </SidebarContentBottom>
+      </div>
     </SidebarContentContainer>
   );
 };
