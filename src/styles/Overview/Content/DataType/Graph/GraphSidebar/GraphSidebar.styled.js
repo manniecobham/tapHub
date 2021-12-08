@@ -4,19 +4,18 @@ const SidebarContainer = styled.div`
   &.graph-sidebar {
     display: flex;
     flex-direction: column;
-    /* width: 20%; */
-    /* height: 546px; */
     height: 100%;
     margin: 0;
     border: 4px solid white;
     border-radius: 10px;
     overflow: auto;
-    @media (max-width: 1024px) {
+
+    /* @media (max-width: 1024px) {
       flex-direction: row;
     }
     @media (max-width: 768px) {
       flex-direction: row;
-    }
+    } */
     .graph-sidebar {
       &__item {
         display: flex;
@@ -26,11 +25,11 @@ const SidebarContainer = styled.div`
         height: 100%;
         width: 100%;
         border-bottom: 1px solid lightgray;
-        /* border-right: 1px solid lightgray; */
         transition: background 0.2s ease-out;
         &:hover {
           background: white;
         }
+
         @media (max-width: 1024px) {
           justify-content: space-between;
         }
@@ -43,6 +42,7 @@ const SidebarContainer = styled.div`
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
             @media (max-width: 1024px) {
               flex-direction: column;
               height: 70%;
@@ -97,6 +97,7 @@ const SidebarContentContainer = styled.div`
     &:hover {
       background: white;
     }
+
     @media (max-width: 1024px) {
       justify-content: space-between;
     }
@@ -109,6 +110,7 @@ const SidebarContentContainer = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
         @media (max-width: 1024px) {
           flex-direction: column;
           height: 70%;

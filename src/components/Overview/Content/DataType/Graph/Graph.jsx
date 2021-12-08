@@ -37,17 +37,19 @@ const Graph = (props) => {
   );
 
   return (
-    <GraphCard backgroundColor={bgColor} className={`graph ${props.classes}`}>
-      <GraphSidebar />
-      <div className="graph__container">
-        <GraphButton
-          setGraphData={onDateChange}
-          setGraphType={onGraphTypeChange}
-          data1={data4}
-          data2={data5}
-          data3={data6}
-        />
-        {Chart}
+    <GraphCard backgroundColor={bgColor} className={`graph-grid ${props.classes}`}>
+      <GraphSidebar className="graph-grid__sidebar" />
+      <div className="graph-grid__container-outer">
+        <div className="graph-grid__container-inner">
+          <GraphButton
+            setGraphData={onDateChange}
+            setGraphType={onGraphTypeChange}
+            data1={data4}
+            data2={data5}
+            data3={data6}
+          />
+          {Chart}
+        </div>
       </div>
     </GraphCard>
   );

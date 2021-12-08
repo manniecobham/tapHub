@@ -33,7 +33,7 @@ function App() {
 
       const responseData = await response.json();
 
-      console.log(JSON.stringify(responseData.body));
+      // console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
       //setIsLoading(false);
       setTimeout(() => {
