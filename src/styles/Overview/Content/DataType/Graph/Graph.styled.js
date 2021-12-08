@@ -5,22 +5,12 @@ const GraphCard = styled.div`
     background-color: ${(props) => props.backgroundColor};
     border-radius: 8px;
     display: grid;
+    position: relative;
     padding: 0;
     flex-direction: row;
     font-size: 16px;
     grid-template-areas: "sidebar graph";
     grid-template-columns: 1fr 4fr;
-
-    @media (max-width: 1024px) {
-      grid-template-areas:
-        "sidebar"
-        "graph";
-    }
-    @media (max-width: 768px) {
-      grid-template-areas:
-        "sidebar"
-        "graph";
-    }
 
     .graph-grid {
       &__sidebar {
@@ -29,7 +19,8 @@ const GraphCard = styled.div`
       &__container {
         &-outer {
           grid-area: graph;
-          margin-left: 1rem;
+          /* This was the issue! */
+          /* margin-left: 1rem; */
           width: 100%;
         }
         &-inner {
@@ -37,6 +28,100 @@ const GraphCard = styled.div`
           margin-bottom: 20px;
           padding: 0;
           overflow: none;
+        }
+      }
+    }
+
+    /* hamburger */
+    .hamburger {
+      z-index: 999;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      background-color: transparent;
+      border: none;
+      display: none;
+      cursor: pointer;
+      transition: all 2s;
+      top: 10px;
+      left: 10px;
+
+      .line-one,
+      .line-two,
+      .line-three {
+        height: 6px;
+        width: 38px;
+        background-color: black;
+      }
+
+      .line-one,
+      .line-two {
+        margin-bottom: 5px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-areas:
+        "sidebar"
+        "graph";
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 768px) {
+      &.graph-grid {
+        grid-template-areas:
+          "sidebar"
+          "graph";
+
+        .graph-grid {
+          &__sidebar {
+            display: none;
+          }
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hamburger--open {
+          position: relative;
+          top: 0px;
+          left: -5px;
+
+          & div {
+            transition: transform 0.2s;
+          }
+
+          & div.line-one {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: rotate(45deg);
+          }
+
+          & div.line-two {
+            visibility: hidden;
+          }
+
+          & div.line-three {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: rotate(-45deg);
+          }
+        }
+
+        .graph-grid__sidebar--full {
+          display: grid;
+          background-color: white;
+          position: absolute;
+          top: 0px;
+          left: 0;
+          z-index: 555;
+          width: 100%;
+          height: 300px;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
         }
       }
     }

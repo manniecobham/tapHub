@@ -6,9 +6,7 @@ import { data1, data2, data3 } from "./lineData";
 import { data4, data5, data6 } from "./heatData";
 
 // styles
-import {
-  GraphCard,
-} from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
+import { GraphCard } from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 
 // components
 import GraphSidebar from "./GraphSidebar/GraphSidebar";
@@ -36,9 +34,32 @@ const Graph = (props) => {
     <HeatMap graphData={graphData} />
   );
 
+  const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
+
+  const openHamburger = () => {
+    setHamburgerIsOpen((prev) => !prev);
+  };
+
   return (
-    <GraphCard backgroundColor={bgColor} className={`graph-grid ${props.classes}`}>
-      <GraphSidebar className="graph-grid__sidebar" />
+    <GraphCard
+      backgroundColor={bgColor}
+      className={`${props.classes} graph-grid ${
+        hamburgerIsOpen ? "graph-grid--hamburger-open" : ""
+      }`}
+    >
+      <button
+        className={`hamburger ${hamburgerIsOpen ? "hamburger--open" : ""}`}
+        onClick={openHamburger}
+      >
+        <div className="line-one"></div>
+        <div className="line-two"></div>
+        <div className="line-three"></div>
+      </button>
+      <GraphSidebar
+        className={`graph-grid__sidebar ${
+          hamburgerIsOpen ? "graph-grid__sidebar--full" : ""
+        }`}
+      />
       <div className="graph-grid__container-outer">
         <div className="graph-grid__container-inner">
           <GraphButton

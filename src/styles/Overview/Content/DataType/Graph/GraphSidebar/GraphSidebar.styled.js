@@ -3,6 +3,7 @@ import styled from "styled-components";
 const SidebarContainer = styled.div`
   &.graph-sidebar {
     display: flex;
+    position: relative;
     flex-direction: column;
     height: 100%;
     margin: 0;
@@ -13,9 +14,11 @@ const SidebarContainer = styled.div`
     @media (max-width: 1024px) {
       flex-direction: row;
     }
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
+    /* @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    } */
     .graph-sidebar {
       &__item {
         display: flex;
