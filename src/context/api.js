@@ -52,6 +52,7 @@ const jsonResponse = {
             // avgLbsPerWk
             value1: 99,
             // relChange
+            value2: 99,
           },
         },
         {

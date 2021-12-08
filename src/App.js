@@ -16,7 +16,6 @@ import Context from "./context/context";
 import jsonResponse from "./context/api";
 
 import Login from "./views/Login";
-// import Slider from './components/Slider/Slider'
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
   const [userData, setUserData] = useState({});

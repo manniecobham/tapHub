@@ -70,8 +70,8 @@ const CO2Reduction = (props) => {
         <p>
           <span className="lead">
             {
-              context["userData"]["devices"][0]["metrics"]["co2Reduction"][
-                "avgLbsPerWk"
+              context["userData"]["devices"][0]["metrics"][1]["co2Reduction"][
+                "value1"
               ]
             }
           </span>
@@ -88,8 +88,8 @@ const CO2Reduction = (props) => {
           <p>
             <span>
               {
-                context["userData"]["devices"][0]["metrics"]["co2Reduction"][
-                  "relChange"
+                context["userData"]["devices"][0]["metrics"][1]["co2Reduction"][
+                  "value2"
                 ]
               }
               %
