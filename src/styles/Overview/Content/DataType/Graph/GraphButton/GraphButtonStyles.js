@@ -7,6 +7,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     /* margin-left: 50px; */
+    /* border: 5px solid red; */
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -42,6 +43,10 @@ export const Container = styled.div`
       background: lightgray;
       margin-right: 30px;
       max-width: 200px;
+      /* border: 2px solid blue; */
+      @media (max-width: 768px) {
+        margin-right: 10px;
+      }
     }
 
     &__icon {

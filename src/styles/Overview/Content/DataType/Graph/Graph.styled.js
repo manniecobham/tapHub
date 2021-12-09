@@ -20,12 +20,18 @@ const GraphCard = styled.div`
         &-outer {
           grid-area: graph;
           width: 100%;
+          /* border: solid 5px red; */
         }
         &-inner {
           margin-top: 20px;
           margin-bottom: 20px;
           padding: 0;
           overflow: none;
+          /* border: solid 5px blue; */
+
+          @media (max-width: 470px) {
+            margin-top: 3rem;
+          }
         }
       }
     }
@@ -40,21 +46,13 @@ const GraphCard = styled.div`
       border: none;
       display: none;
       cursor: pointer;
-      transition: all 2s;
+      transition: all 1s;
       top: 10px;
       left: 10px;
 
-      .line-one,
-      .line-two,
-      .line-three {
-        height: 6px;
-        width: 38px;
-        background-color: black;
-      }
-
-      .line-one,
-      .line-two {
-        margin-bottom: 5px;
+      @media (max-width: 470px) {
+        top: 10px;
+        left: 44%;
       }
     }
 
@@ -76,31 +74,12 @@ const GraphCard = styled.div`
         }
 
         .hamburger--open {
-          position: relative;
-          top: 0px;
-          left: -5px;
-
-          & div {
-            transition: transform 0.2s;
-          }
-
-          & div.line-one {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            transform: rotate(45deg);
-          }
-
-          & div.line-two {
-            visibility: hidden;
-          }
-
-          & div.line-three {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            transform: rotate(-45deg);
-          }
+          top: 10px;
+          left: 10px;
+          /* transition: transform 2s ease-in-out;
+          &::hover {
+            transform: scale(1.3);
+          } */
         }
       }
     }

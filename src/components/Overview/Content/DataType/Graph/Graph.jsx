@@ -6,6 +6,7 @@ import { data1, data2, data3 } from "./lineData";
 import { data4, data5, data6 } from "./heatData";
 
 // styles
+import hamburger from "../../../../../images/Overview/hamburgerb.svg";
 import { GraphCard } from "../../../../../styles/Overview/Content/DataType/Graph/Graph.styled";
 
 // components
@@ -51,9 +52,7 @@ const Graph = (props) => {
         className={`hamburger ${hamburgerIsOpen ? "hamburger--open" : ""}`}
         onClick={openHamburger}
       >
-        <div className="line-one"></div>
-        <div className="line-two"></div>
-        <div className="line-three"></div>
+        <img src={hamburger} href="hamb" />
       </button>
       <GraphSidebar hamburgerIsOpen={hamburgerIsOpen} />
       <div className="graph-grid__container-outer">
