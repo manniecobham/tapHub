@@ -8,7 +8,8 @@ const LineChart = ({ graphData }) => {
       chart: {
         type: "area",
         stacked: false,
-        height: 350,
+        height: 450,
+        width: "100%",
         zoom: {
           type: "x",
           enabled: true,
@@ -19,6 +20,24 @@ const LineChart = ({ graphData }) => {
           show: false,
         },
       },
+      responsive: [
+        {
+          breakpoint: 768,
+          options: {
+            chart: {
+              height: 350,
+            },          
+          }
+        },
+        {
+          breakpoint: 380,
+          options: {
+            chart: {
+              width: 300
+            },            
+          }
+        },
+      ],
       colors: [
         "#546E7A",
         "#E91E63",
@@ -91,7 +110,7 @@ const LineChart = ({ graphData }) => {
           options={lineChart.options}
           series={lineChart.series}
           type="area"
-          height={450}
+          height={lineChart.options.chart.height}
         />
       </div>
     </>
