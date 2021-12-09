@@ -24,7 +24,7 @@ const SpaceSelectionDropdown = (props) => {
           </button>
         </li>
         <li className="spacelist__item">
-          <button>1st Floor</button>
+          <button>1st floor</button>
         </li>
         <li className="spacelist__item">
           <button>2nd Floor</button>
