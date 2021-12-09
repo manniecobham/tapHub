@@ -27,10 +27,12 @@ const GraphCard = styled.div`
           margin-bottom: 20px;
           padding: 0;
           overflow: none;
+          padding-left: 10px;
           /* border: solid 5px blue; */
 
           @media (max-width: 470px) {
             margin-top: 3rem;
+            padding-left: 0px;
           }
         }
       }
