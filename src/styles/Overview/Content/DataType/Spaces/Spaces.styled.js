@@ -36,6 +36,10 @@ const SpaceSelectionDropdownContainer = styled.div`
   border: 1px solid #777777;
   border-radius: 8px;
 
+  @media (max-width: 560px) {
+    left: -4rem;
+  }
+
   & > form {
     padding: 12px;
 
@@ -86,10 +90,6 @@ const SpaceSelectionDropdownContainer = styled.div`
         background-color: lightgray;
       }
     }
-  }
-
-  @media (max-width: 560px) {
-    left: -4rem;
   }
 `;
 
