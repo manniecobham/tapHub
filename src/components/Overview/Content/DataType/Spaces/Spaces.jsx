@@ -68,7 +68,7 @@ const Spaces = (props) => {
       }
       className={`card ${props.classes}`}
     >
-      <div className="card__header">
+      <div className="card__header card__header-spaces">
         <SpaceSelectionContainer ref={ref}>
           <Button onClick={onSpaceSelectionClick}>
             <h2>InstaHub Office</h2>

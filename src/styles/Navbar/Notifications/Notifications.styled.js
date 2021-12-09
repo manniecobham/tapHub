@@ -99,6 +99,7 @@ const NotificationListItem = styled.li`
 
         &-icon {
           margin: auto 10px auto 10px;
+          flex-shrink: 0;
         }
 
         &-content {
