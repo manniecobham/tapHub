@@ -34,34 +34,11 @@ const GlobalStyles = createGlobalStyle`
       monospace;
     }
 
-
-    #root {
-      display: flex;
-
-      /* only for login*/
-      #login {
-        display: flex;
-        width: 100vw;
-      }
-
-      #left {
-        flex-shrink: 0;
-      }
-      #right {
-        flex-grow: 2;
-      }
-    }
-
-    @media (max-width: 768px) {
-      #root {
-        flex-direction: column;
-        #right {
-          height: 80%;
-        }
-      }
-    }
     /* Loading spinner style from loading.io/css/ */
     #root {
+      & .main {
+        padding-top: 5.5rem;
+      }
 
       div.lds-circle {
         display: inline-block;

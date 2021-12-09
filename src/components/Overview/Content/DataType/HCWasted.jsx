@@ -71,8 +71,8 @@ const HCWasted = (props) => {
           <span className="lead">
             $
             {
-              context["userData"]["devices"][0]["metrics"]["hcWasted"][
-                "avgDollarsPerWk"
+              context["userData"]["devices"][0]["metrics"][3]["hcWasted"][
+                "value1"
               ]
             }
           </span>
@@ -89,8 +89,8 @@ const HCWasted = (props) => {
           <p>
             <span>
               {
-                context["userData"]["devices"][0]["metrics"]["hcWasted"][
-                  "relChange"
+                context["userData"]["devices"][0]["metrics"][3]["hcWasted"][
+                  "value2"
                 ]
               }
               %

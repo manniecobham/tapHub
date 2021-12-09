@@ -1,14 +1,11 @@
 import React from "react";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
 
 const Property = () => {
   return (
     <React.Fragment>
-      <Sidebar id="left" />
-      <div
-        id="right"
-        style={{ width: "100vw", height: "100vh", background: "red" }}
-      ></div>
+      <Navbar />
+      <div style={{ width: "100vw", height: "100vh", background: "red" }}></div>
     </React.Fragment>
   );
 };

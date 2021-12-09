@@ -12,6 +12,18 @@ const SpaceSelectionContainer = styled.div`
       line-height: 28px;
       letter-spacing: 0.4px;
     }
+
+    @media (max-width: 445px) {
+      & > h2 {
+        font-size: 20px;
+      }
+    }
+
+    /* @media (max-width: 400px) {
+      & > h2 {
+        font-size: 16px;
+      }
+    } */
   }
 `;
 
@@ -19,6 +31,7 @@ const SpaceSelectionDropdownContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 99;
   background-color: white;
   border: 1px solid #777777;
   border-radius: 8px;
@@ -73,6 +86,10 @@ const SpaceSelectionDropdownContainer = styled.div`
         background-color: lightgray;
       }
     }
+  }
+
+  @media (max-width: 560px) {
+    left: -4rem;
   }
 `;
 

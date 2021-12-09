@@ -26,15 +26,15 @@ const RoomsOccupied = (props) => {
         <p>
           <span className="lead">
             {
-              context["userData"]["devices"][0]["metrics"]["roomsOccupied"][
-                "currentOccupied"
+              context["userData"]["devices"][0]["metrics"][0]["roomsOccupied"][
+                "value1"
               ]
             }
           </span>
           /{" "}
           {
-            context["userData"]["devices"][0]["metrics"]["roomsOccupied"][
-              "totalDevices"
+            context["userData"]["devices"][0]["metrics"][0]["roomsOccupied"][
+              "value2"
             ]
           }
         </p>

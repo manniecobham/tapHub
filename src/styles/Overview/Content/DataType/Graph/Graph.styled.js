@@ -1,117 +1,89 @@
 import styled from "styled-components";
 
 const GraphCard = styled.div`
-  background-color: ${(props) => props.backgroundColor};
-  border-radius: 8px;
-  display: flex;
-  padding: 0;
-  flex-direction: row;
-  font-size: 16px;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-  }
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const GraphContainer = styled.div`
-  /* width: 1000px;
-  height: 546px; */
-  flex-grow: 2;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  /* overflow: auto; */
-  padding: 0;
-  overflow: none;
-`;
-
-const SidebarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* width: 20%; */
-  /* height: 546px; */
-  height: 100%;
-  margin: 0;
-  border: 4px solid white;
-  border-radius: 10px;
-  overflow: auto;
-  @media (max-width: 1024px) {
+  &.graph-grid {
+    background-color: ${(props) => props.backgroundColor};
+    border-radius: 8px;
+    display: grid;
+    position: relative;
+    padding: 0;
     flex-direction: row;
-  }
-  @media (max-width: 768px) {
-    flex-direction: row;
+    font-size: 16px;
+    grid-template-areas: "sidebar graph";
+    grid-template-columns: 2fr 5fr;
+
+    .graph-grid {
+      &__sidebar {
+        grid-area: sidebar;
+      }
+      &__container {
+        &-outer {
+          grid-area: graph;
+          width: 100%;
+          /* border: solid 5px red; */
+        }
+        &-inner {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          padding: 0;
+          overflow: none;
+          /* border: solid 5px blue; */
+
+          @media (max-width: 470px) {
+            margin-top: 3rem;
+          }
+        }
+      }
+    }
+
+    /* hamburger */
+    .hamburger {
+      z-index: 999;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      background-color: transparent;
+      border: none;
+      display: none;
+      cursor: pointer;
+      transition: all 1s;
+      top: 10px;
+      left: 10px;
+
+      @media (max-width: 470px) {
+        top: 10px;
+        left: 44%;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-areas:
+        "sidebar"
+        "graph";
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 768px) {
+      &.graph-grid {
+        grid-template-areas:
+          "sidebar"
+          "graph";
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hamburger--open {
+          top: 10px;
+          left: 10px;
+          /* transition: transform 2s ease-in-out;
+          &::hover {
+            transform: scale(1.3);
+          } */
+        }
+      }
+    }
   }
 `;
 
-const SidebarContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px 20px;
-  background: rgba(242, 242, 242, 1);
-  height: 100%;
-  width: 100%;
-  border-bottom: 1px solid lightgray;
-  /* border-right: 1px solid lightgray; */
-  transition: background 0.2s ease-out;
-  &:hover {
-    background: white;
-  }
-  @media (max-width: 1024px) {
-    justify-content: space-between;
-  }
-  @media (max-width: 768px) {
-    justify-content: space-between;
-  }
-`;
-
-const SidebarContentTop = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    height: 70%;
-    justify-content: space-between;
-  }
-  @media (max-width: 768px) {
-    flex-direction: column;
-    height: 70%;
-    justify-content: space-between;
-  }
-`;
-
-const SidebarText = styled.span`
-  display: flex;
-  flex-direction: column;
-  color: darkslategray;
-  margin-right: 30px;
-`;
-
-const SidebarRelativeChange = styled.span`
-  display: flex;
-  flex-direction: row;
-  background: lightgray;
-  border-radius: 5px;
-  padding: 2px 10px 2px 10px;
-  color: darkslategray;
-`;
-
-const SidebarContentBottom = styled.div`
-  display: flex;
-  padding-top: 5px;
-  font-size: 24px;
-  font-weight: 600;
-  color: black;
-`;
-
-export {
-  GraphCard,
-  GraphContainer,
-  SidebarContainer,
-  SidebarContentContainer,
-  SidebarContentTop,
-  SidebarText,
-  SidebarRelativeChange,
-  SidebarContentBottom,
-};
+export { GraphCard };

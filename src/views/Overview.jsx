@@ -1,12 +1,12 @@
 import React from "react";
 import OverviewIndex from "../components/Overview/OverviewIndex";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
 
 const Overview = (props) => {
   return (
     <React.Fragment>
-      <Sidebar id="left" />
-      <OverviewIndex id="right" />
+      <Navbar />
+      <OverviewIndex className="main" />
     </React.Fragment>
   );
 };
