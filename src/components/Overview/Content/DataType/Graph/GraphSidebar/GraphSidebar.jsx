@@ -9,10 +9,6 @@ import { SidebarContainer } from "../../../../../../styles/Overview/Content/Data
 
 //components
 import SensorComponent from "./GraphSidebarItems/SensorComponent";
-// import Temperature from "./GraphSidebarItems/Temperature";
-// import LightUsage from "./GraphSidebarItems/LightUsage";
-// import Humidity from "./GraphSidebarItems/Humidity";
-// import Pressure from "./GraphSidebarItems/Pressure";
 
 const GraphSidebar = (props) => {
   const context = useContext(Context);

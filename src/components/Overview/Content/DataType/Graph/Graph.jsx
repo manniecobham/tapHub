@@ -17,7 +17,7 @@ import GraphButton from "./GraphButton/GraphButton";
 const Graph = (props) => {
   const theme = useTheme();
   const bgColor = theme.colors.colorSecondaryWhite;
-  const [graphData, setGraphData] = useState(data4);
+  const [graphData, setGraphData] = useState(data5);
   const [isLineChartShown, setIsLineChartShown] = useState(true);
 
   const onDateChange = (newGraph) => {

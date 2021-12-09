@@ -10,7 +10,7 @@ const GraphCard = styled.div`
     flex-direction: row;
     font-size: 16px;
     grid-template-areas: "sidebar graph";
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 2fr 5fr;
 
     .graph-grid {
       &__sidebar {
@@ -19,8 +19,6 @@ const GraphCard = styled.div`
       &__container {
         &-outer {
           grid-area: graph;
-          /* This was the issue! */
-          /* margin-left: 1rem; */
           width: 100%;
         }
         &-inner {
