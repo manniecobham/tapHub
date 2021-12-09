@@ -33,53 +33,92 @@ const jsonResponse = {
   metricTooltipInformation: {
     co2Reduction: "",
     lightWasted: "",
-    co2Reduction: "",
   },
   devices: [
     {
       name: "Test Office",
       id: 1,
-      metrics: {
-        roomsOccupied: {
-          currentOccupied: 99,
-          totalDevices: 99,
+      metrics: [
+        {
+          roomsOccupied: {
+            // currentOccupied
+            value1: 99,
+            // totalDevices
+            value2: 99,
+          },
         },
-        co2Reduction: {
-          avgLbsPerWk: 99,
-          relChange: 99,
+        {
+          co2Reduction: {
+            // avgLbsPerWk
+            value1: 99,
+            // relChange
+            value2: 99,
+          },
         },
-        lightWasted: {
-          avgHoursPerWk: 99,
-          relChange: 99,
+        {
+          lightWasted: {
+            // avgHoursPerWk
+            value1: 99,
+            // relChange
+            value2: 99,
+          },
         },
-        hcWasted: {
-          avgDollarsPerWk: 99,
-          relChange: 99,
+        {
+          hcWasted: {
+            // avgDollarsPerWk
+            value1: 99,
+            // relChange
+            value2: 99,
+          },
         },
-      },
-      metricAverages: {
-        spaceUtilization: {
-          currPercentOccupied: 52,
-          relChangePerDay: 2.1,
+      ],
+      metricAverages: [
+        {
+          title: "Space Utilization",
+          data: {
+            // currPercentOccupied
+            value1: 52,
+            // relChangePerDay
+            value2: 2.1,
+          },
         },
-        temperature: {
-          currAvgTemp: 52,
-          relChangePerDay: 2.1,
+        {
+          title: "Temperature",
+          data: {
+            // currAvgTemp
+            value1: 65,
+            // relChangePerDay
+            value2: 4.1,
+          },
         },
-        lightUsage: {
-          // Clarify incoming units
-          currAvgMinPerMonth: 10,
-          relChangePerMonth: 2.1,
+        {
+          title: "Light Usage",
+          data: {
+            // currAvgMinPerMonth
+            value1: 10,
+            // relChangePerMonth
+            value2: 3,
+          },
         },
-        humidity: {
-          currAvg: 52,
-          comfortLevel: "Comfort",
+        {
+          title: "Humidity",
+          data: {
+            // currAvg
+            value1: 45,
+            // comfortLevel
+            value2: "Comfortable",
+          },
         },
-        pressure: {
-          currAvg: 52,
-          pressureLevel: "Normal",
+        {
+          title: "Pressure",
+          data: {
+            // currAvg
+            value1: 70,
+            // pressureLevel
+            value2: "Normal",
+          },
         },
-      },
+      ],
     },
   ],
 };

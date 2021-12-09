@@ -69,8 +69,8 @@ const LightWasted = (props) => {
         <p>
           <span className="lead">
             {
-              context["userData"]["devices"][0]["metrics"]["lightWasted"][
-                "avgHoursPerWk"
+              context["userData"]["devices"][0]["metrics"][2]["lightWasted"][
+                "value1"
               ]
             }
           </span>{" "}
@@ -87,8 +87,8 @@ const LightWasted = (props) => {
           <p>
             <span>
               {
-                context["userData"]["devices"][0]["metrics"]["lightWasted"][
-                  "relChange"
+                context["userData"]["devices"][0]["metrics"][2]["lightWasted"][
+                  "value2"
                 ]
               }
               %

@@ -1,8 +1,10 @@
+/* Not being used anymore */
+
 import React, { useState, useRef, useContext } from "react";
 import { useTheme } from "styled-components";
-import { SideNav } from "../../styles/Sidebar/Sidebar.styled";
+import { SideNav } from "../../../styles/OldStyles/Sidebar/Sidebar.styled";
 import { NavLink } from "react-router-dom";
-import Context from "../../context/context";
+import Context from "../../../context/context";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 import overview_icon from "../../images/Sidebar/overview.svg";
 import arrow_icon from "../../images/Sidebar/arrow.svg";

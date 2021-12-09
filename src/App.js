@@ -16,7 +16,6 @@ import Context from "./context/context";
 import jsonResponse from "./context/api";
 
 import Login from "./views/Login";
-// import Slider from './components/Slider/Slider'
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
   const [userData, setUserData] = useState({});
@@ -34,7 +33,7 @@ function App() {
 
       const responseData = await response.json();
 
-      console.log(JSON.stringify(responseData.body));
+      // console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
       //setIsLoading(false);
       setTimeout(() => {

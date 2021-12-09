@@ -1,12 +1,11 @@
 import React from "react";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
 
 const Reports = () => {
   return (
     <React.Fragment>
-      <Sidebar id="left" />
+      <Navbar />
       <div
-        id="right"
         style={{ width: "100vw", height: "100vh", background: "blue" }}
       ></div>
     </React.Fragment>
