@@ -10,14 +10,14 @@ import {
 
 const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
   //time frame toggle
-  const [timeFrame, setTimeFrame] = useState("Today's");
+  const [timeFrame, setTimeFrame] = useState("Weekly");
 
-  const [buttonColorDay, setButtonColorDay] = useState("white");
-  const [buttonColorWeek, setButtonColorWeek] = useState("lightgray");
+  const [buttonColorDay, setButtonColorDay] = useState("lightgray");
+  const [buttonColorWeek, setButtonColorWeek] = useState("white");
   const [buttonColorMonth, setButtonColorMonth] = useState("lightgray");
 
-  const [colorDay, setColorDay] = useState("black");
-  const [colorWeek, setColorWeek] = useState("gray");
+  const [colorDay, setColorDay] = useState("gray");
+  const [colorWeek, setColorWeek] = useState("black");
   const [colorMonth, setColorMonth] = useState("gray");
 
   //graph style toggle
