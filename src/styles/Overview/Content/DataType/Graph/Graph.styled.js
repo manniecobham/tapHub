@@ -71,12 +71,6 @@ const GraphCard = styled.div`
           "sidebar"
           "graph";
 
-        .graph-grid {
-          &__sidebar {
-            display: none;
-          }
-        }
-
         .hamburger {
           display: flex;
         }
@@ -107,19 +101,6 @@ const GraphCard = styled.div`
             left: 0px;
             transform: rotate(-45deg);
           }
-        }
-
-        .graph-grid__sidebar--full {
-          display: grid;
-          background-color: white;
-          position: absolute;
-          top: 0px;
-          left: 0;
-          z-index: 555;
-          width: 100%;
-          height: 300px;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: repeat(2, 1fr);
         }
       }
     }

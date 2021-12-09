@@ -55,11 +55,7 @@ const Graph = (props) => {
         <div className="line-two"></div>
         <div className="line-three"></div>
       </button>
-      <GraphSidebar
-        className={`graph-grid__sidebar ${
-          hamburgerIsOpen ? "graph-grid__sidebar--full" : ""
-        }`}
-      />
+      <GraphSidebar hamburgerIsOpen={hamburgerIsOpen} />
       <div className="graph-grid__container-outer">
         <div className="graph-grid__container-inner">
           <GraphButton

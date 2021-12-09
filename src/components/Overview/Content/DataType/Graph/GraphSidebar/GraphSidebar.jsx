@@ -15,9 +15,16 @@ const GraphSidebar = (props) => {
   const sensors = context["userData"]["devices"][0]["metricAverages"];
 
   return (
-    <SidebarContainer className={`graph-sidebar ${props.className}`}>
+    <SidebarContainer
+      className={`graph-sidebar ${
+        props.hamburgerIsOpen ? "graph-sidebar--hamburger-open" : ""
+      }`}
+    >
       {sensors.map((sensor) => (
-        <SensorComponent className="graph-sidebar__item" contextProp={sensor} />
+        <SensorComponent
+          className={`graph-sidebar__item`}
+          contextProp={sensor}
+        />
       ))}
     </SidebarContainer>
   );

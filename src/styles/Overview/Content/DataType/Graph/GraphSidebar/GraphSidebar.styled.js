@@ -5,7 +5,7 @@ const SidebarContainer = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
     margin: 0;
     border: 4px solid white;
     border-radius: 10px;
@@ -13,6 +13,25 @@ const SidebarContainer = styled.div`
 
     @media (max-width: 1024px) {
       flex-direction: row;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    &--hamburger-open {
+      display: flex;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 555;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+      }
     }
 
     .graph-sidebar {
@@ -32,9 +51,6 @@ const SidebarContainer = styled.div`
         @media (max-width: 1024px) {
           justify-content: space-between;
           align-items: center;
-        }
-        @media (max-width: 768px) {
-          justify-content: space-between;
         }
 
         & .sidebar-content {
@@ -77,7 +93,7 @@ const SidebarContainer = styled.div`
               color: darkslategray;
               margin: 20px 20px 0 20px;
               align-self: center;
-              /* border: 1px solid black; */
+              /* border: 1px solid red; */
 
               @media (max-width: 1024px) {
                 margin: 10px 5px 0 5px;
@@ -97,6 +113,10 @@ const SidebarContainer = styled.div`
 
               @media (max-width: 1024px) {
                 padding: 10px 0 10px 0;
+              }
+
+              @media (max-width: 500px) {
+                font-size: 16px;
               }
             }
           }
