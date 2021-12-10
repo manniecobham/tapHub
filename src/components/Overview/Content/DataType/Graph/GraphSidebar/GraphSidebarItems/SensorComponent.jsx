@@ -21,7 +21,7 @@ const SensorComponent = ({className, contextProp}) => {
         src={upPolygon}
         alt="up"
       />
-  } else if (contextProp.title === "temperature") {
+  } else if (contextProp.title === "Temperature") {
     timeframe = "dd/dd";
     units = <span>&deg;F</span>;
     changeUnits = "%";
@@ -59,8 +59,10 @@ const SensorComponent = ({className, contextProp}) => {
         <div className="sidebar-content__top-title">
           <h4>{contextProp.title}</h4>
         </div>
-        <div className="sidebar-content__top-value2">
-          {arrow} {contextProp.data.value2}{changeUnits} {timeframe}
+        <div>
+          <div className="sidebar-content__top-value2">
+            {arrow} {contextProp.data.value2}{changeUnits} {timeframe}
+          </div>
         </div>
       </div>
       <div className="sidebar-content__bottom">

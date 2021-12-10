@@ -5,7 +5,6 @@ const SidebarContainer = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
-    /* height: 100%; */
     margin: 0;
     border: 4px solid white;
     border-radius: 10px;
@@ -44,6 +43,7 @@ const SidebarContainer = styled.div`
         border-bottom: 1px solid lightgray;
         border-right: 1px solid lightgray;
         transition: background 0.2s ease-out;
+
         &:hover {
           background: white;
         }
@@ -59,29 +59,54 @@ const SidebarContainer = styled.div`
             flex-direction: row;
             justify-content: space-between;
 
+            /* border: 1px solid black; */
+
             @media (max-width: 1024px) {
               flex-direction: column;
               height: 70%;
               justify-content: space-between;
             }
+
+            //this is new, commented is old
             @media (max-width: 768px) {
-              flex-direction: column;
-              height: 70%;
+              flex-direction: row;
               justify-content: space-between;
+              height: 70%;
+              margin: 0 0 0 30px;
+
+              /* border: 1px solid red; */
+
+              /* flex-direction: column;
+              height: 70%;
+              justify-content: space-between; */
             }
 
-            /* border: 1px solid black; */
+            // this is new
+            @media (max-width: 400px) {
+              margin: 0 0 0 35px;
+            }
 
             &-title {
               display: flex;
               flex-direction: column;
               color: darkslategray;
               margin: 20px 0 0 20px;
+
               /* border: 1px solid black; */
 
               @media (max-width: 1024px) {
                 margin: 20px 0 0 0;
                 align-self: center;
+              }
+
+              // this is new
+              @media (max-width: 768px) {
+                flex-direction: row;
+                justify-content: space-between;
+                height: 70%;
+                margin-bottom: 10px;
+
+                /* border: 1px solid red; */
               }
             }
             &-value2 {
@@ -93,10 +118,22 @@ const SidebarContainer = styled.div`
               color: darkslategray;
               margin: 20px 20px 0 20px;
               align-self: center;
+              font-size: 14px;
+
               /* border: 1px solid red; */
+
+              @media (max-width: 1100px) {
+                font-size: 11px;
+              }
 
               @media (max-width: 1024px) {
                 margin: 10px 5px 0 5px;
+                font-size: 14px;
+              }
+
+              //this is new
+              @media (max-width: 768px) {
+                margin: 20px 5px 0 5px;
               }
             }
           }
@@ -109,6 +146,7 @@ const SidebarContainer = styled.div`
               font-weight: 600;
               color: black;
               padding: 0 0 0 20px;
+
               /* border: 1px solid black; */
 
               @media (max-width: 1024px) {

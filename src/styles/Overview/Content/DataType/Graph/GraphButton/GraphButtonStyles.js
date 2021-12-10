@@ -6,8 +6,6 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* margin-left: 50px; */
-    /* border: 5px solid red; */
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -17,6 +15,11 @@ export const Container = styled.div`
   .time-display {
     display: flex;
     flex-direction: column;
+    padding-left: 10px;
+
+    @media (max-width: 768px) {
+      padding-left: 0;
+    }
 
     &__text {
       font-size: 19px;

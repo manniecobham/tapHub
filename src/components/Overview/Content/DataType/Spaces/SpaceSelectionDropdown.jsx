@@ -10,6 +10,7 @@ const SpaceSelectionDropdown = (props) => {
   const spaceName = context["userData"]["devices"][0]["name"];
   return (
     <SpaceSelectionDropdownContainer>
+      {props.notif}
       <form>
         <div>
           <img src={searchIcon} alt="?" />
