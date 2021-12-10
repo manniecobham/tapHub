@@ -90,6 +90,11 @@ const NotificationListItem = styled.li`
           min-height: 120px;
           background-color: rgba(11, 123, 255, 1);
           border-radius: 5px 0px 0px 5px;
+          flex-shrink: 0;
+
+          .fill {
+            height: 100%;
+          }
 
           & > div {
             width: 100%;
