@@ -5,16 +5,22 @@
 
 const jsonRequest = {
   username: "testuser",
-  password: "eee0",
-  email: "eee@gmail.com",
-  birthday: "2019-01-20",
-  zipCode: "99999",
-  address: "2833 Hello World St",
-  phone: "999-999-9999",
-  fullName: "eee eeee eeeee",
-  // more info maybe? confirm later
+  password: "password",
+  email: "testuser@gmail.com",
+  fullName: "test user",
 };
 
-const jsonResponse = {
+const jsonResponseSuccess = {
+  success: true,
   message: "User is successfully created",
+};
+
+const jsonResponseFailureType1 = {
+  success: false,
+  message: "User already exists",
+};
+
+const jsonResponseFailureType2 = {
+  success: false,
+  message: "User could not be created",
 };

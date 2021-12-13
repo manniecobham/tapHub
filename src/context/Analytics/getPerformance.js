@@ -1,11 +1,12 @@
-// Get API call to retrieve performance information for specified space
-
-// ASK UI/UX FOR MORE INFO ABOUT THIS; FOR NOW, USE THIS STRUCTURE
+// Get API call to retrieve performance comparison information between 2 rooms
+// NEEDS REVISION
+// ASK UI/UX WHAT DATA IS BEING COMPARED FOR JSON RESPONSE
 
 const jsonRequest = {
-  username: "testuser",
-  userToken: "ewioehwuihiwuqh4wuih4wuih",
-  space: "InstaHub Office",
+  userId: 1,
+  userToken: "12345",
+  roomId: 1,
+  roomIdToCompare: 2,
 };
 
 const jsonResponse = {

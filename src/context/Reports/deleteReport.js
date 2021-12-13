@@ -1,8 +1,8 @@
 // Delete a specific report
 
 const jsonRequest = {
-  username: "testuser",
-  userToken: "ewioehwuihiwuqh4wuih4wuih",
+  userId: 1,
+  userToken: "12345",
   reportId: 1,
 };
 

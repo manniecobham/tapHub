@@ -1,13 +1,17 @@
-// Get API call used for getting graph data for both Analytics and Overview pages
+// NEEDS REVISION
+// ASK UI/UX WHAT GRAPH INFORMATION IS NEEDED FOR ANALYTICS
+// AND HOW DOES IT DIFFER FROM OVERVIEW
 
 const jsonRequest = {
-  username: "testuser",
-  userToken: "ewioehwuihiwuqh4wuih4wuih",
-  space: "InstaHub Office",
-  dateRange: "11-02-2020 / 11-03-2020",
+  userId: 1,
+  userToken: "12345",
+  spaceId: 1,
+  roomId: 1,
+  dateStart: "2020-11-23",
+  dateEnd: "2020-11-03",
 };
 
-const jsonRequest = {
+const jsonResponse = {
   // value is either in the format of data1, data2, or data3 below
   // data 1 = day
   graphDataDay: data1,
