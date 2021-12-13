@@ -116,7 +116,7 @@ const Navbar = (props) => {
           </a>
         </div>
         <div className="actions">
-          <Notification />
+          <Notification id="for-notifications" />
           <Profile />
         </div>
       </Container>

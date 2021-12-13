@@ -9,9 +9,9 @@ const SpaceSelectionDropdown = (props) => {
   const context = useContext(Context);
   const spaceName = context["userData"]["devices"][0]["name"];
   return (
-    <SpaceSelectionDropdownContainer>
+    <SpaceSelectionDropdownContainer id={props.id}>
       <form>
-        <div>
+        <div className="searchbar">
           <img src={searchIcon} alt="?" />
           <input type="text" placeholder="Search" />
         </div>
