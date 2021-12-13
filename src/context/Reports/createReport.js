@@ -7,21 +7,17 @@ const jsonRequest = {
     rooms: ["Office 101", "Office 202"],
     sensor: "Temperature",
     // time range format will change in the future
-    timeRange: "2019-10-02 / 2019-11-02",
+    dateStart: "2020-11-23",
+    dateEnd: "2020-11-03",
     reportType: "CSV",
     chartType: "Line",
     analyticsType: "Average",
     reportTitle: "Office 101 Monthly Report",
+    // Should created at this be generated in backend or frontend?
     createdAt: "2019-11-31",
   },
 };
 
-const jsonResponseSuccess = {
+const jsonResponse = {
   success: true,
-  message: "Report was successfully created",
-};
-
-const jsonResponseFail = {
-  success: false,
-  message: "Could not create report",
 };

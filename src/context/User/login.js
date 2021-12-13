@@ -13,12 +13,6 @@ const jsonResponseSuccess = {
   defaultSpaceId: 1,
 };
 
-const jsonResponseFailureType1 = {
+const jsonResponseFailure = {
   success: false,
-  message: "Incorrect username/password",
-};
-
-const jsonResponseFailureType2 = {
-  success: false,
-  message: "User does not exist",
 };

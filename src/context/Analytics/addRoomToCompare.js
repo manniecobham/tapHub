@@ -3,15 +3,10 @@
 const jsonRequest = {
   userId: 1,
   userToken: "12345",
+  spaceId: 1,
   roomId: 2,
 };
 
 const jsonResponseSuccess = {
   success: true,
-  message: "Room can be compared",
-};
-
-const jsonResponseFailure = {
-  success: true,
-  message: "Room can't be compared",
 };

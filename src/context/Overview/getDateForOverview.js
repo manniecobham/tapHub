@@ -9,12 +9,9 @@ const jsonRequest = {
 
 const jsonResponse = {
   space: {
-    name: "Floor 1",
-  },
-  rooms: [
-    {
-      roomName: "Room 1",
-      roomId: 1,
+    spaceId: 2,
+    spaceName: "Floor 1",
+    setOfDevices: {
       metrics: [
         {
           roomsOccupied: {
@@ -68,5 +65,5 @@ const jsonResponse = {
         },
       ],
     },
-  ],
+  },
 };

@@ -1,4 +1,4 @@
-// Get API call for one specific report
+// Get API call for one specific report for preview
 
 const jsonRequest = {
   userId: 1,
@@ -10,8 +10,8 @@ const jsonResponse = {
   reportInformation: {
     rooms: ["Office 101", "Office 202"],
     sensor: "Temperature",
-    // time range format will change in the future
-    timeRange: "2019-10-02 / 2019-11-02",
+    dateStart: "2020-11-23",
+    dateEnd: "2020-11-03",
     reportType: "CSV",
     chartType: "Line",
     analyticsType: "Average",

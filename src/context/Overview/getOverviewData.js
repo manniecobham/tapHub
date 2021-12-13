@@ -1,4 +1,4 @@
-// Get overview data information for specified space
+// Get API call to retrieve overview data information for a specified space
 
 const jsonRequest = {
   userId: 1,
@@ -8,13 +8,9 @@ const jsonRequest = {
 
 const jsonResponse = {
   space: {
-    name: "InstaHub Office",
-    id: 1,
-  },
-  rooms: [
-    {
-      roomName: "Room 117",
-      roomId: 1,
+    spaceId: 1,
+    spaceName: "InstaHub Office",
+    setOfDevices: {
       metrics: [
         {
           roomsOccupied: {
@@ -68,5 +64,5 @@ const jsonResponse = {
         },
       ],
     },
-  ],
+  },
 };

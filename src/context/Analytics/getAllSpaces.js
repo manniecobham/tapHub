@@ -1,4 +1,5 @@
-// Get API call for all the spaces
+// Get API call to retrieve all spaces for a specific user
+// (For dropdown)
 
 const jsonRequest = {
   userId: 1,

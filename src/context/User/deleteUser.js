@@ -8,12 +8,6 @@ const jsonRequest = {
   password: "password",
 };
 
-const jsonResponseSuccess = {
+const jsonResponse = {
   success: true,
-  message: "Your account has been deleted",
-};
-
-const jsonResponseFailure = {
-  success: false,
-  message: "Your account could not be deleted",
 };

@@ -4,8 +4,7 @@ const jsonRequest = {
   userId: 1,
   userToken: "12345",
   spaceId: 1,
-  dateStart: "2020-11-23",
-  dateEnd: "2020-11-03",
+  startDate: "2020-11-02",
 };
 
 const jsonRequest = {

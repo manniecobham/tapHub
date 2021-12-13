@@ -10,5 +10,6 @@ const jsonRequest = {
 };
 
 const jsonResponse = {
-  averageSpaceUsage: 68,
+  averageSpaceUsage1: 68,
+  averageSpaceUsage2: 21.18,
 };

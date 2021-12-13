@@ -1,4 +1,4 @@
-// Delete a specific report
+// Delete API call for a specific report
 
 const jsonRequest = {
   userId: 1,
@@ -7,5 +7,5 @@ const jsonRequest = {
 };
 
 const jsonResponse = {
-  message: "Report was successfully deleted",
+  success: true,
 };

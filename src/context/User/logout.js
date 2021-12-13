@@ -6,12 +6,6 @@ const jsonRequest = {
   userToken: "12345",
 };
 
-const jsonResponseSuccess = {
+const jsonResponse = {
   success: true,
-  message: "You have logged out",
-};
-
-const jsonResponseFailure = {
-  success: false,
-  message: "Unable to log out",
 };
