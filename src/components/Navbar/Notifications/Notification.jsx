@@ -64,6 +64,7 @@ const Notifications = (props) => {
         {notificationsAreShown && (
           <NotificationsDropdown
             onReadNotifications={onReadNotificationsHandler}
+            id={props.id}
           />
         )}
       </Dropdown>

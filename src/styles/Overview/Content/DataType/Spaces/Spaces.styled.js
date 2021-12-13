@@ -40,6 +40,26 @@ const SpaceSelectionDropdownContainer = styled.div`
     left: -4rem;
   }
 
+  /* Notifications space selector has different styles from the space selector in Overview Content */
+  @media (max-width: 560px) {
+    &#for-notifications {
+      left: 0;
+      width: 200px;
+
+      & .searchbar {
+        & input {
+          width: 100%;
+        }
+      }
+
+      ul.spacelist {
+        .spacelist__item {
+          width: 100%;
+        }
+      }
+    }
+  }
+
   & > form {
     padding: 12px;
 
