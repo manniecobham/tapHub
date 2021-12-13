@@ -36,6 +36,30 @@ const SpaceSelectionDropdownContainer = styled.div`
   border: 1px solid #777777;
   border-radius: 8px;
 
+  @media (max-width: 560px) {
+    left: -4rem;
+  }
+
+  /* Notifications space selector has different styles from the space selector in Overview Content */
+  @media (max-width: 560px) {
+    &#for-notifications {
+      left: 0;
+      width: 200px;
+
+      & .searchbar {
+        & input {
+          width: 100%;
+        }
+      }
+
+      ul.spacelist {
+        .spacelist__item {
+          width: 100%;
+        }
+      }
+    }
+  }
+
   & > form {
     padding: 12px;
 
@@ -86,10 +110,6 @@ const SpaceSelectionDropdownContainer = styled.div`
         background-color: lightgray;
       }
     }
-  }
-
-  @media (max-width: 560px) {
-    left: -4rem;
   }
 `;
 

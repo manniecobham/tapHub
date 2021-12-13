@@ -9,10 +9,9 @@ const SpaceSelectionDropdown = (props) => {
   const context = useContext(Context);
   const spaceName = context["userData"]["devices"][0]["name"];
   return (
-    <SpaceSelectionDropdownContainer>
-      {props.notif}
+    <SpaceSelectionDropdownContainer id={props.id}>
       <form>
-        <div>
+        <div className="searchbar">
           <img src={searchIcon} alt="?" />
           <input type="text" placeholder="Search" />
         </div>
@@ -25,7 +24,7 @@ const SpaceSelectionDropdown = (props) => {
           </button>
         </li>
         <li className="spacelist__item">
-          <button>1st Floor</button>
+          <button>1st floor</button>
         </li>
         <li className="spacelist__item">
           <button>2nd Floor</button>
