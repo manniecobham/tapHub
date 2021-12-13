@@ -2,10 +2,10 @@
 // NOT SURE IF IT WILL BE A POST REQUEST
 
 const jsonRequest = {
-  username: "testuser",
-  userToken: "ewioehwuihiwuqh4wuih4wuih",
+  userId: 1,
+  userToken: "12345",
 };
 
 const jsonResponse = {
-  message: "You have logged out",
+  success: true,
 };

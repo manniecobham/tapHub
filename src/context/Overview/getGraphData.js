@@ -1,10 +1,10 @@
-// Get API call used for getting graph data for both Analytics and Overview pages
+// Get API call used for getting graph data for Overview page
 
 const jsonRequest = {
-  username: "testuser",
-  userToken: "ewioehwuihiwuqh4wuih4wuih",
-  space: "InstaHub Office",
-  dateRange: "11-02-2020 / 11-03-2020",
+  userId: 1,
+  userToken: "12345",
+  spaceId: 1,
+  startDate: "2020-11-02",
 };
 
 const jsonRequest = {
