@@ -16,6 +16,7 @@ import Context from "./context/context";
 import jsonResponse from "./context/api";
 
 import Login from "./views/Login";
+import Register from "./components/Login/Register";
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
   const [userData, setUserData] = useState({});
@@ -35,10 +36,10 @@ function App() {
 
       // console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
-      //setIsLoading(false);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
+      setIsLoading(false);
+      // setTimeout(() => {
+      //   setIsLoading(false);
+      // }, 2000);
     };
 
     fetchData().catch((error) => {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/overview" element={<Overview />} />
             <Route path="/" element={<Navigate replace to="/overview" />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/sensors" element={<Sensors />} />
