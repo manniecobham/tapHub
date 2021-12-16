@@ -5,17 +5,13 @@ const GraphCard = styled.div`
     background-color: ${(props) => props.backgroundColor};
     border-radius: 8px;
     display: grid;
+    position: relative;
     padding: 0;
     flex-direction: row;
     font-size: 16px;
     grid-template-areas: "sidebar graph";
+    grid-template-columns: 2fr 5fr;
 
-    @media (max-width: 1024px) {
-      flex-direction: column;
-    }
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
     .graph-grid {
       &__sidebar {
         grid-area: sidebar;
@@ -23,15 +19,67 @@ const GraphCard = styled.div`
       &__container {
         &-outer {
           grid-area: graph;
-          margin-left: 1rem;
           width: 100%;
+          /* border: solid 5px red; */
         }
         &-inner {
-          flex-grow: 2;
           margin-top: 20px;
           margin-bottom: 20px;
           padding: 0;
           overflow: none;
+          /* border: solid 5px blue; */
+
+          @media (max-width: 470px) {
+            margin-top: 3rem;
+          }
+        }
+      }
+    }
+
+    /* hamburger */
+    .hamburger {
+      z-index: 999;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      background-color: transparent;
+      border: none;
+      display: none;
+      cursor: pointer;
+      transition: all 1s;
+      top: 10px;
+      left: 10px;
+
+      @media (max-width: 470px) {
+        top: 10px;
+        left: 44%;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-areas:
+        "sidebar"
+        "graph";
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 768px) {
+      &.graph-grid {
+        grid-template-areas:
+          "sidebar"
+          "graph";
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hamburger--open {
+          top: 10px;
+          left: 10px;
+          /* transition: transform 2s ease-in-out;
+          &::hover {
+            transform: scale(1.3);
+          } */
         }
       }
     }

@@ -4,7 +4,7 @@ import LoginForm from "../components/Login/LoginForm";
 
 const Login = () => {
   return (
-    <div id="login" style={{display:"flex"}}>
+    <div id="login" style={{ display: "flex" }}>
       <LoginForm id="left" />
       <LoginSlider id="right" />
     </div>

@@ -72,6 +72,13 @@ const Card = styled.div`
           }
         }
       }
+
+      @media (max-width: 560px) {
+        &__header-spaces {
+          flex-direction: column;
+          margin-bottom: 40px;
+        }
+      }
     }
   }
 `;

@@ -4,15 +4,32 @@ import ReactApexChart from "react-apexcharts";
 const HeatMap = ({ graphData, isShown }) => {
   const initialState = {
     series: graphData,
-
     options: {
       chart: {
-        height: 350,
+        height: 450,
         type: "heatmap",
         toolbar: {
           show: false,
         },
       },
+      responsive: [
+        {
+          breakpoint: 768,
+          options: {
+            chart: {
+              height: 350,
+            },          
+          }
+        },
+        {
+          breakpoint: 380,
+          options: {
+            chart: {
+              width: 300
+            },            
+          }
+        },
+      ],
       plotOptions: {
         heatmap: {
           shadeIntensity: 0.5,
@@ -76,7 +93,7 @@ const HeatMap = ({ graphData, isShown }) => {
           options={heatMap.options}
           series={heatMap.series}
           type="heatmap"
-          height={450}
+          height={heatMap.options.chart.height}
         />
       </div>
     </>

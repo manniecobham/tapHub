@@ -5,23 +5,26 @@ import Context from "../../../../../../context/context";
 // import jsonResponse from '../../../../../../context/api'
 
 //styles
-import { SidebarContainer } from "../../../../../../styles/Overview/Content/DataType/Graph/GraphSidebar/GraphSidebar.styled"
+import { SidebarContainer } from "../../../../../../styles/Overview/Content/DataType/Graph/GraphSidebar/GraphSidebar.styled";
 
 //components
 import SensorComponent from "./GraphSidebarItems/SensorComponent";
-// import Temperature from "./GraphSidebarItems/Temperature";
-// import LightUsage from "./GraphSidebarItems/LightUsage";
-// import Humidity from "./GraphSidebarItems/Humidity";
-// import Pressure from "./GraphSidebarItems/Pressure";
 
-const GraphSidebar = () => {
+const GraphSidebar = (props) => {
   const context = useContext(Context);
-  const sensors = context["userData"]["devices"][0]["metricAverages"]
+  const sensors = context["userData"]["devices"][0]["metricAverages"];
 
   return (
-    <SidebarContainer className="graph-sidebar">
+    <SidebarContainer
+      className={`graph-sidebar ${
+        props.hamburgerIsOpen ? "graph-sidebar--hamburger-open" : ""
+      }`}
+    >
       {sensors.map((sensor) => (
-        <SensorComponent className="graph-sidebar__item" contextProp={sensor}/>
+        <SensorComponent
+          className={`graph-sidebar__item`}
+          contextProp={sensor}
+        />
       ))}
     </SidebarContainer>
   );
