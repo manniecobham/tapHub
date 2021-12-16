@@ -1,13 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
+import CreateReport from "../components/Reports/Form/CreateReport";
 
 const Reports = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <div
-        style={{ width: "100vw", height: "100vh", background: "blue" }}
-      ></div>
+      <CreateReport />
     </React.Fragment>
   );
 };
