@@ -2,59 +2,65 @@ import styled from "styled-components";
 import { Card } from "../../../styles/UI/Card.styled";
 
 export const Container = styled.div`
-    &.analytics-container{
+  &.analytics-container {
+    background-color: rgb(212, 212, 212);
+
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    flex-flow: column;
+
+    .analytics-container {
+      &__sensors {
         display: flex;
-        width: 100%;
-        // height: 100%;
-        margin: 0 auto;
-        position: absolute;
-        flex-flow: column;
+        /* width: 100%; */
+        justify-content: space-around;
+        background: gray;
 
-        .analytics-container {
-            &__sensors {
-                display: flex;
-                width: 100%;
-                justify-content: space-around;
-                background: gray;
-
-                &-box {
-                    border: 1px solid red;
-                    padding: 10px;
-
-                }
-            }
-
-            &__analysis {
-                display: grid;
-                height: 500px;
-                grid-template-areas: 
-                "graph graph performance"
-                "graph graph performance"
-                "dropdown dropdown floor";
-
-                border: 1px solid red;
-
-                &-graph {
-                    grid-area: graph;
-                    border: 1px solid red;
-                }
-                &-performance {
-                    grid-area: performance;
-                    border: 1px solid red;
-                }
-                &-dropdown {
-                    grid-area: dropdown;
-                    border: 1px solid red;
-                }
-                &-floor {
-                    grid-area: floor;
-                    border: 1px solid red;
-                }
-            }
+        &-box {
+          border: 1px solid red;
+          padding: 10px;
         }
-    }
+      }
 
-`
+      &__analysis {
+        margin: 20px 20px 20px 20px;
+        gap: 30px;
+        display: grid;
+        height: 100%;
+        grid-template-areas:
+          "graph graph performance"
+          "graph graph performance"
+          "dropdown dropdown floor";
+
+        /* border: 1px solid red; */
+
+        &-graph {
+          background: rgb(241, 241, 245);
+          grid-area: graph;
+          /* border: 1px solid red; */
+        }
+        &-performance {
+          background: rgb(241, 241, 245);
+          grid-area: performance;
+          /* border: 1px solid red; */
+        }
+        &-dropdown {
+          background: rgb(241, 241, 245);
+          grid-area: dropdown;
+          /* border: 1px solid red; */
+        }
+        &-floor {
+          background: rgb(241, 241, 245);
+          grid-area: floor;
+          /* border: 1px solid red; */
+        }
+      }
+    }
+  }
+`;
 
 // const Body = styled.div`
 //     max-width: 100%;
@@ -80,7 +86,7 @@ export const Container = styled.div`
 //             display: grid;
 //             gap: 30px;
 //             grid-area: cards;
-//             grid-template-areas: 
+//             grid-template-areas:
 //             "desc btn"
 //             "img img";
 
@@ -105,13 +111,13 @@ export const Container = styled.div`
 //             flex-direction: row;
 //             background-color: #f0eeee
 //             grid-template-areas:"card btn";
-    
+
 //             &__card {
 //                 background-color: plum;
 //                 width: 100%;
 //                 grid-area: card;
 //             }
-            
+
 //             &__btn {
 //                 gap: 5px;
 //                 width: 100%;
@@ -131,8 +137,8 @@ export const Container = styled.div`
 //                     font-size: 100%;
 //                     height: 30px;
 //                     display: block;
-//                     flex-direction: row;   
-                    
+//                     flex-direction: row;
+
 //                     &:hover{
 //                     background-color: white;
 //                 }

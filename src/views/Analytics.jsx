@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import GraphCards from "../components/Analytics/AnalyticsDisplay.jsx/GraphCards";
+import GraphCards from "../components/Analytics/AnalyticsDisplay/GraphCards";
 
 
 const Analytics = () => {

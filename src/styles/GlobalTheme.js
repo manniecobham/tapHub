@@ -10,7 +10,7 @@ const theme = {
     colorSecondaryCaramel: "rgb(235, 163, 59)",
     colorSecondaryPurple: "rgb(115, 68, 147)",
     colorNeutralDarkest: "rgb(34, 34, 34)",
-    colorNeutralDark: "#rgb(119, 119, 119)",
+    colorNeutralDark: "rgb(119, 119, 119)",
     colorNeutralLight: "rgb(241,241,245)",
     colorNeutralLightest: "rgb(248, 248, 248)",
     colorHeader: "rgba(160, 168, 177, 1)",

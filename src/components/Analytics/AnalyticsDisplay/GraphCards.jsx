@@ -1,30 +1,34 @@
 import React from 'react'
-// import  Body  from './GraphCard.styled'
+
+//components
+import { Card } from '../../../styles/UI/Card.styled';
+import Graph from '../../Overview/Content/DataType/Graph/Graph';
+import HeatMap from '../../Overview/Content/DataType/Graph/Heatmap';
 import { Container } from './GraphCard.styled'
 
 function GraphCard() {
     return (        
         <Container className="analytics-container">
             <div className="analytics-container__sensors">
-                <div className="analytics-container__sensors-box">humidity</div>
-                <div className="analytics-container__sensors-box">temperature</div>
-                <div className="analytics-container__sensors-box">space usage</div>
-                <div className="analytics-container__sensors-box">pressure</div>
-                <div className="analytics-container__sensors-box">lights</div>
+                <Card className="card analytics-container__sensors-box">humidity</Card>
+                <Card className="card analytics-container__sensors-box">temperature</Card>
+                <Card className="card analytics-container__sensors-box">space usage</Card>
+                <Card className="card analytics-container__sensors-box">pressure</Card>
+                <Card className="cardanalytics-container__sensors-box">lights</Card>
             </div>
             <div className="analytics-container__analysis">
-                <div className="analytics-container__analysis-graph">
-                    
-                </div>
-                <div className="analytics-container__analysis-performance">
-                    2
-                </div>
-                <div className="analytics-container__analysis-dropdown">
-                    3
-                </div>
-                <div classname="analytics-container__analysis-floor">
-                    4   
-                </div>
+                <Card className="card analytics-container__analysis-graph">
+        
+                </Card>
+                <Card className="card analytics-container__analysis-performance">
+
+                </Card>
+                <Card className="card analytics-container__analysis-dropdown">
+
+                </Card>
+                <Card className="card analytics-container__analysis-floor">
+
+                </Card>
             </div>
         </Container>
 //             <Body> 
