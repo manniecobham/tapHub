@@ -8,7 +8,7 @@ import selectionDropdownIcon from "../../../../../images/Overview/selectionDropd
 import { ToggleGroup } from "../../../../../styles/UI/Toggle.styled";
 import { Card } from "../../../../../styles/UI/Card.styled";
 import Button from "../../../../../styles/UI/Button.styled";
-import { Dropdown } from "../../../../../styles/Overview/Header/Dropdown.styled";
+import { Dropdown } from "../../../../../styles/Navbar/Dropdown.styled";
 import { SpaceSelectionContainer } from "../../../../../styles/Overview/Content/DataType/Spaces/Spaces.styled";
 import { useTheme } from "styled-components";
 import SpaceSelectionDropdown from "./SpaceSelectionDropdown";
