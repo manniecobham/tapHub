@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles.styled";
 import globalTheme from "./styles/GlobalTheme";
@@ -13,7 +13,6 @@ import Property from "./views/Property";
 //Amplify.configure(aws_exports);
 import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
-import jsonResponse from "./context/api";
 
 import Login from "./views/Login";
 import Register from "./components/Login/Register";
@@ -57,6 +56,8 @@ function App() {
   return (
     <Context.Provider
       value={{
+        userName: "",
+        userToken: "",
         userData: userData,
       }}
     >
@@ -66,10 +67,10 @@ function App() {
           loadingSpinner
         ) : (
           <Routes>
-            <Route path="/overview" element={<Overview />} />
-            <Route path="/" element={<Navigate replace to="/overview" />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/overview" element={<Overview />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/sensors" element={<Sensors />} />

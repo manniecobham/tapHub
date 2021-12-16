@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useInput from "../../hooks/use-input";
 import {
@@ -7,8 +7,18 @@ import {
   RegisterHeader,
 } from "../../styles/Login/Register.styled";
 import instaHubLogo from "../../images/Login/instahub_logo.png";
+import ConfirmSignup from "./ConfirmSignUp";
 
 const Register = (props) => {
+  const {
+    value: enteredUsername,
+    isValid: enteredUsernameIsValid,
+    hasError: usernameInputHasError,
+    valueChangeHandler: usernameChangeHandler,
+    inputBlurHandler: usernameBlurHandler,
+    reset: resetUsernameInput,
+  } = useInput((value) => value.trim() !== "");
+
   const {
     value: enteredFirstName,
     isValid: enteredFirstNameIsValid,
@@ -45,20 +55,53 @@ const Register = (props) => {
     reset: resetPasswordInput,
   } = useInput((value) => value.trim() !== "");
 
-  let formIsValid = false;
-  if (
-    enteredFirstNameIsValid &&
-    enteredLastNameIsValid &&
-    enteredEmailIsValid &&
-    enteredPasswordIsValid
-  ) {
-    formIsValid = true;
-  }
+  const [httpError, setHttpError] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  // let formIsValid = false;
+  // if (
+  //   enteredUsernameIsValid &&
+  //   enteredFirstNameIsValid &&
+  //   enteredLastNameIsValid &&
+  //   enteredEmailIsValid &&
+  //   enteredPasswordIsValid
+  // ) {
+  //   formIsValid = true;
+  // }
+
+  const signUp = async (userCredentials) => {
+    setIsSubmitting(true);
+
+    const response = await fetch(
+      "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/signup",
+      {
+        method: "POST",
+        headers: {
+          // "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userCredentials),
+      }
+    );
+
+    if (!response.ok) {
+      console.log(response.ok);
+      throw new Error("ERROR!");
+    }
+
+    const responseData = await response.json();
+    console.log(responseData);
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+  };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
     if (
+      !enteredUsernameIsValid ||
       !enteredFirstNameIsValid ||
       !enteredLastNameIsValid ||
       !enteredEmailIsValid ||
@@ -67,12 +110,49 @@ const Register = (props) => {
       return;
     }
 
+    signUp({
+      username: enteredUsername,
+      password: enteredPassword,
+      attributes: {
+        email: enteredEmail,
+        given_name: enteredFirstName,
+        family_name: enteredLastName,
+      },
+    }).catch((error) => {
+      console.log("inside catch");
+      setHttpError(error.message);
+      setIsSubmitting(false);
+    });
+
+    resetUsernameInput();
     resetFirstNameInput();
     resetLastNameInput();
     resetEmailInput();
     resetPasswordInput();
   };
 
+  // Signing up in process
+  if (isSubmitting && !hasError) {
+    return (
+      <>
+        <h1 style={{ margin: "100px auto 0 auto" }}>
+          Sending verfication code to your email
+        </h1>
+        <div className="lds-circle">
+          <div></div>
+        </div>
+      </>
+    );
+  }
+
+  // Confirm sign up
+  if (!isSubmitting && !hasError && submitted) {
+    return <ConfirmSignup />;
+  }
+
+  const usernameInputClasses = usernameInputHasError
+    ? "form-control form-control--invalid"
+    : "form-control";
   const firstNameInputClasses = firstNameInputHasError
     ? "form-control form-control--invalid"
     : "form-control";
@@ -92,6 +172,21 @@ const Register = (props) => {
       <RegisterForm onSubmit={onSubmitHandler}>
         <h2 className="form__title">Register</h2>
         <div className="form__inputs">
+          <div className={usernameInputClasses}>
+            <label htmlFor="username">Username</label>
+            <input
+              required
+              value={enteredUsername}
+              id="username"
+              type="text"
+              onChange={usernameChangeHandler}
+              // onBlur fires whenever this input loses focus
+              onBlur={usernameBlurHandler}
+            />
+            {usernameInputHasError && (
+              <p className="error-text">Username must not be empty</p>
+            )}
+          </div>
           <div className={firstNameInputClasses}>
             <label htmlFor="first">First Name</label>
             <input
@@ -150,6 +245,7 @@ const Register = (props) => {
             )}
           </div>
         </div>
+        {hasError && <p>httpError</p>}
         <div className="form__actions">
           {/* disabled button version if form is invalid*/}
           {/* <button disabled={!formIsValid}>Submit</button> */}

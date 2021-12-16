@@ -15,7 +15,7 @@ const RegisterForm = styled.form`
   .form {
     &__title {
       text-align: center;
-      padding: 25px 225px 17px 225px;
+      padding: 25px 0px 17px;
     }
 
     &__inputs {

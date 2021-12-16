@@ -1,11 +1,15 @@
 import React from "react";
+import { useContext } from "react";
 import useInput from "../../hooks/use-input";
 import { LoginContainer } from "../../styles/Login/Login.styled";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 import loginicons from "../../images/Login/login.png";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Context from "../../context/context";
 
 const LoginForm = () => {
+  const context = useContext(Context);
+
   const {
     value: enteredUsername,
     isValid: enteredUsernameIsValid,
@@ -24,10 +28,21 @@ const LoginForm = () => {
     reset: resetPasswordInput,
   } = useInput((value) => value.trim() !== "");
 
-  let formIsValid = false;
-  if (enteredUsernameIsValid && enteredPasswordIsValid) {
-    formIsValid = true;
-  }
+  // let formIsValid = false;
+  // if (enteredUsernameIsValid && enteredPasswordIsValid) {
+  //   formIsValid = true;
+  // }
+
+  // const signIn = async (userCredentials) => {
+  //   const response = fetch(
+  //     "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login",
+  //     {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(userCredentials),
+  //     }
+  //   );
+  // };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -35,6 +50,8 @@ const LoginForm = () => {
     if (!enteredUsernameIsValid || !enteredPasswordIsValid) {
       return;
     }
+
+    // signIn();
 
     resetUsernameInput();
     resetPasswordInput();
@@ -50,7 +67,7 @@ const LoginForm = () => {
   return (
     <LoginContainer className="login">
       <div className="login__image">
-        <img src={IH_icon} />
+        <img src={IH_icon} alt="logo" />
       </div>
 
       <div className="login__tagline">
@@ -86,7 +103,7 @@ const LoginForm = () => {
             required
             value={enteredPassword}
             id="password"
-            type="text"
+            type="password"
             onChange={passwordChangeHandler}
             onBlur={passwordBlurHandler}
           />
