@@ -1,68 +1,116 @@
 import React from 'react'
 
-//components
-import { Card } from '../../../styles/UI/Card.styled';
-import Graph from '../../Overview/Content/DataType/Graph/Graph';
-import HeatMap from '../../Overview/Content/DataType/Graph/Heatmap';
+// images
+import addIcon from '../../../images/Analytics/plusIcon.svg';
+import downloadIcon from '../../../images/Analytics/downloadIcon.svg';
+
+// components
 import { Container } from './GraphCard.styled'
+import { Card } from '../../../styles/UI/Card.styled';
+import SensorComponent from './SensorComponent/SensorComponent';
+
+
+const jsonResponse = {
+    data: {
+        // graph data created by BACKEND between start and end date
+    },
+    // graph sidebar data created by BACKEND between start and end date
+    graphMetrics: [
+        {
+            title: "Space Utilization",
+            data: {
+                // currPercentOccupied
+                value1: 52,
+                // relChangePerDay
+                value2: 2.1,
+            },
+        },
+        {
+            title: "Temperature",
+            data: {
+                // currAvgTemp
+                value1: 65,
+                // relChangePerDay
+                value2: 4.1,
+            },
+        },
+        {
+            title: "Light Usage",
+            data: {
+                // currAvgMinPerMonth
+                value1: 10,
+                // relChangePerMonth
+                value2: 3,
+            },
+        },
+        {
+            title: "Humidity",
+            data: {
+                // currAvg
+                value1: 45,
+                // comfortLevel
+                value2: "Comfortable",
+            },
+        },
+        {
+            title: "Pressure",
+            data: {
+                // currAvg
+                value1: 70,
+                // pressureLevel
+                value2: "Normal",
+            },
+        },
+    ],
+    };
 
 function GraphCard() {
+
+    const sensors = jsonResponse.graphMetrics;
+
     return (        
         <Container className="analytics-container">
-            <div className="analytics-container__sensors">
-                <Card className="card analytics-container__sensors-box">humidity</Card>
-                <Card className="card analytics-container__sensors-box">temperature</Card>
-                <Card className="card analytics-container__sensors-box">space usage</Card>
-                <Card className="card analytics-container__sensors-box">pressure</Card>
-                <Card className="cardanalytics-container__sensors-box">lights</Card>
+            <div className="comparison">
+                <div className="comparison__rooms">
+                    <div className="room">
+                        Room 117
+                    </div>
+                    <div className="add-room">
+                        <img src={addIcon} alt="add icon" />
+                        Add Comparison
+                    </div>
+                </div>
+
+                <div className="comparison__datepicker-download">
+                    <div className="picker">
+                        Date picker goes here
+                    </div>
+                    <div className="download">
+                        <img src={downloadIcon} alt="download icon" />
+                    </div>
+                </div>
             </div>
-            <div className="analytics-container__analysis">
-                <Card className="card analytics-container__analysis-graph">
-        
-                </Card>
-                <Card className="card analytics-container__analysis-performance">
+            <div className="sensors">
+                {sensors.map((sensor) => (
+                    <SensorComponent sensor={sensor}/>
+                ))}
+            </div>
 
+            <div className="analysis">
+                <Card className="card analysis__graph analytics-card">
+                    Graph goes here
                 </Card>
-                <Card className="card analytics-container__analysis-dropdown">
-
+                <Card className="card analysis__performance analytics-card">
+                    Comparison goes here
                 </Card>
-                <Card className="card analytics-container__analysis-floor">
-
+                <Card className="card analysis__dropdown analytics-card">
+                    Other dropdown goes here
+                </Card>
+                <Card className="card analysis__floor analytics-card">
+                    Floor plan goes here
                 </Card>
             </div>
         </Container>
-//             <Body> 
-//                 <div className="analytics">
-//                     <div className="analytics__cards">
-//                         <div className="analytics__desc">
-//                             <div className="analytics__desc__card">
-//                                 <h3>Space Usage</h3>
-//                                 <p>Day of the week, Indoor Space Usage (Room 112)</p>
-//                                 <h4>Room 117</h4>
-//                             </div>
-//                             <div className="analytics__desc__btn">
-//                                 <a href="#">Avg.</a>
-//                                 <a href="#">H & D</a>
-//                                 <a href="#">Chart View</a>
-//                                 <a href="#">Heatmap View</a>
-//                             </div>
-//                         </div>
-//                         <div className="analytics__cards__img">
-//                             <span style={{backgroundColor:'pink', borderRadius:'8px'}}></span>
-//                         </div>
-//                     </div>
-//                     <div className="analytics__comp">
-//                         <div className="analytics__comp__room">
-//                             <h2>Room Temperaqture Comparison</h2>
-//                             <p>The report shows the Comparison of day performance of room 119 and room 327</p>
-//                             <div style={{display:'flex', gap: '10px'}}><a href="#" style={{backgroundColor:'grey',textDecoration:'none',padding: '5px',borderRadius: '3px', color:'black'}}>Room 117</a> <p>68%</p><p>21.8%</p></div>
-//                         </div>
-//                         <div className="analytics__comp__insta">
-//                             <h2>InstaHub - Room 117</h2>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </Body>
     )
 }
 

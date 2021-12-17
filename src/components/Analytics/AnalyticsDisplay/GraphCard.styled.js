@@ -3,173 +3,202 @@ import { Card } from "../../../styles/UI/Card.styled";
 
 export const Container = styled.div`
   &.analytics-container {
-    background-color: rgb(212, 212, 212);
+    background-color: #e5e5e5;
 
     display: flex;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    position: absolute;
+    position: relative;
+    padding-top: 80px;
     flex-flow: column;
 
-    .analytics-container {
-      &__sensors {
-        display: flex;
-        /* width: 100%; */
-        justify-content: space-around;
-        background: gray;
+    .comparison {
+      display: flex;
+      background: rgb(247, 242, 243);
+      justify-content: space-between;
 
-        &-box {
-          border: 1px solid red;
-          padding: 10px;
+      &__rooms {
+        display: flex;
+
+        .room {
+          display: flex;
+          align-items: center;
+          height: 60px;
+          font-size: 24px;
+          border-right: 2px solid #c0c0c0;
+          padding: 0 40px 0 20px;
+          margin: 20px;
+          color: rgb(119, 119, 119);
+        }
+
+        .add-room {
+          display: flex;
+          align-items: center;
+          height: 60px;
+          font-size: 20px;
+          margin: 20px;
+          color: #c0c0c0;
+          cursor: pointer;
+
+          img {
+            padding: 0 20px 0 0;
+          }
+
+          :hover {
+            color: rgb(119, 119, 119);
+
+            /* img {
+              color: rgb(119, 119, 119);
+            } */
+          }
         }
       }
 
-      &__analysis {
-        margin: 20px 20px 20px 20px;
-        gap: 30px;
-        display: grid;
-        height: 100%;
-        grid-template-areas:
-          "graph graph performance"
-          "graph graph performance"
-          "dropdown dropdown floor";
+      &__datepicker-download {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        padding-right: 20px;
 
         /* border: 1px solid red; */
+        .download {
+          display: flex;
+          height: 45px;
+          width: 45px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
+          margin-left: 20px;
+          background: rgb(255, 255, 255);
+          box-shadow: 0px 0px 5px lightgray;
+          cursor: pointer;
 
-        &-graph {
-          background: rgb(241, 241, 245);
-          grid-area: graph;
-          /* border: 1px solid red; */
+          :hover {
+            background: #ebebeb;
+          }
         }
-        &-performance {
-          background: rgb(241, 241, 245);
-          grid-area: performance;
+      }
+    }
+
+    .sensors {
+      display: flex;
+      height: 150px;
+      justify-content: space-around;
+      background: rgb(247, 242, 243);
+      padding: 0 20px 0 20px;
+      gap: 30px;
+
+      &-box {
+        padding: 10px;
+        background: rgb(255, 255, 255);
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &-info {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-around;
+          margin-bottom: 20px;
+
           /* border: 1px solid red; */
+
+          .img-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 5px grey;
+            background: #f8f5f5;
+
+            /* border: 1px solid red; */
+
+            img {
+              height: 30px;
+            }
+          }
+
+          .info-container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            /* border: 1px solid red; */
+
+            .word {
+              font-size: 14px;
+              margin-top: 5px;
+
+              /* border: 1px solid red; */
+            }
+            .room-average {
+              font-size: 10px;
+              margin-top: 5px;
+            }
+          }
         }
-        &-dropdown {
-          background: rgb(241, 241, 245);
-          grid-area: dropdown;
-          /* border: 1px solid red; */
+
+        .graybox {
+          position: absolute;
+          height: 10px;
+          width: 100%;
+          bottom: 0;
         }
-        &-floor {
-          background: rgb(241, 241, 245);
-          grid-area: floor;
-          /* border: 1px solid red; */
+
+        :hover {
+          background: #ebebeb;
+
+          .graybox {
+            background: rgb(119, 119, 119);
+          }
         }
+      }
+    }
+
+    .analysis {
+      margin: 20px 20px 20px 20px;
+      gap: 30px;
+      display: grid;
+      height: 100%;
+      grid-template-areas:
+        "graph graph performance"
+        "graph graph performance"
+        "dropdown dropdown floor";
+
+      /* grid-template-rows: */
+
+      .analytics-card {
+        background: rgb(255, 255, 255);
+      }
+
+      &__graph {
+        grid-area: graph;
+        /* width: 200px;
+        overflow: auto; */
+      }
+
+      &__performance {
+        grid-area: performance;
+      }
+
+      &__dropdown {
+        grid-area: dropdown;
+      }
+
+      &__floor {
+        grid-area: floor;
       }
     }
   }
 `;
-
-// const Body = styled.div`
-//     max-width: 100%;
-//     margin: 0 auto;
-
-//     .analytics {
-//         margin: 8em;
-//         position: absolute;
-//         padding: 10px;
-//         display: grid;
-//         grid-template-areas:
-//         "cards cards comp"
-//         "cards cards comp";
-//         font-style: normal;
-//     }
-
-//     .analytics{
-//         background-color: #c58d8d;
-//         display: flex;
-//         gap: 5em;
-
-//         &__cards {
-//             display: grid;
-//             gap: 30px;
-//             grid-area: cards;
-//             grid-template-areas:
-//             "desc btn"
-//             "img img";
-
-//             &__img {
-//                 padding: 10px;
-//                 background-color: white;
-//                 width: 100%;
-//                 height: 100px;
-//                 grid-area: img;
-//             }
-//         }
-
-//         &__desc {
-//             padding: 20px;
-//             background-color: #f1eff3;
-//             border-radius: 8px;
-//             max-width: 100%;
-//             grid-area: desc;
-//             /* margin: 10em; */
-//             /* position: absolute; */
-//             display: grid;
-//             flex-direction: row;
-//             background-color: #f0eeee
-//             grid-template-areas:"card btn";
-
-//             &__card {
-//                 background-color: plum;
-//                 width: 100%;
-//                 grid-area: card;
-//             }
-
-//             &__btn {
-//                 gap: 5px;
-//                 width: 100%;
-//                 background-color: pink;
-//                 display: flex;
-//                 padding: 3px;
-//                 grid-area: btn;
-
-//                 a {
-//                     background-color: #bebebe;
-//                     border-radius: 3px;
-//                     text-decoration: none;
-//                     color: black;
-//                     margin: 0 auto;
-//                     padding: 5px;
-//                     width: 100%;
-//                     font-size: 100%;
-//                     height: 30px;
-//                     display: block;
-//                     flex-direction: row;
-
-//                     &:hover{
-//                     background-color: white;
-//                 }
-//             }
-//         }
-//     }
-
-//     &__comp {
-//         display: grid;
-//         gap: 30px;
-//         grid-area: comp
-//         grid-template-areas:
-//         "comproom"
-//         "instaroom";
-
-//         &__room{
-//             padding: 20px;
-//             display: block;
-//             grid-area: comproom;
-//             /* gap: 2em; */
-//             border-radius: 8px;
-//             background-color: white;
-//         }
-
-//         &__insta{
-//             background-color: white;
-//             border-radius: 2px;
-//             grid-area: instaroom;
-//         }
-//     }
-// }
-// `
-
-// export default Body;

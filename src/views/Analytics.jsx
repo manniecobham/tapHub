@@ -6,9 +6,8 @@ import GraphCards from "../components/Analytics/AnalyticsDisplay/GraphCards";
 const Analytics = () => {
   return (
     <React.Fragment>
-      {/* <Navbar /> */}
+      <Navbar />
       <GraphCards /> 
-     
     </React.Fragment>
   );
 };
