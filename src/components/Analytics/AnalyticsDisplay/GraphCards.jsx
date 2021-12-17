@@ -90,6 +90,7 @@ function GraphCard() {
                     </div>
                 </div>
             </div>
+            
             <div className="sensors">
                 {sensors.map((sensor) => (
                     <SensorComponent sensor={sensor}/>
