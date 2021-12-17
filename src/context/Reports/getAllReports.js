@@ -1,7 +1,7 @@
 // Get API call to retrieve all reports for a specific user
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
 };
 

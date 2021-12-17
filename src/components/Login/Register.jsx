@@ -9,6 +9,15 @@ import {
 import instaHubLogo from "../../images/Login/instahub_logo.png";
 import ConfirmSignup from "./ConfirmSignUp";
 
+const passwordValidation = (value) => {
+  let match = /(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*\d)(?=.*[!@#$%^&*])(?=.{8,})/;
+
+  if (!match.test(value)) {
+    return false;
+  }
+  return true;
+};
+
 const Register = (props) => {
   const {
     value: enteredUsername,
@@ -17,7 +26,7 @@ const Register = (props) => {
     valueChangeHandler: usernameChangeHandler,
     inputBlurHandler: usernameBlurHandler,
     reset: resetUsernameInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput(passwordValidation);
 
   const {
     value: enteredFirstName,
@@ -134,14 +143,9 @@ const Register = (props) => {
   // Signing up in process
   if (isSubmitting && !hasError) {
     return (
-      <>
-        <h1 style={{ margin: "100px auto 0 auto" }}>
-          Sending verfication code to your email
-        </h1>
-        <div className="lds-circle">
-          <div></div>
-        </div>
-      </>
+      <div className="lds-circle">
+        <div></div>
+      </div>
     );
   }
 

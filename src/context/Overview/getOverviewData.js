@@ -1,8 +1,9 @@
 // Get API call to retrieve overview data information for a specified space
 
 const jsonRequest = {
-  userId: 1,
+  username: "warren",
   userToken: "12345",
+  // Confirm if I need to send in extra data
   spaceId: 1,
 };
 

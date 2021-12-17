@@ -33,16 +33,19 @@ const LoginForm = () => {
   //   formIsValid = true;
   // }
 
-  // const signIn = async (userCredentials) => {
-  //   const response = fetch(
-  //     "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login",
-  //     {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(userCredentials),
-  //     }
-  //   );
-  // };
+  const signIn = async (userCredentials) => {
+    const response = await fetch(
+      "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login",
+      {
+        method: "POST",
+        headers: {},
+        body: JSON.stringify(userCredentials),
+      }
+    );
+
+    const responseData = await response.json();
+    console.log(responseData);
+  };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -51,7 +54,7 @@ const LoginForm = () => {
       return;
     }
 
-    // signIn();
+    signIn({ username: enteredUsername, password: enteredPassword });
 
     resetUsernameInput();
     resetPasswordInput();

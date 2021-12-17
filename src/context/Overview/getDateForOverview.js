@@ -1,7 +1,7 @@
 // Get API call for the overview data for a specific date
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   date: "2019-11-12",
   spaceId: 2,

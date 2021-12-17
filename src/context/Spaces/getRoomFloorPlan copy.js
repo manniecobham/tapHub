@@ -1,7 +1,7 @@
 // Get API call for the floor plan for a specific room
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
   roomId: 1,

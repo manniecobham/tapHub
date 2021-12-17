@@ -1,7 +1,7 @@
 // Get API call for one specific report for preview
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   reportId: 1,
 };

@@ -3,7 +3,7 @@
 // ASK UI/UX WHAT GRAPH INFORMATION IS NEEDED FOR ANALYTICS
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
   roomId: 1,

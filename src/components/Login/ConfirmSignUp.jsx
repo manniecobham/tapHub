@@ -28,12 +28,28 @@ const ConfirmSignup = () => {
   //   formIsValid = true;
   // }
 
+  const onConfirm = async (userCredentials) => {
+    const response = await fetch(
+      "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/confirmsignup",
+      {
+        method: "POST",
+        headers: {},
+        body: JSON.stringify(userCredentials),
+      }
+    );
+
+    const responseData = await response.json();
+    console.log(responseData);
+  };
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
     if (!enteredUsernameIsValid || !enteredCodeIsValid) {
       return;
     }
+
+    onConfirm({ username: enteredUsername, code: enteredCode }).catch(() => {});
 
     // resetUsernameInput();
     // resetCodeInput();

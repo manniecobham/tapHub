@@ -19,19 +19,19 @@ const LoginSlider = () => {
     }
   };
 
-  useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(
-      () =>
-        setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0),
-      2000
-    );
-    console.log(slideIndex);
+  // useEffect(() => {
+  //   resetTimeout();
+  //   timeoutRef.current = setTimeout(
+  //     () =>
+  //       setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0),
+  //     2000
+  //   );
+  //   console.log(slideIndex);
 
-    return () => {
-      resetTimeout();
-    };
-  }, [slideIndex]);
+  //   return () => {
+  //     resetTimeout();
+  //   };
+  // }, [slideIndex]);
 
   // const handleClick = (direction) => {
   //   if (direction === "left") {

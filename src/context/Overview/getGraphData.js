@@ -1,7 +1,7 @@
 // Get API call used for getting graph data for Overview page
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
   startDate: "2020-11-02",
