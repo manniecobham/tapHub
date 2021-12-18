@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "styled-components";
 
 import { OverviewGrid } from "../../../styles/Overview/Content/OverviewContent.styled";
 
@@ -11,9 +10,6 @@ import Spaces from "./DataType/Spaces/Spaces";
 import Graph from "./DataType/Graph/Graph";
 
 const Content = () => {
-  const theme = useTheme();
-  const bgColor = theme.colors.colorSecondaryWhite;
-
   return (
     <OverviewGrid className="overview-grid">
       <Spaces classes="overview-grid__item overview-grid__item-location" />

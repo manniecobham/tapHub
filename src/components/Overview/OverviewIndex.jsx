@@ -21,6 +21,7 @@ const OverviewIndex = (props) => {
       console.log("Inside overviewindex");
       console.log(response);
       const responseData = await response.json();
+      console.log(responseData);
     };
     fetchData();
   });

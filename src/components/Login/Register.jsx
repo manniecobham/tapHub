@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import useInput from "../../hooks/use-input";
 import {
   RegisterFooter,
@@ -7,7 +7,6 @@ import {
   RegisterHeader,
 } from "../../styles/Login/Register.styled";
 import instaHubLogo from "../../images/Login/instahub_logo.png";
-import ConfirmSignup from "./ConfirmSignUp";
 
 const passwordValidation = (value) => {
   let match = /(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*\d)(?=.*[!@#$%^&*])(?=.{8,})/;
@@ -19,8 +18,6 @@ const passwordValidation = (value) => {
 };
 
 const Register = (props) => {
-  const navigate = useNavigate();
-
   const {
     value: enteredUsername,
     isValid: enteredUsernameIsValid,

@@ -22,8 +22,7 @@ in the backend that it has been read
 const NotificationsDropdown = (props) => {
   const context = useContext(Context);
   const userNotifications = context.userData.notifications;
-  const [allNotificationsHaveBeenRead, setAllNotificationsHaveBeenRead] =
-    useState(false);
+
   const Notifications = [];
   const readNotification = (id) => {
     let everythingHasBeenRead = true;
@@ -38,6 +37,7 @@ const NotificationsDropdown = (props) => {
     }
     props.onReadNotifications(everythingHasBeenRead);
   };
+
   for (const notification of userNotifications) {
     Notifications.push(
       <NotificationItem

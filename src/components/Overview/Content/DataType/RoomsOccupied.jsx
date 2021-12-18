@@ -9,15 +9,12 @@ import { Card } from "../../../../styles/UI/Card.styled";
 const RoomsOccupied = (props) => {
   const theme = useTheme();
   const context = useContext(Context);
-  const titleSize = theme.typography.headerSize;
   const bgColor = theme.colors.colorSecondaryWhite;
 
   return (
     <Card backgroundColor={bgColor} className={`card ${props.classes}`}>
       <div className="card__header">
-        <h2 className="card__header-title" titleSize={titleSize}>
-          Rooms Occupied
-        </h2>
+        <h2 className="card__header-title">Rooms Occupied</h2>
         <div>
           <img src={liveIcon} alt="live" />
         </div>

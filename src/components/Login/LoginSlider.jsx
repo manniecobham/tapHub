@@ -26,7 +26,7 @@ const LoginSlider = () => {
         setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0),
       2000
     );
-    console.log(slideIndex);
+    // console.log(slideIndex);
 
     return () => {
       resetTimeout();

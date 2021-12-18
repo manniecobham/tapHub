@@ -9,7 +9,6 @@ import { Navigate } from "react-router-dom";
 
 const ConfirmSignup = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [confirmSuccessful, setConfirmSuccessful] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -51,7 +50,6 @@ const ConfirmSignup = () => {
     }
 
     setIsSubmitting(false);
-    setSubmitted(true);
     setConfirmSuccessful(true);
   };
 
@@ -66,7 +64,7 @@ const ConfirmSignup = () => {
       (error) => {
         console.log(error);
         setIsSubmitting(false);
-        setSubmitted(false);
+        setConfirmSuccessful(false);
       }
     );
   };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTheme } from "styled-components";
 
 // data
-import { data1, data2, data3 } from "./lineData";
+// import { data1, data2, data3 } from "./lineData";
 import { data4, data5, data6 } from "./heatData";
 
 // styles
@@ -52,7 +52,7 @@ const Graph = (props) => {
         className={`hamburger ${hamburgerIsOpen ? "hamburger--open" : ""}`}
         onClick={openHamburger}
       >
-        <img src={hamburger} href="hamb" />
+        <img src={hamburger} href="hamb" alt="hamb" />
       </button>
       <GraphSidebar hamburgerIsOpen={hamburgerIsOpen} />
       <div className="graph-grid__container-outer">

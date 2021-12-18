@@ -12,7 +12,6 @@ import { Card } from "../../../../styles/UI/Card.styled";
 const HCWasted = (props) => {
   const theme = useTheme();
   const context = useContext(Context);
-  const titleSize = theme.typography.headerSize;
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
   const [secondIconIsActive, setSecondIsActive] = useState(false);
@@ -21,6 +20,13 @@ const HCWasted = (props) => {
   const onClickFirst = () => {
     setFirstIconIsActive(true);
     setSecondIsActive(false);
+
+    /*
+      Code below is just to get rid of setIsPositive warning inside 
+      console b/c that we aren't using it anywhere for now
+      REMOVE AFTERWARDS
+    */
+    setIsPositive(true);
   };
 
   const onClickSecond = () => {
@@ -36,9 +42,7 @@ const HCWasted = (props) => {
       className={`card ${props.classes}`}
     >
       <div className="card__header">
-        <h2 className="card__header-title" titleSize={titleSize}>
-          H/C Wasted
-        </h2>
+        <h2 className="card__header-title">H/C Wasted</h2>
         <ToggleGroup className="toggle-group">
           <button
             className={`toggle-group__button ${
