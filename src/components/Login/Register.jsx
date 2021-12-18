@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import useInput from "../../hooks/use-input";
 import {
   RegisterFooter,
@@ -19,14 +19,15 @@ const passwordValidation = (value) => {
 };
 
 const Register = (props) => {
+  const navigate = useNavigate();
+
   const {
     value: enteredUsername,
     isValid: enteredUsernameIsValid,
     hasError: usernameInputHasError,
     valueChangeHandler: usernameChangeHandler,
     inputBlurHandler: usernameBlurHandler,
-    reset: resetUsernameInput,
-  } = useInput(passwordValidation);
+  } = useInput((value) => value.trim() !== "");
 
   const {
     value: enteredFirstName,
@@ -34,7 +35,6 @@ const Register = (props) => {
     hasError: firstNameInputHasError,
     valueChangeHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
-    reset: resetFirstNameInput,
   } = useInput((value) => value.trim() !== "");
 
   const {
@@ -43,7 +43,6 @@ const Register = (props) => {
     hasError: lastNameInputHasError,
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
-    reset: resetLastNameInput,
   } = useInput((value) => value.trim() !== "");
 
   const {
@@ -52,8 +51,7 @@ const Register = (props) => {
     hasError: emailInputHasError,
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
-    reset: resetEmailInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.includes("@"));
 
   const {
     value: enteredPassword,
@@ -61,8 +59,7 @@ const Register = (props) => {
     hasError: passwordInputHasError,
     valueChangeHandler: passwordChangeHandler,
     inputBlurHandler: passwordBlurHandler,
-    reset: resetPasswordInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput(passwordValidation);
 
   const [httpError, setHttpError] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -95,12 +92,16 @@ const Register = (props) => {
     );
 
     if (!response.ok) {
-      console.log(response.ok);
       throw new Error("ERROR!");
     }
 
     const responseData = await response.json();
     console.log(responseData);
+
+    if (responseData.body.code === "UsernameExistsException") {
+      console.log("User already exists");
+      throw new Error("User already exists");
+    }
 
     setIsSubmitting(false);
     setSubmitted(true);
@@ -129,15 +130,10 @@ const Register = (props) => {
       },
     }).catch((error) => {
       console.log("inside catch");
+      setHasError(true);
       setHttpError(error.message);
       setIsSubmitting(false);
     });
-
-    resetUsernameInput();
-    resetFirstNameInput();
-    resetLastNameInput();
-    resetEmailInput();
-    resetPasswordInput();
   };
 
   // Signing up in process
@@ -151,7 +147,9 @@ const Register = (props) => {
 
   // Confirm sign up
   if (!isSubmitting && !hasError && submitted) {
-    return <ConfirmSignup />;
+    // navigate("/confirm");
+    // return;
+    return <Navigate to="/confirm" replace={true} />;
   }
 
   const usernameInputClasses = usernameInputHasError
@@ -231,7 +229,7 @@ const Register = (props) => {
               onBlur={emailBlurHandler}
             />
             {emailInputHasError && (
-              <p className="error-text">Email must not be empty</p>
+              <p className="error-text">Email is invalid</p>
             )}
           </div>
           <div className={passwordInputClasses}>
@@ -249,13 +247,15 @@ const Register = (props) => {
             )}
           </div>
         </div>
-        {hasError && <p>httpError</p>}
         <div className="form__actions">
           {/* disabled button version if form is invalid*/}
           {/* <button disabled={!formIsValid}>Submit</button> */}
           <button>Register</button>
         </div>
       </RegisterForm>
+      {hasError && (
+        <p style={{ textAlign: "center", color: "red" }}>{httpError}</p>
+      )}
       <RegisterFooter>
         <p>Already have an account?</p>
         <NavLink to="/login" className="login">

@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import useInput from "../../hooks/use-input";
 import {
   RegisterForm,
   RegisterHeader,
 } from "../../styles/Login/Register.styled";
 import instaHubLogo from "../../images/Login/instahub_logo.png";
+import { Navigate } from "react-router-dom";
 
 const ConfirmSignup = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [confirmSuccessful, setConfirmSuccessful] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
   const {
     value: enteredUsername,
     isValid: enteredUsernameIsValid,
@@ -23,12 +29,10 @@ const ConfirmSignup = () => {
     inputBlurHandler: codeBlurHandler,
   } = useInput((value) => value.trim() !== "");
 
-  // let formIsValid = false;
-  // if (enteredUsernameIsValid && enteredCodeIsValid) {
-  //   formIsValid = true;
-  // }
-
   const onConfirm = async (userCredentials) => {
+    setHasError(false);
+    setIsSubmitting(true);
+
     const response = await fetch(
       "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/confirmsignup",
       {
@@ -40,6 +44,15 @@ const ConfirmSignup = () => {
 
     const responseData = await response.json();
     console.log(responseData);
+
+    if (responseData.body !== "SUCCESS") {
+      setHasError(true);
+      throw new Error("Something went wrong!");
+    }
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setConfirmSuccessful(true);
   };
 
   const onSubmitHandler = (event) => {
@@ -49,11 +62,26 @@ const ConfirmSignup = () => {
       return;
     }
 
-    onConfirm({ username: enteredUsername, code: enteredCode }).catch(() => {});
-
-    // resetUsernameInput();
-    // resetCodeInput();
+    onConfirm({ username: enteredUsername, code: enteredCode }).catch(
+      (error) => {
+        console.log(error);
+        setIsSubmitting(false);
+        setSubmitted(false);
+      }
+    );
   };
+
+  if (isSubmitting && !hasError) {
+    return (
+      <div className="lds-circle">
+        <div></div>
+      </div>
+    );
+  }
+
+  if (!isSubmitting && !hasError && confirmSuccessful) {
+    return <Navigate to="/login" replace={true} />;
+  }
 
   const usernameInputClasses = usernameInputHasError
     ? "form-control form-control--invalid"
@@ -98,9 +126,12 @@ const ConfirmSignup = () => {
             )}
           </div>
         </div>
+        {hasError && (
+          <p className="error-text" style={{ color: "red", margin: "auto" }}>
+            Something went wrong
+          </p>
+        )}
         <div className="form__actions">
-          {/* disabled button version if form is invalid*/}
-          {/* <button disabled={!formIsValid}>Submit</button> */}
           <button className="signin">Confirm</button>
         </div>
       </RegisterForm>

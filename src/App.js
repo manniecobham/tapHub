@@ -16,10 +16,13 @@ import Context from "./context/context";
 
 import Login from "./views/Login";
 import Register from "./components/Login/Register";
+import ConfirmSignup from "./components/Login/ConfirmSignUp";
+import ProtectedRoutes from "./ProtectedRoutes";
 function App() {
   //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +38,7 @@ function App() {
 
       // console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
+      setIsAuthenticated(true);
       setIsLoading(false);
       // setTimeout(() => {
       //   setIsLoading(false);
@@ -58,6 +62,7 @@ function App() {
       value={{
         userName: "",
         userToken: "",
+        isAuthenticated: isAuthenticated,
         userData: userData,
       }}
     >
@@ -70,11 +75,14 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/overview" element={<Overview />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/sensors" element={<Sensors />} />
-            <Route path="/property" element={<Property />} />
+            <Route path="/confirm" element={<ConfirmSignup />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/sensors" element={<Sensors />} />
+              <Route path="/property" element={<Property />} />
+            </Route>
           </Routes>
         )}
       </ThemeProvider>

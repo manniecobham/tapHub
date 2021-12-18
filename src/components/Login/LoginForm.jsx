@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import useInput from "../../hooks/use-input";
 import { LoginContainer } from "../../styles/Login/Login.styled";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 import loginicons from "../../images/Login/login.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Context from "../../context/context";
 
 const LoginForm = () => {
   const context = useContext(Context);
+  const [loginSuccessful, setLoginSuccessful] = useState(false);
+  const navigate = useNavigate();
 
   const {
     value: enteredUsername,
@@ -43,8 +45,19 @@ const LoginForm = () => {
       }
     );
 
+    if (!response.ok) {
+      throw new Error("Error with login");
+    }
+
     const responseData = await response.json();
     console.log(responseData);
+
+    context.isAuthenticated = true;
+    context.username = responseData.body.username;
+    context.authToken =
+      responseData.body.signInUserSession.accessToken.jwtToken;
+    console.log(context.username, context.authToken);
+    setLoginSuccessful(true);
   };
 
   const onSubmitHandler = (event) => {
@@ -54,11 +67,19 @@ const LoginForm = () => {
       return;
     }
 
-    signIn({ username: enteredUsername, password: enteredPassword });
+    signIn({ username: enteredUsername, password: enteredPassword }).catch(
+      (error) => {
+        console.log(error);
+      }
+    );
 
     resetUsernameInput();
     resetPasswordInput();
   };
+
+  if (loginSuccessful) {
+    navigate("/overview");
+  }
 
   const usernameInputClasses = usernameInputHasError
     ? "form-control form-control--invalid"

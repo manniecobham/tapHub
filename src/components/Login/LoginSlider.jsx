@@ -6,8 +6,8 @@ const LoginSlider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const timeoutRef = useRef(null);
 
-  const SliderItems = sliderItems.map((item) => (
-    <div className="slide">
+  const SliderItems = sliderItems.map((item, index) => (
+    <div className="slide" key={index}>
       <p className="slide__title">{item.title}</p>
       <p className="slide__text">{item.text}</p>
     </div>
@@ -19,19 +19,19 @@ const LoginSlider = () => {
     }
   };
 
-  // useEffect(() => {
-  //   resetTimeout();
-  //   timeoutRef.current = setTimeout(
-  //     () =>
-  //       setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0),
-  //     2000
-  //   );
-  //   console.log(slideIndex);
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0),
+      2000
+    );
+    console.log(slideIndex);
 
-  //   return () => {
-  //     resetTimeout();
-  //   };
-  // }, [slideIndex]);
+    return () => {
+      resetTimeout();
+    };
+  }, [slideIndex]);
 
   // const handleClick = (direction) => {
   //   if (direction === "left") {
