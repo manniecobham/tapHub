@@ -10,6 +10,7 @@ const LoginForm = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [hasError, setHasError] = useState();
+  const [userNeedsConfirmation, setUserNeedsConfirmation] = useState(false);
 
   const {
     value: enteredUsername,
@@ -32,6 +33,7 @@ const LoginForm = (props) => {
   const signIn = async (userCredentials) => {
     setHasError(false);
     setIsSubmitting(true);
+    setUserNeedsConfirmation(false);
     props.onLoginLoad(true);
 
     const response = await fetch(
@@ -51,6 +53,11 @@ const LoginForm = (props) => {
     console.log(responseData);
 
     if (responseData.body.code === "NotAuthorizedException") {
+      throw new Error(responseData.body.message);
+    }
+
+    if (responseData.body.code === "UserNotConfirmedException") {
+      setUserNeedsConfirmation(true);
       throw new Error(responseData.body.message);
     }
 
@@ -157,7 +164,15 @@ const LoginForm = (props) => {
               Sign Up
             </NavLink>
           </div>
-          {hasError && <p>{errorMessage}</p>}
+          {hasError && !userNeedsConfirmation && <p>{errorMessage}</p>}
+          {hasError && userNeedsConfirmation && (
+            <>
+              <p>
+                {errorMessage}
+                <NavLink to="/confirm"> Click here to confirm</NavLink>
+              </p>
+            </>
+          )}
           <button className="signin">Sign In</button>
         </div>
       </form>

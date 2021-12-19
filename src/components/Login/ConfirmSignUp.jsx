@@ -7,10 +7,15 @@ import {
 import instaHubLogo from "../../images/Login/instahub_logo.png";
 import { Navigate } from "react-router-dom";
 
+// Question to ask backend for future:
+// Is there an expiration code for login code? If so, how would user be able to
+// request a new one? Can we just make it infinite for now?
+
 const ConfirmSignup = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [confirmSuccessful, setConfirmSuccessful] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     value: enteredUsername,
@@ -44,6 +49,11 @@ const ConfirmSignup = () => {
     const responseData = await response.json();
     console.log(responseData);
 
+    if (responseData.body.code === "CodeMismatchException") {
+      setHasError(true);
+      throw new Error(responseData.body.message);
+    }
+
     if (responseData.body !== "SUCCESS") {
       setHasError(true);
       throw new Error("Something went wrong!");
@@ -62,7 +72,8 @@ const ConfirmSignup = () => {
 
     onConfirm({ username: enteredUsername, code: enteredCode }).catch(
       (error) => {
-        console.log(error);
+        console.log(error.message);
+        setErrorMessage(error.message);
         setIsSubmitting(false);
         setConfirmSuccessful(false);
       }
@@ -91,7 +102,10 @@ const ConfirmSignup = () => {
   return (
     <>
       <RegisterHeader src={instaHubLogo} alt="logo" />
-      <RegisterForm onSubmit={onSubmitHandler}>
+      <RegisterForm
+        onSubmit={onSubmitHandler}
+        style={hasError ? { borderColor: "#cd564c" } : {}}
+      >
         <h2 className="form__title">Complete your sign up</h2>
         <div className="form__inputs">
           <div className={usernameInputClasses}>
@@ -125,8 +139,11 @@ const ConfirmSignup = () => {
           </div>
         </div>
         {hasError && (
-          <p className="error-text" style={{ color: "red", margin: "auto" }}>
-            Something went wrong
+          <p
+            className="error-text"
+            style={{ color: "red", textAlign: "center" }}
+          >
+            {errorMessage}
           </p>
         )}
         <div className="form__actions">

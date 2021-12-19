@@ -4,6 +4,9 @@ import Container from "../../styles/UI/Container.styled.js";
 
 import Content from "./Content/Content";
 
+// Remove once API call works
+import { jsonResponse } from "../../context/Overview/getOverviewData.js";
+
 const OverviewIndex = (props) => {
   useEffect(() => {
     const fetchData = async () => {

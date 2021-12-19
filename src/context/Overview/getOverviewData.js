@@ -67,3 +67,5 @@ const jsonResponse = {
     },
   },
 };
+
+export { jsonResponse };

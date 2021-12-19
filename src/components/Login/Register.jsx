@@ -18,6 +18,11 @@ const passwordValidation = (value) => {
 };
 
 const Register = (props) => {
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   const {
     value: enteredUsername,
     isValid: enteredUsernameIsValid,
@@ -58,24 +63,9 @@ const Register = (props) => {
     inputBlurHandler: passwordBlurHandler,
   } = useInput(passwordValidation);
 
-  const [httpError, setHttpError] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  // let formIsValid = false;
-  // if (
-  //   enteredUsernameIsValid &&
-  //   enteredFirstNameIsValid &&
-  //   enteredLastNameIsValid &&
-  //   enteredEmailIsValid &&
-  //   enteredPasswordIsValid
-  // ) {
-  //   formIsValid = true;
-  // }
-
   const signUp = async (userCredentials) => {
     setIsSubmitting(true);
+    setHasError(false);
 
     const response = await fetch(
       "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/signup",
@@ -96,7 +86,6 @@ const Register = (props) => {
     console.log(responseData);
 
     if (responseData.body.code === "UsernameExistsException") {
-      console.log("User already exists");
       throw new Error("User already exists");
     }
 
@@ -126,9 +115,9 @@ const Register = (props) => {
         family_name: enteredLastName,
       },
     }).catch((error) => {
-      console.log("inside catch");
+      console.log(error.message);
       setHasError(true);
-      setHttpError(error.message);
+      setErrorMessage(error.message);
       setIsSubmitting(false);
     });
   };
@@ -149,9 +138,10 @@ const Register = (props) => {
     return <Navigate to="/confirm" replace={true} />;
   }
 
-  const usernameInputClasses = usernameInputHasError
-    ? "form-control form-control--invalid"
-    : "form-control";
+  const usernameInputClasses =
+    usernameInputHasError || hasError
+      ? "form-control form-control--invalid"
+      : "form-control";
   const firstNameInputClasses = firstNameInputHasError
     ? "form-control form-control--invalid"
     : "form-control";
@@ -168,8 +158,16 @@ const Register = (props) => {
   return (
     <>
       <RegisterHeader src={instaHubLogo} alt="logo" />
-      <RegisterForm onSubmit={onSubmitHandler}>
+      <RegisterForm
+        onSubmit={onSubmitHandler}
+        style={hasError ? { borderColor: "#cd564c" } : {}}
+      >
         <h2 className="form__title">Register</h2>
+        {hasError && (
+          <p style={{ textAlign: "center", color: "#cd564c" }}>
+            {errorMessage}
+          </p>
+        )}
         <div className="form__inputs">
           <div className={usernameInputClasses}>
             <label htmlFor="username">Username</label>
@@ -184,6 +182,9 @@ const Register = (props) => {
             />
             {usernameInputHasError && (
               <p className="error-text">Username must not be empty</p>
+            )}
+            {hasError && (
+              <p className="error-text">Please enter a different username</p>
             )}
           </div>
           <div className={firstNameInputClasses}>
@@ -250,9 +251,6 @@ const Register = (props) => {
           <button>Register</button>
         </div>
       </RegisterForm>
-      {hasError && (
-        <p style={{ textAlign: "center", color: "red" }}>{httpError}</p>
-      )}
       <RegisterFooter>
         <p>Already have an account?</p>
         <NavLink to="/login" className="login">
