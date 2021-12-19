@@ -9,9 +9,3 @@ const Context = React.createContext({
 });
 
 export default Context;
-
-// const Context = React.createContext({
-//   isLoggedIn: false,
-//   onLogout: () => {},
-//   userData: {},
-// });

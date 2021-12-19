@@ -19,10 +19,11 @@ import Register from "./components/Login/Register";
 import ConfirmSignup from "./components/Login/ConfirmSignUp";
 import ProtectedRoutes from "./ProtectedRoutes";
 function App() {
-  //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+  const [username, setUsername] = useState();
+  const [authToken, setAuthToken] = useState();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +39,6 @@ function App() {
 
       // console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
-      setIsAuthenticated(true);
       setIsLoading(false);
       // setTimeout(() => {
       //   setIsLoading(false);
@@ -51,6 +51,12 @@ function App() {
     });
   }, []);
 
+  const onLoginHandler = (userInfo) => {
+    setUsername(userInfo.username);
+    setAuthToken(userInfo.authToken);
+    setIsAuthenticated(true);
+  };
+
   const loadingSpinner = (
     <div className="lds-circle">
       <div></div>
@@ -60,8 +66,8 @@ function App() {
   return (
     <Context.Provider
       value={{
-        userName: "",
-        userToken: "",
+        username: username,
+        authToken: authToken,
         isAuthenticated: isAuthenticated,
         userData: userData,
       }}
@@ -72,7 +78,7 @@ function App() {
           loadingSpinner
         ) : (
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login onLogin={onLoginHandler} />} />
             <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/register" element={<Register />} />
             <Route path="/confirm" element={<ConfirmSignup />} />

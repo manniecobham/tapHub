@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { useContext } from "react";
 import useInput from "../../hooks/use-input";
 import { LoginContainer } from "../../styles/Login/Login.styled";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 import loginicons from "../../images/Login/login.png";
-import { NavLink, useNavigate } from "react-router-dom";
-import Context from "../../context/context";
+import { Navigate, NavLink } from "react-router-dom";
 
-const LoginForm = () => {
-  const context = useContext(Context);
+const LoginForm = (props) => {
   const [loginSuccessful, setLoginSuccessful] = useState(false);
-  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [hasError, setHasError] = useState();
 
   const {
     value: enteredUsername,
@@ -30,12 +29,11 @@ const LoginForm = () => {
     reset: resetPasswordInput,
   } = useInput((value) => value.trim() !== "");
 
-  // let formIsValid = false;
-  // if (enteredUsernameIsValid && enteredPasswordIsValid) {
-  //   formIsValid = true;
-  // }
-
   const signIn = async (userCredentials) => {
+    setHasError(false);
+    setIsSubmitting(true);
+    props.onLoginLoad(true);
+
     const response = await fetch(
       "https://ibnx4gkcn3.execute-api.us-east-1.amazonaws.com/auth/login",
       {
@@ -52,11 +50,16 @@ const LoginForm = () => {
     const responseData = await response.json();
     console.log(responseData);
 
-    context.isAuthenticated = true;
-    context.username = responseData.body.username;
-    context.authToken =
-      responseData.body.signInUserSession.accessToken.jwtToken;
-    console.log(context.username, context.authToken);
+    if (responseData.body.code === "NotAuthorizedException") {
+      throw new Error(responseData.body.message);
+    }
+
+    props.onLogin({
+      username: responseData.body.username,
+      authToken: responseData.body.signInUserSession.accessToken.jwtToken,
+    });
+    props.onLoginLoad(false);
+    setIsSubmitting(false);
     setLoginSuccessful(true);
   };
 
@@ -69,7 +72,11 @@ const LoginForm = () => {
 
     signIn({ username: enteredUsername, password: enteredPassword }).catch(
       (error) => {
-        console.log(error);
+        console.log(error.message);
+        props.onLoginLoad(false);
+        setIsSubmitting(false);
+        setHasError(true);
+        setErrorMessage(error.message);
       }
     );
 
@@ -77,8 +84,16 @@ const LoginForm = () => {
     resetPasswordInput();
   };
 
-  if (loginSuccessful) {
-    navigate("/overview");
+  if (!hasError && isSubmitting) {
+    return (
+      <div className="lds-circle">
+        <div></div>
+      </div>
+    );
+  }
+
+  if (!hasError && !isSubmitting && loginSuccessful) {
+    return <Navigate to="/overview" />;
   }
 
   const usernameInputClasses = usernameInputHasError
@@ -136,14 +151,13 @@ const LoginForm = () => {
           )}
         </div>
         <div className="form__actions">
-          {/* disabled button version if form is invalid*/}
-          {/* <button disabled={!formIsValid}>Submit</button> */}
           <div>
             <button className="forgot">Forgot Password?</button>
             <NavLink to="/register" className="signup">
               Sign Up
             </NavLink>
           </div>
+          {hasError && <p>{errorMessage}</p>}
           <button className="signin">Sign In</button>
         </div>
       </form>
