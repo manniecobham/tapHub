@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useTheme } from "styled-components";
-import Context from "../../../../context/context";
 
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
@@ -11,7 +10,6 @@ import { Card } from "../../../../styles/UI/Card.styled";
 
 const HCWasted = (props) => {
   const theme = useTheme();
-  const context = useContext(Context);
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
   const [secondIconIsActive, setSecondIsActive] = useState(false);
@@ -73,12 +71,8 @@ const HCWasted = (props) => {
       <div className="card__content">
         <p>
           <span className="lead">
-            $
-            {
-              context["userData"]["devices"][0]["metrics"][3]["hcWasted"][
-                "value1"
-              ]
-            }
+            ${firstIconIsActive && props.hcData.usage.value1}
+            {secondIconIsActive && props.hcData.cost.value1}
           </span>
           /wk
         </p>
@@ -92,12 +86,8 @@ const HCWasted = (props) => {
           <img src={arrow} alt="arrow" />
           <p>
             <span>
-              {
-                context["userData"]["devices"][0]["metrics"][3]["hcWasted"][
-                  "value2"
-                ]
-              }
-              %
+              {firstIconIsActive && props.hcData.usage.value2}
+              {secondIconIsActive && props.hcData.cost.value2}%
             </span>
             vs last week
           </p>

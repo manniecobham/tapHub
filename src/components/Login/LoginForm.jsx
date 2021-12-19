@@ -164,10 +164,12 @@ const LoginForm = (props) => {
               Sign Up
             </NavLink>
           </div>
-          {hasError && !userNeedsConfirmation && <p>{errorMessage}</p>}
+          {hasError && !userNeedsConfirmation && (
+            <p style={{ textAlign: "center", color: "red" }}>{errorMessage}</p>
+          )}
           {hasError && userNeedsConfirmation && (
             <>
-              <p>
+              <p style={{ textAlign: "center", color: "red" }}>
                 {errorMessage}
                 <NavLink to="/confirm"> Click here to confirm</NavLink>
               </p>

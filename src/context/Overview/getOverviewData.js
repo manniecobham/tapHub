@@ -18,7 +18,7 @@ const jsonResponse = {
             // currentOccupied
             value1: 99,
             // totalDevices
-            value2: 99,
+            value2: 100,
           },
         },
         {
@@ -30,8 +30,8 @@ const jsonResponse = {
               value2: 99,
             },
             cost: {
-              value1: 99,
-              value2: 99,
+              value1: 100,
+              value2: 100,
             },
           },
         },
@@ -44,8 +44,8 @@ const jsonResponse = {
               value2: 99,
             },
             cost: {
-              value1: 99,
-              value2: 99,
+              value1: 100,
+              value2: 100,
             },
           },
         },
@@ -58,8 +58,8 @@ const jsonResponse = {
               value2: 99,
             },
             cost: {
-              value1: 99,
-              value2: 99,
+              value1: 100,
+              value2: 100,
             },
           },
         },

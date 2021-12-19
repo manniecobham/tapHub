@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useTheme } from "styled-components";
-import Context from "../../../../context/context";
 
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
@@ -11,7 +10,6 @@ import { Card } from "../../../../styles/UI/Card.styled";
 
 const LightWasted = (props) => {
   const theme = useTheme();
-  const context = useContext(Context);
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
   const [secondIconIsActive, setSecondIsActive] = useState(false);
@@ -72,12 +70,9 @@ const LightWasted = (props) => {
       <div className="card__content">
         <p>
           <span className="lead">
-            {
-              context["userData"]["devices"][0]["metrics"][2]["lightWasted"][
-                "value1"
-              ]
-            }
-          </span>{" "}
+            {firstIconIsActive && props.lightData.usage.value1}
+            {secondIconIsActive && props.lightData.cost.value1}
+          </span>
           hrs/wk
         </p>
       </div>
@@ -90,12 +85,8 @@ const LightWasted = (props) => {
           <img src={arrow} alt="arrow" />
           <p>
             <span>
-              {
-                context["userData"]["devices"][0]["metrics"][2]["lightWasted"][
-                  "value2"
-                ]
-              }
-              %
+              {firstIconIsActive && props.lightData.usage.value2}
+              {secondIconIsActive && props.lightData.cost.value2}%
             </span>
             vs last week
           </p>

@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useTheme } from "styled-components";
-import Context from "../../../../context/context";
 
 import lightningIcon from "../../../../images/Overview/lightning.svg";
 import dollarIcon from "../../../../images/Overview/dollar.svg";
@@ -10,7 +9,6 @@ import { ToggleGroup } from "../../../../styles/UI/Toggle.styled";
 import { Card } from "../../../../styles/UI/Card.styled";
 
 const CO2Reduction = (props) => {
-  const context = useContext(Context);
   const theme = useTheme();
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
@@ -73,11 +71,8 @@ const CO2Reduction = (props) => {
       <div className="card__content">
         <p>
           <span className="lead">
-            {
-              context["userData"]["devices"][0]["metrics"][1]["co2Reduction"][
-                "value1"
-              ]
-            }
+            {firstIconIsActive && props.co2Data.usage.value1}
+            {secondIconIsActive && props.co2Data.cost.value1}
           </span>
           lbs/wk
         </p>
@@ -91,12 +86,8 @@ const CO2Reduction = (props) => {
           <img src={arrow} alt="arrow" />
           <p>
             <span>
-              {
-                context["userData"]["devices"][0]["metrics"][1]["co2Reduction"][
-                  "value2"
-                ]
-              }
-              %
+              {firstIconIsActive && props.co2Data.usage.value2}
+              {secondIconIsActive && props.co2Data.cost.value2}%
             </span>
             vs last week
           </p>
