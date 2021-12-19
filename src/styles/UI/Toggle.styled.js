@@ -21,6 +21,7 @@ const ToggleGroup = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: inherit;
 
       &.active {
         background-color: white;

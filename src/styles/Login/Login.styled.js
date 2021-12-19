@@ -131,6 +131,7 @@ const LoginContainer = styled.div`
 
   button {
     cursor: pointer;
+    background: inherit;
   }
 `;
 
