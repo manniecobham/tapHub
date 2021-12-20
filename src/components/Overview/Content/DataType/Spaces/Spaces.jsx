@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import instahubImage from "../../../../../images/Overview/instahub-office.png";
 import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.png";
@@ -17,7 +17,7 @@ import State from "./State";
 
 const Spaces = (props) => {
   const theme = useTheme();
-  const titleSize = theme.typography.headerSize;
+  // const titleSize = theme.typography.headerSize;
   const bgColor = theme.colors.colorSecondaryWhite;
   const [firstIconIsActive, setFirstIconIsActive] = useState(true);
   const [secondIconIsActive, setSecondIsActive] = useState(false);
@@ -88,7 +88,7 @@ const Spaces = (props) => {
             >
               <img
                 src={imageIcon}
-                alt="image"
+                alt="icon"
                 className={firstIconIsActive ? "filterBlack" : "filterGray"}
               />
             </button>

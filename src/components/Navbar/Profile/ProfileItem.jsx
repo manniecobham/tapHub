@@ -4,7 +4,11 @@ const ProfileItem = (props) => {
   return (
     <li className={props.className}>
       <button>
-        <img src={props.icon} className="profile-dropdown__item-icon" />
+        <img
+          src={props.icon}
+          className="profile-dropdown__item-icon"
+          alt="icon"
+        />
         <p>{props.title}</p>
       </button>
     </li>

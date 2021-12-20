@@ -1,13 +1,9 @@
-import React, { useState, useRef, useContext } from "react";
-import { useTheme } from "styled-components";
+import React, { useState } from "react";
 import { NavbarStyled } from "../../styles/Navbar/Navbar.styled";
 import { NavLink } from "react-router-dom";
 import Container from "../../styles/UI/Container.styled";
-import Context from "../../context/context";
 import IH_icon from "../../images/Sidebar/instahubIcon.png";
 import overview_icon from "../../images/Sidebar/overview.svg";
-import arrow_icon from "../../images/Sidebar/arrow.svg";
-import sep_line from "../../images/Sidebar/line.svg";
 import analytics_icon from "../../images/Sidebar/analytics.svg";
 import reports_icon from "../../images/Sidebar/reports.svg";
 import sensors_icon from "../../images/Sidebar/sensors.svg";
@@ -16,11 +12,6 @@ import Notification from "./Notifications/Notification";
 import Profile from "./Profile/Profile";
 
 const Navbar = (props) => {
-  const theme = useTheme();
-  const context = useContext(Context);
-  const bgColor = theme.colors.colorPrimaryDarkBlue;
-  const textColor = theme.colors.colorSecondaryWhite;
-
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
 
   const openHamburger = () => {
@@ -44,6 +35,7 @@ const Navbar = (props) => {
               <a
                 className="logo"
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.getinstahub.com/"
               >
                 <img className="logo__image" src={IH_icon} alt="home" />
@@ -110,6 +102,7 @@ const Navbar = (props) => {
           <a
             className="logo"
             target="_blank"
+            rel="noreferrer"
             href="https://www.getinstahub.com/"
           >
             <img className="logo__image" src={IH_icon} alt="home" />

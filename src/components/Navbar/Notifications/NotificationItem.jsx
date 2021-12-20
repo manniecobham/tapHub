@@ -1,11 +1,9 @@
-import React, { useContext, useState } from "react";
-import Context from "../../../context/context";
+import React, { useState } from "react";
 
 import bulbIcon from "../../../images/Overview/bulbIcon.svg";
 import { NotificationListItem } from "../../../styles/Navbar/Notifications/Notifications.styled";
 
 const NotificationItem = (props) => {
-  const context = useContext(Context);
   const [hasBeenRead, setHasBeenRead] = useState(props.read);
 
   const onReadHandler = () => {
@@ -32,7 +30,7 @@ const NotificationItem = (props) => {
           <div className={`fill`}></div>
         </div>
         <div className="notif-list__item-icon">
-          <img src={bulbIcon} alt="image" />
+          <img src={bulbIcon} alt="bulb" />
         </div>
         <div className="notif-list__item-content">
           <div className="notif-list__item-content-title">

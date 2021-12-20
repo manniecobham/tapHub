@@ -1,7 +1,7 @@
 // Get API call for metric information
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
 };
 

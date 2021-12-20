@@ -8,6 +8,7 @@ const Button = styled.button`
   display: flex;
   justify-items: space-around;
   align-items: center;
+  background: inherit;
 `;
 
 export default Button;

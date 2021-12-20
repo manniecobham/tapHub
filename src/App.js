@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles.styled";
 import globalTheme from "./styles/GlobalTheme";
@@ -13,11 +13,15 @@ import Property from "./views/Property";
 //Amplify.configure(aws_exports);
 import { Route, Routes, Navigate } from "react-router-dom";
 import Context from "./context/context";
-import jsonResponse from "./context/api";
 
 import Login from "./views/Login";
+import Register from "./components/Login/Register";
+import ConfirmSignup from "./components/Login/ConfirmSignUp";
+import ProtectedRoutes from "./ProtectedRoutes";
 function App() {
-  //const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+  const [username, setUsername] = useState();
+  const [authToken, setAuthToken] = useState();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,10 +39,10 @@ function App() {
 
       // console.log(JSON.stringify(responseData.body));
       setUserData(responseData.body);
-      //setIsLoading(false);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
+      setIsLoading(false);
+      // setTimeout(() => {
+      //   setIsLoading(false);
+      // }, 2000);
     };
 
     fetchData().catch((error) => {
@@ -46,6 +50,12 @@ function App() {
       // setHttpError(error.message);
     });
   }, []);
+
+  const onLoginHandler = (userInfo) => {
+    setUsername(userInfo.username);
+    setAuthToken(userInfo.authToken);
+    setIsAuthenticated(true);
+  };
 
   const loadingSpinner = (
     <div className="lds-circle">
@@ -56,6 +66,9 @@ function App() {
   return (
     <Context.Provider
       value={{
+        username: username,
+        authToken: authToken,
+        isAuthenticated: isAuthenticated,
         userData: userData,
       }}
     >
@@ -65,13 +78,17 @@ function App() {
           loadingSpinner
         ) : (
           <Routes>
-            <Route path="/overview" element={<Overview />} />
-            <Route path="/" element={<Navigate replace to="/overview" />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/sensors" element={<Sensors />} />
-            <Route path="/property" element={<Property />} />
+            <Route path="/login" element={<Login onLogin={onLoginHandler} />} />
+            <Route path="/" element={<Navigate replace to="/login" />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/confirm" element={<ConfirmSignup />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/sensors" element={<Sensors />} />
+              <Route path="/property" element={<Property />} />
+            </Route>
           </Routes>
         )}
       </ThemeProvider>
