@@ -3,155 +3,158 @@ const generateData = (count, yrange) => {
   var series = [];
   while (i < count) {
     var x = (i + 1).toString();
-    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+    var y =
+      Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
     series.push({
       x: x,
-      y: y
+      y: y,
     });
     i++;
   }
   return series;
-}
+};
 
 export const data4 = [
   {
-    name: 'Monday',
+    name: "Monday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Tuesday',
+    name: "Tuesday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Wednesday',
+    name: "Wednesday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Thursday',
+    name: "Thursday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Friday',
+    name: "Friday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Saturday',
+    name: "Saturday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Sunday',
+    name: "Sunday",
     data: generateData(24, {
-      min: -30,
-      max: 55
-    })
-  }
-]
+      min: 0,
+      max: 50,
+    }),
+  },
+];
 
 export const data5 = [
   {
-    name: 'Week 1',
+    name: "Week 1",
     data: [
       {
         x: "1",
-        y: -5
+        y: 0,
       },
       {
         x: "2",
-        y: 26
+        y: 26,
       },
       {
         x: "3",
-        y: 14
+        y: 14,
       },
       {
         x: "4",
-        y: 52
+        y: 50,
       },
       {
         x: "5",
-        y: 34
+        y: 34,
       },
       {
         x: "6",
-        y: -6
+        y: 2,
       },
       {
         x: "7",
-        y: 23
-      }
-    ]
+        y: 23,
+      },
+    ],
   },
   {
-    name: 'Week 2',
+    name: "Week 2",
     data: generateData(7, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Week 3',
+    name: "Week 3",
     data: generateData(7, {
-      min: -30,
-      max: 55
-    })
+      min: 0,
+      max: 50,
+    }),
   },
   {
-    name: 'Week 4',
+    name: "Week 4",
     data: generateData(7, {
-      min: -30,
-      max: 55
-    })
-  }
-]
+      min: 0,
+      max: 50,
+    }),
+  },
+];
 
 export const data6 = [
   {
     name: "Feature 1",
-    data: [{
-      x: "Monday",
-      y: 21
-    },
-    {
-      x: "Tuesday",
-      y: 35
-    },
-    {
-      x: "Wednesday",
-      y: 3
-    },
-    {
-      x: "Thursday",
-      y: 50
-    },
-    {
-      x: "Friday",
-      y: 12 
-    },
-    {
-      x: "Saturday",
-      y: 27
-    },
-    {
-      x: "Sunday",
-      y: 2
-    }],
-  }
-]
+    data: [
+      {
+        x: "Monday",
+        y: 21,
+      },
+      {
+        x: "Tuesday",
+        y: 35,
+      },
+      {
+        x: "Wednesday",
+        y: 3,
+      },
+      {
+        x: "Thursday",
+        y: 50,
+      },
+      {
+        x: "Friday",
+        y: 12,
+      },
+      {
+        x: "Saturday",
+        y: 27,
+      },
+      {
+        x: "Sunday",
+        y: 2,
+      },
+    ],
+  },
+];
