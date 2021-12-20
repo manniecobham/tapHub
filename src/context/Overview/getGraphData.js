@@ -7,7 +7,7 @@ const jsonRequest = {
   startDate: "2020-11-02",
 };
 
-const jsonRequest = {
+const jsonResponse = {
   // value is either in the format of data1, data2, or data3 below
   // data 1 = day
   graphDataDay: data1,
