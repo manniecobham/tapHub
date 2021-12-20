@@ -52,7 +52,7 @@ const Graph = (props) => {
         className={`hamburger ${hamburgerIsOpen ? "hamburger--open" : ""}`}
         onClick={openHamburger}
       >
-        <img src={hamburger} href="hamb" />
+        <img src={hamburger} href="hamb" alt="hamburger" />
       </button>
       <GraphSidebar hamburgerIsOpen={hamburgerIsOpen} />
       <div className="graph-grid__container-outer">

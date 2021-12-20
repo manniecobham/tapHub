@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // images
 import addIcon from '../../../images/Analytics/plusIcon.svg';
@@ -9,6 +9,11 @@ import { Container } from './GraphCard.styled'
 import { Card } from '../../../styles/UI/Card.styled';
 import SensorComponent from './SensorComponent/SensorComponent';
 
+import { data4, data5, data6 } from "../../Overview/Content/DataType/Graph/heatData";
+
+
+import Graph from '../../Overview/Content/DataType/Graph/Graph'
+import HeatMap from '../../Overview/Content/DataType/Graph/Heatmap';
 
 const jsonResponse = {
     data: {
@@ -67,6 +72,7 @@ const jsonResponse = {
 function GraphCard() {
 
     const sensors = jsonResponse.graphMetrics;
+    const [graphData, setGraphData] = useState(data4);
 
     return (        
         <Container className="analytics-container">
@@ -90,16 +96,16 @@ function GraphCard() {
                     </div>
                 </div>
             </div>
-            
+
             <div className="sensors">
                 {sensors.map((sensor) => (
                     <SensorComponent sensor={sensor}/>
-                ))}
+                    ))}
             </div>
 
             <div className="analysis">
                 <Card className="card analysis__graph analytics-card">
-                    Graph goes here
+                    <HeatMap graphData={graphData} />
                 </Card>
                 <Card className="card analysis__performance analytics-card">
                     Comparison goes here

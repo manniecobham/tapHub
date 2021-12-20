@@ -175,8 +175,10 @@ export const Container = styled.div`
         "graph graph performance"
         "graph graph performance"
         "dropdown dropdown floor";
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
 
-      /* grid-template-rows: */
+      /* border: 1px solid red; */
 
       .analytics-card {
         background: rgb(255, 255, 255);
