@@ -1,7 +1,7 @@
 // Post API call to generate report
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   reportInformation: {
     rooms: ["Office 101", "Office 202"],

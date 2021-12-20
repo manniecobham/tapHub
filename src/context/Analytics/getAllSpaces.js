@@ -2,7 +2,7 @@
 // (For dropdown)
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
 };
 

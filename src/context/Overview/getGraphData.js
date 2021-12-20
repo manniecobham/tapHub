@@ -1,13 +1,13 @@
 // Get API call used for getting graph data for Overview page
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
   startDate: "2020-11-02",
 };
 
-const jsonRequest = {
+const jsonResponse = {
   // value is either in the format of data1, data2, or data3 below
   // data 1 = day
   graphDataDay: data1,

@@ -20,8 +20,9 @@ const GraphSidebar = (props) => {
         props.hamburgerIsOpen ? "graph-sidebar--hamburger-open" : ""
       }`}
     >
-      {sensors.map((sensor) => (
+      {sensors.map((sensor, index) => (
         <SensorComponent
+          key={index}
           className={`graph-sidebar__item`}
           contextProp={sensor}
         />

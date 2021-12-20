@@ -2,7 +2,7 @@
 // not a priority
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   // password for confirmation - if wrong password, account is not deleted
   password: "password",

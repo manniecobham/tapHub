@@ -8,7 +8,7 @@ const jsonRequest = {
 // FOR BACKEND: WILL WE GET MORE THAN ONE TOKEN BACK?
 const jsonResponseSuccess = {
   success: true,
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   defaultSpaceId: 1,
 };

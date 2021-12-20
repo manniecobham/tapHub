@@ -1,7 +1,7 @@
 // Delete API call for a specific report
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   reportId: 1,
 };

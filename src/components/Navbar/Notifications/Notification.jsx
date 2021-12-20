@@ -50,7 +50,7 @@ const Notifications = (props) => {
         <img
           src={notification}
           alt="bell"
-          classname="notifications__button-icon"
+          className="notifications__button-icon"
         />
         {!hasReadAllNotifications && (
           <img

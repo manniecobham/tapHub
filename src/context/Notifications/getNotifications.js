@@ -1,7 +1,7 @@
 // Get API call to retrieve notifications for a specific space
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
 };

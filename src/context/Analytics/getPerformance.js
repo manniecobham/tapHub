@@ -3,7 +3,7 @@
 // ASK UI/UX WHAT DATA IS BEING COMPARED FOR JSON RESPONSE
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   roomId: 1,
   roomIdToCompare: 2,

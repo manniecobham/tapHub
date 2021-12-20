@@ -92,7 +92,7 @@ const NotificationsDropdown = (props) => {
           <img src={selectionDropdownIcon} alt="^" />
         </Button>
         <Dropdown>
-          {spaceDropdownIsShown && <SpaceSelectionDropdown />}
+          {spaceDropdownIsShown && <SpaceSelectionDropdown notif="notif" />}
         </Dropdown>
       </SpaceSelectionContainer>
       <hr />

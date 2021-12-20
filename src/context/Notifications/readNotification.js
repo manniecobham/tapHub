@@ -2,7 +2,7 @@
 
 // Database should have a read field to know whether a notification has been read
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
   notification: {
