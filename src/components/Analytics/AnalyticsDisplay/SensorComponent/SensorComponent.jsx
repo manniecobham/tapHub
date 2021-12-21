@@ -11,10 +11,8 @@ import roomIcon from '../../../../images/Analytics/roomIcon.svg';
 import { Card } from '../../../../styles/UI/Card.styled';
 
 
-const SensorComponent = ({ sensor, setGraphData, sensors, setActiveSensor, active }) => {
-  
-  const [background, setBackground] = useState('rgb(255, 255, 255')
-  const [boxBackground, setBoxBackground] = useState('red')
+const SensorComponent = ({ sensor, setGraphData, sensors, setActiveSensor, id}) => {
+  const [isActive, setIsActive] = useState(false)
   var units;
   var icon;
   var description;
@@ -67,21 +65,26 @@ const SensorComponent = ({ sensor, setGraphData, sensors, setActiveSensor, activ
   }
 
     const onClickHandler = () => {
-        if (sensor.id === 1) {
+        if (id === 1) {
             setGraphData(sensors[0].graphData)
-        } else if (sensor.id === 2) {
+            // setActiveSensor(1)
+        } else if (id === 2) {
             setGraphData(sensors[1].graphData)
-        } else if (sensor.id === 3) {
+            // setActiveSensor(2)
+        } else if (id === 3) {
             setGraphData(sensors[2].graphData)
-        } else if (sensor.id === 4) {
+            // setActiveSensor(3)
+        } else if (id === 4) {
             setGraphData(sensors[3].graphData)
-        } else if (sensor.id === 5) {
+            // setActiveSensor(4)
+        } else if (id === 5) {
             setGraphData(sensors[4].graphData)
+            // setActiveSensor(5)
         }
     }
 
   return (
-    <Card className="card sensors-box" background={background} onClick={onClickHandler} >
+    <Card className="card sensors-box" onClick={onClickHandler} >
       <div className="sensors-box-info">
         <div className="img-container">
           {icon}
@@ -92,7 +95,7 @@ const SensorComponent = ({ sensor, setGraphData, sensors, setActiveSensor, activ
           <span className="room-average">{description}</span>
         </div>                    
       </div>
-      <div className="graybox" boxBackground={boxBackground}></div>
+      <div className="graybox" ></div>
     </Card>
   )
 }

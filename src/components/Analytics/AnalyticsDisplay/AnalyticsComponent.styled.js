@@ -61,7 +61,6 @@ export const Container = styled.div`
         font-size: 24px;
         padding-right: 20px;
 
-        /* border: 1px solid red; */
         .download {
           display: flex;
           height: 45px;
@@ -91,6 +90,7 @@ export const Container = styled.div`
 
       &-box {
         padding: 10px;
+        /* background: ${(props) => props.background}; */
         background: rgb(255, 255, 255);
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
@@ -108,8 +108,6 @@ export const Container = styled.div`
           justify-content: space-around;
           margin-bottom: 20px;
 
-          /* border: 1px solid red; */
-
           .img-container {
             display: flex;
             align-items: center;
@@ -119,8 +117,6 @@ export const Container = styled.div`
             border-radius: 5px;
             box-shadow: 0px 3px 5px grey;
             background: #f8f5f5;
-
-            /* border: 1px solid red; */
 
             img {
               height: 30px;
@@ -134,14 +130,11 @@ export const Container = styled.div`
             justify-content: center;
             text-align: center;
 
-            /* border: 1px solid red; */
-
             .word {
               font-size: 14px;
               margin-top: 5px;
-
-              /* border: 1px solid red; */
             }
+
             .room-average {
               font-size: 10px;
               margin-top: 5px;
@@ -178,16 +171,12 @@ export const Container = styled.div`
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
 
-      /* border: 1px solid red; */
-
       .analytics-card {
         background: rgb(255, 255, 255);
       }
 
       &__graph {
         grid-area: graph;
-        /* width: 200px;
-        overflow: auto; */
       }
 
       &__performance {

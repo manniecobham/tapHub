@@ -96,14 +96,14 @@ function AnalyticsComponent() {
     const [graphType, setGraphType] = useState("line");
 
     //need state for tracking active sensors inside of analytics component
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
+
     //create function to pass as props to sensor component allowing to change state
     const setActiveSensor = (id) => {
         //set the active state for a specific id
     }
-    
     const sensors = jsonResponse.graphMetrics;
-    console.log(graphType)
+
     return (        
         <Container className="analytics-container">
             <div className="comparison">
@@ -129,7 +129,16 @@ function AnalyticsComponent() {
 
             <div className="sensors">
                 {sensors.map((sensor, id) => (
-                    <SensorComponent setActiveSensor={setActiveSensor} active={active} sensor={sensor} setGraphData={setGraphData} sensors={sensors} key={id} id={id} />
+                    <SensorComponent 
+
+                        setActiveSensor={setActiveSensor} 
+                        // active={active} 
+                        sensor={sensor} 
+                        setGraphData={setGraphData} 
+                        sensors={sensors} 
+                        key={id} 
+                        id={id} 
+                    />
                 ))}
             </div>
 
@@ -141,9 +150,6 @@ function AnalyticsComponent() {
                     <div>
                         <Graph graphData={graphData} graphType={graphType}/>
                     </div>
-                    {/* <GraphButton setGraphType={setGraphType} graphType={graphType} />
-                    <Graph graphData={graphData} graphType={graphType} /> */}
-                    {/* <Graph  /> */}
                 </Card>
                 <Card className="card analysis__performance analytics-card">
                     Comparison goes here
