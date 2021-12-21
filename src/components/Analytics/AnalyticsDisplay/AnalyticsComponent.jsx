@@ -1,79 +1,109 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // images
 import addIcon from '../../../images/Analytics/plusIcon.svg';
 import downloadIcon from '../../../images/Analytics/downloadIcon.svg';
 
 // components
-import { Container } from './GraphCard.styled'
+import { Container } from './AnalyticsComponent.styled'
 import { Card } from '../../../styles/UI/Card.styled';
 import SensorComponent from './SensorComponent/SensorComponent';
 
 import { data4, data5, data6 } from "../../Overview/Content/DataType/Graph/heatData";
 
+import Graph from './AnalyticsGraphComponents/Graph';
+import GraphButtons from './AnalyticsGraphComponents/GraphButtons';
 
-import Graph from '../../Overview/Content/DataType/Graph/Graph'
-import HeatMap from '../../Overview/Content/DataType/Graph/Heatmap';
+// import GraphButton from './AnalyticsGraphComponents2/GraphButton';
+// import Graph from './AnalyticsGraphComponents2/Graph'
+// import Graph from '../../Overview/Content/DataType/Graph/Graph'
+const jsonRequest = {
+    username: "testuser",
+    userToken: "12345",
+    spaceId: 1,
+    roomId: 1,
+    dateStart: "2020-11-23",
+    dateEnd: "2020-11-03",
+    //based on id of sensor
+    type: 1,
+};
 
+// ID 1 = space utilization
+// ID 2 = temperature
+// ID 3 = light
 const jsonResponse = {
-    data: {
-        // graph data created by BACKEND between start and end date
-    },
-    // graph sidebar data created by BACKEND between start and end date
     graphMetrics: [
         {
+            id: 1,
             title: "Space Utilization",
-            data: {
+            tabData: {
                 // currPercentOccupied
                 value1: 52,
                 // relChangePerDay
                 value2: 2.1,
             },
+            graphData: data4,
         },
         {
+            id: 2,
             title: "Temperature",
-            data: {
+            tabData: {
                 // currAvgTemp
                 value1: 65,
                 // relChangePerDay
                 value2: 4.1,
             },
+            graphData: data5,
         },
         {
+            id: 3,
             title: "Light Usage",
-            data: {
+            tabData: {
                 // currAvgMinPerMonth
                 value1: 10,
                 // relChangePerMonth
                 value2: 3,
             },
+            graphData: data6,
         },
         {
+            id: 4,
             title: "Humidity",
-            data: {
+            tabData: {
                 // currAvg
                 value1: 45,
                 // comfortLevel
                 value2: "Comfortable",
             },
+            graphData: data5,
         },
         {
+            id: 5,
             title: "Pressure",
-            data: {
+            tabData: {
                 // currAvg
                 value1: 70,
                 // pressureLevel
                 value2: "Normal",
             },
+            graphData: data6,
         },
     ],
-    };
+};
 
-function GraphCard() {
+function AnalyticsComponent() {
+    const [graphData, setGraphData] = useState(data5);
+    const [graphType, setGraphType] = useState("line");
 
+    //need state for tracking active sensors inside of analytics component
+    const [active, setActive] = useState(false);
+    //create function to pass as props to sensor component allowing to change state
+    const setActiveSensor = (id) => {
+        //set the active state for a specific id
+    }
+    
     const sensors = jsonResponse.graphMetrics;
-    const [graphData, setGraphData] = useState(data4);
-
+    console.log(graphType)
     return (        
         <Container className="analytics-container">
             <div className="comparison">
@@ -98,14 +128,22 @@ function GraphCard() {
             </div>
 
             <div className="sensors">
-                {sensors.map((sensor) => (
-                    <SensorComponent sensor={sensor}/>
-                    ))}
+                {sensors.map((sensor, id) => (
+                    <SensorComponent setActiveSensor={setActiveSensor} active={active} sensor={sensor} setGraphData={setGraphData} sensors={sensors} key={id} id={id} />
+                ))}
             </div>
 
             <div className="analysis">
                 <Card className="card analysis__graph analytics-card">
-                    <HeatMap graphData={graphData} />
+                    <div style={{display:"flex", justifyContent:"right", paddingTop:"10px"}}>
+                        <GraphButtons setGraphType={setGraphType} />
+                    </div>
+                    <div>
+                        <Graph graphData={graphData} graphType={graphType}/>
+                    </div>
+                    {/* <GraphButton setGraphType={setGraphType} graphType={graphType} />
+                    <Graph graphData={graphData} graphType={graphType} /> */}
+                    {/* <Graph  /> */}
                 </Card>
                 <Card className="card analysis__performance analytics-card">
                     Comparison goes here
@@ -121,4 +159,4 @@ function GraphCard() {
     )
 }
 
-export default GraphCard;
+export default AnalyticsComponent;

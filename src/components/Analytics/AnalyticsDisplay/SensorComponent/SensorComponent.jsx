@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // images
 import acIcon from '../../../../images/Analytics/acIcon.svg';
@@ -11,8 +11,10 @@ import roomIcon from '../../../../images/Analytics/roomIcon.svg';
 import { Card } from '../../../../styles/UI/Card.styled';
 
 
-const SensorComponent = ({ sensor }) => {
+const SensorComponent = ({ sensor, setGraphData, sensors, setActiveSensor, active }) => {
   
+  const [background, setBackground] = useState('rgb(255, 255, 255')
+  const [boxBackground, setBoxBackground] = useState('red')
   var units;
   var icon;
   var description;
@@ -64,19 +66,33 @@ const SensorComponent = ({ sensor }) => {
     );
   }
 
+    const onClickHandler = () => {
+        if (sensor.id === 1) {
+            setGraphData(sensors[0].graphData)
+        } else if (sensor.id === 2) {
+            setGraphData(sensors[1].graphData)
+        } else if (sensor.id === 3) {
+            setGraphData(sensors[2].graphData)
+        } else if (sensor.id === 4) {
+            setGraphData(sensors[3].graphData)
+        } else if (sensor.id === 5) {
+            setGraphData(sensors[4].graphData)
+        }
+    }
+
   return (
-    <Card className="card sensors-box">
+    <Card className="card sensors-box" background={background} onClick={onClickHandler} >
       <div className="sensors-box-info">
         <div className="img-container">
           {icon}
         </div>
         <div className="info-container">
-          <span className="word">{sensor.data.value1}{units}</span>
+          <span className="word">{sensor.tabData.value1}{units}</span>
           <span className="word">{sensor.title}</span>
           <span className="room-average">{description}</span>
         </div>                    
       </div>
-      <div className="graybox"></div>
+      <div className="graybox" boxBackground={boxBackground}></div>
     </Card>
   )
 }

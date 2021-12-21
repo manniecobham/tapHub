@@ -1,65 +1,103 @@
 // Get API call used for getting graph data for Overview page
 
 const jsonRequest = {
-  userId: 1,
+  username: "testuser",
   userToken: "12345",
   spaceId: 1,
   startDate: "2020-11-02",
+  type: "Temperature",
 };
 
-const jsonRequest = {
-  // value is either in the format of data1, data2, or data3 below
-  // data 1 = day
-  graphDataDay: data1,
-  // data 2 = week
-  graphDataWeek: data2,
-  // data 3 = month
-  graphDataMonth: data3,
-  // graph sidebar
+const jsonResponseSpace = {
   graphMetrics: [
     {
       title: "Space Utilization",
-      data: {
+      tabData: {
         // currPercentOccupied
         value1: 52,
         // relChangePerDay
         value2: 2.1,
       },
+      graphData: {
+        graphDataDay: data1,
+        graphDataWeek: data2,
+        graphDataMonth: data3,
+      },
     },
+  ],
+};
+
+const jsonResponseTemperature = {
+  graphMetrics: [
     {
       title: "Temperature",
-      data: {
+      tabData: {
         // currAvgTemp
         value1: 65,
         // relChangePerDay
         value2: 4.1,
       },
+      graphData: {
+        graphDataDay: data1,
+        graphDataWeek: data2,
+        graphDataMonth: data3,
+      },
     },
+  ],
+};
+
+const jsonResponseLight = {
+  graphMetrics: [
     {
       title: "Light Usage",
-      data: {
+      tabData: {
         // currAvgMinPerMonth
         value1: 10,
         // relChangePerMonth
         value2: 3,
       },
+      graphData: {
+        graphDataDay: data1,
+        graphDataWeek: data2,
+        graphDataMonth: data3,
+      },
     },
+  ],
+};
+
+const jsonResponseHumidity = {
+  graphMetrics: [
     {
       title: "Humidity",
-      data: {
+      tabData: {
         // currAvg
         value1: 45,
         // comfortLevel
         value2: "Comfortable",
       },
+      graphData: {
+        graphDataDay: data1,
+        graphDataWeek: data2,
+        graphDataMonth: data3,
+      },
     },
+  ],
+};
+
+const jsonResponsePressure = {
+  graphMetrics: [
     {
       title: "Pressure",
-      data: {
+      tabData: {
         // currAvg
         value1: 70,
         // pressureLevel
         value2: "Normal",
+      },
+      graphData: {
+        graphDataDay: data1,
+        graphDataWeek: data2,
+        graphDataMonth: data3,
       },
     },
   ],

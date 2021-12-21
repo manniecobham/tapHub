@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import GraphCards from "../components/Analytics/AnalyticsDisplay/GraphCards";
+import AnalyticsComponent from "../components/Analytics/AnalyticsDisplay/AnalyticsComponent";
 
 
 const Analytics = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <GraphCards /> 
+      <AnalyticsComponent /> 
     </React.Fragment>
   );
 };
