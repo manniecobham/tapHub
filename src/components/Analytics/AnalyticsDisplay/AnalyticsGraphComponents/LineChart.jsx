@@ -101,7 +101,9 @@ const LineChart = ({ graphData }) => {
       ...prev,
       series: graphData,
       // options: {
+      //   // ...prev,
       //   title: {
+      //     // ...prev,
       //     text: "hello"
       //   }
       // }
@@ -114,9 +116,9 @@ const LineChart = ({ graphData }) => {
         <ReactApexChart
           options={lineChart.options}
           series={lineChart.series}
-          type="area"
+          type={lineChart.options.chart.type}
           height={lineChart.options.chart.height}
-          title={lineChart.options.title}
+          title={lineChart.options.title.text}
         />
       </div>
     </>

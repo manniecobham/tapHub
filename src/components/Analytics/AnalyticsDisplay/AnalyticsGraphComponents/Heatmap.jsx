@@ -92,7 +92,7 @@ const HeatMap = ({ graphData, isShown }) => {
         <ReactApexChart
           options={heatMap.options}
           series={heatMap.series}
-          type="heatmap"
+          type={heatMap.options.chart.type}
           height={heatMap.options.chart.height}
         />
       </div>

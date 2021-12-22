@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Card } from "../../../styles/UI/Card.styled";
 
 export const Container = styled.div`
   &.analytics-container {
@@ -92,8 +91,7 @@ export const Container = styled.div`
         padding: 10px;
         /* background: ${(props) => props.background}; */
         background: rgb(255, 255, 255);
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
+        border-radius: 8px 8px 0 0;
         width: 100%;
         height: 100%;
         position: relative;
@@ -173,6 +171,10 @@ export const Container = styled.div`
 
       .analytics-card {
         background: rgb(255, 255, 255);
+
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
       }
 
       &__graph {
