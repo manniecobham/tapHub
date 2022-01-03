@@ -18,6 +18,7 @@ export const Container = styled.div`
       border-radius: 8px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
 
     .analysis {

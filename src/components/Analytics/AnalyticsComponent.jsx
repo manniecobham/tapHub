@@ -4,7 +4,8 @@ import { data4, data5, data6 } from "../Overview/Content/DataType/Graph/heatData
 
 // components
 import { Container } from './AnalyticsComponent.styled'
-import SensorComponent from './AnalyticsSensors/Sensors/Sensors';
+import SensorComponent from './AnalyticsSensors/SensorComponent';
+// import SensorComponent from './AnalyticsSensors/Sensors/Sensors';
 
 import AnalyticsHeader from './AnalyticsHeader/AnalyticsHeader';
 import AnalyticsCards from './AnalyticsCards/AnalyticsCards';
@@ -31,6 +32,7 @@ const jsonResponse = {
                 // relChangePerDay
                 value2: 2.1,
             },
+            description: "Room Average",
             graphData: data4,
         },
         {
@@ -42,6 +44,7 @@ const jsonResponse = {
                 // relChangePerDay
                 value2: 4.1,
             },
+            description: "Room Average",
             graphData: data5,
         },
         {
@@ -53,6 +56,7 @@ const jsonResponse = {
                 // relChangePerMonth
                 value2: 3,
             },
+            description: "Waste Percentage",
             graphData: data6,
         },
         {
@@ -64,6 +68,7 @@ const jsonResponse = {
                 // comfortLevel
                 value2: "Comfortable",
             },
+            description: "Room Average",
             graphData: data5,
         },
         {
@@ -75,6 +80,7 @@ const jsonResponse = {
                 // pressureLevel
                 value2: "Normal",
             },
+            description: "Room Average",
             graphData: data6,
         },
     ],
@@ -82,25 +88,16 @@ const jsonResponse = {
 
 function AnalyticsComponent() {
     const [graphData, setGraphData] = useState(data5);
-    const [graphType, setGraphType] = useState("line");
 
     const sensors = jsonResponse.graphMetrics;
 
     return (        
         <Container className="analytics-container">
             <AnalyticsHeader />
-            <div className="sensors">
-                {sensors.map((sensor, id) => (
-                    <SensorComponent 
-                        sensor={sensor} 
-                        setGraphData={setGraphData} 
-                        sensors={sensors} 
-                        key={id} 
-                        id={id} 
-                    />
-                ))}
-            </div>
-            <AnalyticsCards />
+
+            <SensorComponent sensors={sensors} setGraphData={setGraphData} />
+
+            <AnalyticsCards graphData={graphData} />
         </Container>
     )
 }

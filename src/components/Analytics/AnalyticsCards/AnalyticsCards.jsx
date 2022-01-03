@@ -10,19 +10,18 @@ import { Container } from './AnalyticsCards.styled'
 import Graph from './AnalyticsGraph/Graph';
 import GraphButtons from './AnalyticsGraph/GraphButtons';
 
-const AnalyticsCards = () => {
-  const [graphData, setGraphData] = useState(data5);
+const AnalyticsCards = ({ graphData }) => {
   const [graphType, setGraphType] = useState("line");
 
   return (
     <Container className="analysis">
       <div className="analysis__graph analytics-card">
-        <div style={{display:"flex", justifyContent:"right", paddingTop:"10px"}}>
-          <GraphButtons setGraphType={setGraphType} />
-        </div>
-        <div>
-          <Graph graphData={graphData} graphType={graphType}/>
-        </div>
+          <div style={{display:"flex", justifyContent:"right", paddingTop:"10px"}}>
+            <GraphButtons setGraphType={setGraphType} />
+          </div>
+          <div>
+            <Graph graphData={graphData} graphType={graphType}/>
+          </div>
       </div>
 
       <div className="analysis__performance analytics-card">

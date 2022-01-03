@@ -22,7 +22,7 @@ const AnalyticsHeader = () => {
 
             <div className="comparison__datepicker-download">
                 <div className="picker">
-                    Date picker goes here
+                    <input type="date" />
                 </div>
                 <div className="download">
                     <img src={downloadIcon} alt="download icon" />

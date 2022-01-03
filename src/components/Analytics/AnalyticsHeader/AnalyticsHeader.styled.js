@@ -37,9 +37,9 @@ export const Container = styled.div`
           :hover {
             color: rgb(119, 119, 119);
 
-            /* img {
+            img {
               color: rgb(119, 119, 119);
-            } */
+            }
           }
         }
       }
