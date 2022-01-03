@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { data4, data5, data6 } from "../../Overview/Content/DataType/Graph/heatData";
+import { data4, data5, data6 } from "../Overview/Content/DataType/Graph/heatData";
 
 // components
 import { Container } from './AnalyticsComponent.styled'
-import SensorComponent from './SensorComponent/Sensors/Sensors';
+import SensorComponent from './AnalyticsSensors/Sensors/Sensors';
 
 import AnalyticsHeader from './AnalyticsHeader/AnalyticsHeader';
 import AnalyticsCards from './AnalyticsCards/AnalyticsCards';

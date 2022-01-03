@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import AnalyticsComponent from "../components/Analytics/AnalyticsDisplay/AnalyticsComponent";
+import AnalyticsComponent from "../components/Analytics/AnalyticsComponent";
 
 
 const Analytics = () => {

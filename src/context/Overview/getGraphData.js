@@ -8,7 +8,7 @@ const jsonRequest = {
   type: "Temperature",
 };
 
-const jsonResponseSpace = {
+const jsonResponse = {
   graphMetrics: [
     {
       title: "Space Utilization",
@@ -19,16 +19,121 @@ const jsonResponseSpace = {
         value2: 2.1,
       },
       graphData: {
-        graphDataDay: data1,
-        graphDataWeek: data2,
-        graphDataMonth: data3,
+        graphDataDay: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "Monday",
+                y: 45,
+              },
+              {
+                x: "Tuesday",
+                y: 24,
+              },
+              {
+                x: "Wednesday",
+                y: 37,
+              },
+              {
+                x: "Thursday",
+                y: 3,
+              },
+              {
+                x: "Friday",
+                y: 45,
+              },
+              {
+                x: "Saturday",
+                y: 12,
+              },
+              {
+                x: "Sunday",
+                y: 50,
+              },
+            ],
+          },
+        ],
+        graphDataWeek: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "1",
+                y: 4,
+              },
+              {
+                x: "2",
+                y: 13,
+              },
+              {
+                x: "3",
+                y: 27,
+              },
+              {
+                x: "4",
+                y: 15,
+              },
+            ],
+          },
+        ],
+        graphDataMonth: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "January",
+                y: 21,
+              },
+              {
+                x: "February",
+                y: 35,
+              },
+              {
+                x: "March",
+                y: 3,
+              },
+              {
+                x: "April",
+                y: 50,
+              },
+              {
+                x: "May",
+                y: 12,
+              },
+              {
+                x: "June",
+                y: 27,
+              },
+              {
+                x: "July",
+                y: 32,
+              },
+              {
+                x: "August",
+                y: 11,
+              },
+              {
+                x: "September",
+                y: 46,
+              },
+              {
+                x: "October",
+                y: 23,
+              },
+              {
+                x: "November",
+                y: 6,
+              },
+              {
+                x: "December",
+                y: 4,
+              },
+            ],
+          },
+        ],
       },
     },
-  ],
-};
-
-const jsonResponseTemperature = {
-  graphMetrics: [
     {
       title: "Temperature",
       tabData: {
@@ -38,16 +143,121 @@ const jsonResponseTemperature = {
         value2: 4.1,
       },
       graphData: {
-        graphDataDay: data1,
-        graphDataWeek: data2,
-        graphDataMonth: data3,
+        graphDataDay: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "Monday",
+                y: 45,
+              },
+              {
+                x: "Tuesday",
+                y: 24,
+              },
+              {
+                x: "Wednesday",
+                y: 37,
+              },
+              {
+                x: "Thursday",
+                y: 3,
+              },
+              {
+                x: "Friday",
+                y: 45,
+              },
+              {
+                x: "Saturday",
+                y: 12,
+              },
+              {
+                x: "Sunday",
+                y: 50,
+              },
+            ],
+          },
+        ],
+        graphDataWeek: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "1",
+                y: 4,
+              },
+              {
+                x: "2",
+                y: 13,
+              },
+              {
+                x: "3",
+                y: 27,
+              },
+              {
+                x: "4",
+                y: 15,
+              },
+            ],
+          },
+        ],
+        graphDataMonth: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "January",
+                y: 21,
+              },
+              {
+                x: "February",
+                y: 35,
+              },
+              {
+                x: "March",
+                y: 3,
+              },
+              {
+                x: "April",
+                y: 50,
+              },
+              {
+                x: "May",
+                y: 12,
+              },
+              {
+                x: "June",
+                y: 27,
+              },
+              {
+                x: "July",
+                y: 32,
+              },
+              {
+                x: "August",
+                y: 11,
+              },
+              {
+                x: "September",
+                y: 46,
+              },
+              {
+                x: "October",
+                y: 23,
+              },
+              {
+                x: "November",
+                y: 6,
+              },
+              {
+                x: "December",
+                y: 4,
+              },
+            ],
+          },
+        ],
       },
     },
-  ],
-};
-
-const jsonResponseLight = {
-  graphMetrics: [
     {
       title: "Light Usage",
       tabData: {
@@ -57,16 +267,121 @@ const jsonResponseLight = {
         value2: 3,
       },
       graphData: {
-        graphDataDay: data1,
-        graphDataWeek: data2,
-        graphDataMonth: data3,
+        graphDataDay: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "Monday",
+                y: 45,
+              },
+              {
+                x: "Tuesday",
+                y: 24,
+              },
+              {
+                x: "Wednesday",
+                y: 37,
+              },
+              {
+                x: "Thursday",
+                y: 3,
+              },
+              {
+                x: "Friday",
+                y: 45,
+              },
+              {
+                x: "Saturday",
+                y: 12,
+              },
+              {
+                x: "Sunday",
+                y: 50,
+              },
+            ],
+          },
+        ],
+        graphDataWeek: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "1",
+                y: 4,
+              },
+              {
+                x: "2",
+                y: 13,
+              },
+              {
+                x: "3",
+                y: 27,
+              },
+              {
+                x: "4",
+                y: 15,
+              },
+            ],
+          },
+        ],
+        graphDataMonth: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "January",
+                y: 21,
+              },
+              {
+                x: "February",
+                y: 35,
+              },
+              {
+                x: "March",
+                y: 3,
+              },
+              {
+                x: "April",
+                y: 50,
+              },
+              {
+                x: "May",
+                y: 12,
+              },
+              {
+                x: "June",
+                y: 27,
+              },
+              {
+                x: "July",
+                y: 32,
+              },
+              {
+                x: "August",
+                y: 11,
+              },
+              {
+                x: "September",
+                y: 46,
+              },
+              {
+                x: "October",
+                y: 23,
+              },
+              {
+                x: "November",
+                y: 6,
+              },
+              {
+                x: "December",
+                y: 4,
+              },
+            ],
+          },
+        ],
       },
     },
-  ],
-};
-
-const jsonResponseHumidity = {
-  graphMetrics: [
     {
       title: "Humidity",
       tabData: {
@@ -76,16 +391,121 @@ const jsonResponseHumidity = {
         value2: "Comfortable",
       },
       graphData: {
-        graphDataDay: data1,
-        graphDataWeek: data2,
-        graphDataMonth: data3,
+        graphDataDay: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "Monday",
+                y: 45,
+              },
+              {
+                x: "Tuesday",
+                y: 24,
+              },
+              {
+                x: "Wednesday",
+                y: 37,
+              },
+              {
+                x: "Thursday",
+                y: 3,
+              },
+              {
+                x: "Friday",
+                y: 45,
+              },
+              {
+                x: "Saturday",
+                y: 12,
+              },
+              {
+                x: "Sunday",
+                y: 50,
+              },
+            ],
+          },
+        ],
+        graphDataWeek: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "1",
+                y: 4,
+              },
+              {
+                x: "2",
+                y: 13,
+              },
+              {
+                x: "3",
+                y: 27,
+              },
+              {
+                x: "4",
+                y: 15,
+              },
+            ],
+          },
+        ],
+        graphDataMonth: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "January",
+                y: 21,
+              },
+              {
+                x: "February",
+                y: 35,
+              },
+              {
+                x: "March",
+                y: 3,
+              },
+              {
+                x: "April",
+                y: 50,
+              },
+              {
+                x: "May",
+                y: 12,
+              },
+              {
+                x: "June",
+                y: 27,
+              },
+              {
+                x: "July",
+                y: 32,
+              },
+              {
+                x: "August",
+                y: 11,
+              },
+              {
+                x: "September",
+                y: 46,
+              },
+              {
+                x: "October",
+                y: 23,
+              },
+              {
+                x: "November",
+                y: 6,
+              },
+              {
+                x: "December",
+                y: 4,
+              },
+            ],
+          },
+        ],
       },
     },
-  ],
-};
-
-const jsonResponsePressure = {
-  graphMetrics: [
     {
       title: "Pressure",
       tabData: {
@@ -95,160 +515,120 @@ const jsonResponsePressure = {
         value2: "Normal",
       },
       graphData: {
-        graphDataDay: data1,
-        graphDataWeek: data2,
-        graphDataMonth: data3,
+        graphDataDay: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "Monday",
+                y: 45,
+              },
+              {
+                x: "Tuesday",
+                y: 24,
+              },
+              {
+                x: "Wednesday",
+                y: 37,
+              },
+              {
+                x: "Thursday",
+                y: 3,
+              },
+              {
+                x: "Friday",
+                y: 45,
+              },
+              {
+                x: "Saturday",
+                y: 12,
+              },
+              {
+                x: "Sunday",
+                y: 50,
+              },
+            ],
+          },
+        ],
+        graphDataWeek: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "1",
+                y: 4,
+              },
+              {
+                x: "2",
+                y: 13,
+              },
+              {
+                x: "3",
+                y: 27,
+              },
+              {
+                x: "4",
+                y: 15,
+              },
+            ],
+          },
+        ],
+        graphDataMonth: [
+          {
+            name: "Feature 1",
+            data: [
+              {
+                x: "January",
+                y: 21,
+              },
+              {
+                x: "February",
+                y: 35,
+              },
+              {
+                x: "March",
+                y: 3,
+              },
+              {
+                x: "April",
+                y: 50,
+              },
+              {
+                x: "May",
+                y: 12,
+              },
+              {
+                x: "June",
+                y: 27,
+              },
+              {
+                x: "July",
+                y: 32,
+              },
+              {
+                x: "August",
+                y: 11,
+              },
+              {
+                x: "September",
+                y: 46,
+              },
+              {
+                x: "October",
+                y: 23,
+              },
+              {
+                x: "November",
+                y: 6,
+              },
+              {
+                x: "December",
+                y: 4,
+              },
+            ],
+          },
+        ],
       },
     },
   ],
 };
-
-// data1, data2, data3 are just different lengths of data sets (day, week, month)
-const data1 = [
-  {
-    name: "Feature 1",
-    data: [
-      {
-        x: "Monday",
-        y: 45,
-      },
-      {
-        x: "Tuesday",
-        y: 24,
-      },
-      {
-        x: "Wednesday",
-        y: 37,
-      },
-      {
-        x: "Thursday",
-        y: 3,
-      },
-      {
-        x: "Friday",
-        y: 45,
-      },
-      {
-        x: "Saturday",
-        y: 12,
-      },
-      {
-        x: "Sunday",
-        y: 50,
-      },
-    ],
-  },
-  {
-    name: "Feature 1",
-    data: [
-      {
-        x: "Monday",
-        y: 12,
-      },
-      {
-        x: "Tuesday",
-        y: 6,
-      },
-      {
-        x: "Wednesday",
-        y: 37,
-      },
-      {
-        x: "Thursday",
-        y: 21,
-      },
-      {
-        x: "Friday",
-        y: 11,
-      },
-      {
-        x: "Saturday",
-        y: 35,
-      },
-      {
-        x: "Sunday",
-        y: 45,
-      },
-    ],
-  },
-];
-
-const data2 = [
-  {
-    name: "Feature 1",
-    data: [
-      {
-        x: "1",
-        y: 4,
-      },
-      {
-        x: "2",
-        y: 13,
-      },
-      {
-        x: "3",
-        y: 27,
-      },
-      {
-        x: "4",
-        y: 15,
-      },
-    ],
-  },
-];
-
-const data3 = [
-  {
-    name: "Feature 1",
-    data: [
-      {
-        x: "January",
-        y: 21,
-      },
-      {
-        x: "February",
-        y: 35,
-      },
-      {
-        x: "March",
-        y: 3,
-      },
-      {
-        x: "April",
-        y: 50,
-      },
-      {
-        x: "May",
-        y: 12,
-      },
-      {
-        x: "June",
-        y: 27,
-      },
-      {
-        x: "July",
-        y: 32,
-      },
-      {
-        x: "August",
-        y: 11,
-      },
-      {
-        x: "September",
-        y: 46,
-      },
-      {
-        x: "October",
-        y: 23,
-      },
-      {
-        x: "November",
-        y: 6,
-      },
-      {
-        x: "December",
-        y: 4,
-      },
-    ],
-  },
-];

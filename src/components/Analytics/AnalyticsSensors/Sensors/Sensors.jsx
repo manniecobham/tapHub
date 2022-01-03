@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 // images
-import acIcon from '../../../../../images/Analytics/acIcon.svg';
-import humidityIcon from '../../../../../images/Analytics/humidityIcon.svg';
-import lightingIcon from '../../../../../images/Analytics/lightingIcon.svg';
-import airIcon from '../../../../../images/Analytics/airIcon.svg';
-import roomIcon from '../../../../../images/Analytics/roomIcon.svg';
+import acIcon from '../../../../images/Analytics/acIcon.svg';
+import humidityIcon from '../../../../images/Analytics/humidityIcon.svg';
+import lightingIcon from '../../../../images/Analytics/lightingIcon.svg';
+import airIcon from '../../../../images/Analytics/airIcon.svg';
+import roomIcon from '../../../../images/Analytics/roomIcon.svg';
 
 // components
-import { Card } from '../../../../../styles/UI/Card.styled';
+import { Card } from '../../../../styles/UI/Card.styled';
 
 
 const SensorComponent = ({ sensor, setGraphData, sensors, setActiveSensor, id}) => {
