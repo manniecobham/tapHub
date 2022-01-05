@@ -50,6 +50,21 @@ export const Container = styled.div`
         font-size: 24px;
         padding-right: 20px;
 
+        /* .daterange {
+          margin-right: 50px;
+        } */
+
+        .picker {
+          display: flex;
+          width: 300px;
+          height: 40px;
+          margin-right: 10px;
+          align-items: center;
+          justify-content: center;
+          background: white;
+          border-radius: 50px;
+          border: 1px solid lightgray;
+        }
         .download {
           display: flex;
           height: 45px;

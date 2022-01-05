@@ -9,4 +9,4 @@ const jsonResponse = {
   co2Reduction: "",
   lightWasted: "",
   hcWasted: "",
-},
+}sa

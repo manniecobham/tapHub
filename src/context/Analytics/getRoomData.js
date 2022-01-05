@@ -17,6 +17,7 @@ const jsonRequest = {
 // ID 2 = temperature
 // ID 3 = light
 const jsonResponse = {
+  floorPlan: "img",
   graphMetrics: [
     {
       id: 1,
@@ -27,7 +28,74 @@ const jsonResponse = {
         // relChangePerDay
         value2: 2.1,
       },
-      graphData: data1,
+      graphData: [
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 45,
+            },
+            {
+              x: "Tuesday",
+              y: 24,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 3,
+            },
+            {
+              x: "Friday",
+              y: 45,
+            },
+            {
+              x: "Saturday",
+              y: 12,
+            },
+            {
+              x: "Sunday",
+              y: 50,
+            },
+          ],
+        },
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 12,
+            },
+            {
+              x: "Tuesday",
+              y: 6,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 21,
+            },
+            {
+              x: "Friday",
+              y: 11,
+            },
+            {
+              x: "Saturday",
+              y: 35,
+            },
+            {
+              x: "Sunday",
+              y: 45,
+            },
+          ],
+        },
+      ],
     },
     {
       id: 2,
@@ -38,7 +106,74 @@ const jsonResponse = {
         // relChangePerDay
         value2: 4.1,
       },
-      graphData: data1,
+      graphData: [
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 45,
+            },
+            {
+              x: "Tuesday",
+              y: 24,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 3,
+            },
+            {
+              x: "Friday",
+              y: 45,
+            },
+            {
+              x: "Saturday",
+              y: 12,
+            },
+            {
+              x: "Sunday",
+              y: 50,
+            },
+          ],
+        },
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 12,
+            },
+            {
+              x: "Tuesday",
+              y: 6,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 21,
+            },
+            {
+              x: "Friday",
+              y: 11,
+            },
+            {
+              x: "Saturday",
+              y: 35,
+            },
+            {
+              x: "Sunday",
+              y: 45,
+            },
+          ],
+        },
+      ],
     },
     {
       id: 3,
@@ -49,7 +184,74 @@ const jsonResponse = {
         // relChangePerMonth
         value2: 3,
       },
-      graphData: data1,
+      graphData: [
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 45,
+            },
+            {
+              x: "Tuesday",
+              y: 24,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 3,
+            },
+            {
+              x: "Friday",
+              y: 45,
+            },
+            {
+              x: "Saturday",
+              y: 12,
+            },
+            {
+              x: "Sunday",
+              y: 50,
+            },
+          ],
+        },
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 12,
+            },
+            {
+              x: "Tuesday",
+              y: 6,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 21,
+            },
+            {
+              x: "Friday",
+              y: 11,
+            },
+            {
+              x: "Saturday",
+              y: 35,
+            },
+            {
+              x: "Sunday",
+              y: 45,
+            },
+          ],
+        },
+      ],
     },
     {
       id: 4,
@@ -60,7 +262,74 @@ const jsonResponse = {
         // comfortLevel
         value2: "Comfortable",
       },
-      graphData: data1,
+      graphData: [
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 45,
+            },
+            {
+              x: "Tuesday",
+              y: 24,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 3,
+            },
+            {
+              x: "Friday",
+              y: 45,
+            },
+            {
+              x: "Saturday",
+              y: 12,
+            },
+            {
+              x: "Sunday",
+              y: 50,
+            },
+          ],
+        },
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 12,
+            },
+            {
+              x: "Tuesday",
+              y: 6,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 21,
+            },
+            {
+              x: "Friday",
+              y: 11,
+            },
+            {
+              x: "Saturday",
+              y: 35,
+            },
+            {
+              x: "Sunday",
+              y: 45,
+            },
+          ],
+        },
+      ],
     },
     {
       id: 5,
@@ -71,77 +340,74 @@ const jsonResponse = {
         // pressureLevel
         value2: "Normal",
       },
-      graphData: data1,
+      graphData: [
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 45,
+            },
+            {
+              x: "Tuesday",
+              y: 24,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 3,
+            },
+            {
+              x: "Friday",
+              y: 45,
+            },
+            {
+              x: "Saturday",
+              y: 12,
+            },
+            {
+              x: "Sunday",
+              y: 50,
+            },
+          ],
+        },
+        {
+          name: "Feature 1",
+          data: [
+            {
+              x: "Monday",
+              y: 12,
+            },
+            {
+              x: "Tuesday",
+              y: 6,
+            },
+            {
+              x: "Wednesday",
+              y: 37,
+            },
+            {
+              x: "Thursday",
+              y: 21,
+            },
+            {
+              x: "Friday",
+              y: 11,
+            },
+            {
+              x: "Saturday",
+              y: 35,
+            },
+            {
+              x: "Sunday",
+              y: 45,
+            },
+          ],
+        },
+      ],
     },
   ],
 };
-
-// data1, data2, data3 are just different lengths of data sets (day, week, month)
-const data1 = [
-  {
-    name: "Feature 1",
-    data: [
-      {
-        x: "Monday",
-        y: 45,
-      },
-      {
-        x: "Tuesday",
-        y: 24,
-      },
-      {
-        x: "Wednesday",
-        y: 37,
-      },
-      {
-        x: "Thursday",
-        y: 3,
-      },
-      {
-        x: "Friday",
-        y: 45,
-      },
-      {
-        x: "Saturday",
-        y: 12,
-      },
-      {
-        x: "Sunday",
-        y: 50,
-      },
-    ],
-  },
-  {
-    name: "Feature 1",
-    data: [
-      {
-        x: "Monday",
-        y: 12,
-      },
-      {
-        x: "Tuesday",
-        y: 6,
-      },
-      {
-        x: "Wednesday",
-        y: 37,
-      },
-      {
-        x: "Thursday",
-        y: 21,
-      },
-      {
-        x: "Friday",
-        y: 11,
-      },
-      {
-        x: "Saturday",
-        y: 35,
-      },
-      {
-        x: "Sunday",
-        y: 45,
-      },
-    ],
-  },
-];

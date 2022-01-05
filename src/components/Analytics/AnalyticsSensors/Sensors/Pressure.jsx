@@ -7,7 +7,6 @@ const Pressure = ({ sensor, setGraphData }) => {
 
   const onClickHandler = () => {
     setGraphData(sensor.graphData)
-    console.log("Clicked pressure")
   }
 
   return (

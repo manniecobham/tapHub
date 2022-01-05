@@ -30,13 +30,32 @@ export const Container = styled.div`
         grid-area: performance;
       }
 
-      &__dropdown {
+      /* &__dropdown {
         grid-area: dropdown;
-      }
+      } */
 
       &__floor {
         grid-area: floor;
       }
+    }
+
+    @media (max-width: 1240px) {
+      grid-template-areas:
+        "graph graph"
+        "performance floor";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 15px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-areas:
+        "graph"
+        "performance"
+        "floor";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 15px;
     }
   }
 `;

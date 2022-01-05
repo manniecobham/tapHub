@@ -28,9 +28,9 @@ const AnalyticsCards = ({ graphData }) => {
         Comparison goes here
       </div>
 
-      <div className="analysis__dropdown analytics-card">
+      {/* <div className="analysis__dropdown analytics-card">
         Other dropdown goes here
-      </div>
+      </div> */}
       
       <div className="analysis__floor analytics-card">
         Floor plan goes here

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   &.sensors {
     display: flex;
-    height: 150px;
+    height: 120px;
     justify-content: space-around;
     background: rgb(247, 242, 243);
     padding: 0 20px 0 20px;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 
     .sensors {
       &-box {
-        padding: 10px 0 10px 0;
+        padding: 20px 0 10px 0;
         background: rgb(255, 255, 255);
         border-radius: 8px 8px 0 0;
         width: 100%;
@@ -49,6 +49,9 @@ export const Container = styled.div`
             align-items: center;
             justify-content: center;
             text-align: center;
+            width: 120px;
+
+            /* border: 1px solid red; */
 
             .text {
               font-size: 14px;
@@ -75,6 +78,54 @@ export const Container = styled.div`
 
           .graybox {
             background: rgb(119, 119, 119);
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1240px) {
+      gap: 15px;
+
+      .sensors {
+        &-box {
+          &-info {
+            .img-container {
+              height: 40px;
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1124px) {
+      .sensors {
+        &-box {
+          &-info {
+            .img-container {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 760px) {
+      &.sensors {
+        justify-content: space-between;
+        overflow-x: scroll;
+        /* border: 1px solid red; */
+        .sensors {
+          &-box {
+            padding: 20px 0 10px 10px;
+            &-info {
+              .img-container {
+                display: flex;
+              }
+            }
+            .graybox {
+              margin-left: -10px;
+            }
           }
         }
       }

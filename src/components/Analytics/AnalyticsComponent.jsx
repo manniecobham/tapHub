@@ -94,9 +94,7 @@ function AnalyticsComponent() {
     return (        
         <Container className="analytics-container">
             <AnalyticsHeader />
-
             <SensorComponent sensors={sensors} setGraphData={setGraphData} />
-
             <AnalyticsCards graphData={graphData} />
         </Container>
     )

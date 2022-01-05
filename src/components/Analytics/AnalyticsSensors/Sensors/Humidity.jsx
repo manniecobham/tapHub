@@ -7,7 +7,6 @@ const Humidity = ({ sensor, setGraphData }) => {
 
   const onClickHandler = () => {
     setGraphData(sensor.graphData)
-    console.log("Clicked humidity")
   }
 
   return (

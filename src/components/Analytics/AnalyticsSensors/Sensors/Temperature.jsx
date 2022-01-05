@@ -7,7 +7,6 @@ const Temperature = ({ sensor, setGraphData }) => {
 
   const onClickHandler = () => {
     setGraphData(sensor.graphData)
-    console.log(sensor.graphData)
   }
 
   return (
