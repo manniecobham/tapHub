@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavbarStyled } from "../../styles/Navbar/Navbar.styled";
 import { NavLink } from "react-router-dom";
 import Container from "../../styles/UI/Container.styled";
-import IH_icon from "../../images/Sidebar/instahubIcon.png";
+import IH_icon from "../../images/Sidebar/TabHubIcon.png";
 import overview_icon from "../../images/Sidebar/overview.svg";
 import analytics_icon from "../../images/Sidebar/analytics.svg";
 import reports_icon from "../../images/Sidebar/reports.svg";
@@ -36,7 +36,7 @@ const Navbar = (props) => {
                 className="logo"
                 target="_blank"
                 rel="noreferrer"
-                href="https://www.getinstahub.com/"
+                href="https://www.getTabHub.com/"
               >
                 <img className="logo__image" src={IH_icon} alt="home" />
               </a>
@@ -103,7 +103,7 @@ const Navbar = (props) => {
             className="logo"
             target="_blank"
             rel="noreferrer"
-            href="https://www.getinstahub.com/"
+            href="https://www.getTabHub.com/"
           >
             <img className="logo__image" src={IH_icon} alt="home" />
           </a>

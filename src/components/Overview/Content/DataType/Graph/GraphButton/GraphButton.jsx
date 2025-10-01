@@ -95,7 +95,7 @@ const GraphButton = ({ setGraphType, setGraphData, data1, data2, data3 }) => {
     <>
       <Container className="buttons">
         <div className="time-display">
-          <span className="time-display__text">{timeFrame} Trends of Instahub Office</span>
+          <span className="time-display__text">{timeFrame} Trends of TabHub Office</span>
         </div>
         <div className="buttons__outer-container">
           <div className="buttons__inner-container">

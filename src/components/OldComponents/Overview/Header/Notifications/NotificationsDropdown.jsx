@@ -88,7 +88,7 @@ const NotificationsDropdown = (props) => {
     <NotificationDropdownContainer className="notifications-dropdown">
       <SpaceSelectionContainer ref={ref}>
         <Button onClick={onSpaceSelectionClick}>
-          <h2>InstaHub Office</h2>
+          <h2>TabHub Office</h2>
           <img src={selectionDropdownIcon} alt="^" />
         </Button>
         <Dropdown>

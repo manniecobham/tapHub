@@ -4,7 +4,7 @@ import {
   RegisterForm,
   RegisterHeader,
 } from "../../styles/Login/Register.styled";
-import instaHubLogo from "../../images/Login/instahub_logo.png";
+import TabHubLogo from "../../images/Login/TabHub_logo.png";
 import { Navigate } from "react-router-dom";
 
 // Question to ask backend for future:
@@ -101,7 +101,7 @@ const ConfirmSignup = () => {
 
   return (
     <>
-      <RegisterHeader src={instaHubLogo} alt="logo" />
+      <RegisterHeader src={TabHubLogo} alt="logo" />
       <RegisterForm
         onSubmit={onSubmitHandler}
         style={hasError ? { borderColor: "#cd564c" } : {}}

@@ -7,7 +7,7 @@ const jsonRequest = {
 
 const jsonResponse = [
   {
-    spaceName: "InstaHub Office",
+    spaceName: "TabHub Office",
     spaceId: 1,
   },
   {

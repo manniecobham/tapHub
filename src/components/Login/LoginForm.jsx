@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useInput from "../../hooks/use-input";
 import { LoginContainer } from "../../styles/Login/Login.styled";
-import IH_icon from "../../images/Sidebar/instahubIcon.png";
+import IH_icon from "../../images/Sidebar/TabHubIcon.png";
 import loginicons from "../../images/Login/login.png";
 import { Navigate, NavLink } from "react-router-dom";
 
@@ -118,7 +118,7 @@ const LoginForm = (props) => {
 
       <div className="login__tagline">
         <p>
-          <span className="lead">Instahub</span>
+          <span className="lead">TabHub</span>
           <br />
           Automation Simplified.
         </p>

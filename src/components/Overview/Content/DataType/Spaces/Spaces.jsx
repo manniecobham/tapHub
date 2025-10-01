@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 
-import instahubImage from "../../../../../images/Overview/instahub-office.png";
-import instaHubBuilding from "../../../../../images/Overview/instahubBuilding.png";
+import TabHubImage from "../../../../../images/Overview/TabHub-office.png";
+import TabHubBuilding from "../../../../../images/Overview/TabHubBuilding.png";
 import imageIcon from "../../../../../images/Overview/imageIcon.svg";
 import mapIcon from "../../../../../images/Overview/mapIcon.svg";
 import selectionDropdownIcon from "../../../../../images/Overview/selectionDropdownIcon.svg";
@@ -71,7 +71,7 @@ const Spaces = (props) => {
       <div className="card__header card__header-spaces">
         <SpaceSelectionContainer ref={ref}>
           <Button onClick={onSpaceSelectionClick}>
-            <h2>InstaHub Office</h2>
+            <h2>TabHub Office</h2>
             <img className={``} src={selectionDropdownIcon} alt="^" />
           </Button>
           <Dropdown>
@@ -110,10 +110,10 @@ const Spaces = (props) => {
       </div>
       <div className="card__content">
         {firstIconIsActive && (
-          <img src={instaHubBuilding} alt="location" className="img" />
+          <img src={TabHubBuilding} alt="location" className="img" />
         )}
         {secondIconIsActive && (
-          <img src={instahubImage} alt="location" className="img" />
+          <img src={TabHubImage} alt="location" className="img" />
         )}
       </div>
     </Card>

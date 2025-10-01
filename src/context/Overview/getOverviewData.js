@@ -10,7 +10,7 @@ const jsonRequest = {
 const jsonResponse = {
   space: {
     spaceId: 1,
-    spaceName: "InstaHub Office",
+    spaceName: "TabHub Office",
     setOfDevices: {
       metrics: [
         {

@@ -5,7 +5,7 @@ import { useTheme } from "styled-components";
 import { SideNav } from "../../../styles/OldStyles/Sidebar/Sidebar.styled";
 import { NavLink } from "react-router-dom";
 import Context from "../../../context/context";
-import IH_icon from "../../images/Sidebar/instahubIcon.png";
+import IH_icon from "../../images/Sidebar/TabHubIcon.png";
 import overview_icon from "../../images/Sidebar/overview.svg";
 import arrow_icon from "../../images/Sidebar/arrow.svg";
 import sep_line from "../../images/Sidebar/line.svg";
@@ -40,7 +40,7 @@ const Sidebar = (props) => {
       />
       <ul className="nav__list">
         <li className="nav__list-item">
-          <a target="_blank" href="https://www.getinstahub.com/">
+          <a target="_blank" href="https://www.getTabHub.com/">
             <img src={IH_icon} alt="home" />
           </a>
         </li>
@@ -116,7 +116,7 @@ export default Sidebar;
 // <nav className="nav">
 //   <StyledSidebar backgroundColor={bgColor} textColor={textColor}>
 //     <li>
-//       <a target="_blank" href="https://www.getinstahub.com/">
+//       <a target="_blank" href="https://www.getTabHub.com/">
 //         <img src={IH_icon} alt="home" style={{ width: "30px" }} />
 //       </a>
 //     </li>
